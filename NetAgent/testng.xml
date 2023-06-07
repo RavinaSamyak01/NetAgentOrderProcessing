@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="NetAgentOrderProcess">
+
+
+	
+
+
+	<!--Order Processing -->
+	<test thread-count="5" name="OrderProcessing">
+		<classes>
+			<class name="netAgent_OrderProcess.AllOrderCreation"></class>
+		</classes>
+	</test>
+
+	<!--   -->
+</suite> <!--
+NASuite -->

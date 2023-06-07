@@ -1,0 +1,19 @@
+﻿Reporttitle
+Agent Activity Chart
+
+Textbox8,Textbox11
+05/28/2023,06/07/2023
+
+No Of Jobs_label,No Of Jobs_Chart2_CategoryGroup_label,No Of Jobs_Chart2_CategoryGroup_Value_Y
+No Of Jobs,ARRIVED,1
+No Of Jobs,CALLEDBACK,9
+No Of Jobs,CANCEL,21
+No Of Jobs,CHECKED,42
+No Of Jobs,DELIVERED,56
+No Of Jobs,DEPARTED,1
+No Of Jobs,DROPPED,1
+No Of Jobs,OUT FOR DEL,4
+No Of Jobs,PU DRV ALERTED,7
+No Of Jobs,PULL ALERT CONFED,12
+No Of Jobs,TC ACKED,1
+

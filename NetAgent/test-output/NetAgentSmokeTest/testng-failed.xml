@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NetAgentSmokeTest]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="OrderProcessing(failed)">
+    <classes>
+      <class name="netAgent_OrderProcess.AllOrderCreation">
+        <methods>
+          <include name="getResult"/>
+          <include name="beforeMethod"/>
+          <include name="allOrderCreation"/>
+          <include name="SendEmail"/>
+          <include name="testMethodName"/>
+        </methods>
+      </class> <!-- netAgent_OrderProcess.AllOrderCreation -->
+    </classes>
+  </test> <!-- OrderProcessing(failed) -->
+</suite> <!-- Failed suite [NetAgentSmokeTest] -->

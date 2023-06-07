@@ -1,0 +1,322 @@
+2023-06-07 16:42:55,093 - AllOrderCreation -INFO - initialization of the properties file is done
+2023-06-07 16:42:56,843 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 114.0.5735.90 (resolved driver for Chrome 114)
+2023-06-07 16:42:56,888 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as C:\Users\rprajapati\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-06-07 16:43:08,458 - AllOrderCreation -INFO - Url opened
+2023-06-07 16:43:31,508 - AllOrderCreation -INFO - Entered UserName
+2023-06-07 16:43:32,678 - AllOrderCreation -INFO - Entered Password
+2023-06-07 16:43:33,814 - AllOrderCreation -INFO - Login done
+2023-06-07 16:43:50,233 - AllOrderCreation -INFO - Click on Operation
+2023-06-07 16:43:56,086 - AllOrderCreation -INFO - Click on Tasklog
+2023-06-07 16:43:57,865 - AllOrderCreation -INFO - Click on New Order
+2023-06-07 16:44:14,537 - AllOrderCreation -INFO - =====Service:- FRA=====
+2023-06-07 16:44:14,894 - AllOrderCreation -INFO - Entered CallerName
+2023-06-07 16:44:15,160 - AllOrderCreation -INFO - Entered Contact/Phone
+2023-06-07 16:44:15,471 - AllOrderCreation -INFO - Entered Customer Code
+2023-06-07 16:44:19,498 - AllOrderCreation -INFO - Dialogue is not displayed for Customer
+2023-06-07 16:44:21,743 - AllOrderCreation -INFO - Entered PU Zip
+2023-06-07 16:44:23,025 - AllOrderCreation -INFO - Click on PU Address
+2023-06-07 16:44:23,359 - AllOrderCreation -INFO - Entered PU Company
+2023-06-07 16:44:23,619 - AllOrderCreation -INFO - Entered PU AddressLine1
+2023-06-07 16:44:23,846 - AllOrderCreation -INFO - Entered PU Attention
+2023-06-07 16:44:24,084 - AllOrderCreation -INFO - Entered PU Phone
+2023-06-07 16:45:04,503 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //input[contains(@class,'ng-invalid ng-invalid-required')] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55748}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55748/devtoo..., se:cdpVersion: 114.0.5735.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: de60153198fbb30015cf1ca6baf6f1f2
+2023-06-07 16:45:04,506 - AllOrderCreation -INFO - Line number is: 95
+2023-06-07 16:45:04,506 - AllOrderCreation -INFO - PU Ready time is exist
+2023-06-07 16:45:04,569 - AllOrderCreation -INFO - PU Ready Time==07:14
+2023-06-07 16:45:04,715 - AllOrderCreation -INFO - PU Receive Time==07:14
+2023-06-07 16:45:04,782 - AllOrderCreation -INFO - PU Arrival Time==07:14
+2023-06-07 16:45:04,857 - AllOrderCreation -INFO - PU Mileage==13
+2023-06-07 16:45:07,407 - AllOrderCreation -INFO - Entered DL Zip
+2023-06-07 16:45:07,559 - AllOrderCreation -INFO - Entered DL Address
+2023-06-07 16:45:07,995 - AllOrderCreation -INFO - Entered DL Company
+2023-06-07 16:45:08,497 - AllOrderCreation -INFO - Entered DL Address Line1
+2023-06-07 16:45:08,848 - AllOrderCreation -INFO - Entered DL Attention
+2023-06-07 16:45:09,420 - AllOrderCreation -INFO - Entered DL Phone
+2023-06-07 16:45:09,502 - AllOrderCreation -INFO - DL Miles==12
+2023-06-07 16:45:12,648 - AllOrderCreation -INFO - Entered Total Qty
+2023-06-07 16:45:13,016 - AllOrderCreation -INFO - Entered Weight
+2023-06-07 16:45:13,376 - AllOrderCreation -INFO - Entered Length
+2023-06-07 16:45:13,760 - AllOrderCreation -INFO - Entered Width
+2023-06-07 16:45:14,129 - AllOrderCreation -INFO - Entered Height
+2023-06-07 16:45:14,699 - AllOrderCreation -INFO - Entered Commodity
+2023-06-07 16:45:16,760 - AllOrderCreation -INFO - Total Mileage==1097
+2023-06-07 16:45:30,588 - AllOrderCreation -INFO - Enter FRA service in Service input
+2023-06-07 16:45:35,899 - AllOrderCreation -INFO - Clicked on Unknown Shipper
+2023-06-07 16:46:16,945 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.xpath: //*[@class="modal-content ui-draggable"] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55748}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55748/devtoo..., se:cdpVersion: 114.0.5735.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: de60153198fbb30015cf1ca6baf6f1f2
+2023-06-07 16:46:16,948 - AllOrderCreation -INFO - Line number is: 95
+2023-06-07 16:46:21,413 - AllOrderCreation -INFO - Issue in Create Order
+2023-06-07 16:46:21,696 - AllOrderCreation -INFO - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.getText()" because the return value of "connect_OCBaseMethods.TCAcknowledge.isElementPresent(String)" is null
+2023-06-07 16:46:21,979 - AllOrderCreation -INFO - Click on Operation
+2023-06-07 16:47:02,061 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (de60153198fbb30015cf1ca6baf6f1f2)] -> id: a_TaskLog] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55748}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55748/devtoo..., se:cdpVersion: 114.0.5735.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: de60153198fbb30015cf1ca6baf6f1f2
+2023-06-07 16:47:02,063 - AllOrderCreation -INFO - Line number is: 95
+2023-06-07 16:47:06,468 - AllOrderCreation -INFO - Issue in Create Order
+2023-06-07 16:47:06,479 - AllOrderCreation -INFO - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2023-06-07 16:47:06,834 - AllOrderCreation -INFO - Click on Operation
+2023-06-07 16:47:13,581 - AllOrderCreation -INFO - Click on Tasklog
+2023-06-07 16:47:13,972 - AllOrderCreation -INFO - Click on New Order
+2023-06-07 16:47:15,178 - AllOrderCreation -INFO - =====Service:- AIR=====
+2023-06-07 16:47:15,402 - AllOrderCreation -INFO - Entered CallerName
+2023-06-07 16:47:15,626 - AllOrderCreation -INFO - Entered Contact/Phone
+2023-06-07 16:47:15,871 - AllOrderCreation -INFO - Entered Customer Code
+2023-06-07 16:47:19,283 - AllOrderCreation -INFO - Dialogue is not displayed for Customer
+2023-06-07 16:47:21,528 - AllOrderCreation -INFO - Entered PU Zip
+2023-06-07 16:47:23,366 - AllOrderCreation -INFO - Click on PU Address
+2023-06-07 16:47:23,658 - AllOrderCreation -INFO - Entered PU Company
+2023-06-07 16:47:23,867 - AllOrderCreation -INFO - Entered PU AddressLine1
+2023-06-07 16:47:24,069 - AllOrderCreation -INFO - Entered PU Attention
+2023-06-07 16:47:24,442 - AllOrderCreation -INFO - Entered PU Phone
+2023-06-07 16:48:04,777 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //input[contains(@class,'ng-invalid ng-invalid-required')] (tried for 40 second(s) with 500 milliseconds interval)
+Build info: version: '4.9.0', revision: 'd7057100a6'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55748}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55748/devtoo..., se:cdpVersion: 114.0.5735.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: de60153198fbb30015cf1ca6baf6f1f2
+2023-06-07 16:48:04,778 - AllOrderCreation -INFO - Line number is: 95
+2023-06-07 16:48:04,778 - AllOrderCreation -INFO - PU Ready time is exist
+2023-06-07 16:48:04,809 - AllOrderCreation -INFO - PU Ready Time==07:17
+2023-06-07 16:48:04,849 - AllOrderCreation -INFO - PU Receive Time==07:17
+2023-06-07 16:48:04,888 - AllOrderCreation -INFO - PU Arrival Time==07:17
+2023-06-07 16:48:04,929 - AllOrderCreation -INFO - PU Mileage==10
+2023-06-07 16:48:07,272 - AllOrderCreation -INFO - Entered DL Zip
+2023-06-07 16:48:07,361 - AllOrderCreation -INFO - Entered DL Address
+2023-06-07 16:48:07,781 - AllOrderCreation -INFO - Entered DL Company
+2023-06-07 16:48:08,194 - AllOrderCreation -INFO - Entered DL Address Line1
+2023-06-07 16:48:08,524 - AllOrderCreation -INFO - Entered DL Attention
+2023-06-07 16:48:08,880 - AllOrderCreation -INFO - Entered DL Phone
+2023-06-07 16:48:08,928 - AllOrderCreation -INFO - DL Miles==
+2023-06-07 16:48:11,990 - AllOrderCreation -INFO - Entered Total Qty
+2023-06-07 16:48:12,355 - AllOrderCreation -INFO - Entered Weight
+2023-06-07 16:48:12,703 - AllOrderCreation -INFO - Entered Length
+2023-06-07 16:48:13,039 - AllOrderCreation -INFO - Entered Width
+2023-06-07 16:48:13,370 - AllOrderCreation -INFO - Entered Height
+2023-06-07 16:48:13,920 - AllOrderCreation -INFO - Entered Commodity
+2023-06-07 16:48:15,978 - AllOrderCreation -INFO - Total Mileage==2622
+2023-06-07 16:48:16,408 - AllOrderCreation -INFO - Clicked on Unknown Shipper
+2023-06-07 16:48:27,073 - AllOrderCreation -INFO - Entered value in FedEx Verify Input
+2023-06-07 16:48:27,345 - AllOrderCreation -INFO - Clicked on Yes button
+2023-06-07 16:48:28,174 - AllOrderCreation -INFO - Clicked on Select Flight button
+2023-06-07 16:48:41,589 - AllOrderCreation -INFO - Clicked on DirectOnly Checkbox
+2023-06-07 16:48:41,880 - AllOrderCreation -INFO - Clicked on ReqRoute button
+2023-06-07 16:48:52,993 - AllOrderCreation -INFO - Direct flights are available
+2023-06-07 16:48:53,590 - AllOrderCreation -INFO - Clicked on DirectOnly Checkbox
+2023-06-07 16:48:54,038 - AllOrderCreation -INFO - Clicked on ReqRoute button
+2023-06-07 16:49:05,584 - AllOrderCreation -INFO - Selected 1st flight
+2023-06-07 16:49:06,363 - AllOrderCreation -INFO - Clicked on Assign button
+2023-06-07 16:49:10,960 - AllOrderCreation -INFO - Clicked on HAA Checkbox
+2023-06-07 16:49:17,083 - AllOrderCreation -INFO - Clicked on ReCalculate button
+2023-06-07 16:49:21,630 - AllOrderCreation -INFO - Click on Create Order button
+2023-06-07 16:50:05,760 - AllOrderCreation -INFO - Validation for Package is not displayed
+2023-06-07 16:50:05,903 - AllOrderCreation -INFO - =====Pickup =10101459=====
+
+2023-06-07 16:50:06,060 - AllOrderCreation -INFO - Clicked on Edit Order
+2023-06-07 16:50:26,975 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 16:50:43,182 - AllOrderCreation -INFO - Click on Add AirBill
+2023-06-07 16:50:43,499 - AllOrderCreation -INFO - Click on Add AirBill
+2023-06-07 16:50:43,615 - AllOrderCreation -INFO - Enter Quantity
+2023-06-07 16:50:43,752 - AllOrderCreation -INFO - Enter Weight
+2023-06-07 16:50:43,919 - AllOrderCreation -INFO - Enter Description
+2023-06-07 16:50:43,919 - AllOrderCreation -INFO - Account and Service Lavel dropdowns are available
+2023-06-07 16:50:44,086 - AllOrderCreation -INFO - Selected Account
+2023-06-07 16:50:44,183 - AllOrderCreation -INFO - Selected Service Level
+2023-06-07 16:50:44,954 - AllOrderCreation -INFO - Click on Save Bill button
+2023-06-07 16:50:44,968 - AllOrderCreation -INFO - Validation for Air Bill Description is not displayed
+2023-06-07 16:50:45,069 - AllOrderCreation -INFO - ServiceID=AIR
+2023-06-07 16:50:45,136 - AllOrderCreation -INFO - Stage=TC ACKNOWLEDGE
+2023-06-07 16:50:45,368 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 16:50:45,652 - AllOrderCreation -INFO - Clicked on TC Acknowledge button
+2023-06-07 16:50:50,612 - AllOrderCreation -INFO - Service is==AIR
+2023-06-07 16:50:50,690 - AllOrderCreation -INFO - Stage=READY FOR DISPATCH
+2023-06-07 16:50:50,906 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 16:50:50,935 - AllOrderCreation -INFO - ==Edit Driver Test Start==
+2023-06-07 16:50:56,053 - AllOrderCreation -INFO - Clicked on Edit button of Driver
+2023-06-07 16:50:58,554 - AllOrderCreation -INFO - Enter CourierID
+2023-06-07 16:50:58,730 - AllOrderCreation -INFO - Enter CourierID
+2023-06-07 16:50:58,757 - AllOrderCreation -INFO - Clicked on search button
+2023-06-07 16:50:59,401 - AllOrderCreation -INFO - Total Agent==4
+2023-06-07 16:50:59,686 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-06-07 16:50:59,995 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-06-07 16:51:00,261 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-06-07 16:51:00,541 - AllOrderCreation -INFO - Searched Agent is exist
+2023-06-07 16:51:00,861 - AllOrderCreation -INFO - Select the AgentID
+2023-06-07 16:51:03,109 - AllOrderCreation -INFO - Selected agent is==34769
+2023-06-07 16:51:03,109 - AllOrderCreation -INFO - Selected Agent is displayed in Driver section
+2023-06-07 16:51:03,109 - AllOrderCreation -INFO - == Edit Driver Test End==
+2023-06-07 16:51:03,240 - AllOrderCreation -INFO - Email is selected as a Contact By
+2023-06-07 16:51:03,516 - AllOrderCreation -INFO - Entered EmailID
+2023-06-07 16:51:03,674 - AllOrderCreation -INFO - Entered Spoke With
+2023-06-07 16:51:08,971 - AllOrderCreation -INFO - Clicked on Alert&Confirm button
+2023-06-07 16:51:19,484 - AllOrderCreation -INFO - ==Moved to NetAgent==
+2023-06-07 16:51:19,491 - AllOrderCreation -INFO - PickUpID is==10101459
+2023-06-07 16:51:19,530 - AllOrderCreation -INFO - ALready loggedin
+2023-06-07 16:51:19,727 - AllOrderCreation -INFO - Click on Operations
+2023-06-07 16:51:26,109 - AllOrderCreation -INFO - Click on Task Log
+2023-06-07 16:51:26,112 - AllOrderCreation -INFO - PickUpID is==10101459
+2023-06-07 16:52:06,228 - AllOrderCreation -INFO - Operation tab is not selected
+2023-06-07 16:52:06,693 - AllOrderCreation -INFO - Click on Operation Tab
+2023-06-07 16:52:06,830 - AllOrderCreation -INFO - Clear search input
+2023-06-07 16:52:06,942 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-06-07 16:52:07,109 - AllOrderCreation -INFO - Click on Search button
+2023-06-07 16:54:17,039 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-06-07 16:55:17,123 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-06-07 16:55:17,190 - AllOrderCreation -INFO - ServiceID=AIR
+2023-06-07 16:55:17,270 - AllOrderCreation -INFO - Stage=Confirm Pu Alert
+2023-06-07 16:55:17,474 - AllOrderCreation -INFO - Clicked on Confirm PU Alert button
+2023-06-07 16:55:21,430 - AllOrderCreation -INFO - Clear search input
+2023-06-07 16:55:21,488 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-06-07 16:55:21,666 - AllOrderCreation -INFO - Click on Search button
+2023-06-07 16:57:31,374 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-06-07 16:58:31,445 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-06-07 16:58:31,550 - AllOrderCreation -INFO - ServiceID=AIR
+2023-06-07 16:58:31,659 - AllOrderCreation -INFO - Stage=Pickup
+2023-06-07 16:58:31,703 - AllOrderCreation -INFO - ZoneID of is==EDT
+2023-06-07 16:58:31,704 - AllOrderCreation -INFO - 07:28
+2023-06-07 16:58:32,184 - AllOrderCreation -INFO - Enter Actual pickup time
+2023-06-07 16:58:34,394 - AllOrderCreation -INFO - Click on Confirm PU button
+2023-06-07 16:59:10,226 - AllOrderCreation -INFO - Validation message is not displayed for Recalculate the charges
+2023-06-07 16:59:10,364 - AllOrderCreation -INFO - Clear search input
+2023-06-07 16:59:10,431 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-06-07 16:59:10,606 - AllOrderCreation -INFO - Click on Search button
+2023-06-07 17:01:22,195 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-06-07 17:02:22,214 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-06-07 17:02:22,430 - AllOrderCreation -INFO - ServiceID=AIR
+2023-06-07 17:02:22,488 - AllOrderCreation -INFO - Stage=Drop @ Origin
+2023-06-07 17:02:22,532 - AllOrderCreation -INFO - ZoneID of is==EDT
+2023-06-07 17:02:22,533 - AllOrderCreation -INFO - 07:32
+2023-06-07 17:02:22,748 - AllOrderCreation -INFO - Enter Drop off time
+2023-06-07 17:02:22,800 - AllOrderCreation -INFO - Click on Confirm Drop button
+2023-06-07 17:02:27,838 - AllOrderCreation -INFO - Airbill already exist !!
+2023-06-07 17:02:27,908 - AllOrderCreation -INFO - Clear search input
+2023-06-07 17:02:27,980 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-06-07 17:02:28,134 - AllOrderCreation -INFO - Click on Search button
+2023-06-07 17:02:29,347 - AllOrderCreation -INFO - Job is not found in Operation Tab
+2023-06-07 17:02:29,490 - AllOrderCreation -INFO - Click on Inventory tab
+2023-06-07 17:02:29,575 - AllOrderCreation -INFO - Clear search input
+2023-06-07 17:02:29,625 - AllOrderCreation -INFO - Enter pickupID in search input
+2023-06-07 17:03:29,172 - AllOrderCreation -INFO - Job is not available in NetAgent
+2023-06-07 17:03:29,240 - AllOrderCreation -INFO - Job is not available in NetAgent
+2023-06-07 17:03:30,006 - AllOrderCreation -INFO - ==Moved to Connect==
+2023-06-07 17:03:40,633 - AllOrderCreation -INFO - Total Jobs==0
+2023-06-07 17:03:40,634 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
+2023-06-07 17:03:40,722 - AllOrderCreation -INFO - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2023-06-07 17:03:40,969 - AllOrderCreation -INFO - Stage=HAA NOTIFY
+2023-06-07 17:03:41,405 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:03:41,641 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:03:42,048 - AllOrderCreation -INFO - Entered value in HAA Spoke With
+2023-06-07 17:03:42,322 - AllOrderCreation -INFO - Clicked on HAA Notify button
+2023-06-07 17:03:48,834 - AllOrderCreation -INFO - Stage=WAIT FOR DEPARTURE
+2023-06-07 17:03:49,076 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:03:49,587 - AllOrderCreation -INFO - Enter Departure Time
+2023-06-07 17:03:49,689 - AllOrderCreation -INFO - Click on Depart button
+2023-06-07 17:04:22,514 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'XER Wait For Arr@')] (tried for 30 second(s) with 500 milliseconds interval)
+2023-06-07 17:04:22,749 - AllOrderCreation -INFO - XER Wait for Arrival Not Exist in Flow!!
+2023-06-07 17:04:52,909 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'XER Wait For Dept@')] (tried for 30 second(s) with 500 milliseconds interval)
+2023-06-07 17:04:53,117 - AllOrderCreation -INFO - XER Wait for Departure Not Exist in Flow!!
+2023-06-07 17:05:23,486 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'Wait for Arrival')] (tried for 30 second(s) with 500 milliseconds interval)
+2023-06-07 17:05:23,701 - AllOrderCreation -INFO - Wait for Arrival Not Exist in Flow!!
+2023-06-07 17:05:54,117 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'Onhand @ Destination')] (tried for 30 second(s) with 500 milliseconds interval)
+2023-06-07 17:05:54,237 - AllOrderCreation -INFO - Onhand @ Destination Not Exist in Flow!!
+2023-06-07 17:05:54,330 - AllOrderCreation -INFO - Stage=ON BOARD
+2023-06-07 17:05:54,534 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:06:01,152 - AllOrderCreation -INFO - Stage=XER WAIT FOR ARR@DTW
+2023-06-07 17:06:01,335 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:06:01,377 - AllOrderCreation -INFO - ZoneID of is==EDT
+2023-06-07 17:06:01,377 - AllOrderCreation -INFO - 07:36
+2023-06-07 17:06:01,603 - AllOrderCreation -INFO - Enter Arrival Time
+2023-06-07 17:06:01,667 - AllOrderCreation -INFO - Click on Arrival button
+2023-06-07 17:06:05,102 - AllOrderCreation -INFO - Stage=XER WAIT FOR DEPT@DTW
+2023-06-07 17:06:05,342 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:06:05,412 - AllOrderCreation -INFO - ZoneID of is==EDT
+2023-06-07 17:06:05,412 - AllOrderCreation -INFO - 07:36
+2023-06-07 17:06:05,701 - AllOrderCreation -INFO - Enter Depature Time
+2023-06-07 17:06:05,809 - AllOrderCreation -INFO - Click on Depart button
+2023-06-07 17:06:09,252 - AllOrderCreation -INFO - Stage=ON BOARD
+2023-06-07 17:06:09,465 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:06:42,121 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'Wait for Arrival')] (tried for 30 second(s) with 500 milliseconds interval)
+2023-06-07 17:06:42,284 - AllOrderCreation -INFO - Wait for Arrival Not Exist in Flow!!
+2023-06-07 17:07:12,526 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'Onhand @ Destination')] (tried for 30 second(s) with 500 milliseconds interval)
+2023-06-07 17:07:12,688 - AllOrderCreation -INFO - Onhand @ Destination Not Exist in Flow!!
+2023-06-07 17:07:42,957 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'Deliver')] (tried for 30 second(s) with 500 milliseconds interval)
+2023-06-07 17:07:43,068 - AllOrderCreation -INFO - DELIVER Not Exist in Flow!!
+2023-06-07 17:08:23,829 - AllOrderCreation -INFO - Clicked on Operations
+2023-06-07 17:08:24,249 - AllOrderCreation -INFO - Clicked on TaskLog
+2023-06-07 17:08:34,064 - AllOrderCreation -INFO - PickUpID=10101459
+
+2023-06-07 17:08:41,814 - AllOrderCreation -INFO - Total Jobs==0
+2023-06-07 17:08:41,815 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
+2023-06-07 17:09:12,309 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'Verify Margin')] (tried for 30 second(s) with 500 milliseconds interval)
+2023-06-07 17:09:12,416 - AllOrderCreation -INFO - Verify Margin Not Exist in Flow!!
+2023-06-07 17:09:14,467 - AllOrderCreation -INFO - Click on Operation
+2023-06-07 17:09:22,052 - AllOrderCreation -INFO - Click on Tasklog
+2023-06-07 17:09:22,796 - AllOrderCreation -INFO - Click on New Order
+2023-06-07 17:09:23,507 - AllOrderCreation -INFO - =====Service:- CPU=====
+2023-06-07 17:09:23,885 - AllOrderCreation -INFO - Entered CallerName
+2023-06-07 17:09:24,190 - AllOrderCreation -INFO - Entered Contact/Phone
+2023-06-07 17:09:24,564 - AllOrderCreation -INFO - Entered Customer Code
+2023-06-07 17:09:45,346 - AllOrderCreation -INFO - Dialogue is not displayed for Customer
+2023-06-07 17:09:45,425 - AllOrderCreation -INFO - Clicked on Parts search button
+2023-06-07 17:09:47,403 - AllOrderCreation -INFO - Clicked on Advanced search button
+2023-06-07 17:09:48,201 - AllOrderCreation -INFO - Selected FSL
+2023-06-07 17:09:48,455 - AllOrderCreation -INFO - Entered value of Field 1
+2023-06-07 17:09:48,526 - AllOrderCreation -INFO - Clicked on search button
+2023-06-07 17:09:51,952 - AllOrderCreation -INFO - Clicked on Add Part button
+2023-06-07 17:09:52,034 - AllOrderCreation -INFO - Total Qty of added parts==1
+2023-06-07 17:09:52,035 - AllOrderCreation -INFO - Part is added successfully==PASS
+2023-06-07 17:09:52,249 - AllOrderCreation -INFO - Clicked on Save Part button
+2023-06-07 17:09:56,915 - AllOrderCreation -INFO - Qty of added parts==1
+2023-06-07 17:09:56,915 - AllOrderCreation -INFO - Part is saved successfully==PASS
+2023-06-07 17:09:59,239 - AllOrderCreation -INFO - Entered DL Zip
+2023-06-07 17:09:59,304 - AllOrderCreation -INFO - Clicked on Delivery Address Tab
+2023-06-07 17:09:59,520 - AllOrderCreation -INFO - Entered DL Company
+2023-06-07 17:09:59,543 - AllOrderCreation -INFO - Entered DL Address
+2023-06-07 17:09:59,739 - AllOrderCreation -INFO - Entered DL Address Line1
+2023-06-07 17:09:59,888 - AllOrderCreation -INFO - Entered DL Attention
+2023-06-07 17:10:00,060 - AllOrderCreation -INFO - Entered DL Phone
+2023-06-07 17:10:00,102 - AllOrderCreation -INFO - DL Miles==
+2023-06-07 17:10:06,018 - AllOrderCreation -INFO - Total Mileage==1
+2023-06-07 17:10:08,487 - AllOrderCreation -INFO - Click on Create Order button
+2023-06-07 17:10:54,457 - AllOrderCreation -INFO - Confirmation message for warehouse is not displayed
+2023-06-07 17:10:54,556 - AllOrderCreation -INFO - =====Pickup =10101506=====
+
+2023-06-07 17:10:55,558 - AllOrderCreation -INFO - Clicked on Edit Order
+2023-06-07 17:11:00,761 - AllOrderCreation -INFO - Service is==CPU
+2023-06-07 17:11:00,832 - AllOrderCreation -INFO - Scroll down to Get the Rate
+2023-06-07 17:11:30,985 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:11:51,967 - AllOrderCreation -INFO - ServiceID=CPU
+2023-06-07 17:11:52,056 - AllOrderCreation -INFO - Stage=TC ACKNOWLEDGE
+2023-06-07 17:11:52,258 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:11:52,496 - AllOrderCreation -INFO - Clicked on TC Acknowledge button
+2023-06-07 17:12:27,248 - AllOrderCreation -INFO - ServiceID=CPU
+2023-06-07 17:12:27,342 - AllOrderCreation -INFO - Stage=SEND PULL ALERT
+2023-06-07 17:12:27,554 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-06-07 17:12:27,633 - AllOrderCreation -INFO - Actual Courier=34769
+2023-06-07 17:12:27,634 - AllOrderCreation -INFO - By default Automation courier is selected 
+2023-06-07 17:12:27,801 - AllOrderCreation -INFO - Email is selected as a Contact By
+2023-06-07 17:12:28,255 - AllOrderCreation -INFO - Entered EmailID
+2023-06-07 17:12:28,522 - AllOrderCreation -INFO - Entered Spoke With
+2023-06-07 17:12:28,704 - AllOrderCreation -INFO - Clicked on Send Pull button
+2023-06-07 17:12:32,607 - AllOrderCreation -INFO - ==Moved to NetAgent==
+2023-06-07 17:12:32,617 - AllOrderCreation -INFO - PickUpID is==10101506
+2023-06-07 17:12:32,683 - AllOrderCreation -INFO - ALready loggedin
+2023-06-07 17:12:32,909 - AllOrderCreation -INFO - Click on Operations
+2023-06-07 17:12:36,816 - AllOrderCreation -INFO - Click on Task Log
+2023-06-07 17:12:36,823 - AllOrderCreation -INFO - PickUpID is==10101506
+2023-06-07 17:13:16,905 - AllOrderCreation -INFO - Operation tab is not selected
+2023-06-07 17:13:18,375 - AllOrderCreation -INFO - Click on Operation Tab
+2023-06-07 17:13:18,534 - AllOrderCreation -INFO - Clear search input
+2023-06-07 17:13:18,661 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-06-07 17:13:18,844 - AllOrderCreation -INFO - Click on Search button
