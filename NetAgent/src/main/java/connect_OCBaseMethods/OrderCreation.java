@@ -989,7 +989,7 @@ public class OrderCreation extends BaseInit {
 	public void movjobstatus() {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait;
-		wait = new WebDriverWait(Driver, 120);// wait time
+		wait = new WebDriverWait(Driver, 60);// wait time
 		Actions act = new Actions(Driver);
 
 		try {
@@ -3026,7 +3026,7 @@ public class OrderCreation extends BaseInit {
 	public void NATaskSearch(String PUID) throws InterruptedException {
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 60);// wait time
+			wait = new WebDriverWait(Driver, 100);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 120);// wait time
@@ -3126,8 +3126,8 @@ public class OrderCreation extends BaseInit {
 				WebElement InvSearch = isElementPresent("NAInvSearchBtn_id");
 				act.moveToElement(InvSearch).build().perform();
 				wait.until(ExpectedConditions.elementToBeClickable(InvSearch));
-				InvSearch.click();
-				// js.executeScript("arguments[0].click();", InvSearch);
+				// InvSearch.click();
+				js.executeScript("arguments[0].click();", InvSearch);
 				logger.info("Click on Search button");
 				try {
 					wait.until(ExpectedConditions
@@ -3140,7 +3140,6 @@ public class OrderCreation extends BaseInit {
 
 				}
 
-				
 			}
 		} catch (Exception Tab) {
 			try {
