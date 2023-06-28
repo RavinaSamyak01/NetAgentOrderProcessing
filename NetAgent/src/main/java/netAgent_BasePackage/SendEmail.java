@@ -34,14 +34,17 @@ public class SendEmail {
 
 			// Setup mail server
 			props.put("relay.mnx.com", hostName);
-
+			props.put("mail.smtp.ssl.trust", "relay.mnx.com");
 			// Get session
 
 			session = Session.getInstance(props, null);
 			transport = session.getTransport("smtp");
 			transport.connect(hostName, "noreply@mnx.com", null);
-		} catch (Exception eEmail) {
+			System.out.println("Able to send email from relay.mnx.com ");
 
+		} catch (Exception eEmail) {
+			System.out.println(eEmail);
+			System.out.println("unable to send email from relay.mnx.com ");
 			hostName = "10.100.112.1";
 			fromAddress = "ravina.prajapati@samyak.com";
 			bccAddresses = "ravina.prajapati@samyak.com";
@@ -60,6 +63,7 @@ public class SendEmail {
 			transport.connect(hostName, "ravina.prajapati@samyak.com", "Rpsipl45");
 
 		}
+
 
 		// Define message object
 		MimeMessage message = new MimeMessage(session);
