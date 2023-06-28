@@ -99,9 +99,9 @@ public class BaseInit {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
-			// options.addArguments("--headless", "--window-size=1920, 1080");
-			options.addArguments("--incognito");
-			options.addArguments("--test-type");
+			options.addArguments("--headless", "--window-size=1920, 1080");
+			// options.addArguments("--incognito");
+			// options.addArguments("--test-type");
 			options.addArguments("--disable-extensions");
 			options.addArguments("--no-sandbox");
 			options.addArguments("enable-automation");
@@ -111,11 +111,11 @@ public class BaseInit {
 			options.addArguments("--disable-infobars");
 			options.addArguments("--disable-dev-shm-usage");
 			options.addArguments("--force-device-scale-factor=1");
-			options.addArguments("--aggressive-cache-discard");
-			options.addArguments("--disable-cache");
-			options.addArguments("--disable-application-cache");
-			options.addArguments("--disable-offline-load-stale-cache");
-			options.addArguments("--disk-cache-size=0");
+			// options.addArguments("--aggressive-cache-discard");
+			// options.addArguments("--disable-cache");
+			// options.addArguments("--disable-application-cache");
+			// options.addArguments("--disable-offline-load-stale-cache");
+			// options.addArguments("--disk-cache-size=0");
 			options.addArguments("--no-proxy-server");
 			options.addArguments("--log-level=3");
 			options.addArguments("--silent");
@@ -658,6 +658,7 @@ public class BaseInit {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'userthumb')]")));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class,'userthumb')]")));
 		WebElement LogoutDiv = isElementPresent("LogOutDiv_xpath");
+		act.moveToElement(LogoutDiv).build().perform();
 		act.moveToElement(LogoutDiv).click().build().perform();
 		WebElement LogOut = isElementPresent("LogOut_linkText");
 		wait.until(ExpectedConditions.visibilityOf(LogOut));
@@ -882,8 +883,19 @@ public class BaseInit {
 		String Env = storage.getProperty("Env");
 		msg.append("Environment==" + Env + ":" + BaseURL + "\n\n");
 		String subject = "Selenium Automation Script: " + Env + " NetAgent Order Processing";
-		String File = ".\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgent-Order Processing.html	";
+		String File = null;
+		if (Env.equalsIgnoreCase("Test")) {
+			File = ".\\src\\main\\resources\\NA OCP Result_Test.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgent-Order Processing.html";
+		} else if (Env.equalsIgnoreCase("STG")) {
+			File = ".\\src\\main\\resources\\NA OCP Result_STG.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgent-Order Processing.html";
 
+		} else if (Env.equalsIgnoreCase("Pre-Prod")) {
+			File = ".\\src\\main\\resources\\NA OCP Result_PreProd.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgent-Order Processing.html";
+
+		} else if (Env.equalsIgnoreCase("PROD")) {
+			File = ".\\src\\main\\resources\\NA OCP Result_Prod.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgent-Order Processing.html";
+
+		}
 		try {
 //			/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
 
@@ -1107,6 +1119,41 @@ public class BaseInit {
 				.takeScreenshot(Driver);
 		String destination = System.getProperty("user.dir") + "/Report/NA_Screenshot/" + screenshotName + ".png";
 		ImageIO.write(fpScreenshot.getImage(), "PNG", new File(destination));
+	}
+
+	public static void setResultData(String sheetName, int row, int col, String value)
+			throws EncryptedDocumentException, InvalidFormatException, IOException {
+		String Env = storage.getProperty("Env");
+		String FilePath = null;
+		if (Env.equalsIgnoreCase("Pre-Prod")) {
+			FilePath = storage.getProperty("PrePRODResultFile");
+		} else if (Env.equalsIgnoreCase("STG")) {
+			FilePath = storage.getProperty("STGResultFile");
+		} else if (Env.equalsIgnoreCase("Prod")) {
+			FilePath = storage.getProperty("PRODResultFile");
+		} else if (Env.equalsIgnoreCase("TEST")) {
+			FilePath = storage.getProperty("TESTResultFile");
+		}
+
+		File src = new File(FilePath);
+		FileInputStream fis = new FileInputStream(src);
+		Workbook workbook = WorkbookFactory.create(fis);
+		FileOutputStream fos1 = new FileOutputStream(src);
+		Sheet sh = workbook.getSheet(sheetName);
+
+		try {
+			sh.getRow(row).createCell(col).setCellValue(value);
+			workbook.write(fos1);
+			fos1.close();
+			fis.close();
+
+		} catch (Exception e) {
+			fos1.close();
+			fis.close();
+			logger.info("Issue in SetData" + e);
+
+		}
+
 	}
 
 }

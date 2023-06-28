@@ -2,15 +2,134 @@
 <suite name="NetAgentOrderProcess">
 
 
-	
-
-
 	<!--Order Processing -->
 	<test thread-count="5" name="OrderProcessing">
 		<classes>
 			<class name="netAgent_OrderProcess.AllOrderCreation"></class>
 		</classes>
 	</test>
+
+	<!--<test name="OrderCreation">
+    <classes>
+        <class name="netAgent_OrderProcess.OrderProcessFromNA">
+            <methods>
+            <include name="OrderCreationConnect"></include>
+            </methods>
+        </class>           
+    </classes>
+  </test>
+  
+  <test name="Order Processing">
+    <classes>
+        <class name="netAgent_OrderProcess.OrderProcessFromNA">
+            <methods>
+            <include name="naOrderProcess"></include>
+            </methods>
+        </class>           
+    </classes>
+  </test>-->
+
+	<!--	<test name="StartUp">
+    <classes>
+        <class name="connect_OCBaseMethods.StartUp">
+            <methods>
+            <include name="startup"></include>
+            </methods>
+        </class>           
+    </classes>
+  </test>
+
+	<test thread-count="5" name="LOC">
+		<classes>
+			<class name="connect_OrderProcessNonSPL.LOC"></class>
+		</classes>
+	</test>
+
+
+	<test thread-count="5" name="SD">
+		<classes>
+			<class name="connect_OrderProcessNonSPL.SD"></class>
+		</classes>
+	</test>
+
+
+	<test thread-count="5" name="SDC">
+		<classes>
+			<class name="connect_OrderProcessNonSPL.SDC"></class>
+		</classes>
+	</test>
+
+
+	<test thread-count="5" name="DRV">
+		<classes>
+			<class name="connect_OrderProcessNonSPL.DRV"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="PA">
+		<classes>
+			<class name="connect_OrderProcessNonSPL.PA"></class>
+		</classes>
+	</test>
+
+
+	<test thread-count="5" name="P3P">
+		<classes>
+			<class name="connect_OrderProcessNonSPL.P3P"></class>
+		</classes>
+	</test>
+
+
+	<test thread-count="5" name="AIR">
+		<classes>
+			<class name="connect_OrderProcessNonSPL.AIR"></class>
+		</classes>
+	</test>
+
+
+	<test thread-count="5" name="FRA">
+		<classes>
+			<class name="connect_OrderProcessNonSPL.FRA"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="FRG">
+		<classes>
+			<class name="connect_OrderProcessNonSPL.FRG"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="CPU">
+		<classes>
+			<class name="connect_OrderProcessSPL.CPU"></class>
+		</classes>
+	</test>
+	<test thread-count="5" name="H3P">
+		<classes>
+			<class name="connect_OrderProcessSPL.H3P"></class>
+		</classes>
+	</test>
+	<test thread-count="5" name="D3P">
+		<classes>
+			<class name="connect_OrderProcessSPL.D3P"></class>
+		</classes>
+	</test>
+	<test thread-count="5" name="T3PLAST">
+		<classes>
+			<class name="connect_OrderProcessSPL.T3PLAST"></class>
+		</classes>
+	</test>
+	
+	<test name="EndUp">
+    <classes>
+        <class name="connect_OCBaseMethods.StartUp">
+            <methods>
+            <include name="endup"></include>
+            </methods>
+        </class>           
+    </classes>
+  </test>-->
+
 
 	<!--   -->
 </suite> <!--

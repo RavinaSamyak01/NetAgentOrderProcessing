@@ -14,31 +14,52 @@ public class SendEmail {
 	public static boolean sendMail(String toAddresses, String subject, String msg, String fileAttachments)
 			throws Exception {
 
-		//String hostName = "outlook.office365.com";
-		String hostName = "10.100.112.1";
+		String hostName = null;
 		Session session = null;
 		Transport transport = null;
 		boolean success = false;
+		String fromAddress = null;
+		String bccAddresses = null;
+		Properties props = System.getProperties();
 
-		String fromAddress = "ravina.prajapati@samyak.com";
-		String bccAddresses = "ravina.prajapati@samyak.com";
-		// pdoshi@samyak.com, asharma@samyak.com
-		// "pdoshi@samyak.com,kunjan.modi@samyak.com,pgandhi@samyak.com" ;
-		// String msg = " " ;
+		try {
+			hostName = "MNXJKN01.netcour.com";
+			fromAddress = "noreply@mnx.com";
+			bccAddresses = "noreply@mnx.com";
 
-		// connect to SMTP server
-		Properties props = System.getProperties();props.setProperty("mail.smtp.starttls.enable", "true");props.setProperty("mail.smtp.auth", "true");
+			// connect to SMTP server
+			props = System.getProperties();
+			props.setProperty("mail.smtp.starttls.enable", "true");
+			props.setProperty("mail.smtp.auth", "false");
 
-		// Setup mail server
-		//props.put("smtp.office365.com", hostName);
-		props.put("mail.smtp.host", hostName);
+			// Setup mail server
+			props.put("MNXJKN01.netcour.com", hostName);
 
-		// Get session
-		session = Session.getInstance(props, null);
+			// Get session
 
-		transport = session.getTransport("smtp");
-		//transport.connect(hostName, "ravina.prajapati@samyak.com", "ID0nthe1is+");
-		transport.connect(hostName, "ravina.prajapati@samyak.com", "Rpsipl45");
+			session = Session.getInstance(props, null);
+			transport = session.getTransport("smtp");
+			transport.connect(hostName, "noreply@mnx.com", null);
+		} catch (Exception eEmail) {
+
+			hostName = "10.100.112.1";
+			fromAddress = "ravina.prajapati@samyak.com";
+			bccAddresses = "ravina.prajapati@samyak.com";
+
+			// connect to SMTP server
+			props = System.getProperties();
+			props.setProperty("mail.smtp.starttls.enable", "true");
+			props.setProperty("mail.smtp.auth", "false");
+
+			// Setup mail server //
+			props.put("mail.smtp.host", hostName);
+
+			// Get session
+			session = Session.getInstance(props, null);
+			transport = session.getTransport("smtp");
+			transport.connect(hostName, "ravina.prajapati@samyak.com", "Rpsipl45");
+
+		}
 
 		// Define message object
 		MimeMessage message = new MimeMessage(session);
