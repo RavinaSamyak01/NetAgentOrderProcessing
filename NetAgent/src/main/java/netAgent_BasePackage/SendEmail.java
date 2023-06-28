@@ -23,7 +23,7 @@ public class SendEmail {
 		Properties props = System.getProperties();
 
 		try {
-			hostName = "MNXJKN01.netcour.com";
+			hostName = "relay.mnx.com";
 			fromAddress = "noreply@mnx.com";
 			bccAddresses = "noreply@mnx.com";
 
@@ -33,7 +33,7 @@ public class SendEmail {
 			props.setProperty("mail.smtp.auth", "false");
 
 			// Setup mail server
-			props.put("MNXJKN01.netcour.com", hostName);
+			props.put("relay.mnx.com", hostName);
 
 			// Get session
 
