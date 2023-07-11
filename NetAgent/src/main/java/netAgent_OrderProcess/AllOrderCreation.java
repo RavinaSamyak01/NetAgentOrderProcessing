@@ -12,6 +12,7 @@ import connect_OrderProcessNonSPL.FRG;
 import connect_OrderProcessNonSPL.LOC;
 import connect_OrderProcessNonSPL.P3P;
 import connect_OrderProcessNonSPL.PA;
+import connect_OrderProcessNonSPL.RTE;
 import connect_OrderProcessNonSPL.SD;
 import connect_OrderProcessNonSPL.SDC;
 import connect_OrderProcessSPL.CPU;
@@ -44,7 +45,12 @@ public class AllOrderCreation extends BaseInit {
 
 			Connectlogin();
 
+			/*
+			 * RTE rteJob= new RTE(); rteJob.rtejobcreationprocess();
+			 */
+
 			// -- Activate Account
+
 			ActivateAccount();
 
 			try {

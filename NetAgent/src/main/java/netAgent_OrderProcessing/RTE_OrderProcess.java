@@ -28,14 +28,28 @@ public class RTE_OrderProcess extends BaseInit {
 		Actions act = new Actions(Driver);
 
 		try {
-		
+
 			// Go To TaskLog
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id=\"idOperations\"]")));
 			WebElement OperationMenu = Driver.findElement(By.xpath("//a[@id=\"idOperations\"]"));
 			act.moveToElement(OperationMenu).build().perform();
 			js.executeScript("arguments[0].click();", OperationMenu);
-
 			logger.info("Click on Operations");
+
+			try {
+				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("login")));
+				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.name("loginForm")));
+				Login();
+				// Go To TaskLog
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id=\"idOperations\"]")));
+				OperationMenu = Driver.findElement(By.xpath("//a[@id=\"idOperations\"]"));
+				act.moveToElement(OperationMenu).build().perform();
+				js.executeScript("arguments[0].click();", OperationMenu);
+				logger.info("Click on Operations");
+
+			} catch (Exception loginissue) {
+
+			}
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id=\"idTask\"]")));
 			WebElement TaskLogMenu = Driver.findElement(By.xpath("//a[@id=\"idTask\"]"));
 			act.moveToElement(TaskLogMenu).build().perform();
@@ -46,12 +60,12 @@ public class RTE_OrderProcess extends BaseInit {
 
 			getScreenshot(Driver, "TaskLog_OperationsRTE");
 
-			//String ServiceID = getData("OrderProcessing", 9, 0);
-			//logger.info("ServiceID is==" + ServiceID);
-		//	msg.append("ServiceID==" + ServiceID + "\n");
-			String PUID = getData("RTE", 1, 3);
-			logger.info("PickUpID is==" + PUID);
-			msg.append("PickUpID==" + PUID + "\n");
+			// String ServiceID = getData("OrderProcessing", 9, 0);
+			// logger.info("ServiceID is==" + ServiceID);
+			// msg.append("ServiceID==" + ServiceID + "\n");
+			String TrackingNo = getData("RTE", 1, 1);
+			logger.info("TrackingID is==" + TrackingNo);
+			msg.append("TrackingID==" + TrackingNo + "\n");
 
 			try {// --Click on RTE tab
 				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-model=\"RTE\"]")));
@@ -66,7 +80,7 @@ public class RTE_OrderProcess extends BaseInit {
 				// --Search
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 				Driver.findElement(By.id("txtBasicSearchRTE")).clear();
-				Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(PUID);
+				Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(TrackingNo);
 				WebElement RTESearch = Driver.findElement(By.id("btnRTESearch2"));
 				act.moveToElement(RTESearch).build().perform();
 				js.executeScript("arguments[0].click();", RTESearch);
@@ -91,7 +105,7 @@ public class RTE_OrderProcess extends BaseInit {
 					logger.info("Current stage of the order is=" + Orderstage);
 					msg.append("Current stage of the order is=" + Orderstage + "\n");
 
-					getScreenshot(Driver, "RTE_" + Orderstage + PUID);
+					getScreenshot(Driver, "RTE_" + Orderstage + TrackingNo);
 
 					if (Orderstage.contains("Confirm Alert")) {
 						// --Confirm Alert stage
@@ -119,7 +133,7 @@ public class RTE_OrderProcess extends BaseInit {
 						// ---Pickup@Stop 1 of 2 stage
 						wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 						Driver.findElement(By.id("txtBasicSearchRTE")).clear();
-						Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(PUID);
+						Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(TrackingNo);
 						RTESearch = Driver.findElement(By.id("btnRTESearch2"));
 						act.moveToElement(RTESearch).build().perform();
 						js.executeScript("arguments[0].click();", RTESearch);
@@ -144,7 +158,7 @@ public class RTE_OrderProcess extends BaseInit {
 							Orderstage = Driver.findElement(By.xpath("//h3[contains(@class,'panel-title')]")).getText();
 							logger.info("Current stage of the order is=" + Orderstage);
 							msg.append("Current stage of the order is=" + Orderstage + "\n");
-							getScreenshot(Driver, "RTE_" + Orderstage + PUID);
+							getScreenshot(Driver, "RTE_" + Orderstage + TrackingNo);
 							// --Click on save
 							WebElement Save = Driver.findElement(By.id("idiconsave"));
 							act.moveToElement(Save).build().perform();
@@ -158,22 +172,12 @@ public class RTE_OrderProcess extends BaseInit {
 								logger.info("validation message=" + Errmsg);
 
 								// --Enter Actual PickupTime
-								String ZOneID = Driver.findElement(By.xpath("//span[contains(@ng-bind,'PUTimeZone')]"))
-										.getText();
-								logger.info("ZoneID of is==" + ZOneID);
-								if (ZOneID.equalsIgnoreCase("EDT")) {
-									ZOneID = "America/New_York";
-								} else if (ZOneID.equalsIgnoreCase("CDT")) {
-									ZOneID = "CST";
-								}
 
 								WebElement ActPUTime = Driver.findElement(By.id("txtActPuTime"));
 								ActPUTime.clear();
-								Date date = new Date();
-								SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
-								dateFormat.setTimeZone(TimeZone.getTimeZone(ZOneID));
-								logger.info(dateFormat.format(date));
-								ActPUTime.sendKeys(dateFormat.format(date));
+								String tzone = isElementPresent("RTEPUTimeZone_xpath").getText();
+								String rectime = getTimeAsTZone(tzone);
+								ActPUTime.sendKeys(rectime);
 								ActPUTime.sendKeys(Keys.TAB);
 
 								// --Click on save
@@ -190,7 +194,7 @@ public class RTE_OrderProcess extends BaseInit {
 							// ---DEL@Stop 2 of 2 stage
 							wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 							Driver.findElement(By.id("txtBasicSearchRTE")).clear();
-							Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(PUID);
+							Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(TrackingNo);
 							RTESearch = Driver.findElement(By.id("btnRTESearch2"));
 							act.moveToElement(RTESearch).build().perform();
 							js.executeScript("arguments[0].click();", RTESearch);
@@ -216,7 +220,7 @@ public class RTE_OrderProcess extends BaseInit {
 										.getText();
 								logger.info("Current stage of the order is=" + Orderstage);
 								msg.append("Current stage of the order is=" + Orderstage + "\n");
-								getScreenshot(Driver, "RTE_" + Orderstage + PUID);
+								getScreenshot(Driver, "RTE_" + Orderstage + TrackingNo);
 
 								// --Click on save
 								try {
@@ -240,22 +244,12 @@ public class RTE_OrderProcess extends BaseInit {
 									wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("errorid")));
 									String Errmsg = Driver.findElement(By.id("errorid")).getText();
 									logger.info("validation message=" + Errmsg);
-									// --Enter Actual DeliverTime
-									String ZOneID = Driver
-											.findElement(By.xpath("//span[contains(@ng-bind,'PUTimeZone')]")).getText();
-									logger.info("ZoneID of is==" + ZOneID);
-									if (ZOneID.equalsIgnoreCase("EDT")) {
-										ZOneID = "America/New_York";
-									} else if (ZOneID.equalsIgnoreCase("CDT")) {
-										ZOneID = "CST";
-									}
+									// --Enter Actual PU
+									String tzone = isElementPresent("RTEDelTimeZone_xpath").getText();
+									String rectime = getTimeAsTZone(tzone);
 									WebElement ActDelTime = Driver.findElement(By.id("txtActDlTime"));
 									ActDelTime.clear();
-									Date date = new Date();
-									SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
-									dateFormat.setTimeZone(TimeZone.getTimeZone(ZOneID));
-									logger.info(dateFormat.format(date));
-									ActDelTime.sendKeys(dateFormat.format(date));
+									ActDelTime.sendKeys(rectime);
 									ActDelTime.sendKeys(Keys.TAB);
 
 									// --Click on save
@@ -314,20 +308,13 @@ public class RTE_OrderProcess extends BaseInit {
 											if (Errmsg.contains(
 													"Actual Delivery Datetime can not be less than or equal to Actual Pickup Datetime.")) {
 
+												tzone = isElementPresent("RTEDelTimeZone_xpath").getText();
+												rectime = getTimeAsTZone(tzone);
 												ActDelTime = Driver.findElement(By.id("txtActDlTime"));
-												WebElement ActPUTime = Driver.findElement(By.id("txtActPuTime"));
-												String EnteredPUTime = ActPUTime.getAttribute("value");
-												SimpleDateFormat df = new SimpleDateFormat("HH:mm");
-												Date d = df.parse(EnteredPUTime);
-												Calendar cal = Calendar.getInstance();
-												cal.setTime(d);
-												cal.add(Calendar.MINUTE, 1);
-												String newTime = df.format(cal.getTime());
-												System.out.println("New Time after add 1 minute is==" + newTime);
 												ActDelTime.clear();
-												ActDelTime.sendKeys(newTime);
+												ActDelTime.sendKeys(rectime);
 												ActDelTime.sendKeys(Keys.TAB);
-												logger.info("Entered Actual Pickup Time");
+												logger.info("Entered Actual Deliver Time");
 
 												// --Click on save
 												try {
@@ -361,7 +348,7 @@ public class RTE_OrderProcess extends BaseInit {
 								// --Search the job
 								wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 								Driver.findElement(By.id("txtBasicSearchRTE")).clear();
-								Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(PUID);
+								Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(TrackingNo);
 								RTESearch = Driver.findElement(By.id("btnRTESearch2"));
 								act.moveToElement(RTESearch).build().perform();
 								js.executeScript("arguments[0].click();", RTESearch);
@@ -415,7 +402,7 @@ public class RTE_OrderProcess extends BaseInit {
 						Orderstage = Driver.findElement(By.xpath("//h3[contains(@class,'panel-title')]")).getText();
 						logger.info("Current stage of the order is=" + Orderstage);
 						msg.append("Current stage of the order is=" + Orderstage + "\n");
-						getScreenshot(Driver, "RTE_" + Orderstage + PUID);
+						getScreenshot(Driver, "RTE_" + Orderstage + TrackingNo);
 						// --Click on save
 						WebElement Save = Driver.findElement(By.id("idiconsave"));
 						act.moveToElement(Save).build().perform();
@@ -459,7 +446,7 @@ public class RTE_OrderProcess extends BaseInit {
 						// ---DEL@Stop 2 of 2 stage
 						wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 						Driver.findElement(By.id("txtBasicSearchRTE")).clear();
-						Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(PUID);
+						Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(TrackingNo);
 						RTESearch = Driver.findElement(By.id("btnRTESearch2"));
 						act.moveToElement(RTESearch).build().perform();
 						js.executeScript("arguments[0].click();", RTESearch);
@@ -484,7 +471,7 @@ public class RTE_OrderProcess extends BaseInit {
 							Orderstage = Driver.findElement(By.xpath("//h3[contains(@class,'panel-title')]")).getText();
 							logger.info("Current stage of the order is=" + Orderstage);
 							msg.append("Current stage of the order is=" + Orderstage + "\n");
-							getScreenshot(Driver, "RTE_" + Orderstage + PUID);
+							getScreenshot(Driver, "RTE_" + Orderstage + TrackingNo);
 
 							// --Click on save
 							try {
@@ -583,7 +570,7 @@ public class RTE_OrderProcess extends BaseInit {
 							// --Search the job
 							wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 							Driver.findElement(By.id("txtBasicSearchRTE")).clear();
-							Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(PUID);
+							Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(TrackingNo);
 							RTESearch = Driver.findElement(By.id("btnRTESearch2"));
 							act.moveToElement(RTESearch).build().perform();
 							js.executeScript("arguments[0].click();", RTESearch);
@@ -638,7 +625,7 @@ public class RTE_OrderProcess extends BaseInit {
 						Orderstage = Driver.findElement(By.xpath("//h3[contains(@class,'panel-title')]")).getText();
 						logger.info("Current stage of the order is=" + Orderstage);
 						msg.append("Current stage of the order is=" + Orderstage + "\n");
-						getScreenshot(Driver, "RTE_" + Orderstage + PUID);
+						getScreenshot(Driver, "RTE_" + Orderstage + TrackingNo);
 
 						// --Click on save
 						try {
@@ -737,7 +724,7 @@ public class RTE_OrderProcess extends BaseInit {
 						// --Search the job
 						wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 						Driver.findElement(By.id("txtBasicSearchRTE")).clear();
-						Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(PUID);
+						Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(TrackingNo);
 						RTESearch = Driver.findElement(By.id("btnRTESearch2"));
 						act.moveToElement(RTESearch).build().perform();
 						js.executeScript("arguments[0].click();", RTESearch);
@@ -824,21 +811,24 @@ public class RTE_OrderProcess extends BaseInit {
 				}
 			}
 
-			logger.info("RTE Order Processing Test=PASS");
-			msg.append("RTE Order Processing Test=PASS" + "\n\n");
-
+			/*
+			 * logger.info("RTE Order Processing Test=PASS");
+			 * msg.append("RTE Order Processing Test=PASS" + "\n\n");
+			 */
 		} catch (
 
 		Exception RTEE) {
 			logger.error(RTEE);
 			getScreenshot(Driver, "RTE_error");
-			logger.info("RTE Order Processing Test=FAIL");
-			msg.append("RTE Order Processing Test=FAIL" + "\n\n");
+			/*
+			 * logger.info("RTE Order Processing Test=FAIL");
+			 * msg.append("RTE Order Processing Test=FAIL" + "\n\n");
+			 */
 
 		}
 
-		logger.info("=====RTE Order Processing Test End=====");
-		//msg.append("=====RTE Order Processing Test End=====" + "\n\n");
+		// logger.info("=====RTE Order Processing Test End=====");
+		// msg.append("=====RTE Order Processing Test End=====" + "\n\n");
 
 		// --Refresh the App
 		narefreshApp();

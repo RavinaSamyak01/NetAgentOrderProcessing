@@ -99,7 +99,7 @@ public class BaseInit {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
-			options.addArguments("--headless", "--window-size=1920, 1080");
+			//options.addArguments("--headless", "--window-size=1920, 1080");
 			// options.addArguments("--incognito");
 			// options.addArguments("--test-type");
 			options.addArguments("--disable-extensions");
@@ -159,6 +159,9 @@ public class BaseInit {
 			// options.addArguments("window-size=1936,1056");
 			// options.addArguments("window-size=1036x776");
 
+			// -Clear Result excel
+			resetResultofExcel();
+
 			// --NetAgent Login
 			Login();
 
@@ -199,12 +202,12 @@ public class BaseInit {
 				try {
 //					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
 					/*
-					 * SendEmail.
+					 * SendEmailOld.
 					 * sendMail("ravina.prajapati@samyak.com, asharma@samyak.com, parth.doshi@samyak.com"
 					 * , subject, msg.toString(), File);
 					 */
 
-					SendEmail.sendMail("ravina.prajapati@samyak.com", subject, msg.toString(), File);
+					SendEmailOld.sendMail("ravina.prajapati@samyak.com", subject, msg.toString(), File);
 
 				} catch (Exception ex) {
 					logger.error(ex);
@@ -240,12 +243,12 @@ public class BaseInit {
 				try {
 //					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
 					/*
-					 * SendEmail.
+					 * SendEmailOld.
 					 * sendMail("ravina.prajapati@samyak.com, asharma@samyak.com, parth.doshi@samyak.com"
 					 * , subject, msg.toString(), File);
 					 */
 
-					SendEmail.sendMail("ravina.prajapati@samyak.com", subject, msg.toString(), File);
+					SendEmailOld.sendMail("ravina.prajapati@samyak.com", subject, msg.toString(), File);
 
 				} catch (Exception ex) {
 					logger.error(ex);
@@ -281,12 +284,12 @@ public class BaseInit {
 				try {
 //					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
 					/*
-					 * SendEmail.
+					 * SendEmailOld.
 					 * sendMail("ravina.prajapati@samyak.com, asharma@samyak.com, parth.doshi@samyak.com"
 					 * , subject, msg.toString(), File);
 					 */
 
-					SendEmail.sendMail("ravina.prajapati@samyak.com", subject, msg.toString(), File);
+					SendEmailOld.sendMail("ravina.prajapati@samyak.com", subject, msg.toString(), File);
 
 				} catch (Exception ex) {
 					logger.error(ex);
@@ -504,14 +507,14 @@ public class BaseInit {
 				try {
 //					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
 
-					SendEmail.sendMail(EmailID, subject, msg.toString(), File);
+					SendEmailOld.sendMail(EmailID, subject, msg.toString(), File);
 
 					/*
-					 * SendEmail.
+					 * SendEmailOld.
 					 * sendMail("ravina.prajapati@samyak.com, asharma@samyak.com, parth.doshi@samyak.com"
 					 * , subject, msg.toString(), File);
 					 */
-					// SendEmail.sendMail("ravina.prajapati@samyak.com, asharma@samyak.com
+					// SendEmailOld.sendMail("ravina.prajapati@samyak.com, asharma@samyak.com
 					// ,parth.doshi@samyak.com", subject, msg.toString(), File);
 
 				} catch (Exception ex) {
@@ -547,14 +550,14 @@ public class BaseInit {
 				try {
 //					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
 
-					SendEmail.sendMail(EmailID, subject, msg.toString(), File);
+					SendEmailOld.sendMail(EmailID, subject, msg.toString(), File);
 
 					/*
-					 * SendEmail.
+					 * SendEmailOld.
 					 * sendMail("ravina.prajapati@samyak.com, asharma@samyak.com, parth.doshi@samyak.com"
 					 * , subject, msg.toString(), File);
 					 */
-					// SendEmail.sendMail("ravina.prajapati@samyak.com, asharma@samyak.com
+					// SendEmailOld.sendMail("ravina.prajapati@samyak.com, asharma@samyak.com
 					// ,parth.doshi@samyak.com", subject, msg.toString(), File);
 
 				} catch (Exception ex) {
@@ -585,19 +588,19 @@ public class BaseInit {
 				Driver.quit();
 				Env = storage.getProperty("Env");
 				String File = ".\\Report\\NA_Screenshot\\LoginIssue.png";
-				String subject = "Selenium Automation Script: " + Env + " NetAgent Portal";
+				String subject = "Selenium Automation Script: " + Env + "  NetAgent Portal";
 
 				try {
 //					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
 
-					SendEmail.sendMail(EmailID, subject, msg.toString(), File);
+					SendEmailOld.sendMail(EmailID, subject, msg.toString(), File);
 
 					/*
-					 * SendEmail.
+					 * SendEmailOld.
 					 * sendMail("ravina.prajapati@samyak.com, asharma@samyak.com, parth.doshi@samyak.com"
 					 * , subject, msg.toString(), File);
 					 */
-					// SendEmail.sendMail("ravina.prajapati@samyak.com, asharma@samyak.com
+					// SendEmailOld.sendMail("ravina.prajapati@samyak.com, asharma@samyak.com
 					// ,parth.doshi@samyak.com", subject, msg.toString(), File);
 
 				} catch (Exception ex) {
@@ -899,14 +902,14 @@ public class BaseInit {
 		try {
 //			/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
 
-			SendEmail.sendMail(EmailID, subject, msg.toString(), File);
+			SendEmailOld.sendMail(EmailID, subject, msg.toString(), File);
 
 			/*
-			 * SendEmail.sendMail(
+			 * SendEmailOld.sendMail(
 			 * "ravina.prajapati@samyak.com, asharma@samyak.com, parth.doshi@samyak.com,saurabh.jain@samyak.com"
 			 * , subject, msg.toString(), File);
 			 */
-			// SendEmail.sendMail("ravina.prajapati@samyak.com, asharma@samyak.com
+			// SendEmailOld.sendMail("ravina.prajapati@samyak.com, asharma@samyak.com
 			// ,parth.doshi@samyak.com", subject, msg.toString(), File);
 
 		} catch (Exception ex) {
@@ -1156,4 +1159,86 @@ public class BaseInit {
 
 	}
 
+	public void resetResultofExcel() throws EncryptedDocumentException, InvalidFormatException, IOException {
+		String Env = storage.getProperty("Env");
+		String FilePath = null;
+
+		if (Env.equalsIgnoreCase("Pre-Prod")) {
+			FilePath = storage.getProperty("PrePRODResultFile");
+		} else if (Env.equalsIgnoreCase("STG")) {
+			FilePath = storage.getProperty("STGResultFile");
+		} else if (Env.equalsIgnoreCase("Prod")) {
+			FilePath = storage.getProperty("PRODResultFile");
+		} else if (Env.equalsIgnoreCase("TEST")) {
+			FilePath = storage.getProperty("TESTResultFile");
+		}
+
+		File src = new File(FilePath);
+		FileInputStream fis = new FileInputStream(src);
+		Workbook workbook = WorkbookFactory.create(fis);
+		FileOutputStream fos1 = new FileOutputStream(src);
+		Sheet sh = workbook.getSheet("Result");
+
+		// --Get total Row
+		int totalrow = sh.getLastRowNum() + 1;
+		System.out.println("Total row==" + totalrow);
+		// -Get total Col
+		Row RowNo = sh.getRow(0);
+		int totalcol = RowNo.getLastCellNum();
+		System.out.println("Total Columns==" + totalcol);
+
+		int ResultColIndex = 0;
+		int FailLogColIndex = 0;
+		int NAResultColIndex = 0;
+		int NAFailLogColIndex = 0;
+
+		// --Get column index by its name
+
+		for (int tcol = 0; tcol < totalcol; tcol++) {
+			String Colname = sh.getRow(0).getCell(tcol).getStringCellValue();
+
+			System.out.println("Colname==" + Colname);
+
+			if (Colname.equalsIgnoreCase("Connect OP Result")) {
+				ResultColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
+				System.out.println("Index of the column==" + ResultColIndex);
+
+			} else if (Colname.equalsIgnoreCase("Fail Log")) {
+				FailLogColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
+				System.out.println("Index of the column==" + FailLogColIndex);
+
+			} else if (Colname.equalsIgnoreCase("NA Process Result")) {
+				NAResultColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
+				System.out.println("Index of the column==" + NAResultColIndex);
+
+			} else if (Colname.equalsIgnoreCase("NA Fail Log")) {
+				NAFailLogColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
+				System.out.println("Index of the column==" + NAFailLogColIndex);
+				break;
+			}
+
+		}
+
+		// --Set blank value in Result and Fail Log column
+		for (int row = 1; row < totalrow; row++) {
+			fis = new FileInputStream(src);
+			fos1 = new FileOutputStream(src);
+
+			try {
+				sh.getRow(row).createCell(ResultColIndex).setCellValue("");
+				sh.getRow(row).createCell(FailLogColIndex).setCellValue("");
+				sh.getRow(row).createCell(NAResultColIndex).setCellValue("");
+				sh.getRow(row).createCell(NAFailLogColIndex).setCellValue("");
+				workbook.write(fos1);
+				fos1.close();
+				fis.close();
+			} catch (Exception e) {
+				fos1.close();
+				fis.close();
+				logger.info("Issue in SetData" + e);
+
+			}
+		}
+
+	}
 }

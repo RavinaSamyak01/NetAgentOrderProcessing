@@ -31,7 +31,7 @@ public class OrderCreation extends BaseInit {
 		Actions act = new Actions(Driver);
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 60);// wait time
+			wait = new WebDriverWait(Driver, 35);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 120);// wait time
@@ -1535,8 +1535,8 @@ public class OrderCreation extends BaseInit {
 
 				}
 
-				wait.until(
-						ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-form=\"ItineraryForm\"]")));
+				wait.until(ExpectedConditions
+						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-form=\"ItineraryForm\"]")));
 				Thread.sleep(2000);
 
 				// --CLick on Select Flight
@@ -1577,8 +1577,6 @@ public class OrderCreation extends BaseInit {
 			setResultData("Result", 15, 5, Error);
 
 		}
-
-		
 
 	}
 
@@ -1760,6 +1758,7 @@ public class OrderCreation extends BaseInit {
 			throws InterruptedException, IOException, EncryptedDocumentException, InvalidFormatException {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time;
+		Actions act = new Actions(Driver);
 		try {
 
 			String PartName = getData("OrderCreation", i, 37);
@@ -1857,6 +1856,13 @@ public class OrderCreation extends BaseInit {
 				setResultData("Result", 16, 4, "PASS");
 				setResultData("Result", 16, 5, "Parts not available"); // wait time
 
+				// --Close the parts table
+				WebElement PartsClose = isElementPresent("TLQClose_id");
+				wait.until(ExpectedConditions.visibilityOf(PartsClose));
+				act.moveToElement(PartsClose).build().perform();
+				act.moveToElement(PartsClose).click().build().perform();
+				logger.info("Closed parts pop up");
+
 			}
 		} catch (Exception ewait) {
 			logger.info(ewait);
@@ -1869,11 +1875,12 @@ public class OrderCreation extends BaseInit {
 
 	}
 
-	public void selectDropOffLoc() throws InterruptedException, IOException, EncryptedDocumentException, InvalidFormatException {
+	public void selectDropOffLoc()
+			throws InterruptedException, IOException, EncryptedDocumentException, InvalidFormatException {
 		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
-	
+
 		try {
 			// --Select Drop Off Location
 			try {
@@ -2092,7 +2099,8 @@ public class OrderCreation extends BaseInit {
 
 	}
 
-	public String shipLabel() throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException {
+	public String shipLabel()
+			throws IOException, InterruptedException, EncryptedDocumentException, InvalidFormatException {
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
@@ -3043,6 +3051,7 @@ public class OrderCreation extends BaseInit {
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 					wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hlkedit")));
 					AgentValue = AgentIDV;
+					break;
 
 				} else {
 					logger.info("There is no Agent with search parameter");
@@ -3052,7 +3061,7 @@ public class OrderCreation extends BaseInit {
 			}
 
 			// --Compare the Searched Agent and selected Agent
-			String AgeValue = isElementPresent("PDCouriervalue_xpath").getText();
+			String AgeValue = isElementPresent("PDAgentValue_xpath").getText();
 			logger.info("Selected agent is==" + AgeValue);
 
 			if (AgeValue.equalsIgnoreCase(AgentValue)) {
