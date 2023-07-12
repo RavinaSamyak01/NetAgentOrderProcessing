@@ -1039,7 +1039,7 @@ public class OrderCreation extends BaseInit {
 	public void movjobstatus() {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait;
-		wait = new WebDriverWait(Driver, 60);// wait time
+		wait = new WebDriverWait(Driver, 35);// wait time
 		Actions act = new Actions(Driver);
 
 		try {
@@ -1210,7 +1210,7 @@ public class OrderCreation extends BaseInit {
 
 	public void searchJob(int i) throws Exception {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 35);// wait time
 		Actions act = new Actions(Driver);
 
 		try {
@@ -1393,7 +1393,7 @@ public class OrderCreation extends BaseInit {
 	public String getStageName() {
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 40);// wait time
+			wait = new WebDriverWait(Driver, 30);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 120);// wait time
@@ -1413,7 +1413,7 @@ public class OrderCreation extends BaseInit {
 	public void refreshApp() {
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 40);// wait time
+			wait = new WebDriverWait(Driver, 30);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 120);// wait time
@@ -1583,7 +1583,7 @@ public class OrderCreation extends BaseInit {
 	public void reCalc(String svc) {
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 50);// wait time
+			wait = new WebDriverWait(Driver, 30);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 120);// wait time
@@ -1877,7 +1877,7 @@ public class OrderCreation extends BaseInit {
 
 	public void selectDropOffLoc()
 			throws InterruptedException, IOException, EncryptedDocumentException, InvalidFormatException {
-		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
 
@@ -2977,7 +2977,7 @@ public class OrderCreation extends BaseInit {
 
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 40);// wait time
+			wait = new WebDriverWait(Driver, 30);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 120);// wait time
@@ -3088,7 +3088,7 @@ public class OrderCreation extends BaseInit {
 	public void opFromNetAgent(int i) throws Exception {
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 60);// wait time
+			wait = new WebDriverWait(Driver, 35);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 120);// wait time
@@ -3150,7 +3150,7 @@ public class OrderCreation extends BaseInit {
 	public void NATaskSearch(String PUID) throws InterruptedException {
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 100);// wait time
+			wait = new WebDriverWait(Driver, 40);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 120);// wait time
@@ -3292,7 +3292,7 @@ public class OrderCreation extends BaseInit {
 	public String getNAStageName() {
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 40);// wait time
+			wait = new WebDriverWait(Driver, 30);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 120);// wait time

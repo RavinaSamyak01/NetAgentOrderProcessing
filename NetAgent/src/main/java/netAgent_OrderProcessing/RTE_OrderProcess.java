@@ -23,7 +23,7 @@ public class RTE_OrderProcess extends BaseInit {
 	@Test
 	public void orderProcessRTEJOB() throws EncryptedDocumentException, InvalidFormatException, IOException {
 
-		WebDriverWait wait = new WebDriverWait(Driver, 30);
+		WebDriverWait wait = new WebDriverWait(Driver, 40);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
 
@@ -309,7 +309,7 @@ public class RTE_OrderProcess extends BaseInit {
 													"Actual Delivery Datetime can not be less than or equal to Actual Pickup Datetime.")) {
 
 												tzone = isElementPresent("RTEDelTimeZone_xpath").getText();
-												rectime = getTimeAsTZone(tzone);
+												rectime = getExtraTimeAsTZone(tzone);
 												ActDelTime = Driver.findElement(By.id("txtActDlTime"));
 												ActDelTime.clear();
 												ActDelTime.sendKeys(rectime);

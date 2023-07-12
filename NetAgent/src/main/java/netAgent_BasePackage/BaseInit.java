@@ -99,7 +99,7 @@ public class BaseInit {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
-			//options.addArguments("--headless", "--window-size=1920, 1080");
+		//	options.addArguments("--headless", "--window-size=1920, 1080");
 			// options.addArguments("--incognito");
 			// options.addArguments("--test-type");
 			options.addArguments("--disable-extensions");
@@ -1239,6 +1239,29 @@ public class BaseInit {
 
 			}
 		}
+
+	}
+	
+	public String getExtraTimeAsTZone(String timeZone) {
+
+		System.out.println("ZoneID of is==" + timeZone);
+		logger.info("ZoneID of is==" + timeZone);
+		if (timeZone.equalsIgnoreCase("EDT")) {
+			timeZone = "America/New_York";
+		} else if (timeZone.equalsIgnoreCase("CDT")) {
+			timeZone = "CST";
+		} else if (timeZone.equalsIgnoreCase("PDT")) {
+			timeZone = "PST";
+		}
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+		dateFormat.setTimeZone(TimeZone.getTimeZone(timeZone));
+		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(timeZone));
+		cal.add(Calendar.MINUTE, 1);
+		logger.info(dateFormat.format(cal.getTime()));
+		String Time = dateFormat.format(cal.getTime());
+		System.out.println("New Time==" + Time);
+		return Time;
 
 	}
 }
