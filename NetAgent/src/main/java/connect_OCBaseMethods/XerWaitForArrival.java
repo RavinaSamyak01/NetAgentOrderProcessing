@@ -14,14 +14,14 @@ public class XerWaitForArrival extends OrderCreation {
 	public void xerWaitForArr() throws Exception {
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time;
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		String svc = Driver.findElement(By.id("lblServiceID")).getText();
 		System.out.println(svc);
 
 		try {
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(
+			wait2.until(ExpectedConditions.visibilityOfElementLocated(
 					By.xpath("//*[@id=\"lblStages\"][contains(text(),'XER Wait For Arr@')]")));
 
 			// --Get StageName

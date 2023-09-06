@@ -76,6 +76,10 @@ public class AIR extends OrderCreation {
 		WaitForDeptarture WFD = new WaitForDeptarture();
 		WFD.waitForDept();
 
+		// OnBorad
+				Board Brd = new Board();
+				Brd.onBoard();
+		
 		// XER wait for Arrival
 		XerWaitForArrival XWFA = new XerWaitForArrival();
 		XWFA.xerWaitForArr();
@@ -93,8 +97,8 @@ public class AIR extends OrderCreation {
 		OHAD.onHandDst();
 
 		// OnBorad
-		Board Brd = new Board();
-		Brd.onBoard();
+		Board Brd1 = new Board();
+		Brd1.onBoard();
 
 		// XER wait forArrival
 		XWFA.xerWaitForArr();

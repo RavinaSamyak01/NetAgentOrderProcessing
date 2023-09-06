@@ -1,0 +1,8 @@
+﻿From_Date,To_Date
+07/31/2022,08/10/2022
+
+CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
+34769 -  AUTOMATION COURIER,,,,,,,,,,,,,,,,           TotalShipment : 1        Total PCS : 1        Total WT :  24      
+,32481019 / 08/02/2022,PU,PCS : 1     WT : 24.00,PU#   3486253,RAVINA OZA,ABHIJIT 1,,"PALOS HILLS, IL 60465",PU TM : 8/4/2022 06:22,"PARKHILL, PHYLLIS",2100 SPACE PARK DR.,,"CHICAGO, IL 60666",DEL TM : 8/4/2022 06:24,,           TotalShipment : 1        Total PCS : 1        Total WT :  24      
+,,,,,,,,,,,,,,,           Shipment : 1        SubTotal PCS : 1        SubTotal WT :  24      ,           TotalShipment : 1        Total PCS : 1        Total WT :  24      
+

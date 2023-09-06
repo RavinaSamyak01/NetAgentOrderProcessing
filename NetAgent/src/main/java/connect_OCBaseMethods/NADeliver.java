@@ -15,11 +15,11 @@ public class NADeliver extends OrderCreation {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		// Actions act = new Actions(Driver);
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		String svc = null;
 		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Deliver')]")));
+			wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Deliver')]")));
 
 			// --Get the ServiceID
 

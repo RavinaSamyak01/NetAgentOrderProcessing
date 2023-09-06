@@ -1,0 +1,10 @@
+﻿From_Date,To_Date
+01/31/2023,02/10/2023
+
+CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
+34769 -  PACIFIC COAST LOGISTIX,,,,,,,,,,,,,,,,           TotalShipment : 3        Total PCS : 14        Total WT :  90      
+,33022883 / 02/02/2023,PU,PCS : 10     WT : 50.00,PU#   9840936,Automation,1525 14th St NW,,"WASHINGTON, DC 20005",PU TM : ,WASHINGTON NATL (DCA),1 Aviation Cir,,"WASHINGTON, DC 22202",DEL TM : ,,           TotalShipment : 3        Total PCS : 14        Total WT :  90      
+,33022882 / 02/02/2023,PU,PCS : 2     WT : 20.00,PU#   9840935,Automation,612 E Dallas Rd,Ste 200,"GRAPEVINE, TX 76051",PU TM : ,AutoTest,44 Folly Road,,"Charleston, SC 29407",DEL TM : ,,           TotalShipment : 3        Total PCS : 14        Total WT :  90      
+,33022885 / 02/02/2023,PU,PCS : 2     WT : 20.00,PU#   9840938,Automation,612 E Dallas Rd,Ste 200,"GRAPEVINE, TX 76051",PU TM : ,AutoTest,44 Folly Road,,"Charleston, SC 29407",DEL TM : ,,           TotalShipment : 3        Total PCS : 14        Total WT :  90      
+,,,,,,,,,,,,,,,           Shipment : 3        SubTotal PCS : 14        SubTotal WT :  90      ,           TotalShipment : 3        Total PCS : 14        Total WT :  90      
+

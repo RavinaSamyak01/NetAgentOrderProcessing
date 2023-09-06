@@ -15,11 +15,11 @@ public class Deliver extends OrderCreation {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		// Actions act = new Actions(driver);
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		String svc = null;
 		try {
-			wait.until(ExpectedConditions
+			wait2.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//*[@id=\"lblStages\"][contains(text(),'Deliver')]")));
 
 			// --Get the ServiceID

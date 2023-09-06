@@ -2,20 +2,16 @@
 Agent Activity Chart
 
 Textbox8,Textbox11
-05/26/2023,06/05/2023
+08/18/2023,08/28/2023
 
 No Of Jobs_label,No Of Jobs_Chart2_CategoryGroup_label,No Of Jobs_Chart2_CategoryGroup_Value_Y
-No Of Jobs,ARRIVED,1
-No Of Jobs,CALLEDBACK,9
-No Of Jobs,CANCEL,8
-No Of Jobs,CHECKED,36
-No Of Jobs,DEL ALERT CONFED,1
-No Of Jobs,DELIVERED,51
-No Of Jobs,DEPARTED,1
-No Of Jobs,DROPPED,12
-No Of Jobs,OUT FOR DEL,3
-No Of Jobs,PU ALERT CONFED,2
-No Of Jobs,PU DRV ALERTED,6
-No Of Jobs,PULL ALERT CONFED,14
-No Of Jobs,TC ACKED,1
+No Of Jobs,CALLEDBACK,10
+No Of Jobs,CHECKED,23
+No Of Jobs,CONFED PULLED,1
+No Of Jobs,DELIVERED,44
+No Of Jobs,DEPARTED,2
+No Of Jobs,DEPARTED@,2
+No Of Jobs,OUT FOR DEL,2
+No Of Jobs,PU DRV ALERTED,18
+No Of Jobs,VERIFIED,5
 

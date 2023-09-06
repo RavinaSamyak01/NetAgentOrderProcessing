@@ -1,0 +1,11 @@
+﻿From_Date,To_Date
+07/15/2022,07/25/2022
+
+CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
+34769 -  AUTOMATION COURIER,,,,,,,,,,,,,,,,           TotalShipment : 4        Total PCS : 14        Total WT :  110      
+,32436364 / 07/20/2022,PU,PCS : 10     WT : 50.00,PU#   3441598,Automation,1525 14th St NW,,"WASHINGTON, DC 20005",PU TM : 7/20/2022 08:44,WASHINGTON NATL (DCA),1 Aviation Cir,,"WASHINGTON, DC 22202",DEL TM : 7/20/2022 08:46,,           TotalShipment : 4        Total PCS : 14        Total WT :  110      
+,32436378 / 07/20/2022,PU,PCS : 1     WT : 20.00,PU#   3441612,AUTOMATION RV (F5505),304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 7/20/2022 08:20,AUTOMATION SPL RV,2074 PAUL WAYNE HAGGERTY ROAD,,"METAIRIE, LA 70001",DEL TM : 7/20/2022 08:22,,           TotalShipment : 4        Total PCS : 14        Total WT :  110      
+,32436363 / 07/20/2022,PU,PCS : 2     WT : 20.00,PU#   3441597,Automation,612 E Dallas Rd,Ste 200,"GRAPEVINE, TX 76051",PU TM : 7/20/2022 07:39,AutoTest,44 Folly Road,,"Charleston, SC 29407",DEL TM : 7/20/2022 08:41,,           TotalShipment : 4        Total PCS : 14        Total WT :  110      
+,32436366 / 07/20/2022,PU,PCS : 1     WT : 20.00,PU#   3441600,AUTOMATION RV,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 7/20/2022 07:59,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : 7/20/2022 09:00,,           TotalShipment : 4        Total PCS : 14        Total WT :  110      
+,,,,,,,,,,,,,,,           Shipment : 4        SubTotal PCS : 14        SubTotal WT :  110      ,           TotalShipment : 4        Total PCS : 14        Total WT :  110      
+

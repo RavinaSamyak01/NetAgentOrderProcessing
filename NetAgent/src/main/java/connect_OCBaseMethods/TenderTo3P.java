@@ -14,7 +14,8 @@ public class TenderTo3P extends BaseInit {
 
 	@Test
 	public void tndrTo3P() throws Exception {
-		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time
 		// Actions act = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;// scroll,click
 
@@ -24,7 +25,7 @@ public class TenderTo3P extends BaseInit {
 
 		try {
 			try {
-				wait.until(ExpectedConditions.visibilityOfElementLocated(
+				wait2.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("//*[@id=\"lblStages\"][contains(text(),'Tender to 3P')]")));
 
 			} catch (Exception e) {
@@ -152,7 +153,7 @@ public class TenderTo3P extends BaseInit {
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 			try {
-				wait.until(ExpectedConditions
+				wait2.until(ExpectedConditions
 						.visibilityOfElementLocated(By.xpath("//*[@id=\"idValidationforMain\"]//ul[@id=\"errorid\"]")));
 				String Valmsg = isElementPresent("OCValOnePack_xpath").getText();
 				logger.info("Validation message is displayed=" + Valmsg);

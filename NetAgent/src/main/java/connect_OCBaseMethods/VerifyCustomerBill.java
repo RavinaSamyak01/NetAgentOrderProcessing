@@ -13,7 +13,7 @@ public class VerifyCustomerBill extends BaseInit {
 	@Test
 	public void verifyCustomerBill(int i) throws Exception {
 		WebDriverWait wait = new WebDriverWait(Driver, 30);//
-
+		WebDriverWait wait2 = new WebDriverWait(Driver,10);// wait time
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 		// --Search the Job
@@ -25,11 +25,11 @@ public class VerifyCustomerBill extends BaseInit {
 
 		try {
 			try {
-				wait.until(ExpectedConditions.visibilityOfElementLocated(
+				wait2.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("//*[@id=\"lblStages\"][contains(text(),'Verify Customer Bill')]")));
 
 			} catch (Exception eStage) {
-				wait.until(ExpectedConditions.visibilityOfElementLocated(
+				wait2.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("//*[@id=\"lblStages\"][contains(text(),'VFY CUST BILL')]")));
 
 			}

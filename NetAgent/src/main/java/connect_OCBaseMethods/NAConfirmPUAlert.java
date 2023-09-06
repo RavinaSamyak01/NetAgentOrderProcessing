@@ -16,6 +16,7 @@ public class NAConfirmPUAlert extends BaseInit {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time
 		Actions act = new Actions(Driver);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 30);// wait time;
 
 		/*
 		 * try { wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(
@@ -39,7 +40,7 @@ public class NAConfirmPUAlert extends BaseInit {
 		try {
 
 			try {
-				wait.until(ExpectedConditions
+				wait2.until(ExpectedConditions
 						.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Confirm Pu Alert')]")));
 				// --Set Pass in TestScenarios
 				if (svc.equals("LOC")) {

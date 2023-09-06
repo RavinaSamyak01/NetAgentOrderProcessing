@@ -13,10 +13,10 @@ public class NAPickup extends OrderCreation {
 
 	@Test
 	public void naconfirmPickup() throws Exception {
-		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
 		Actions act = new Actions(Driver);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time;
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 		// --Get the ServiceID
@@ -25,7 +25,7 @@ public class NAPickup extends OrderCreation {
 		logger.info("ServiceID=" + svc);
 
 		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Pickup')]")));
+			wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Pickup')]")));
 
 			OrderCreation OC = new OrderCreation();
 			OC.getNAStageName();
@@ -59,7 +59,7 @@ public class NAPickup extends OrderCreation {
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 				try {
-					wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("modal-dialog")));
+					wait2.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("modal-dialog")));
 					WebElement Dyes = isElementPresent("NTPuPopYes_id");
 					js.executeScript("arguments[0].click();", Dyes);
 					logger.info("Clicked on Yes button");
@@ -97,7 +97,7 @@ public class NAPickup extends OrderCreation {
 
 				try {
 
-					wait.until(ExpectedConditions.visibilityOfElementLocated(
+					wait2.until(ExpectedConditions.visibilityOfElementLocated(
 							By.xpath("//*[@id=\"idValidationforMain\"]//ul[@id=\"errorid\"]")));
 					String Valmsg = isElementPresent("OCValOnePack_xpath").getText();
 					logger.info("Validation message is displayed=" + Valmsg);

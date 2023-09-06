@@ -1,0 +1,16 @@
+﻿From_Date,To_Date
+03/24/2023,04/03/2023
+
+CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
+34769 -  PACIFIC COAST LOGISTIX,,,,,,,,,,,,,,,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,33167399 / 03/30/2023,PU,PCS : 1     WT : 24.00,PU#   9985449,NOTHING BUNDT CAKES,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 3/30/2023 03:56,"PARKHILL, PHYLLIS",2100 SPACE PARK DR.,,"CLEAR LAKE, TX 77058",DEL TM : 3/30/2023 03:57,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,33164921 / 03/29/2023,PU,PCS : 1     WT : 20.00,PU#   9982971,AUTOMATION RV (F5505) ,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 3/29/2023 08:32,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : 3/29/2023 09:02,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,33165327 / 03/29/2023,PU,PCS : 1     WT : 20.00,PU#   9983377,AUTOMATION RV (F5505) ,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : ,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : ,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,33165357 / 03/29/2023,PU,PCS : 1     WT : 20.00,PU#   9983407,AUTOMATION RV (F5505) ,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : ,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : ,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,33165413 / 03/29/2023,PU,PCS : 1     WT : 20.00,PU#   9983463,AUTOMATION RV (F5505) ,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 3/29/2023 10:42,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : ,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,33165518 / 03/29/2023,PU,PCS : 1     WT : 20.00,PU#   9983568,AUTOMATION RV (F5505) ,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 3/29/2023 11:00,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : 3/29/2023 11:01,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,33165598 / 03/29/2023,PU,PCS : 1     WT : 20.00,PU#   9983648,AUTOMATION RV (F5505) ,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 3/29/2023 11:36,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : 3/29/2023 11:37,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,33165661 / 03/29/2023,PU,PCS : 1     WT : 20.00,PU#   9983711,AUTOMATION RV (F5505) ,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 3/29/2023 12:01,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : 3/29/2023 12:02,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,33165790 / 03/29/2023,PU,PCS : 1     WT : 20.00,PU#   9983840,AUTOMATION RV (F5505),304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 3/29/2023 13:27,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : 3/29/2023 13:28,,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+,,,,,,,,,,,,,,,           Shipment : 9        SubTotal PCS : 9        SubTotal WT :  184      ,           TotalShipment : 9        Total PCS : 9        Total WT :  184      
+

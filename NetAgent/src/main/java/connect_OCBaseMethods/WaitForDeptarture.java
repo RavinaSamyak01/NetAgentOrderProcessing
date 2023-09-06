@@ -12,16 +12,16 @@ public class WaitForDeptarture extends OrderCreation {
 
 	@Test
 	public void waitForDept() throws Exception {
-		WebDriverWait wait = new WebDriverWait(Driver, 30);//
+		WebDriverWait wait = new WebDriverWait(Driver, 60);//
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		String svc = Driver.findElement(By.id("lblServiceID")).getText();
 		System.out.println(svc);
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time;
 		try {
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(
+			wait2.until(ExpectedConditions.visibilityOfElementLocated(
 					By.xpath("//*[@id=\"lblStages\"][contains(text(),'Wait for Departure')]")));
 
 			// --Get StageName

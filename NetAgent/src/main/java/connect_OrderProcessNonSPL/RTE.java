@@ -64,7 +64,8 @@ public class RTE extends BaseInit {
 	}
 
 	public void getRTETrackingNo() throws EncryptedDocumentException, InvalidFormatException, IOException {
-		WebDriverWait wait = new WebDriverWait(Driver, 30);
+		WebDriverWait wait = new WebDriverWait(Driver, 60);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);
 		Actions act = new Actions(Driver);
 		// --Go to RouteList
 		// --Go to Tools tab
@@ -105,7 +106,7 @@ public class RTE extends BaseInit {
 
 			try {
 				WebElement NoData = isElementPresent("NoData_className");
-				wait.until(ExpectedConditions.visibilityOf(NoData));
+				wait2.until(ExpectedConditions.visibilityOf(NoData));
 				if (NoData.isDisplayed()) {
 					logger.info("There is no Data with Search parameter");
 
@@ -143,7 +144,7 @@ public class RTE extends BaseInit {
 			throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time
 		Actions act = new Actions(Driver);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 
@@ -151,6 +152,7 @@ public class RTE extends BaseInit {
 			// --Go To Operations
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("a_operations")));
 			WebElement Operations = isElementPresent("OperationsTab_id");
+			act.moveToElement(Operations).build().perform();
 			act.moveToElement(Operations).click().perform();
 			logger.info("Clicked on Operations");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
@@ -224,7 +226,7 @@ public class RTE extends BaseInit {
 
 			try {
 				WebElement NoData = isElementPresent("NoData_className");
-				wait.until(ExpectedConditions.visibilityOf(NoData));
+				wait2.until(ExpectedConditions.visibilityOf(NoData));
 				if (NoData.isDisplayed()) {
 					logger.info("There is no Data with Search TrackingNO");
 
@@ -298,7 +300,8 @@ public class RTE extends BaseInit {
 	}
 
 	public void rteConnectProcess() throws IOException {
-		WebDriverWait wait = new WebDriverWait(Driver, 40);
+		WebDriverWait wait = new WebDriverWait(Driver, 60);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);
 		Actions act = new Actions(Driver);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 
@@ -327,6 +330,7 @@ public class RTE extends BaseInit {
 
 		// --Click on Acknowledge button
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("GreyTick")));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		isElementPresent("TLAcknoldge_id").click();
 
 		logger.info("Clicked on Acknowledge button");
@@ -350,7 +354,7 @@ public class RTE extends BaseInit {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("idValidationforMain")));
+			wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("idValidationforMain")));
 			String ValMsg = isElementPresent("TLAlValidation_id").getText();
 			logger.info("Validation is displayed==" + ValMsg);
 
@@ -374,6 +378,7 @@ public class RTE extends BaseInit {
 
 	public void rteVerifyConnect() throws IOException {
 		WebDriverWait wait = new WebDriverWait(Driver, 40);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);
 		Actions act = new Actions(Driver);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 
@@ -440,7 +445,7 @@ public class RTE extends BaseInit {
 						String REndDate = getDateAsTZone(ZOneID);
 
 						// --Get the Time
-						String REndTime = getExtraTimeAsTZone(ZOneID);
+						String REndTime = getTimeAsTZone(ZOneID);
 
 						// --Route End Date
 						WebElement ERDate = isElementPresent("TLERDate_id");
@@ -465,7 +470,7 @@ public class RTE extends BaseInit {
 						logger.info("Clicked on End Route");
 						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 						try {
-							wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("errorid")));
+							wait2.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("errorid")));
 
 							Val = isElementPresent("Error_id").getText();
 							logger.info("Validation is displayed==" + Val);

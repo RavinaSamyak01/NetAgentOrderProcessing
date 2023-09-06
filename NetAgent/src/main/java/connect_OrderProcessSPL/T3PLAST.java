@@ -30,7 +30,7 @@ public class T3PLAST extends BaseInit {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		// Actions act = new Actions(Driver);
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time
 		// --Order Creation
 		OrderCreation OC = new OrderCreation();
 
@@ -47,7 +47,7 @@ public class T3PLAST extends BaseInit {
 
 		// --Error Pop Up
 		try {
-			wait.until(ExpectedConditions
+			wait2.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//*[@class=\"ngdialog-content ui-draggable\"]")));
 			getScreenshot(Driver, "ErrorPopUp_" + ServiceID);
 			WebElement ErrorPUp = isElementPresent("EOErrorPUp_id");

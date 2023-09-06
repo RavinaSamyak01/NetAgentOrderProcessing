@@ -45,7 +45,8 @@ public class SendEmail {
 		} catch (Exception eEmail) {
 			System.out.println(eEmail);
 			System.out.println("unable to send email from relay.mnx.com ");
-			hostName = "outlook.office365.com";
+			//hostName = "10.100.112.1";
+			 hostName = "outlook.office365.com";
 			fromAddress = "ravina.prajapati@samyak.com";
 			bccAddresses = "ravina.prajapati@samyak.com";
 
@@ -55,7 +56,7 @@ public class SendEmail {
 			props.setProperty("mail.smtp.auth", "false");
 
 			// Setup mail server //
-			// props.put("mail.smtp.host", hostName);
+			//props.put("mail.smtp.host", hostName);
 			props.put("smtp.office365.com", hostName);
 
 			// Get session
@@ -63,9 +64,7 @@ public class SendEmail {
 			transport = session.getTransport("smtp");
 			transport.connect(hostName, "ravina.prajapati@samyak.com", null);
 
-
 		}
-
 
 		// Define message object
 		MimeMessage message = new MimeMessage(session);

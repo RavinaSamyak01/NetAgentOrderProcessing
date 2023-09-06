@@ -1,0 +1,15 @@
+﻿Reporttitle
+Agent Activity Chart
+
+Textbox8,Textbox11
+01/22/2023,02/01/2023
+
+No Of Jobs_label,No Of Jobs_Chart2_CategoryGroup_label,No Of Jobs_Chart2_CategoryGroup_Value_Y
+No Of Jobs,CANCEL,7
+No Of Jobs,CHECKED,8
+No Of Jobs,CONFED PULLED,1
+No Of Jobs,DEL ALERT CONFED,1
+No Of Jobs,DELIVERED,3
+No Of Jobs,PRE BILL,6
+No Of Jobs,PULL ALERT CONFED,2
+

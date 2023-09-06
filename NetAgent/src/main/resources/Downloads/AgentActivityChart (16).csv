@@ -1,0 +1,15 @@
+﻿Reporttitle
+Agent Activity Chart
+
+Textbox8,Textbox11
+07/08/2022,07/18/2022
+
+No Of Jobs_label,No Of Jobs_Chart2_CategoryGroup_label,No Of Jobs_Chart2_CategoryGroup_Value_Y
+No Of Jobs,CANCEL,3
+No Of Jobs,CHECKED,2
+No Of Jobs,DEL DRV ALERTED,2
+No Of Jobs,DELIVERED,6
+No Of Jobs,PRE BILL,2
+No Of Jobs,PU ALERT CONFED,1
+No Of Jobs,PU DRV ALERTED,2
+

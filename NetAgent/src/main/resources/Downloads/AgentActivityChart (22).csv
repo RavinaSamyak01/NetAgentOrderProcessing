@@ -1,0 +1,13 @@
+﻿Reporttitle
+Agent Activity Chart
+
+Textbox8,Textbox11
+07/15/2022,07/25/2022
+
+No Of Jobs_label,No Of Jobs_Chart2_CategoryGroup_label,No Of Jobs_Chart2_CategoryGroup_Value_Y
+No Of Jobs,BILLED,5
+No Of Jobs,CANCEL,3
+No Of Jobs,CHECKED,2
+No Of Jobs,DELIVERED,5
+No Of Jobs,DROPPED,1
+

@@ -12,7 +12,8 @@ public class NARecover extends OrderCreation {
 	@Test
 	public void narecoverAtDestination() throws Exception {
 		// JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time
 
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		// --Get the ServiceID
@@ -23,7 +24,7 @@ public class NARecover extends OrderCreation {
 		logger.info("ServiceID=" + svc);
 		msg.append("ServiceID=" + svc + "\n");
 		try {
-			wait.until(ExpectedConditions
+			wait2.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Recover @ Destination')]")));
 
 			// --Get StageName

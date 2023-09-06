@@ -1,0 +1,11 @@
+﻿From_Date,To_Date
+08/02/2022,08/12/2022
+
+CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
+34769 -  AUTOMATION COURIER,,,,,,,,,,,,,,,,           TotalShipment : 4        Total PCS : 14        Total WT :  114      
+,32505292 / 08/12/2022,PU,PCS : 10     WT : 50.00,PU#   3510526,Automation,1525 14th St NW,,"WASHINGTON, DC 20005",PU TM : ,WASHINGTON NATL (DCA),1 Aviation Cir,,"WASHINGTON, DC 22202",DEL TM : ,,           TotalShipment : 4        Total PCS : 14        Total WT :  114      
+,32481019 / 08/02/2022,PU,PCS : 1     WT : 24.00,PU#   3486253,RAVINA OZA,ABHIJIT 1,,"PALOS HILLS, IL 60465",PU TM : 8/4/2022 06:22,"PARKHILL, PHYLLIS",2100 SPACE PARK DR.,,"CHICAGO, IL 60666",DEL TM : 8/4/2022 06:24,,           TotalShipment : 4        Total PCS : 14        Total WT :  114      
+,32505291 / 08/12/2022,PU,PCS : 2     WT : 20.00,PU#   3510525,Automation,612 E Dallas Rd,Ste 200,"GRAPEVINE, TX 76051",PU TM : ,AutoTest,44 Folly Road,,"Charleston, SC 29407",DEL TM : ,,           TotalShipment : 4        Total PCS : 14        Total WT :  114      
+,32505294 / 08/12/2022,PU,PCS : 1     WT : 20.00,PU#   3510528,AUTOMATION RV,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : ,FedEx Ship Center,12606 Fuqua St,,"Houston, TX 77034",DEL TM : ,,           TotalShipment : 4        Total PCS : 14        Total WT :  114      
+,,,,,,,,,,,,,,,           Shipment : 4        SubTotal PCS : 14        SubTotal WT :  114      ,           TotalShipment : 4        Total PCS : 14        Total WT :  114      
+

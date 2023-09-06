@@ -19,13 +19,13 @@ public class SendDelAlert extends BaseInit {
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		Actions act = new Actions(Driver);
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time;
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		String svc = Driver.findElement(By.id("lblServiceID")).getText();
 		System.out.println(svc);
 
 		try {
-			wait.until(ExpectedConditions
+			wait2.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//*[@id=\"lblStages\"][contains(text(),'Send Del Alert')]")));
 
 			// --Get StageName

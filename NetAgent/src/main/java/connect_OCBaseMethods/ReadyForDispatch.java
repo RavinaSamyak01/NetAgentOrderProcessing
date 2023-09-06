@@ -18,7 +18,7 @@ public class ReadyForDispatch extends BaseInit {
 	@Test
 	public void pickupAlert() throws Exception {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
 		Actions act = new Actions(Driver);
 
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));

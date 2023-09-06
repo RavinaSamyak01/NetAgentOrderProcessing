@@ -1,0 +1,5 @@
+﻿From_Date,To_Date
+
+CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
+,,,,,,,,,,,,,,,,           TotalShipment : 0        Total PCS :         Total WT :        
+

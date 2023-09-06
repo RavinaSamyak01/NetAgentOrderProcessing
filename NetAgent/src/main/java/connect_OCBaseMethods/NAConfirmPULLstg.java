@@ -17,7 +17,8 @@ public class NAConfirmPULLstg extends BaseInit {
 	public void naConfirmPullstage(int i) throws Exception {
 
 		JavascriptExecutor js = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time
 		Actions act = new Actions(Driver);
 
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
@@ -32,7 +33,7 @@ public class NAConfirmPULLstg extends BaseInit {
 		msg.append("ServiceID=" + svc + "\n");
 
 		try {
-			wait.until(
+			wait2.until(
 					ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[contains(text(),'Confirm Pull')]")));
 
 			// --Get StageName

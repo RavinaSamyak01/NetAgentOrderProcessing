@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -99,30 +101,17 @@ public class BaseInit {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
-		//	options.addArguments("--headless", "--window-size=1920, 1080");
-			// options.addArguments("--incognito");
-			// options.addArguments("--test-type");
-			options.addArguments("--disable-extensions");
-			options.addArguments("--no-sandbox");
-			options.addArguments("enable-automation");
-			options.addArguments("--dns-prefetch-disable");
-			options.addArguments("--disable-gpu");
-			options.addArguments("enable-features=NetworkServiceInProcess");
-			options.addArguments("--disable-infobars");
-			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("--force-device-scale-factor=1");
-			// options.addArguments("--aggressive-cache-discard");
-			// options.addArguments("--disable-cache");
-			// options.addArguments("--disable-application-cache");
-			// options.addArguments("--disable-offline-load-stale-cache");
-			// options.addArguments("--disk-cache-size=0");
-			options.addArguments("--no-proxy-server");
+			 options.addArguments("--headless", "--window-size=1920, 1080");
+			options.addArguments("start-maximized"); // open Browser in maximized mode
+			options.addArguments("disable-infobars"); // disabling infobars
+			options.addArguments("--disable-extensions"); // disabling extensions
+			options.addArguments("--disable-gpu"); // applicable to Windows os only
+			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+			options.addArguments("--no-sandbox"); // Bypass OS security model
+			options.addArguments("--disable-in-process-stack-traces");
+			options.addArguments("--disable-logging");
 			options.addArguments("--log-level=3");
-			options.addArguments("--silent");
-			// options.addArguments("--disable-browser-side-navigation");
-			options.addArguments("--no-proxy-server");
-			options.addArguments("--proxy-bypass-list=*");
-			options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+			options.addArguments("--remote-allow-origins=*");
 
 			System.setProperty("webDriver.chrome.silentOutput", "true");
 			// options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
@@ -136,7 +125,7 @@ public class BaseInit {
 			chromePrefs.put("safebrowsing.enabled", "false");
 			chromePrefs.put("download.default_directory", downloadFilepath);
 			options.setExperimentalOption("prefs", chromePrefs);
-			capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+			// capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
 			capabilities.setPlatform(Platform.ANY);
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			Driver = new ChromeDriver(options);
@@ -159,17 +148,45 @@ public class BaseInit {
 			// options.addArguments("window-size=1936,1056");
 			// options.addArguments("window-size=1036x776");
 
-			// -Clear Result excel
+			// --Reset result excel
 			resetResultofExcel();
-
 			// --NetAgent Login
 			Login();
 
 		}
 	}
 
-	public void Connectlogin() throws Exception {
+	public static String current_date() {
+		LocalDate currentDate = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		String formattedDate = currentDate.format(formatter);
+		logger.info("Cuurnt date is : " + formattedDate);
+		return formattedDate;
+	}
+
+	public void ConnectlogOut_prod() throws InterruptedException, IOException {
 		WebDriverWait wait = new WebDriverWait(Driver, 50);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);
+		Actions act = new Actions(Driver);
+		JavascriptExecutor js = (JavascriptExecutor) Driver;
+
+		WebElement LogOut = isElementPresent("ConnectLogOut_linkText");
+		act.moveToElement(LogOut).build().perform();
+		wait.until(ExpectedConditions.elementToBeClickable(LogOut));
+		highLight(LogOut, Driver);
+		js.executeScript("arguments[0].click();", LogOut);
+		logger.info("Logout performe");
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@ng-bind='LogoutMessage']")));
+		String LogOutMsg = isElementPresent("ConnectLogOutMsg_xpath").getText();
+		logger.info("Logout Message is displayed==" + LogOutMsg);
+		logger.info("Logout done");
+		getScreenshot(Driver, "ConnectLogOut");
+
+	}
+
+	public void Connectlogin() throws Exception {
+		WebDriverWait wait = new WebDriverWait(Driver, 60);
 		// Actions act = new Actions(driver);
 		String Env = storage.getProperty("Env");
 		System.out.println("Env " + Env);
@@ -299,6 +316,29 @@ public class BaseInit {
 
 			}
 
+		} else if (Env.equalsIgnoreCase("PROD")) {
+			baseUrl = storage.getProperty("Connect_PROD_URL");
+			Driver.get(baseUrl);
+			Thread.sleep(2000);
+			try {
+				Driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("login")));
+				String UserName = storage.getProperty("Connect_PROD_UserName");
+				highLight(isElementPresent("ConnectUserName_id"), Driver);
+				isElementPresent("ConnectUserName_id").sendKeys(UserName);
+				logger.info("Entered UserName");
+
+				String Password = storage.getProperty("Connect_PROD_Password");
+				highLight(isElementPresent("ConnectPassword_id"), Driver);
+				isElementPresent("ConnectPassword_id").sendKeys(Password);
+				logger.info("Entered Password");
+
+			} catch (Exception e) {
+				msg.append("Test URL is not working==FAIL" + e);
+				getScreenshot(Driver, "LoginIssue");
+
+			}
+
 		}
 
 		BaseURL = baseUrl;
@@ -367,6 +407,60 @@ public class BaseInit {
 
 	public static String getScreenshot(WebDriver Driver, String screenshotName) throws IOException {
 
+		String Env = storage.getProperty("Env");
+		String baseUrl = null;
+		if (Env.equalsIgnoreCase("PROD")) {
+
+			TakesScreenshot ts = (TakesScreenshot) Driver;
+			File source = ts.getScreenshotAs(OutputType.FILE);
+			// after execution, you could see a folder "FailedTestsScreenshots" under src
+			// folder
+			String destination = System.getProperty("user.dir") + "/Report/NA-Production-Screenshot/" + screenshotName
+					+ ".png";
+
+			File finalDestination = new File(destination);
+			try {
+				FileUtils.copyFile(source, finalDestination);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return destination;
+		} else if (Env.equalsIgnoreCase("STG")) {
+
+			TakesScreenshot ts = (TakesScreenshot) Driver;
+			File source = ts.getScreenshotAs(OutputType.FILE);
+			// after execution, you could see a folder "FailedTestsScreenshots" under src
+			// folder
+			String destination = System.getProperty("user.dir") + "/Report/NA-Stage-Screenshot/" + screenshotName
+					+ ".png";
+
+			File finalDestination = new File(destination);
+			try {
+				FileUtils.copyFile(source, finalDestination);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return destination;
+		} else if (Env.equalsIgnoreCase("Test")) {
+
+			TakesScreenshot ts = (TakesScreenshot) Driver;
+			File source = ts.getScreenshotAs(OutputType.FILE);
+			// after execution, you could see a folder "FailedTestsScreenshots" under src
+			// folder
+			String destination = System.getProperty("user.dir") + "/Report/NA-Test-Screenshot/" + screenshotName
+					+ ".png";
+
+			File finalDestination = new File(destination);
+			try {
+				FileUtils.copyFile(source, finalDestination);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return destination;
+		}
 		TakesScreenshot ts = (TakesScreenshot) Driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		// after execution, you could see a folder "FailedTestsScreenshots" under src
@@ -478,6 +572,7 @@ public class BaseInit {
 	// --Updated by Ravina
 	public void Login() throws Exception {
 		WebDriverWait wait = new WebDriverWait(Driver, 50);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);
 
 		String Env = storage.getProperty("Env");
 		String baseUrl = null;
@@ -502,7 +597,7 @@ public class BaseInit {
 				Driver.quit();
 				Env = storage.getProperty("Env");
 				String File = ".\\Report\\NA_Screenshot\\LoginIssue.png";
-				String subject = "Selenium Automation Script: " + Env + " NetAgent Portal";
+				String subject = "Selenium Automation Script: " + Env + " NetAgent Order Processing";
 
 				try {
 //					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
@@ -527,6 +622,8 @@ public class BaseInit {
 		} else if (Env.equalsIgnoreCase("STG")) {
 			baseUrl = storage.getProperty("STGURL");
 			Driver.get(baseUrl);
+			logger.info("Env : " + Env);
+			logger.info("URL use for " + Env + " test is : " + baseUrl);
 			logger.info("Url opened");
 			try {
 				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("login")));
@@ -545,7 +642,7 @@ public class BaseInit {
 				Driver.quit();
 				Env = storage.getProperty("Env");
 				String File = ".\\Report\\NA_Screenshot\\LoginIssue.png";
-				String subject = "Selenium Automation Script: " + Env + " NetAgent Portal";
+				String subject = "Selenium Automation Script: " + Env + " NetAgent Order Processing";
 
 				try {
 //					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
@@ -570,6 +667,9 @@ public class BaseInit {
 		} else if (Env.equalsIgnoreCase("Test")) {
 			baseUrl = storage.getProperty("TestURL");
 			Driver.get(baseUrl);
+			logger.info("Env : " + Env);
+			logger.info("URL use for " + Env + " test is : " + baseUrl);
+
 			logger.info("Url opened");
 			try {
 				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("login")));
@@ -588,7 +688,69 @@ public class BaseInit {
 				Driver.quit();
 				Env = storage.getProperty("Env");
 				String File = ".\\Report\\NA_Screenshot\\LoginIssue.png";
-				String subject = "Selenium Automation Script: " + Env + "  NetAgent Portal";
+				String subject = "Selenium Automation Script: " + Env + " NetAgent Order Processing";
+
+				try {
+//					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
+
+					SendEmailOld.sendMail(EmailID, subject, msg.toString(), File);
+
+					/*
+					 * SendEmailOld.
+					 * sendMail("ravina.prajapati@samyak.com, asharma@samyak.com, parth.doshi@samyak.com"
+					 * , subject, msg.toString(), File);
+					 */
+					// SendEmailOld.sendMail("ravina.prajapati@samyak.com, asharma@samyak.com
+					// ,parth.doshi@samyak.com", subject, msg.toString(), File);
+
+				} catch (Exception ex) {
+					logger.error(ex);
+					logger.info("Line number is: " + ex.getStackTrace()[0].getLineNumber());
+
+				}
+			}
+
+		} else if (Env.equalsIgnoreCase("PROD")) {
+			baseUrl = storage.getProperty("PRODURL");
+			logger.info("Env : " + Env);
+			logger.info("URL use for " + Env + " test is : " + baseUrl);
+			Driver.get(baseUrl);
+			logger.info("Url opened");
+			try {
+				try {
+
+					Driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+//						wait2.until(ExpectedConditions
+//								.invisibilityOfElementLocated(By.xpath("//*[@class='ajax-loadernew']")));
+
+					getScreenshot(Driver, "LoginPage");
+					String UserName = storage.getProperty("PRODUserName");
+					String password = storage.getProperty("PRODPassword");
+					// Enter User_name and Password and click on Login
+					isElementPresent("UserName_id").clear();
+					isElementPresent("UserName_id").sendKeys(UserName);
+					logger.info("UserName Entered");
+					isElementPresent("Password_id").clear();
+					isElementPresent("Password_id").sendKeys(password);
+					logger.info("Password Entered");
+
+// Click on Login
+
+					msg.append(baseUrl + "\n\n");
+
+				} catch (Exception e) {
+					// TODO: handle exception
+					logger.info("User Already logged in");
+					getScreenshot(Driver, "Already_login_NA");
+				}
+			} catch (Exception e) {
+				logger.info("URL is not working==FAIL" + e);
+				msg.append("URL is not working==FAIL");
+				getScreenshot(Driver, "LoginIssue");
+				Driver.quit();
+				Env = storage.getProperty("Env");
+				String File = ".\\Report\\NA_Screenshot\\LoginIssue.png";
+				String subject = "Selenium Automation Script: " + Env + " NetAgent Order Processing";
 
 				try {
 //					/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
@@ -657,20 +819,61 @@ public class BaseInit {
 
 	public void logOut() throws InterruptedException, IOException {
 		WebDriverWait wait = new WebDriverWait(Driver, 50);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 8);
 		Actions act = new Actions(Driver);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'userthumb')]")));
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class,'userthumb')]")));
-		WebElement LogoutDiv = isElementPresent("LogOutDiv_xpath");
-		act.moveToElement(LogoutDiv).build().perform();
-		act.moveToElement(LogoutDiv).click().build().perform();
-		WebElement LogOut = isElementPresent("LogOut_linkText");
-		wait.until(ExpectedConditions.visibilityOf(LogOut));
-		wait.until(ExpectedConditions.elementToBeClickable(LogOut));
-		act.moveToElement(LogOut).click().build().perform();
-		logger.info("Clicked on LogOut");
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
 
-		getScreenshot(Driver, "LogOutDiv");
+		String Env = storage.getProperty("Env");
+		String stg = "LogOutDiv_xpath";
+		String prod = "LogOutDiv_prod_xpath";
+
+		String logout_div = null;
+
+		if (Env.equalsIgnoreCase("STG")) {
+
+			logout_div = stg;
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'userthumb')]")));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class,'userthumb')]")));
+			WebElement LogoutDiv = isElementPresent(logout_div);
+			act.moveToElement(LogoutDiv).click().build().perform();
+			WebElement LogOut = isElementPresent("LogOut_linkText");
+			wait.until(ExpectedConditions.visibilityOf(LogOut));
+			wait.until(ExpectedConditions.elementToBeClickable(LogOut));
+			act.moveToElement(LogOut).click().build().perform();
+			logger.info("Clicked on LogOut");
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
+
+			getScreenshot(Driver, "LogOutDiv");
+		} else if (Env.equalsIgnoreCase("Test")) {
+			logout_div = stg;
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'userthumb')]")));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class,'userthumb')]")));
+			WebElement LogoutDiv = isElementPresent(logout_div);
+			act.moveToElement(LogoutDiv).click().build().perform();
+			WebElement LogOut = isElementPresent("LogOut_linkText");
+			wait.until(ExpectedConditions.visibilityOf(LogOut));
+			wait.until(ExpectedConditions.elementToBeClickable(LogOut));
+			act.moveToElement(LogOut).click().build().perform();
+			logger.info("Clicked on LogOut");
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
+
+			getScreenshot(Driver, "LogOutDiv");
+		} else if (Env.equalsIgnoreCase("PROD")) {
+			logout_div = prod;
+
+//			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'userthumb')]")));
+//			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class,'userthumb')]")));
+			WebElement LogoutDiv = isElementPresent(logout_div);
+			act.moveToElement(LogoutDiv).click().build().perform();
+			WebElement LogOut = isElementPresent("LogOut_linkText");
+			wait.until(ExpectedConditions.visibilityOf(LogOut));
+			wait.until(ExpectedConditions.elementToBeClickable(LogOut));
+			act.moveToElement(LogOut).click().build().perform();
+			logger.info("Clicked on LogOut");
+			wait2.until(ExpectedConditions.presenceOfElementLocated(By.id("idsigninbutton")));
+			Thread.sleep(3000);
+			getScreenshot(Driver, "LogOutDiv");
+		}
 	}
 
 	public void Complete() throws Exception {
@@ -712,6 +915,8 @@ public class BaseInit {
 			FilePath = storage.getProperty("STGFile");
 		} else if (Env.equalsIgnoreCase("Test")) {
 			FilePath = storage.getProperty("TestFile");
+		} else if (Env.equalsIgnoreCase("PROD")) {
+			FilePath = storage.getProperty("PRDFile");
 		}
 
 		File src = new File(FilePath);
@@ -743,6 +948,41 @@ public class BaseInit {
 			FilePath = storage.getProperty("STGFile");
 		} else if (Env.equalsIgnoreCase("Test")) {
 			FilePath = storage.getProperty("TestFile");
+		} else if (Env.equalsIgnoreCase("PROD")) {
+			FilePath = storage.getProperty("PRDFile");
+		}
+		File src = new File(FilePath);
+		FileInputStream fis = new FileInputStream(src);
+		Workbook workbook = WorkbookFactory.create(fis);
+		FileOutputStream fos1 = new FileOutputStream(src);
+		Sheet sh = workbook.getSheet(sheetName);
+
+		try {
+			sh.getRow(row).createCell(col).setCellValue(value);
+			workbook.write(fos1);
+			fos1.close();
+			fis.close();
+
+		} catch (Exception e) {
+			fos1.close();
+			fis.close();
+			logger.info("Issue in SetData" + e);
+
+		}
+	}
+
+	public static void setResultData(String sheetName, int row, int col, String value)
+			throws EncryptedDocumentException, InvalidFormatException, IOException {
+		String Env = storage.getProperty("Env");
+		String FilePath = null;
+		if (Env.equalsIgnoreCase("Pre-Prod")) {
+			FilePath = storage.getProperty("PrePRODResultFile");
+		} else if (Env.equalsIgnoreCase("STG")) {
+			FilePath = storage.getProperty("STGResultFile");
+		} else if (Env.equalsIgnoreCase("Test")) {
+			FilePath = storage.getProperty("TESTResultFile");
+		} else if (Env.equalsIgnoreCase("PROD")) {
+			FilePath = storage.getProperty("PRODResultFile");
 		}
 		File src = new File(FilePath);
 		FileInputStream fis = new FileInputStream(src);
@@ -888,17 +1128,18 @@ public class BaseInit {
 		String subject = "Selenium Automation Script: " + Env + " NetAgent Order Processing";
 		String File = null;
 		if (Env.equalsIgnoreCase("Test")) {
-			File = ".\\src\\main\\resources\\NA OCP Result_Test.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgent-Order Processing.html";
+			File = ".\\src\\main\\resources\\NAResult_Test.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgentLog.html";
 		} else if (Env.equalsIgnoreCase("STG")) {
-			File = ".\\src\\main\\resources\\NA OCP Result_STG.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgent-Order Processing.html";
+			File = ".\\src\\main\\resources\\NAResult_STG.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgentLog.html";
 
 		} else if (Env.equalsIgnoreCase("Pre-Prod")) {
-			File = ".\\src\\main\\resources\\NA OCP Result_PreProd.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgent-Order Processing.html";
+			File = ".\\src\\main\\resources\\NAResult_PreProd.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgentLog.html";
 
 		} else if (Env.equalsIgnoreCase("PROD")) {
-			File = ".\\src\\main\\resources\\NA OCP Result_Prod.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgent-Order Processing.html";
+			File = ".\\src\\main\\resources\\NAResult_Prod.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgentLog.html";
 
 		}
+
 		try {
 //			/kunjan.modi@samyak.com, pgandhi@samyak.com,parth.doshi@samyak.com
 
@@ -1124,43 +1365,9 @@ public class BaseInit {
 		ImageIO.write(fpScreenshot.getImage(), "PNG", new File(destination));
 	}
 
-	public static void setResultData(String sheetName, int row, int col, String value)
-			throws EncryptedDocumentException, InvalidFormatException, IOException {
-		String Env = storage.getProperty("Env");
-		String FilePath = null;
-		if (Env.equalsIgnoreCase("Pre-Prod")) {
-			FilePath = storage.getProperty("PrePRODResultFile");
-		} else if (Env.equalsIgnoreCase("STG")) {
-			FilePath = storage.getProperty("STGResultFile");
-		} else if (Env.equalsIgnoreCase("Prod")) {
-			FilePath = storage.getProperty("PRODResultFile");
-		} else if (Env.equalsIgnoreCase("TEST")) {
-			FilePath = storage.getProperty("TESTResultFile");
-		}
-
-		File src = new File(FilePath);
-		FileInputStream fis = new FileInputStream(src);
-		Workbook workbook = WorkbookFactory.create(fis);
-		FileOutputStream fos1 = new FileOutputStream(src);
-		Sheet sh = workbook.getSheet(sheetName);
-
-		try {
-			sh.getRow(row).createCell(col).setCellValue(value);
-			workbook.write(fos1);
-			fos1.close();
-			fis.close();
-
-		} catch (Exception e) {
-			fos1.close();
-			fis.close();
-			logger.info("Issue in SetData" + e);
-
-		}
-
-	}
-
 	public void resetResultofExcel() throws EncryptedDocumentException, InvalidFormatException, IOException {
 		String Env = storage.getProperty("Env");
+		System.out.println(Env);
 		String FilePath = null;
 
 		if (Env.equalsIgnoreCase("Pre-Prod")) {
@@ -1171,6 +1378,7 @@ public class BaseInit {
 			FilePath = storage.getProperty("PRODResultFile");
 		} else if (Env.equalsIgnoreCase("TEST")) {
 			FilePath = storage.getProperty("TESTResultFile");
+			System.out.println("Env Test");
 		}
 
 		File src = new File(FilePath);
@@ -1189,8 +1397,6 @@ public class BaseInit {
 
 		int ResultColIndex = 0;
 		int FailLogColIndex = 0;
-		int NAResultColIndex = 0;
-		int NAFailLogColIndex = 0;
 
 		// --Get column index by its name
 
@@ -1199,21 +1405,13 @@ public class BaseInit {
 
 			System.out.println("Colname==" + Colname);
 
-			if (Colname.equalsIgnoreCase("Connect OP Result")) {
+			if (Colname.contains("Result")) {
 				ResultColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
 				System.out.println("Index of the column==" + ResultColIndex);
 
-			} else if (Colname.equalsIgnoreCase("Fail Log")) {
+			} else if (Colname.contains("Fail Log")) {
 				FailLogColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
 				System.out.println("Index of the column==" + FailLogColIndex);
-
-			} else if (Colname.equalsIgnoreCase("NA Process Result")) {
-				NAResultColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
-				System.out.println("Index of the column==" + NAResultColIndex);
-
-			} else if (Colname.equalsIgnoreCase("NA Fail Log")) {
-				NAFailLogColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
-				System.out.println("Index of the column==" + NAFailLogColIndex);
 				break;
 			}
 
@@ -1227,8 +1425,6 @@ public class BaseInit {
 			try {
 				sh.getRow(row).createCell(ResultColIndex).setCellValue("");
 				sh.getRow(row).createCell(FailLogColIndex).setCellValue("");
-				sh.getRow(row).createCell(NAResultColIndex).setCellValue("");
-				sh.getRow(row).createCell(NAFailLogColIndex).setCellValue("");
 				workbook.write(fos1);
 				fos1.close();
 				fis.close();
@@ -1239,29 +1435,6 @@ public class BaseInit {
 
 			}
 		}
-
-	}
-	
-	public String getExtraTimeAsTZone(String timeZone) {
-
-		System.out.println("ZoneID of is==" + timeZone);
-		logger.info("ZoneID of is==" + timeZone);
-		if (timeZone.equalsIgnoreCase("EDT")) {
-			timeZone = "America/New_York";
-		} else if (timeZone.equalsIgnoreCase("CDT")) {
-			timeZone = "CST";
-		} else if (timeZone.equalsIgnoreCase("PDT")) {
-			timeZone = "PST";
-		}
-
-		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
-		dateFormat.setTimeZone(TimeZone.getTimeZone(timeZone));
-		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(timeZone));
-		cal.add(Calendar.MINUTE, 1);
-		logger.info(dateFormat.format(cal.getTime()));
-		String Time = dateFormat.format(cal.getTime());
-		System.out.println("New Time==" + Time);
-		return Time;
 
 	}
 }

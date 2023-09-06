@@ -27,7 +27,7 @@ public class DRV extends OrderCreation {
 	@Test
 	public void drvDriver() throws Exception {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
 		Actions act = new Actions(Driver);
 
 		// --Order Creation

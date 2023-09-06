@@ -3,11 +3,9 @@ package netAgent_BasePackage;
 import java.io.File;
 import java.util.Date;
 import java.util.Properties;
-
-import javax.activation.DataHandler;
-import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.*;
+import javax.activation.*;
 
 public class SendEmailOld {
 
@@ -37,7 +35,7 @@ public class SendEmailOld {
 		// Get session
 		session = Session.getInstance(props, null);
 		transport = session.getTransport("smtp");
-		transport.connect(hostName, "ravina.prajapati@samyak.com", "Rpsipl45");
+		transport.connect(hostName, "ravina.prajapati@samyak.com", "ravina.prajapati");
 
 		// Define message object
 		MimeMessage message = new MimeMessage(session);

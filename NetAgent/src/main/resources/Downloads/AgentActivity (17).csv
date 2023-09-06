@@ -1,0 +1,13 @@
+﻿From_Date,To_Date
+07/09/2022,07/19/2022
+
+CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
+34769 -  AUTOMATION COURIER,,,,,,,,,,,,,,,,           TotalShipment : 6        Total PCS : 17        Total WT :  150      
+,32426916 / 07/14/2022,PU,PCS : 10     WT : 50.00,PU#   3432150,Automation,1525 14th St NW,,"WASHINGTON, DC 20005",PU TM : 7/15/2022 03:13,WASHINGTON NATL (DCA),1 Aviation Cir,,"WASHINGTON, DC 22202",DEL TM : 7/15/2022 04:23,,           TotalShipment : 6        Total PCS : 17        Total WT :  150      
+,32425614 / 07/13/2022,PU,PCS : 2     WT : 20.00,PU#   3430848,Automation,612 E Dallas Rd,Ste 200,"GRAPEVINE, TX 76051",PU TM : 7/14/2022 02:02,AutoTest,44 Folly Road,,"Charleston, SC 29407",DEL TM : 7/14/2022 03:04,,           TotalShipment : 6        Total PCS : 17        Total WT :  150      
+,32430113 / 07/17/2022,PU,PCS : 1     WT : 20.00,PU#   3435347,AUTOMATION RV (F5505) ,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 7/18/2022 02:16,AUTOMATION SPL RV,2074 PAUL WAYNE HAGGERTY ROAD,,"METAIRIE, LA 70001",DEL TM : ,,           TotalShipment : 6        Total PCS : 17        Total WT :  150      
+,32426915 / 07/14/2022,PU,PCS : 2     WT : 20.00,PU#   3432149,Automation,612 E Dallas Rd,Ste 200,"GRAPEVINE, TX 76051",PU TM : 7/15/2022 02:08,AutoTest,44 Folly Road,,"Charleston, SC 29407",DEL TM : 7/15/2022 03:10,,           TotalShipment : 6        Total PCS : 17        Total WT :  150      
+,32426919 / 07/14/2022,PU,PCS : 1     WT : 20.00,PU#   3432153,AUTOMATION RV (F5505),304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 7/15/2022 03:54,AUTOMATION SPL RV,2074 PAUL WAYNE HAGGERTY ROAD,,"METAIRIE, LA 70001",DEL TM : 7/15/2022 03:56,,           TotalShipment : 6        Total PCS : 17        Total WT :  150      
+,32426913 / 07/14/2022,PU,PCS : 1     WT : 20.00,PU#   3432147,AUTOMATION RV,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 7/15/2022 03:37,FedEx Ship Center,12606 Fuqua St,,"HOUSTON, TX 77034",DEL TM : 7/15/2022 04:39,,           TotalShipment : 6        Total PCS : 17        Total WT :  150      
+,,,,,,,,,,,,,,,           Shipment : 6        SubTotal PCS : 17        SubTotal WT :  150      ,           TotalShipment : 6        Total PCS : 17        Total WT :  150      
+

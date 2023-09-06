@@ -24,7 +24,9 @@ public class D3P extends BaseInit {
 	@Test
 	public void d3P() throws Exception {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time
+		// Actions act = new Actions(Driver);
 		// Actions act = new Actions(Driver);
 
 		// --Order Creation
@@ -42,7 +44,7 @@ public class D3P extends BaseInit {
 
 		// --Error Pop Up //
 		try {
-			wait.until(ExpectedConditions
+			wait2.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//*[@class=\"ngdialog-content ui-draggable\"]"))); //
 			getScreenshot(Driver, "ErrorPopUp_" + ServiceID); //
 			WebElement ErrorPUp = isElementPresent("EOErrorPUp_id"); //

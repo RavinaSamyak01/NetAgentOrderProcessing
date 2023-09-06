@@ -14,12 +14,12 @@ public class Board1 extends OrderCreation {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 30);//
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time;
 		String svc = Driver.findElement(By.id("lblServiceID")).getText();
 		System.out.println(svc);
 		try {
 
-			wait.until(ExpectedConditions
+			wait2.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//*[@id=\"lblStages\"][contains(text(),'ON BOARD')]")));
 
 			// --Get StageName

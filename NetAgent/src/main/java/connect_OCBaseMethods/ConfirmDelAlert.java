@@ -19,7 +19,7 @@ public class ConfirmDelAlert extends BaseInit {
 		Actions act = new Actions(Driver);
 
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time;
 		// --Get the ServiceID
 		String svc = isElementPresent("NOEServiceID_xpath").getText();
 		System.out.println(svc);
@@ -28,7 +28,7 @@ public class ConfirmDelAlert extends BaseInit {
 
 		try {
 
-			wait.until(ExpectedConditions
+			wait2.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Confirm Del Alert')]")));
 
 			OrderCreation OC = new OrderCreation();

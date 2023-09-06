@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="NetAgentSmokeTest">
+	<test thread-count="5" name="ContactUS">
+		<classes>
+			<class name="netAgent_LogOutDiv.ContactUS"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="AgentTSATraining">
+		<classes>
+			<class name="netAgent_LogOutDiv.AgentTSATraining"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="AgentElevatedTraining">
+		<classes>
+			<class name="netAgent_LogOutDiv.AgentElevatesRiskTraining"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="TaskLog">
+		<classes>
+			<class name="netAgent_OperationsTab.TaskLog"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="OrderSearch">
+		<classes>
+			<class name="netAgent_OperationsTab.OrderSearch"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Replenish">
+		<classes>
+			<class name="netAgent_OperationsTab.Replenish"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="CycleCount">
+		<classes>
+			<class name="netAgent_OperationsTab.CycleCount"></class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Courier">
+		<classes>
+			<class name="netAgent_OperationsTab.Courier"></class>
+		</classes>
+	</test> <!-- NASmoke -->
+</suite> <!-- NASuite -->
