@@ -1,3 +1,404 @@
-2023-09-06 17:15:58,068 - AllOrderCreation -INFO - initialization of the properties file is done
-2023-09-06 17:16:00,344 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 116.0.5845.96 (resolved driver for Chrome 116)
-2023-09-06 17:16:00,413 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as C:\Users\rprajapati\.cache\selenium\chromedriver\win64\116.0.5845.96\chromedriver.exe
+2023-09-08 19:33:50,389 - AllOrderCreation -INFO - initialization of the properties file is done
+2023-09-08 19:33:50,841 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 116.0.5845.96 (resolved driver for Chrome 116)
+2023-09-08 19:33:50,869 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as C:\Users\rprajapati\.cache\selenium\chromedriver\win64\116.0.5845.96\chromedriver.exe
+2023-09-08 19:34:07,145 - AllOrderCreation -INFO - Env : STG
+2023-09-08 19:34:07,145 - AllOrderCreation -INFO - URL use for STG test is : https://stagingna.nglog.com/
+2023-09-08 19:34:07,146 - AllOrderCreation -INFO - Url opened
+2023-09-08 19:34:31,449 - AllOrderCreation -INFO - Entered UserName
+2023-09-08 19:34:32,597 - AllOrderCreation -INFO - Entered Password
+2023-09-08 19:34:33,743 - AllOrderCreation -INFO - Login done
+2023-09-08 19:34:44,192 - AllOrderCreation -INFO - Click on Operation
+2023-09-08 19:34:51,759 - AllOrderCreation -INFO - Click on Tasklog
+2023-09-08 19:34:51,868 - AllOrderCreation -INFO - Click on New Order
+2023-09-08 19:34:57,254 - AllOrderCreation -INFO - =====Service:- 3PLAST=====
+2023-09-08 19:34:57,521 - AllOrderCreation -INFO - Entered CallerName
+2023-09-08 19:34:57,776 - AllOrderCreation -INFO - Entered Contact/Phone
+2023-09-08 19:34:58,075 - AllOrderCreation -INFO - Entered Customer Code
+2023-09-08 19:35:04,821 - AllOrderCreation -INFO - Dialogue is not displayed for Customer
+2023-09-08 19:35:04,941 - AllOrderCreation -INFO - Clicked on Parts search button
+2023-09-08 19:35:07,070 - AllOrderCreation -INFO - Clicked on Advanced search button
+2023-09-08 19:35:07,911 - AllOrderCreation -INFO - Selected FSL
+2023-09-08 19:35:08,057 - AllOrderCreation -INFO - Entered value of Field 1
+2023-09-08 19:35:08,123 - AllOrderCreation -INFO - Clicked on search button
+2023-09-08 19:35:10,940 - AllOrderCreation -INFO - Clicked on Add Part button
+2023-09-08 19:35:11,028 - AllOrderCreation -INFO - Total Qty of added parts==1
+2023-09-08 19:35:11,028 - AllOrderCreation -INFO - Part is added successfully==PASS
+2023-09-08 19:35:11,151 - AllOrderCreation -INFO - Clicked on Save Part button
+2023-09-08 19:35:25,501 - AllOrderCreation -INFO - Qty of added parts==1
+2023-09-08 19:35:25,501 - AllOrderCreation -INFO - Part is saved successfully==PASS
+2023-09-08 19:35:27,811 - AllOrderCreation -INFO - Entered DL Zip
+2023-09-08 19:35:31,681 - AllOrderCreation -INFO - Clicked on Delivery Address Tab
+2023-09-08 19:35:32,028 - AllOrderCreation -INFO - Entered DL Company
+2023-09-08 19:35:32,061 - AllOrderCreation -INFO - Entered DL Address
+2023-09-08 19:35:32,344 - AllOrderCreation -INFO - Entered DL Address Line1
+2023-09-08 19:35:32,561 - AllOrderCreation -INFO - Entered DL Attention
+2023-09-08 19:35:32,777 - AllOrderCreation -INFO - Entered DL Phone
+2023-09-08 19:35:32,808 - AllOrderCreation -INFO - DL Miles==12
+2023-09-08 19:35:35,010 - AllOrderCreation -INFO - Selected 3P account
+2023-09-08 19:35:37,672 - AllOrderCreation -INFO - Selected FedEx service
+2023-09-08 19:36:01,707 - AllOrderCreation -INFO - Click on Select Drop-Off Location
+2023-09-08 19:36:01,857 - AllOrderCreation -INFO - Select 1st drop off location
+2023-09-08 19:36:05,951 - AllOrderCreation -INFO - Drop Off Location Test= PASS
+2023-09-08 19:36:08,071 - AllOrderCreation -INFO - Total Mileage==1581
+2023-09-08 19:36:10,996 - AllOrderCreation -INFO - Click on Create Order button
+2023-09-08 19:36:13,704 - AllOrderCreation -INFO - Content of the Dialogue is==Do you wish to change the Delivery Airport from BUR to LAX ?
+Yes  No
+2023-09-08 19:36:13,774 - AllOrderCreation -INFO - Click on Yes Proceed button
+2023-09-08 19:37:14,373 - AllOrderCreation -INFO - Click on Yes Proceed button
+2023-09-08 19:37:20,909 - AllOrderCreation -INFO - =====Pickup =10276847=====
+
+2023-09-08 19:37:21,134 - AllOrderCreation -INFO - Clicked on Edit Order
+2023-09-08 19:37:27,673 - AllOrderCreation -INFO - Service is==3PLAST
+2023-09-08 19:37:27,805 - AllOrderCreation -INFO - Scroll down to Get the Rate
+2023-09-08 19:37:38,248 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-09-08 19:37:44,391 - AllOrderCreation -INFO - ServiceID=3PLAST
+2023-09-08 19:37:44,482 - AllOrderCreation -INFO - Stage=TC ACKNOWLEDGE
+2023-09-08 19:37:44,669 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-09-08 19:37:44,815 - AllOrderCreation -INFO - Clicked on TC Acknowledge button
+2023-09-08 19:39:00,654 - AllOrderCreation -INFO - ServiceID=3PLAST
+2023-09-08 19:39:00,740 - AllOrderCreation -INFO - Stage=SEND PULL ALERT
+2023-09-08 19:39:01,087 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-09-08 19:39:01,145 - AllOrderCreation -INFO - Actual Courier=34769
+2023-09-08 19:39:01,145 - AllOrderCreation -INFO - By default Automation courier is selected 
+2023-09-08 19:39:01,345 - AllOrderCreation -INFO - Email is selected as a Contact By
+2023-09-08 19:39:01,665 - AllOrderCreation -INFO - Entered EmailID
+2023-09-08 19:39:01,864 - AllOrderCreation -INFO - Entered Spoke With
+2023-09-08 19:39:02,029 - AllOrderCreation -INFO - Clicked on Send Pull button
+2023-09-08 19:39:06,715 - AllOrderCreation -INFO - ==Moved to NetAgent==
+2023-09-08 19:39:06,755 - AllOrderCreation -INFO - PickUpID is==10276847
+2023-09-08 19:39:06,788 - AllOrderCreation -INFO - ALready loggedin
+2023-09-08 19:39:07,021 - AllOrderCreation -INFO - Click on Operations
+2023-09-08 19:39:12,273 - AllOrderCreation -INFO - Click on Task Log
+2023-09-08 19:39:12,321 - AllOrderCreation -INFO - PickUpID is==10276847
+2023-09-08 19:39:22,330 - AllOrderCreation -INFO - Operation tab is not selected
+2023-09-08 19:39:22,658 - AllOrderCreation -INFO - Click on Operation Tab
+2023-09-08 19:39:22,778 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:39:22,871 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:39:23,028 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:39:40,600 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:39:40,815 - AllOrderCreation -INFO - Click on Operations
+2023-09-08 19:39:43,924 - AllOrderCreation -INFO - Click on Task Log
+2023-09-08 19:39:43,952 - AllOrderCreation -INFO - Operation tab is already selected
+2023-09-08 19:39:44,062 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:39:44,142 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:39:44,334 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:40:00,292 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:40:00,390 - AllOrderCreation -INFO - ServiceID=3PLAST
+2023-09-08 19:40:00,503 - AllOrderCreation -INFO - Stage=CONF PULL ALERT
+2023-09-08 19:40:00,674 - AllOrderCreation -INFO - Enter Spoke with
+2023-09-08 19:40:00,892 - AllOrderCreation -INFO - Click on Confirm Pull Alert  button
+2023-09-08 19:40:04,519 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:40:04,609 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:40:04,768 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:40:23,831 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:40:23,922 - AllOrderCreation -INFO - ServiceID=3PLAST
+2023-09-08 19:40:24,022 - AllOrderCreation -INFO - Stage=Confirm Pull
+2023-09-08 19:40:24,275 - AllOrderCreation -INFO - Click on Confirm Pull  button
+2023-09-08 19:40:24,394 - AllOrderCreation -INFO - Validation message is displayed=Part Pull DateTime is required.
+2023-09-08 19:40:24,437 - AllOrderCreation -INFO - ZoneID of is==CDT
+2023-09-08 19:40:24,437 - AllOrderCreation -INFO - 09:10
+2023-09-08 19:40:24,438 - AllOrderCreation -INFO - ZoneID is==CDT
+2023-09-08 19:40:24,438 - AllOrderCreation -INFO - 09/08/2023
+2023-09-08 19:40:24,851 - AllOrderCreation -INFO - Enter Actual Part Pull Date
+2023-09-08 19:40:25,080 - AllOrderCreation -INFO - Enter Actual Part Pull time
+2023-09-08 19:40:30,484 - AllOrderCreation -INFO - Click on Confirm Pull  button
+2023-09-08 19:40:30,584 - AllOrderCreation -INFO - Validation message is displayed=Verify all parts before proceeding.
+2023-09-08 19:40:30,617 - AllOrderCreation -INFO - Serial No of Part is==27290ZZNYALJQ54CZ8RVXQ
+
+2023-09-08 19:40:31,736 - AllOrderCreation -INFO - Entered serial No in scan barcode
+2023-09-08 19:40:31,756 - AllOrderCreation -INFO - ZoneID of is==CDT
+2023-09-08 19:40:31,757 - AllOrderCreation -INFO - 09:10
+2023-09-08 19:40:31,757 - AllOrderCreation -INFO - ZoneID is==CDT
+2023-09-08 19:40:31,758 - AllOrderCreation -INFO - 09/08/2023
+2023-09-08 19:40:32,084 - AllOrderCreation -INFO - Enter Actual Part Pull Date
+2023-09-08 19:40:32,398 - AllOrderCreation -INFO - Enter Actual Part Pull time
+2023-09-08 19:40:37,788 - AllOrderCreation -INFO - Click on Confirm Pull  button
+2023-09-08 19:40:41,313 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:40:41,403 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:40:41,561 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:41:01,537 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:41:01,712 - AllOrderCreation -INFO - ServiceID=3PLAST
+2023-09-08 19:41:01,812 - AllOrderCreation -INFO - Stage=Tender to 3P
+2023-09-08 19:41:01,849 - AllOrderCreation -INFO - ZoneID of is==PDT
+2023-09-08 19:41:01,850 - AllOrderCreation -INFO - 07:11
+2023-09-08 19:41:02,132 - AllOrderCreation -INFO - Entered Drop time
+2023-09-08 19:41:02,202 - AllOrderCreation -INFO - ZoneID of is==PDT
+2023-09-08 19:41:02,204 - AllOrderCreation -INFO - 07:11
+2023-09-08 19:41:02,467 - AllOrderCreation -INFO - Entered Drop time
+2023-09-08 19:41:02,646 - AllOrderCreation -INFO - Clicked on Tender To 3P button
+2023-09-08 19:41:03,356 - AllOrderCreation -INFO - Dialogue content==Actual Drop Time is less than Ready Time. Do you want to continue?
+2023-09-08 19:41:06,718 - AllOrderCreation -INFO - Clicked on Yes
+2023-09-08 19:41:06,891 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:41:07,014 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:41:07,220 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:41:07,974 - AllOrderCreation -INFO - Job is not found in Operation Tab
+2023-09-08 19:41:08,201 - AllOrderCreation -INFO - Click on Inventory tab
+2023-09-08 19:41:08,314 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:41:08,376 - AllOrderCreation -INFO - Enter pickupID in search input
+2023-09-08 19:41:17,127 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:41:17,958 - AllOrderCreation -INFO - ==Moved to Connect==
+2023-09-08 19:41:28,255 - AllOrderCreation -INFO - Clicked on Operations
+2023-09-08 19:41:28,548 - AllOrderCreation -INFO - Clicked on TaskLog
+2023-09-08 19:41:35,041 - AllOrderCreation -INFO - PickUpID=10276847
+
+2023-09-08 19:41:42,834 - AllOrderCreation -INFO - Total Jobs==0
+2023-09-08 19:41:42,834 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
+2023-09-08 19:41:42,996 - AllOrderCreation -INFO - Stage=SEND DEL ALERT
+2023-09-08 19:41:43,219 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-09-08 19:41:43,248 - AllOrderCreation -INFO - ==Edit Driver Test Start==
+2023-09-08 19:41:45,324 - AllOrderCreation -INFO - Clicked on Edit button of Driver
+2023-09-08 19:41:47,488 - AllOrderCreation -INFO - Enter CourierID
+2023-09-08 19:41:47,705 - AllOrderCreation -INFO - Enter Agent Key
+2023-09-08 19:41:47,749 - AllOrderCreation -INFO - Clicked on search button
+2023-09-08 19:41:48,336 - AllOrderCreation -INFO - Total Agent==12
+2023-09-08 19:41:48,610 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:48,872 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:49,152 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:49,398 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:49,663 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:49,927 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:50,208 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:50,485 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:50,749 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:51,063 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:51,347 - AllOrderCreation -INFO - There is no Agent with search parameter
+2023-09-08 19:41:51,668 - AllOrderCreation -INFO - Searched Agent is exist
+2023-09-08 19:41:52,003 - AllOrderCreation -INFO - Select the AgentID
+2023-09-08 19:41:52,698 - AllOrderCreation -INFO - Selected agent is==AUTOMATION
+2023-09-08 19:41:52,699 - AllOrderCreation -INFO - Selected Agent is not displayed in Driver section
+2023-09-08 19:41:52,699 - AllOrderCreation -INFO - == Edit Driver Test End==
+2023-09-08 19:41:52,785 - AllOrderCreation -INFO - Selected Email option as Contacted
+2023-09-08 19:41:54,040 - AllOrderCreation -INFO - entered Contacted By
+2023-09-08 19:41:54,439 - AllOrderCreation -INFO - entered Spoke With
+2023-09-08 19:41:55,605 - AllOrderCreation -INFO - Selected Driver
+2023-09-08 19:41:56,680 - AllOrderCreation -INFO - CLicked on Alert and Confirm Button
+2023-09-08 19:42:00,439 - AllOrderCreation -INFO - ==Moved to NetAgent==
+2023-09-08 19:42:00,476 - AllOrderCreation -INFO - PickUpID is==10276847
+2023-09-08 19:42:00,514 - AllOrderCreation -INFO - ALready loggedin
+2023-09-08 19:42:00,703 - AllOrderCreation -INFO - Click on Operations
+2023-09-08 19:42:07,507 - AllOrderCreation -INFO - Click on Task Log
+2023-09-08 19:42:07,545 - AllOrderCreation -INFO - PickUpID is==10276847
+2023-09-08 19:42:17,560 - AllOrderCreation -INFO - Operation tab is not selected
+2023-09-08 19:42:18,402 - AllOrderCreation -INFO - Click on Operation Tab
+2023-09-08 19:42:18,589 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:42:18,684 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:42:18,847 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:42:38,196 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:42:38,293 - AllOrderCreation -INFO - ServiceID=3PLAST
+2023-09-08 19:42:38,395 - AllOrderCreation -INFO - Stage=Confirm Del Alert
+2023-09-08 19:42:38,614 - AllOrderCreation -INFO - Clicked on Confirm Del Alert button
+2023-09-08 19:42:43,515 - AllOrderCreation -INFO - ==Moved to Connect==
+2023-09-08 19:42:53,842 - AllOrderCreation -INFO - Clicked on Operations
+2023-09-08 19:42:54,170 - AllOrderCreation -INFO - Clicked on TaskLog
+2023-09-08 19:43:01,420 - AllOrderCreation -INFO - PickUpID=10276847
+
+2023-09-08 19:43:09,173 - AllOrderCreation -INFO - Total Jobs==0
+2023-09-08 19:43:09,173 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
+2023-09-08 19:43:16,386 - AllOrderCreation -INFO - Stage=3RD PARTY DELIVERY
+2023-09-08 19:43:16,635 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-09-08 19:43:16,709 - AllOrderCreation -INFO - ZoneID of is==PDT
+2023-09-08 19:43:16,710 - AllOrderCreation -INFO - 07:13
+2023-09-08 19:43:16,959 - AllOrderCreation -INFO - Entered Drop time
+2023-09-08 19:43:17,178 - AllOrderCreation -INFO - Clicked on Ship Label Services
+2023-09-08 19:43:19,916 - AllOrderCreation -INFO - Entered Email in Send Email
+2023-09-08 19:43:20,056 - AllOrderCreation -INFO - Clicked on Send button
+2023-09-08 19:43:20,183 - AllOrderCreation -INFO - ErroMsg is Displayed=Please select any one label for send a email.
+2023-09-08 19:43:20,249 - AllOrderCreation -INFO - Checked the checkbox of ship label
+2023-09-08 19:43:20,545 - AllOrderCreation -INFO - Entered Email in Send Email
+2023-09-08 19:43:20,688 - AllOrderCreation -INFO - Clicked on Send button
+2023-09-08 19:43:21,429 - AllOrderCreation -INFO - Tracking No==Your tracking number is :794659454491
+2023-09-08 19:43:21,430 - AllOrderCreation -INFO - Tracking No==794659454491
+2023-09-08 19:43:21,491 - AllOrderCreation -INFO - Clicked on Close button of ShipLabel
+2023-09-08 19:44:21,669 - AllOrderCreation -INFO - There is no Ship Label
+2023-09-08 19:44:21,727 - AllOrderCreation -INFO - ShipLabel Test=PASS
+2023-09-08 19:44:22,011 - AllOrderCreation -INFO - Entered POD
+2023-09-08 19:44:22,124 - AllOrderCreation -INFO - ZoneID of is==PDT
+2023-09-08 19:44:22,125 - AllOrderCreation -INFO - 07:14
+2023-09-08 19:44:22,347 - AllOrderCreation -INFO - Entered Drop time
+2023-09-08 19:44:22,465 - AllOrderCreation -INFO - Clicked on Tender To 3P button
+2023-09-08 19:44:33,157 - AllOrderCreation -INFO - ==Moved to NetAgent==
+2023-09-08 19:44:33,510 - AllOrderCreation -INFO - PickUpID is==10276847
+2023-09-08 19:44:33,550 - AllOrderCreation -INFO - ALready loggedin
+2023-09-08 19:44:33,743 - AllOrderCreation -INFO - Click on Operations
+2023-09-08 19:44:37,304 - AllOrderCreation -INFO - Click on Task Log
+2023-09-08 19:44:37,333 - AllOrderCreation -INFO - PickUpID is==10276847
+2023-09-08 19:44:37,372 - AllOrderCreation -INFO - Operation tab is already selected
+2023-09-08 19:44:37,475 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:44:37,554 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:44:37,725 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:44:56,845 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:44:56,937 - AllOrderCreation -INFO - ServiceID=3PLAST
+2023-09-08 19:44:57,018 - AllOrderCreation -INFO - Stage=Recover @ Destination
+2023-09-08 19:44:57,049 - AllOrderCreation -INFO - ZoneID of is==PDT
+2023-09-08 19:44:57,049 - AllOrderCreation -INFO - 07:14
+2023-09-08 19:44:57,237 - AllOrderCreation -INFO - Enter Recovery Time
+2023-09-08 19:44:57,365 - AllOrderCreation -INFO - Click on Confirm Recover button
+2023-09-08 19:45:02,505 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:45:02,586 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:45:02,763 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:45:22,036 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:45:22,130 - AllOrderCreation -INFO - ServiceID=3PLAST
+2023-09-08 19:45:22,172 - AllOrderCreation -INFO - Stage=Deliver
+2023-09-08 19:45:22,206 - AllOrderCreation -INFO - ZoneID of is==PDT
+2023-09-08 19:45:22,207 - AllOrderCreation -INFO - 07:15
+2023-09-08 19:45:22,366 - AllOrderCreation -INFO - Enter Actual DL Time
+2023-09-08 19:45:22,542 - AllOrderCreation -INFO - Enter Signature
+2023-09-08 19:45:24,229 - AllOrderCreation -INFO - Clicked on Confirm DEL button
+2023-09-08 19:45:24,330 - AllOrderCreation -INFO - Click on OK of Dialogue box
+2023-09-08 19:45:28,696 - AllOrderCreation -INFO - ==Moved to Connect==
+2023-09-08 19:45:39,033 - AllOrderCreation -INFO - Clicked on Operations
+2023-09-08 19:45:39,429 - AllOrderCreation -INFO - Clicked on TaskLog
+2023-09-08 19:45:46,277 - AllOrderCreation -INFO - PickUpID=10276847
+
+2023-09-08 19:45:57,248 - AllOrderCreation -INFO - Total Jobs==0
+2023-09-08 19:45:57,249 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
+2023-09-08 19:46:07,638 - AllOrderCreation -INFO - Clicked on Operations
+2023-09-08 19:46:08,027 - AllOrderCreation -INFO - Clicked on TaskLog
+2023-09-08 19:46:14,886 - AllOrderCreation -INFO - PickUpID=10276847
+
+2023-09-08 19:46:25,070 - AllOrderCreation -INFO - Total Jobs==0
+2023-09-08 19:46:25,071 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
+2023-09-08 19:46:25,278 - AllOrderCreation -INFO - Stage=VERIFY CUSTOMER BILL
+2023-09-08 19:46:26,588 - AllOrderCreation -INFO - Click on Operation
+2023-09-08 19:46:33,594 - AllOrderCreation -INFO - Click on Tasklog
+2023-09-08 19:46:34,179 - AllOrderCreation -INFO - Click on New Order
+2023-09-08 19:46:35,917 - AllOrderCreation -INFO - =====Service:- CPU=====
+2023-09-08 19:46:36,103 - AllOrderCreation -INFO - Entered CallerName
+2023-09-08 19:46:36,323 - AllOrderCreation -INFO - Entered Contact/Phone
+2023-09-08 19:46:36,548 - AllOrderCreation -INFO - Entered Customer Code
+2023-09-08 19:46:41,749 - AllOrderCreation -INFO - Dialogue is not displayed for Customer
+2023-09-08 19:46:41,966 - AllOrderCreation -INFO - Clicked on Parts search button
+2023-09-08 19:46:44,073 - AllOrderCreation -INFO - Clicked on Advanced search button
+2023-09-08 19:46:44,844 - AllOrderCreation -INFO - Selected FSL
+2023-09-08 19:46:44,996 - AllOrderCreation -INFO - Entered value of Field 1
+2023-09-08 19:46:45,063 - AllOrderCreation -INFO - Clicked on search button
+2023-09-08 19:46:46,566 - AllOrderCreation -INFO - Clicked on Add Part button
+2023-09-08 19:46:46,631 - AllOrderCreation -INFO - Total Qty of added parts==1
+2023-09-08 19:46:46,631 - AllOrderCreation -INFO - Part is added successfully==PASS
+2023-09-08 19:46:46,757 - AllOrderCreation -INFO - Clicked on Save Part button
+2023-09-08 19:46:47,967 - AllOrderCreation -INFO - Qty of added parts==1
+2023-09-08 19:46:47,967 - AllOrderCreation -INFO - Part is saved successfully==PASS
+2023-09-08 19:46:50,244 - AllOrderCreation -INFO - Entered DL Zip
+2023-09-08 19:46:53,228 - AllOrderCreation -INFO - Clicked on Delivery Address Tab
+2023-09-08 19:46:53,474 - AllOrderCreation -INFO - Entered DL Company
+2023-09-08 19:46:53,502 - AllOrderCreation -INFO - Entered DL Address
+2023-09-08 19:46:53,848 - AllOrderCreation -INFO - Entered DL Address Line1
+2023-09-08 19:46:54,064 - AllOrderCreation -INFO - Entered DL Attention
+2023-09-08 19:46:54,246 - AllOrderCreation -INFO - Entered DL Phone
+2023-09-08 19:46:54,283 - AllOrderCreation -INFO - DL Miles==
+2023-09-08 19:46:57,847 - AllOrderCreation -INFO - Total Mileage==1
+2023-09-08 19:47:00,534 - AllOrderCreation -INFO - Click on Create Order button
+2023-09-08 19:48:05,169 - AllOrderCreation -INFO - Confirmation message for warehouse is not displayed
+2023-09-08 19:48:05,294 - AllOrderCreation -INFO - =====Pickup =10276859=====
+
+2023-09-08 19:48:06,028 - AllOrderCreation -INFO - Clicked on Edit Order
+2023-09-08 19:48:10,028 - AllOrderCreation -INFO - Service is==CPU
+2023-09-08 19:48:10,174 - AllOrderCreation -INFO - Scroll down to Get the Rate
+2023-09-08 19:48:41,023 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-09-08 19:48:44,418 - AllOrderCreation -INFO - ServiceID=CPU
+2023-09-08 19:48:44,499 - AllOrderCreation -INFO - Stage=TC ACKNOWLEDGE
+2023-09-08 19:48:44,757 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-09-08 19:48:44,909 - AllOrderCreation -INFO - Clicked on TC Acknowledge button
+2023-09-08 19:49:57,440 - AllOrderCreation -INFO - ServiceID=CPU
+2023-09-08 19:49:57,518 - AllOrderCreation -INFO - Stage=SEND PULL ALERT
+2023-09-08 19:49:57,699 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2023-09-08 19:49:57,758 - AllOrderCreation -INFO - Actual Courier=34769
+2023-09-08 19:49:57,758 - AllOrderCreation -INFO - By default Automation courier is selected 
+2023-09-08 19:49:57,927 - AllOrderCreation -INFO - Email is selected as a Contact By
+2023-09-08 19:49:58,206 - AllOrderCreation -INFO - Entered EmailID
+2023-09-08 19:49:58,473 - AllOrderCreation -INFO - Entered Spoke With
+2023-09-08 19:49:58,687 - AllOrderCreation -INFO - Clicked on Send Pull button
+2023-09-08 19:50:02,524 - AllOrderCreation -INFO - ==Moved to NetAgent==
+2023-09-08 19:50:02,564 - AllOrderCreation -INFO - PickUpID is==10276859
+2023-09-08 19:50:02,602 - AllOrderCreation -INFO - ALready loggedin
+2023-09-08 19:50:02,877 - AllOrderCreation -INFO - Click on Operations
+2023-09-08 19:50:07,290 - AllOrderCreation -INFO - Click on Task Log
+2023-09-08 19:50:07,331 - AllOrderCreation -INFO - PickUpID is==10276859
+2023-09-08 19:50:07,376 - AllOrderCreation -INFO - Operation tab is already selected
+2023-09-08 19:50:07,481 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:50:07,566 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:50:07,743 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:50:24,171 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:50:24,292 - AllOrderCreation -INFO - ServiceID=CPU
+2023-09-08 19:50:24,395 - AllOrderCreation -INFO - Stage=CONF PULL ALERT
+2023-09-08 19:50:24,580 - AllOrderCreation -INFO - Enter Spoke with
+2023-09-08 19:50:24,781 - AllOrderCreation -INFO - Click on Confirm Pull Alert  button
+2023-09-08 19:50:28,881 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:50:28,990 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:50:29,168 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:50:47,195 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:50:47,397 - AllOrderCreation -INFO - ServiceID=CPU
+2023-09-08 19:50:47,544 - AllOrderCreation -INFO - Stage=Confirm Pull
+2023-09-08 19:50:47,824 - AllOrderCreation -INFO - Click on Confirm Pull  button
+2023-09-08 19:50:47,936 - AllOrderCreation -INFO - Validation message is displayed=Part Pull DateTime is required.
+2023-09-08 19:50:47,973 - AllOrderCreation -INFO - ZoneID of is==CDT
+2023-09-08 19:50:47,975 - AllOrderCreation -INFO - 09:20
+2023-09-08 19:50:47,975 - AllOrderCreation -INFO - ZoneID is==CDT
+2023-09-08 19:50:47,975 - AllOrderCreation -INFO - 09/08/2023
+2023-09-08 19:50:48,343 - AllOrderCreation -INFO - Enter Actual Part Pull Date
+2023-09-08 19:50:48,484 - AllOrderCreation -INFO - Enter Actual Part Pull time
+2023-09-08 19:50:53,897 - AllOrderCreation -INFO - Click on Confirm Pull  button
+2023-09-08 19:50:53,984 - AllOrderCreation -INFO - Validation message is displayed=Verify all parts before proceeding.
+2023-09-08 19:50:54,026 - AllOrderCreation -INFO - Serial No of Part is==713062C2Y7ADP8IP6RWR0A
+
+2023-09-08 19:50:55,230 - AllOrderCreation -INFO - Entered serial No in scan barcode
+2023-09-08 19:50:55,268 - AllOrderCreation -INFO - ZoneID of is==CDT
+2023-09-08 19:50:55,268 - AllOrderCreation -INFO - 09:20
+2023-09-08 19:50:55,269 - AllOrderCreation -INFO - ZoneID is==CDT
+2023-09-08 19:50:55,269 - AllOrderCreation -INFO - 09/08/2023
+2023-09-08 19:50:55,699 - AllOrderCreation -INFO - Enter Actual Part Pull Date
+2023-09-08 19:50:56,012 - AllOrderCreation -INFO - Enter Actual Part Pull time
+2023-09-08 19:51:01,369 - AllOrderCreation -INFO - Click on Confirm Pull  button
+2023-09-08 19:51:04,640 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:51:04,718 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:51:04,906 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:51:23,543 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:51:23,683 - AllOrderCreation -INFO - Clicked on Close button
+2023-09-08 19:51:23,757 - AllOrderCreation -INFO - ServiceID=CPU
+2023-09-08 19:51:23,789 - AllOrderCreation -INFO - ZoneID of is==CDT
+2023-09-08 19:51:23,789 - AllOrderCreation -INFO - 09:21
+2023-09-08 19:51:23,915 - AllOrderCreation -INFO - Enter Actual DL Time
+2023-09-08 19:51:24,034 - AllOrderCreation -INFO - Enter Signature
+2023-09-08 19:51:26,696 - AllOrderCreation -INFO - Clicked on Confirm DEL button
+2023-09-08 19:51:37,089 - AllOrderCreation -INFO - Dialogue is not exist
+2023-09-08 19:51:37,184 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:51:37,269 - AllOrderCreation -INFO - Enter PickUpID in Search input
+2023-09-08 19:51:37,421 - AllOrderCreation -INFO - Click on Search button
+2023-09-08 19:51:38,104 - AllOrderCreation -INFO - Job is not found in Operation Tab
+2023-09-08 19:51:38,382 - AllOrderCreation -INFO - Click on Inventory tab
+2023-09-08 19:51:38,482 - AllOrderCreation -INFO - Clear search input
+2023-09-08 19:51:38,602 - AllOrderCreation -INFO - Enter pickupID in search input
+2023-09-08 19:51:47,059 - AllOrderCreation -INFO - Job is available in NetAgent
+2023-09-08 19:51:47,830 - AllOrderCreation -INFO - ==Moved to Connect==
+2023-09-08 19:51:58,589 - AllOrderCreation -INFO - Clicked on Operations
+2023-09-08 19:51:58,849 - AllOrderCreation -INFO - Clicked on TaskLog
+2023-09-08 19:52:05,573 - AllOrderCreation -INFO - PickUpID=10276859
+
+2023-09-08 19:52:12,752 - AllOrderCreation -INFO - Total Jobs==0
+2023-09-08 19:52:12,753 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
+2023-09-08 19:52:23,453 - AllOrderCreation -INFO - Clicked on Operations
+2023-09-08 19:52:23,767 - AllOrderCreation -INFO - Clicked on TaskLog
+2023-09-08 19:52:30,761 - AllOrderCreation -INFO - PickUpID=10276859
+
+2023-09-08 19:52:40,050 - AllOrderCreation -INFO - Total Jobs==0
+2023-09-08 19:52:40,050 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
+2023-09-08 19:52:40,203 - AllOrderCreation -INFO - Stage=VERIFY CUSTOMER BILL
+2023-09-08 19:52:47,369 - AllOrderCreation -INFO - Env : STG
+2023-09-08 19:52:47,370 - AllOrderCreation -INFO - URL use for STG test is : https://stagingna.nglog.com/
+2023-09-08 19:52:47,370 - AllOrderCreation -INFO - Url opened
+2023-09-08 19:53:38,012 - org.asynchttpclient.netty.handler.WebSocketHandler -WARN - onError
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
