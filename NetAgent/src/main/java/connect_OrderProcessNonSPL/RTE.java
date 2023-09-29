@@ -35,20 +35,22 @@ public class RTE extends BaseInit {
 
 		OrderCreation OC = new OrderCreation();
 
-		// Get Tracking No 
+		msg.append("\n\n" + "=====Service:- RTE=====" + "\n");
+
+		// Get Tracking No
 		getRTETrackingNo();
 
-		// -Search RTE job 
+		// -Search RTE job
 		searchRTEJob();
 
-		// -Process From Connect 
+		// -Process From Connect
 		rteConnectProcess();
 
 		// --Refresh App
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		OC.refreshApp();
 
-		// --NetAgent Tab 
+		// --NetAgent Tab
 		OC.naTab();
 
 		RTE_OrderProcess RTEO = new RTE_OrderProcess();
@@ -59,7 +61,8 @@ public class RTE extends BaseInit {
 
 		// Process from connect
 		rteVerifyConnect();
-
+		
+		
 
 	}
 

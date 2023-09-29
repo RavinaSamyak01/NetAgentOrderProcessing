@@ -244,7 +244,7 @@ public class OrderCreation extends BaseInit {
 				// --DL Phone
 				String DLPhone = getData("OrderCreation", i, 16);
 				isElementPresent("OCDLPhone_id").clear();
-				isElementPresent("OCDLPhone_id").sendKeys(DLPhone,Keys.TAB);
+				isElementPresent("OCDLPhone_id").sendKeys(DLPhone, Keys.TAB);
 				logger.info("Entered DL Phone");
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 				Thread.sleep(2000);
@@ -272,7 +272,7 @@ public class OrderCreation extends BaseInit {
 				isElementPresent("OCTotalQty_id").sendKeys(Keys.TAB);
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 				Thread.sleep(2000);
-			
+
 				logger.info("Entered Total Qty");
 
 				// --Weight
@@ -304,16 +304,15 @@ public class OrderCreation extends BaseInit {
 				logger.info("Entered Height");
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 				Thread.sleep(1000);
-				
+
 // -- COMMODITY_DROPDOWN
-				
+
 				Select comodity_drpdown1 = new Select(isElementPresent("comodity_drpdown_xpath"));
 				comodity_drpdown1.selectByIndex(1);
 				logger.info("comodity dropdown is selected");
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 				Thread.sleep(2000);
-				
-				
+
 				// --Commodity
 				String Commodity = getData("OrderCreation", i, 23);
 				isElementPresent("OCDesc_id").clear();
@@ -363,7 +362,7 @@ public class OrderCreation extends BaseInit {
 					T3pAc.selectByIndex(1);
 					logger.info("Selected 3P account");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-					
+
 					// --Select 3P Service
 					WebElement t3pService = isElementPresent("EO3PServiceS_id");
 					act.moveToElement(t3pService).build().perform();
@@ -375,7 +374,6 @@ public class OrderCreation extends BaseInit {
 					T3pService.selectByVisibleText("FEDEX_GROUND");
 					logger.info("Selected 3P Service");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
 
 					// --Scroll down
 					r.keyPress(KeyEvent.VK_TAB);
@@ -438,14 +436,14 @@ public class OrderCreation extends BaseInit {
 					// --Click on Select Flight
 					WebElement SelectFlight = isElementPresent("TLSelFlight_id");
 					wait.until(ExpectedConditions.elementToBeClickable(SelectFlight));
-				//	SelectFlight.click();
-					jse.executeScript("arguments[0].scrollIntoView(true);", SelectFlight); 
+					// SelectFlight.click();
+					jse.executeScript("arguments[0].scrollIntoView(true);", SelectFlight);
 					Thread.sleep(1500);
-				jse.executeScript("arguments[0].click();", SelectFlight);
+					jse.executeScript("arguments[0].click();", SelectFlight);
 					logger.info("Clicked on Select Flight button");
-					
+
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-					Thread.sleep(1500);	
+					Thread.sleep(1500);
 
 					try {
 						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
@@ -498,7 +496,7 @@ public class OrderCreation extends BaseInit {
 						jse.executeScript("arguments[0].click();", DirectOnly);
 						logger.info("Clicked on DirectOnly Checkbox");
 						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-Thread.sleep(1500);
+						Thread.sleep(1500);
 						// --Click on Request route
 						ReqRoute = isElementPresent("TLFlighReqR_id");
 						wait.until(ExpectedConditions.visibilityOf(ReqRoute));
@@ -520,11 +518,11 @@ Thread.sleep(1500);
 					// --Click on Assign button
 					WebElement AssignFlight = isElementPresent("TLAssignFlght_xpath");
 					wait.until(ExpectedConditions.elementToBeClickable(AssignFlight));
-					AssignFlight.click();
+					// AssignFlight.click();
+					jse.executeScript("arguments[0].click();", AssignFlight);
 					logger.info("Clicked on Assign button");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-					
-					
+
 					try {
 
 						WebElement Validation = isElementPresent("Error_id");
@@ -532,8 +530,8 @@ Thread.sleep(1500);
 						String ValMsg = Validation.getText();
 						logger.info("Validation==" + ValMsg);
 
-						if (ValMsg
-								.equalsIgnoreCase("Please select the appropriate Product Code before assigning the flight.")) {
+						if (ValMsg.equalsIgnoreCase(
+								"Please select the appropriate Product Code before assigning the flight.")) {
 
 							// --Select Product Code
 							WebElement ProductCode = isElementPresent("TLSFProdCode_id");
@@ -585,7 +583,7 @@ Thread.sleep(1500);
 					// --Scroll Down
 					jse.executeScript("window.scrollBy(0,450)", "");
 					Thread.sleep(2000);
-					
+
 					// --Scroll Down
 					jse.executeScript("window.scrollBy(0,450)", "");
 					Thread.sleep(2000);
@@ -735,15 +733,14 @@ Thread.sleep(1500);
 						isElementPresent("OCHeight_id").sendKeys(Height);
 						isElementPresent("OCHeight_id").sendKeys(Keys.TAB);
 						logger.info("Entered Height");
-						
+
 						// -- COMMODITY_DROPDOWN
-						
+
 						Select comodity_drpdown = new Select(isElementPresent("comodity_drpdown_xpath"));
 						comodity_drpdown.selectByIndex(1);
 						logger.info("comodity dropdown is selected");
 						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 						Thread.sleep(2000);
-						
 
 						// --Commodity
 						Commodity = getData("OrderCreation", i, 23);
@@ -981,7 +978,7 @@ Thread.sleep(1500);
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 					logger.info("Selected FedEx service");
 				}
-				
+
 				try {
 					// --Select 3P Service
 					// --Select 3P Service
@@ -999,7 +996,6 @@ Thread.sleep(1500);
 				} catch (Exception e) {
 
 				}
-
 
 				// --Scroll Up
 				r.keyPress(KeyEvent.VK_TAB);
@@ -1158,7 +1154,6 @@ Thread.sleep(1500);
 		}
 		Actions act = new Actions(Driver);
 
-
 		String ExpCourierID = getData("Sheet1", i, 38);
 		logger.info("Expected CourierID==" + ExpCourierID);
 		msg.append("Expected CourierID==" + ExpCourierID + "\n");
@@ -1302,170 +1297,169 @@ Thread.sleep(1500);
 		Actions act = new Actions(Driver);
 		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time;
 		try {
-			
-		
-		try {
-			// Enter JobID*
-			wait2.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-			wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtContains")));
-			wait.until(ExpectedConditions.elementToBeClickable(By.id("txtContains")));
 
-			String PUID = getData("OrderCreation", i, 32);
-			isElementPresent("TLSearch_id").clear();
-			isElementPresent("TLSearch_id").sendKeys(PUID);
-			isElementPresent("TLSearch_id").sendKeys(Keys.TAB);
-
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-			WebElement Search = isElementPresent("TLSearchButton_id");
-			wait.until(ExpectedConditions.elementToBeClickable(Search));
-			jse.executeScript("arguments[0].click();", Search);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 			try {
-				getScreenshot(Driver, "H3PJob_After_TenderTo3P");
+				// Enter JobID*
+				wait2.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtContains")));
+				wait.until(ExpectedConditions.elementToBeClickable(By.id("txtContains")));
 
-				List<WebElement> Jobs = Driver
-						.findElements(By.xpath("//*[contains(@aria-label,'Pickup')]//label[@id=\"lblDateTime\"]"));
-				int totaljobs = Jobs.size();
-				logger.info("Total Jobs==" + totaljobs);
-				for (int job = 0; job < totaljobs; job++) {
-					String PickupID = Jobs.get(job).getText();
-					String PickID = null;
+				String PUID = getData("OrderCreation", i, 32);
+				isElementPresent("TLSearch_id").clear();
+				isElementPresent("TLSearch_id").sendKeys(PUID);
+				isElementPresent("TLSearch_id").sendKeys(Keys.TAB);
 
-					if (PickupID.startsWith("N")) {
-						String[] PickValue = PickupID.split("N");
-						PickID = PickValue[1];
-					} else if (PickupID.startsWith("F")) {
-						String[] PickValue = PickupID.split("F");
-						PickID = PickValue[1];
-					} else if (PickupID.startsWith("R")) {
-						String[] PickValue = PickupID.split("R");
-						PickID = PickValue[1];
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				WebElement Search = isElementPresent("TLSearchButton_id");
+				wait.until(ExpectedConditions.elementToBeClickable(Search));
+				jse.executeScript("arguments[0].click();", Search);
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				try {
+					getScreenshot(Driver, "H3PJob_After_TenderTo3P");
+
+					List<WebElement> Jobs = Driver
+							.findElements(By.xpath("//*[contains(@aria-label,'Pickup')]//label[@id=\"lblDateTime\"]"));
+					int totaljobs = Jobs.size();
+					logger.info("Total Jobs==" + totaljobs);
+					for (int job = 0; job < totaljobs; job++) {
+						String PickupID = Jobs.get(job).getText();
+						String PickID = null;
+
+						if (PickupID.startsWith("N")) {
+							String[] PickValue = PickupID.split("N");
+							PickID = PickValue[1];
+						} else if (PickupID.startsWith("F")) {
+							String[] PickValue = PickupID.split("F");
+							PickID = PickValue[1];
+						} else if (PickupID.startsWith("R")) {
+							String[] PickValue = PickupID.split("R");
+							PickID = PickValue[1];
+						}
+						PUID = getData("OrderCreation", i, 32);
+						logger.info("Searched PickUpID==" + PickID);
+						if (PickID.equalsIgnoreCase(PUID)) {
+							Jobs.get(job).click();
+							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+							break;
+						}
+
 					}
-					PUID = getData("OrderCreation", i, 32);
-					logger.info("Searched PickUpID==" + PickID);
-					if (PickID.equalsIgnoreCase(PUID)) {
-						Jobs.get(job).click();
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-						break;
-					}
+
+					/*
+					 * // --Click on Job Name WebElement JobName =
+					 * isElementPresent("TLH3PJobName_id");
+					 * wait.until(ExpectedConditions.elementToBeClickable(JobName));
+					 * JobName.click(); logger.info("Clicked on Job Name");
+					 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
+					 * ));
+					 */
+					logger.info("Same job is displayed with 2 status==PASS");
+					// msg.append("Same job is displayed with 2 status==PASS" + "\n");
+
+					// --Get StageName
+				} catch (Exception eTenderTo3P) {
+					logger.info("Same job is not displayed with 2 status");
+					// msg.append("Same job is not displayed with 2 status" + "\n");
+
+					// --Get StageName
 
 				}
 
-				/*
-				 * // --Click on Job Name WebElement JobName =
-				 * isElementPresent("TLH3PJobName_id");
-				 * wait.until(ExpectedConditions.elementToBeClickable(JobName));
-				 * JobName.click(); logger.info("Clicked on Job Name");
-				 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
-				 * ));
-				 */
-				logger.info("Same job is displayed with 2 status==PASS");
-				// msg.append("Same job is displayed with 2 status==PASS" + "\n");
+			} catch (Exception eTasklog) {
+				// --Go To Operations
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("a_operations")));
+				WebElement Operations = isElementPresent("OperMenu_id");
+				act.moveToElement(Operations).click().perform();
+				logger.info("Clicked on Operations");
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-				// --Get StageName
-			} catch (Exception eTenderTo3P) {
-				logger.info("Same job is not displayed with 2 status");
-				// msg.append("Same job is not displayed with 2 status" + "\n");
+				wait2.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+						By.xpath("//*[@class=\"OpenCloseClass dropdown open\"]//ul")));
 
-				// --Get StageName
+				// --Go to TaskLog
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("a_TaskLog")));
+				isElementPresent("OpTaskLog_id").click();
+				logger.info("Clicked on TaskLog");
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-			}
+				getScreenshot(Driver, "TaskLog");
 
-		} catch (Exception eTasklog) {
-			// --Go To Operations
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("a_operations")));
-			WebElement Operations = isElementPresent("OperMenu_id");
-			act.moveToElement(Operations).click().perform();
-			logger.info("Clicked on Operations");
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				// Enter JobID*
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-			wait2.until(ExpectedConditions
-					.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"OpenCloseClass dropdown open\"]//ul")));
+				String PUID = getData("OrderCreation", i, 32);
+				logger.info("PickUpID=" + PUID + "\n");
+				isElementPresent("TLSearch_id").clear();
+				isElementPresent("TLSearch_id").sendKeys(PUID);
+				isElementPresent("TLSearch_id").sendKeys(Keys.TAB);
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-			// --Go to TaskLog
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("a_TaskLog")));
-			isElementPresent("OpTaskLog_id").click();
-			logger.info("Clicked on TaskLog");
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				WebElement Search = isElementPresent("TLSearchButton_id");
+				wait.until(ExpectedConditions.elementToBeClickable(Search));
+				jse.executeScript("arguments[0].click();", Search);
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-			getScreenshot(Driver, "TaskLog");
+				try {
+					getScreenshot(Driver, "H3PJob_After_TenderTo3P");
 
-			// Enter JobID*
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+					List<WebElement> Jobs = Driver
+							.findElements(By.xpath("//*[contains(@aria-label,'Pickup')]//label[@id=\"lblDateTime\"]"));
+					int totaljobs = Jobs.size();
+					logger.info("Total Jobs==" + totaljobs);
+					for (int job = 0; job < Jobs.size(); job++) {
+						String PickupID = Jobs.get(job).getText();
+						String PickID = null;
 
-			String PUID = getData("OrderCreation", i, 32);
-			logger.info("PickUpID=" + PUID + "\n");
-			isElementPresent("TLSearch_id").clear();
-			isElementPresent("TLSearch_id").sendKeys(PUID);
-			isElementPresent("TLSearch_id").sendKeys(Keys.TAB);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+						if (PickupID.startsWith("N")) {
+							String[] PickValue = PickupID.split("N");
+							PickID = PickValue[1];
+						} else if (PickupID.startsWith("F")) {
+							String[] PickValue = PickupID.split("F");
+							PickID = PickValue[1];
+						} else if (PickupID.startsWith("R")) {
+							String[] PickValue = PickupID.split("R");
+							PickID = PickValue[1];
+						}
+						PUID = getData("OrderCreation", i, 32);
+						logger.info("Searched PickUpID==" + PickID);
+						if (PickID.equalsIgnoreCase(PUID)) {
+							Jobs.get(job).click();
+							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+							break;
+						}
 
-			WebElement Search = isElementPresent("TLSearchButton_id");
-			wait.until(ExpectedConditions.elementToBeClickable(Search));
-			jse.executeScript("arguments[0].click();", Search);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-			try {
-				getScreenshot(Driver, "H3PJob_After_TenderTo3P");
-
-				List<WebElement> Jobs = Driver
-						.findElements(By.xpath("//*[contains(@aria-label,'Pickup')]//label[@id=\"lblDateTime\"]"));
-				int totaljobs = Jobs.size();
-				logger.info("Total Jobs==" + totaljobs);
-				for (int job = 0; job < Jobs.size(); job++) {
-					String PickupID = Jobs.get(job).getText();
-					String PickID = null;
-
-					if (PickupID.startsWith("N")) {
-						String[] PickValue = PickupID.split("N");
-						PickID = PickValue[1];
-					} else if (PickupID.startsWith("F")) {
-						String[] PickValue = PickupID.split("F");
-						PickID = PickValue[1];
-					} else if (PickupID.startsWith("R")) {
-						String[] PickValue = PickupID.split("R");
-						PickID = PickValue[1];
 					}
-					PUID = getData("OrderCreation", i, 32);
-					logger.info("Searched PickUpID==" + PickID);
-					if (PickID.equalsIgnoreCase(PUID)) {
-						Jobs.get(job).click();
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-						break;
-					}
+					/*
+					 * // --Click on Job Name WebElement JobName =
+					 * isElementPresent("TLH3PJobName_id");
+					 * wait.until(ExpectedConditions.elementToBeClickable(JobName));
+					 * JobName.click(); logger.info("Clicked on Job Name");
+					 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
+					 * ));
+					 */
+					logger.info("Same job is displayed with 2 status==PASS");
+					// msg.append("Same job is displayed with 2 status==PASS" + "\n");
+
+					// --Get StageName
+				} catch (Exception eTenderTo3P) {
+					logger.info("Same job is not displayed with 2 status");
+					// msg.append("Same job is not displayed with 2 status" + "\n");
+
+					// --Get StageName
 
 				}
-				/*
-				 * // --Click on Job Name WebElement JobName =
-				 * isElementPresent("TLH3PJobName_id");
-				 * wait.until(ExpectedConditions.elementToBeClickable(JobName));
-				 * JobName.click(); logger.info("Clicked on Job Name");
-				 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
-				 * ));
-				 */
-				logger.info("Same job is displayed with 2 status==PASS");
-				// msg.append("Same job is displayed with 2 status==PASS" + "\n");
-
-				// --Get StageName
-			} catch (Exception eTenderTo3P) {
-				logger.info("Same job is not displayed with 2 status");
-				// msg.append("Same job is not displayed with 2 status" + "\n");
-
-				// --Get StageName
 
 			}
+			setResultData("Result", 22, 4, "PASS");
+
+		} catch (Exception ewait) {
+			getScreenshot(Driver, "SearchJobError" + i);
+			String Error = ewait.getMessage();
+			setResultData("Result", 22, 4, "FAIL");
+			setResultData("Result", 22, 5, Error);
 
 		}
-		setResultData("Result", 22, 4, "PASS");
-
-	} catch (Exception ewait) {
-		getScreenshot(Driver, "SearchJobError" + i);
-		String Error = ewait.getMessage();
-		setResultData("Result", 22, 4, "FAIL");
-		setResultData("Result", 22, 5, Error);
-
-	}
 
 	}
 
@@ -1538,60 +1532,60 @@ Thread.sleep(1500);
 		try {
 
 			try {
-			// --Unknown Shipper click
-			WebElement UnShipper = isElementPresent("TLUnShipp_id");
-			wait.until(ExpectedConditions.visibilityOf(UnShipper));
-			wait.until(ExpectedConditions.elementToBeClickable(UnShipper));
-			act.moveToElement(UnShipper).build().perform();
-			js.executeScript("arguments[0].click();", UnShipper);
-			logger.info("Clicked on Unknown Shipper");
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				// --Unknown Shipper click
+				WebElement UnShipper = isElementPresent("TLUnShipp_id");
+				wait.until(ExpectedConditions.visibilityOf(UnShipper));
+				wait.until(ExpectedConditions.elementToBeClickable(UnShipper));
+				act.moveToElement(UnShipper).build().perform();
+				js.executeScript("arguments[0].click();", UnShipper);
+				logger.info("Clicked on Unknown Shipper");
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-			// --Wait for pop up of Unknown Shipper
-			wait.until(ExpectedConditions
-					.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"modal-dialog modal-sm\"]")));
+				// --Wait for pop up of Unknown Shipper
+				wait.until(ExpectedConditions
+						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"modal-dialog modal-sm\"]")));
 
-			// --Click on Confirm Button
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnConfirmExtrernal")));
-			WebElement UnShCOnfirm = isElementPresent("TLUnShConfrm_id");
-			wait.until(ExpectedConditions.elementToBeClickable(UnShCOnfirm));
-			UnShCOnfirm.click();
-			logger.info("Clicked on Confirm button");
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				// --Click on Confirm Button
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnConfirmExtrernal")));
+				WebElement UnShCOnfirm = isElementPresent("TLUnShConfrm_id");
+				wait.until(ExpectedConditions.elementToBeClickable(UnShCOnfirm));
+				UnShCOnfirm.click();
+				logger.info("Clicked on Confirm button");
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-			// --Scroll to get Rate
-			js.executeScript("window.scrollBy(0,400)", "");
-			String cost = isElementPresent("TLActualRate_id").getText();
-			setData("OrderCreation", i, 31, cost);
-			logger.info("Scroll down to Get the Rate");
+				// --Scroll to get Rate
+				js.executeScript("window.scrollBy(0,400)", "");
+				String cost = isElementPresent("TLActualRate_id").getText();
+				setData("OrderCreation", i, 31, cost);
+				logger.info("Scroll down to Get the Rate");
 
-			// --Click on Save Changes
-			isElementPresent("TLSaveChanges_id").click();
-			logger.info("Clicked on Save Changes button");
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				// --Click on Save Changes
+				isElementPresent("TLSaveChanges_id").click();
+				logger.info("Clicked on Save Changes button");
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-			// --Set result in test scenarios
-			if (i == 2) {
-				setData("TC_OrderProcess", 13, 5, "PASS");
+				// --Set result in test scenarios
+				if (i == 2) {
+					setData("TC_OrderProcess", 13, 5, "PASS");
+				}
+			} catch (Exception e) {
+				getScreenshot(Driver, "UnknownShippereRROR");
+				// --Set result in test scenarios
+				if (i == 2) {
+					setData("TC_OrderProcess", 13, 5, "FAIL");
+				}
 			}
-		} catch (Exception e) {
-			getScreenshot(Driver, "UnknownShippereRROR");
-			// --Set result in test scenarios
-			if (i == 2) {
-				setData("TC_OrderProcess", 13, 5, "FAIL");
-			}
+			setResultData("Result", 14, 4, "PASS");
+
+		} catch (Exception ewait) {
+			logger.info(ewait);
+			getScreenshot(Driver, "eUnknownShipperError");
+			String Error = ewait.getMessage();
+			setResultData("Result", 14, 4, "FAIL");
+			setResultData("Result", 14, 5, Error);
 		}
-		setResultData("Result", 14, 4, "PASS");
 
-	} catch (Exception ewait) {
-		logger.info(ewait);
-		getScreenshot(Driver, "eUnknownShipperError");
-		String Error = ewait.getMessage();
-		setResultData("Result", 14, 4, "FAIL");
-		setResultData("Result", 14, 5, Error);
 	}
-
-}
 
 	public void selectFlight(int i)
 			throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
@@ -1599,8 +1593,8 @@ Thread.sleep(1500);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-		
-			try {
+
+		try {
 			// --Move to Job Status Tab
 			WebElement JoStatusTab = isElementPresent("TLJobStatusTab_id");
 			wait.until(ExpectedConditions.visibilityOf(JoStatusTab));
@@ -2129,6 +2123,7 @@ Thread.sleep(1500);
 		}
 
 	}
+
 	public static void routeNoteSpecialInstruction() throws InterruptedException {
 		Thread.sleep(1000);
 		Driver.findElement(By.id("btnRouteAck")).click();
@@ -2223,82 +2218,54 @@ Thread.sleep(1500);
 		Actions act = new Actions(Driver);
 		String TrackNo = null;
 		try {
-		try {
-			// --Ship Label
-			WebElement ShipLabel = isElementPresent("TT3ShipLabel_id");
-			wait.until(ExpectedConditions.elementToBeClickable(ShipLabel));
-			ShipLabel.click();
-			logger.info("Clicked on Ship Label Services");
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-form=\"SLForm\"]")));
-
 			try {
-				// --If Ship Label is not generated
-				// --Select 3p Account
-				Select p3acc = new Select(isElementPresent("TT3ACDrop_id"));
-				p3acc.selectByIndex(1);
-				logger.info("Selected 3p Account");
+				// --Ship Label
+				WebElement ShipLabel = isElementPresent("TT3ShipLabel_id");
+				wait.until(ExpectedConditions.elementToBeClickable(ShipLabel));
+				ShipLabel.click();
+				logger.info("Clicked on Ship Label Services");
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-form=\"SLForm\"]")));
 
-				// --Select Service
-				Select Contacttype = new Select(isElementPresent("TT3Servicedrp_id"));
-				Contacttype.selectByVisibleText("FEDEX_GROUND");
-				logger.info("Selected Service");
-				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-				// --Click on Submit
-				WebElement Submit = isElementPresent("TT3ShiLSubmit_id");
-				wait.until(ExpectedConditions.elementToBeClickable(Submit));
-				Submit.click();
-				logger.info("Clicked on Submit button");
-				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-				// --Print button
-				wait.until(ExpectedConditions.visibilityOfElementLocated(
-						By.xpath("//*[@id=\"scrollboxIframe\"]//button[@id=\"btnPrint\"]")));
-				String TrackingNo = isElementPresent("SLSTrackNo_xpath").getText();
-				logger.info("Tracking No==" + TrackingNo);
-				setResultData("Result", 19, 2, TrackNo); // wait time // wait time
-
-				// --Get the TrackingNo
-				String inLine = TrackingNo;
-				String[] lineSplits = inLine.split(":");
-				TrackNo = lineSplits[1];
-				logger.info("Tracking No==" + TrackNo);
-
-			} catch (Exception eShipLabel) {
-				// --If Ship Label is generated
-
-				// --Send Email
-				WebElement SendEmail = isElementPresent("SLSemail_id");
-				wait.until(ExpectedConditions.elementToBeClickable(SendEmail));
-				SendEmail.clear();
-				SendEmail.sendKeys("ravina.prajapati.samyak@gmail.com");
-				logger.info("Entered Email in Send Email");
-				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-				// --Click on Send Button
-				WebElement SendBTN = isElementPresent("SLSSend_id");
-				wait.until(ExpectedConditions.elementToBeClickable(SendBTN));
-				js.executeScript("arguments[0].click();", SendBTN);
-				logger.info("Clicked on Send button");
-				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-				// ErrorMsg
 				try {
-					wait.until(
-							ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"idValidationPopup\"]")));
-					logger.info("ErroMsg is Displayed=" + isElementPresent("SLSVal_xpath").getText());
-
-					// -- Check the checkbox
-					WebElement ShipLabl = isElementPresent("SLSSelect1_xpath");
-					wait.until(ExpectedConditions.elementToBeClickable(ShipLabl));
-					js.executeScript("arguments[0].click();", ShipLabl);
-					logger.info("Checked the checkbox of ship label");
+					// --If Ship Label is not generated
+					// --Select 3p Account
+					Select p3acc = new Select(isElementPresent("TT3ACDrop_id"));
+					p3acc.selectByIndex(1);
+					logger.info("Selected 3p Account");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
+					// --Select Service
+					Select Contacttype = new Select(isElementPresent("TT3Servicedrp_id"));
+					Contacttype.selectByVisibleText("FEDEX_GROUND");
+					logger.info("Selected Service");
+					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+					// --Click on Submit
+					WebElement Submit = isElementPresent("TT3ShiLSubmit_id");
+					wait.until(ExpectedConditions.elementToBeClickable(Submit));
+					Submit.click();
+					logger.info("Clicked on Submit button");
+					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+					// --Print button
+					wait.until(ExpectedConditions.visibilityOfElementLocated(
+							By.xpath("//*[@id=\"scrollboxIframe\"]//button[@id=\"btnPrint\"]")));
+					String TrackingNo = isElementPresent("SLSTrackNo_xpath").getText();
+					logger.info("Tracking No==" + TrackingNo);
+					setResultData("Result", 19, 2, TrackNo); // wait time // wait time
+
+					// --Get the TrackingNo
+					String inLine = TrackingNo;
+					String[] lineSplits = inLine.split(":");
+					TrackNo = lineSplits[1];
+					logger.info("Tracking No==" + TrackNo);
+
+				} catch (Exception eShipLabel) {
+					// --If Ship Label is generated
+
 					// --Send Email
-					SendEmail = isElementPresent("SLSemail_id");
+					WebElement SendEmail = isElementPresent("SLSemail_id");
 					wait.until(ExpectedConditions.elementToBeClickable(SendEmail));
 					SendEmail.clear();
 					SendEmail.sendKeys("ravina.prajapati.samyak@gmail.com");
@@ -2306,100 +2273,129 @@ Thread.sleep(1500);
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 					// --Click on Send Button
-					SendBTN = isElementPresent("SLSSend_id");
+					WebElement SendBTN = isElementPresent("SLSSend_id");
 					wait.until(ExpectedConditions.elementToBeClickable(SendBTN));
-					SendBTN.click();
+					js.executeScript("arguments[0].click();", SendBTN);
 					logger.info("Clicked on Send button");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-					wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("success")));
-					System.out
-							.println("Success Message is Displayed=" + isElementPresent("SLSSuccess_xpath").getText());
+					// ErrorMsg
+					try {
+						wait.until(ExpectedConditions
+								.visibilityOfElementLocated(By.xpath("//*[@id=\"idValidationPopup\"]")));
+						logger.info("ErroMsg is Displayed=" + isElementPresent("SLSVal_xpath").getText());
 
-				} catch (Exception e) {
-					logger.info("Error Message is not displayed");
-					System.out.println(e);
+						// -- Check the checkbox
+						WebElement ShipLabl = isElementPresent("SLSSelect1_xpath");
+						wait.until(ExpectedConditions.elementToBeClickable(ShipLabl));
+						js.executeScript("arguments[0].click();", ShipLabl);
+						logger.info("Checked the checkbox of ship label");
+						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+						// --Send Email
+						SendEmail = isElementPresent("SLSemail_id");
+						wait.until(ExpectedConditions.elementToBeClickable(SendEmail));
+						SendEmail.clear();
+						SendEmail.sendKeys("ravina.prajapati.samyak@gmail.com");
+						logger.info("Entered Email in Send Email");
+						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+						// --Click on Send Button
+						SendBTN = isElementPresent("SLSSend_id");
+						wait.until(ExpectedConditions.elementToBeClickable(SendBTN));
+						SendBTN.click();
+						logger.info("Clicked on Send button");
+						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+						wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("success")));
+						System.out.println(
+								"Success Message is Displayed=" + isElementPresent("SLSSuccess_xpath").getText());
+
+					} catch (Exception e) {
+						logger.info("Error Message is not displayed");
+						System.out.println(e);
+					}
+
+					// --Print button
+					wait.until(ExpectedConditions.visibilityOfElementLocated(
+							By.xpath("//*[@id=\"scrollboxIframe\"]//button[@id=\"btnPrint\"]")));
+					String TrackingNo = isElementPresent("SLSTrackNo_xpath").getText();
+					logger.info("Tracking No==" + TrackingNo);
+
+					// --Get the TrackingNo
+					String inLine = TrackingNo;
+					String[] lineSplits = inLine.split(":");
+					TrackNo = lineSplits[1];
+					logger.info("Tracking No==" + TrackNo);
+					setResultData("Result", 19, 2, TrackNo); // wait time // wait time
+
+					/*
+					 * // --Click on Print Button WebElement PrintBTN =
+					 * isElementPresent("SLSPrintBTN_id");
+					 * wait.until(ExpectedConditions.elementToBeClickable(PrintBTN));
+					 * PrintBTN.click(); logger.info("Clicked on Print button");
+					 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
+					 * )); wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(
+					 * "//*[@ng-form=\"SLForm\"]")));
+					 * 
+					 * // Handle Print window String WindowHandlebefore = Driver.getWindowHandle();
+					 * for (String windHandle : Driver.getWindowHandles()) {
+					 * Driver.switchTo().window(windHandle);
+					 * logger.info("Switched to Print window"); Thread.sleep(5000);
+					 * getScreenshot(Driver, "PrintShipLabelService"); } Driver.close();
+					 * logger.info("Closed Print window");
+					 * 
+					 * Driver.switchTo().window(WindowHandlebefore);
+					 * logger.info("Switched to main window");
+					 */
+
 				}
 
-				// --Print button
-				wait.until(ExpectedConditions.visibilityOfElementLocated(
-						By.xpath("//*[@id=\"scrollboxIframe\"]//button[@id=\"btnPrint\"]")));
-				String TrackingNo = isElementPresent("SLSTrackNo_xpath").getText();
-				logger.info("Tracking No==" + TrackingNo);
+				try {
+					// --Close
+					WebElement SLClose = isElementPresent("SLSCloseBtn_id");
+					js.executeScript("arguments[0].click();", SLClose);
+					logger.info("Clicked on Close button of ShipLabel");
+					wait.until(
+							ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@ng-form=\\\"SLForm\\\"]")));
+					Thread.sleep(2000);
+				} catch (Exception CLoseee) {
+					wait.until(
+							ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-form=\"SLForm\"]")));
 
-				// --Get the TrackingNo
-				String inLine = TrackingNo;
-				String[] lineSplits = inLine.split(":");
-				TrackNo = lineSplits[1];
-				logger.info("Tracking No==" + TrackNo);
-				setResultData("Result", 19, 2, TrackNo); // wait time // wait time
+					// --Close
+					WebElement SLClose = isElementPresent("SLSCloseBtn_id");
+					act.moveToElement(SLClose).build().perform();
+					act.moveToElement(SLClose).click().perform();
+					logger.info("Clicked on Close button of ShipLabel");
+					Thread.sleep(2000);
+				}
 
-				/*
-				 * // --Click on Print Button WebElement PrintBTN =
-				 * isElementPresent("SLSPrintBTN_id");
-				 * wait.until(ExpectedConditions.elementToBeClickable(PrintBTN));
-				 * PrintBTN.click(); logger.info("Clicked on Print button");
-				 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
-				 * )); wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(
-				 * "//*[@ng-form=\"SLForm\"]")));
-				 * 
-				 * // Handle Print window String WindowHandlebefore = Driver.getWindowHandle();
-				 * for (String windHandle : Driver.getWindowHandles()) {
-				 * Driver.switchTo().window(windHandle);
-				 * logger.info("Switched to Print window"); Thread.sleep(5000);
-				 * getScreenshot(Driver, "PrintShipLabelService"); } Driver.close();
-				 * logger.info("Closed Print window");
-				 * 
-				 * Driver.switchTo().window(WindowHandlebefore);
-				 * logger.info("Switched to main window");
-				 */
+			} catch (Exception noShipLabel) {
+				logger.info("There is no Ship Label");
 
 			}
+			setResultData("Result", 19, 4, "PASS");
 
-			try {
-				// --Close
-				WebElement SLClose = isElementPresent("SLSCloseBtn_id");
-				js.executeScript("arguments[0].click();", SLClose);
-				logger.info("Clicked on Close button of ShipLabel");
-				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@ng-form=\\\"SLForm\\\"]")));
-				Thread.sleep(2000);
-			} catch (Exception CLoseee) {
-				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-form=\"SLForm\"]")));
+		} catch (Exception ewait) {
+			logger.info(ewait);
+			getScreenshot(Driver, "ShipLabelError");
+			String Error1 = ewait.getMessage();
+			setResultData("Result", 19, 4, "FAIL");
+			setResultData("Result", 19, 5, Error1); // wait time // wait time
+			// --Close Ship Label Service pop up
 
-				// --Close
-				WebElement SLClose = isElementPresent("SLSCloseBtn_id");
-				act.moveToElement(SLClose).build().perform();
-				act.moveToElement(SLClose).click().perform();
-				logger.info("Clicked on Close button of ShipLabel");
-				Thread.sleep(2000);
-			}
-
-		} catch (Exception noShipLabel) {
-			logger.info("There is no Ship Label");
+			/*
+			 * logger.info("===ShipLabel Test End===");
+			 * msg.append("===ShipLabel Test End===" + "\n\n");
+			 */
 
 		}
-		setResultData("Result", 19, 4, "PASS");
-
-	} catch (Exception ewait) {
-		logger.info(ewait);
-		getScreenshot(Driver, "ShipLabelError");
-		String Error1 = ewait.getMessage();
-		setResultData("Result", 19, 4, "FAIL");
-		setResultData("Result", 19, 5, Error1); // wait time // wait time
-		// --Close Ship Label Service pop up
-
-		/*
-		 * logger.info("===ShipLabel Test End===");
-		 * msg.append("===ShipLabel Test End===" + "\n\n");
-		 */
-
-		
-	
-	}
 		logger.info("ShipLabel Test=PASS");
 		msg.append("ShipLabel Test=PASS" + "\n");
 		return TrackNo;
 	}
+
 	public void stage3Pdeliver(int i) throws Exception {
 		// JavascriptExecutor jse = (JavascriptExecutor) driver;// scroll,click
 		WebDriverWait wait;
@@ -2914,7 +2910,7 @@ Thread.sleep(1500);
 					logger.info("comodity dropdown is selected");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 					Thread.sleep(2000);
-					
+
 					WebElement Commo = isElementPresent("EOCommodity_id");
 					act.moveToElement(Commo).build().perform();
 					wait.until(ExpectedConditions.elementToBeClickable(Commo));
@@ -3204,7 +3200,7 @@ Thread.sleep(1500);
 			wait = new WebDriverWait(Driver, 40);// wait time
 
 		} catch (Exception ewait) {
-			wait = new WebDriverWait(Driver, 120);// wait time
+			wait = new WebDriverWait(Driver, 60);// wait time
 
 		}
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
@@ -3272,7 +3268,7 @@ Thread.sleep(1500);
 		}
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
-		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time;
+		WebDriverWait wait2 = new WebDriverWait(Driver, 15);// wait time;
 		try {
 			WebElement SearchBox = isElementPresent("NTaskSearchbox_id");
 			wait.until(ExpectedConditions.visibilityOf(SearchBox));

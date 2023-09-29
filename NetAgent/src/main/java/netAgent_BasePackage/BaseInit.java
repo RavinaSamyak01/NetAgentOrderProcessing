@@ -101,7 +101,7 @@ public class BaseInit {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
-			 options.addArguments("--headless", "--window-size=1920, 1080");
+			options.addArguments("--headless", "--window-size=1920, 1080");
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
@@ -317,18 +317,18 @@ public class BaseInit {
 			}
 
 		} else if (Env.equalsIgnoreCase("PROD")) {
-			baseUrl = storage.getProperty("Connect_PROD_URL");
+			baseUrl = storage.getProperty("ConnectPRODURL");
 			Driver.get(baseUrl);
 			Thread.sleep(2000);
 			try {
-				Driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+				//Driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("login")));
-				String UserName = storage.getProperty("Connect_PROD_UserName");
+				String UserName = storage.getProperty("ConnectPRODUserName");
 				highLight(isElementPresent("ConnectUserName_id"), Driver);
 				isElementPresent("ConnectUserName_id").sendKeys(UserName);
 				logger.info("Entered UserName");
 
-				String Password = storage.getProperty("Connect_PROD_Password");
+				String Password = storage.getProperty("ConnectPRODPassword");
 				highLight(isElementPresent("ConnectPassword_id"), Driver);
 				isElementPresent("ConnectPassword_id").sendKeys(Password);
 				logger.info("Entered Password");

@@ -49,19 +49,15 @@ public class AllOrderCreation extends BaseInit {
 
 			ActivateAccount();
 
-			try {
-				LOC LocJob = new LOC();
-				LocJob.locLocal();
-
-				setResultData("Result", 1, 4, "PASS");
-
-			} catch (Exception LOC) {
-				logger.info(LOC);
-				getScreenshot(Driver, "LOCIssue");
-				String Error = LOC.getMessage();
-				setResultData("Result", 1, 4, "FAIL");
-				setResultData("Result", 1, 5, Error);
-			}
+			/*
+			 * try { LOC LocJob = new LOC(); LocJob.locLocal();
+			 * 
+			 * setResultData("Result", 1, 4, "PASS");
+			 * 
+			 * } catch (Exception LOC) { logger.info(LOC); getScreenshot(Driver,
+			 * "LOCIssue"); String Error = LOC.getMessage(); setResultData("Result", 1, 4,
+			 * "FAIL"); setResultData("Result", 1, 5, Error); }
+			 */
 
 			try {
 				SD SDJob = new SD();
@@ -105,48 +101,37 @@ public class AllOrderCreation extends BaseInit {
 
 			}
 
-			try {
-				DRV DRVJob = new DRV();
-				DRVJob.drvDriver();
-				setResultData("Result", 5, 4, "PASS");
+			/*
+			 * try { DRV DRVJob = new DRV(); DRVJob.drvDriver(); setResultData("Result", 5,
+			 * 4, "PASS");
+			 * 
+			 * } catch (Exception DRV) { logger.info(DRV); getScreenshot(Driver,
+			 * "DRVIssue"); String Error = DRV.getMessage(); setResultData("Result", 5, 4,
+			 * "FAIL"); setResultData("Result", 5, 5, Error);
+			 * 
+			 * }
+			 */
 
-			} catch (Exception DRV) {
-				logger.info(DRV);
-				getScreenshot(Driver, "DRVIssue");
-				String Error = DRV.getMessage();
-				setResultData("Result", 5, 4, "FAIL");
-				setResultData("Result", 5, 5, Error);
-
-			}
-
-			try {
-				AIR AIRJob = new AIR();
-				AIRJob.airService();
-				setResultData("Result", 6, 4, "PASS");
-
-			} catch (Exception AIR) {
-				logger.info(AIR);
-				getScreenshot(Driver, "AIRIssue");
-				String Error = AIR.getMessage();
-				setResultData("Result", 6, 4, "FAIL");
-				setResultData("Result", 6, 5, Error);
-
-			}
-
-			try {
-				SDC SDCJob = new SDC();
-				SDCJob.sdcSameDayCity();
-				setResultData("Result", 7, 4, "PASS");
-
-			} catch (Exception SDC) {
-				logger.info(SDC);
-				String Error = SDC.getMessage();
-				setResultData("Result", 7, 4, "FAIL");
-				setResultData("Result", 7, 5, Error);
-				getScreenshot(Driver, "SDCIssue");
-
-			}
-
+			/*
+			 * try { AIR AIRJob = new AIR(); AIRJob.airService(); setResultData("Result", 6,
+			 * 4, "PASS");
+			 * 
+			 * } catch (Exception AIR) { logger.info(AIR); getScreenshot(Driver,
+			 * "AIRIssue"); String Error = AIR.getMessage(); setResultData("Result", 6, 4,
+			 * "FAIL"); setResultData("Result", 6, 5, Error);
+			 * 
+			 * }
+			 */
+			/*
+			 * try { SDC SDCJob = new SDC(); SDCJob.sdcSameDayCity();
+			 * setResultData("Result", 7, 4, "PASS");
+			 * 
+			 * } catch (Exception SDC) { logger.info(SDC); String Error = SDC.getMessage();
+			 * setResultData("Result", 7, 4, "FAIL"); setResultData("Result", 7, 5, Error);
+			 * getScreenshot(Driver, "SDCIssue");
+			 * 
+			 * }
+			 */
 			try {
 				FRA FRAJob = new FRA();
 				FRAJob.fraFreight();

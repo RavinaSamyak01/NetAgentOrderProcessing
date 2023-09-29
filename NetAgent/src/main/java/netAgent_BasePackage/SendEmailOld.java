@@ -27,7 +27,7 @@ public class SendEmailOld {
 		// connect to SMTP server
 		props = System.getProperties();
 		props.setProperty("mail.smtp.starttls.enable", "true");
-		props.setProperty("mail.smtp.auth", "false");
+		props.setProperty("mail.smtp.auth", "true");
 
 		// Setup mail server //
 		props.put("mail.smtp.host", hostName);
