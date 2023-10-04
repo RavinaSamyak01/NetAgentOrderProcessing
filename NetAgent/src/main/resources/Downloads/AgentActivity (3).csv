@@ -1,9 +1,0 @@
-﻿From_Date,To_Date
-05/29/2023,06/08/2023
-
-CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
-34769 -  PACIFIC COAST LOGISTIX,,,,,,,,,,,,,,,,           TotalShipment : 2        Total PCS : 2        Total WT :  6      
-,33221335 / 05/30/2023,PU,PCS : 1     WT : 3.00,PU#   10039384,FEDEX SAMEDAY SERVICE,C/O IBC MESSENGER INC,,"DORAL, FL 33126",PU TM : ,CITY NATIONAL BANK OF FLORIDA,2855 S LE JEUNE RD,,"COCONUT GROVE, FL 33134",DEL TM : ,,           TotalShipment : 2        Total PCS : 2        Total WT :  6      
-,33221336 / 05/30/2023,PU,PCS : 1     WT : 3.00,PU#   10039385,FEDEX SAMEDAY SERVICE,C/O IBC MESSENGER INC,,"DORAL, FL 33126",PU TM : ,CITY NATIONAL BANK OF FLORIDA,2855 S LE JEUNE RD,,"COCONUT GROVE, FL 33134",DEL TM : ,,           TotalShipment : 2        Total PCS : 2        Total WT :  6      
-,,,,,,,,,,,,,,,           Shipment : 2        SubTotal PCS : 2        SubTotal WT :  6      ,           TotalShipment : 2        Total PCS : 2        Total WT :  6      
-

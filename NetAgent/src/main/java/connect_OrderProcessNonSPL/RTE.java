@@ -15,6 +15,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
@@ -22,54 +23,99 @@ import com.thoughtworks.qdox.parser.ParseException;
 
 import connect_OCBaseMethods.OrderCreation;
 import connect_OCBaseMethods.VerifyCustomerBill;
+import connect_OCBaseMethods.cancel_job;
 import netAgent_BasePackage.BaseInit;
 import netAgent_OrderProcessing.RTE_OrderProcess;
 
 public class RTE extends BaseInit {
 
 	@Test
-	public void rtejobcreationprocess()
-			throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
+	public void rtejobcreationprocess() throws Exception {
 
-		WebDriverWait wait = new WebDriverWait(Driver, 40);
-
+		WebDriverWait wait = new WebDriverWait(Driver, 60);
+		String Env = storage.getProperty("Env");
 		OrderCreation OC = new OrderCreation();
 
-		msg.append("\n\n" + "=====Service:- RTE=====" + "\n");
+		if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
 
-		// Get Tracking No
-		getRTETrackingNo();
+			// Get Tracking No 
+			getRTETrackingNo();
 
-		// -Search RTE job
-		searchRTEJob();
+			// -Search RTE job 
+			searchRTEJob();
 
-		// -Process From Connect
-		rteConnectProcess();
+			// -Process From Connect 
+			rteConnectProcess();
 
-		// --Refresh App
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-		OC.refreshApp();
+			// --Refresh App
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			OC.refreshApp();
 
-		// --NetAgent Tab
-		OC.naTab();
+			// --NetAgent Tab 
+			OC.naTab();
 
-		RTE_OrderProcess RTEO = new RTE_OrderProcess();
-		RTEO.orderProcessRTEJOB();
+			RTE_OrderProcess RTEO = new RTE_OrderProcess();
+			RTEO.orderProcessRTEJOB();
 
-		// --COnnect Tab
-		OC.connectTab();
+			// --COnnect Tab
+			OC.connectTab();
 
-		// Process from connect
-		rteVerifyConnect();
-		
-		
+			// Process from connect
+			rteVerifyConnect();
 
+		}
+
+		else if (Env.equalsIgnoreCase("PROD"))
+
+		{
+			// -- create loc --> merge and create new RTE
+
+						OC.create_Loc_merge_loc_create_rte();
+						
+						// -Process From Connect
+						rteConnectProcess();
+
+						// --Refresh App
+						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+						OC.refreshApp();
+
+						// --NetAgent Tab
+						OC.naTab();
+
+						RTE_OrderProcess RTEO = new RTE_OrderProcess();
+						RTEO.orderProcessRTEJOB();
+
+						// --COnnect Tab
+						OC.connectTab();
+
+						// Process from connect
+						rteVerifyConnect();
+						
+						if (Env.equalsIgnoreCase("PROD")) {
+
+							// -- cancel job
+							cancel_job cb = new cancel_job();
+							cb.job_cancel(23);
+
+						}
+
+						else {
+
+							logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+						}
+						
+						// --NetAgent Tab 
+						OC.naTab();
+						Thread.sleep(2500);
+						
+		}
 	}
 
 	public void getRTETrackingNo() throws EncryptedDocumentException, InvalidFormatException, IOException {
 		WebDriverWait wait = new WebDriverWait(Driver, 60);
 		WebDriverWait wait2 = new WebDriverWait(Driver, 7);
 		Actions act = new Actions(Driver);
+		String Env = storage.getProperty("Env");
 		// --Go to RouteList
 		// --Go to Tools tab
 		try {
@@ -95,11 +141,23 @@ public class RTE extends BaseInit {
 
 			// --Enter RoutWorkID
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("txtRouteWorkId")));
-			String RoutWID = getData("RTE", 1, 0);
-			msg.append("RouteWorkID is==" + RoutWID + "\n");
-			isElementPresent("RLRWIDInput_id").clear();
-			isElementPresent("RLRWIDInput_id").sendKeys(RoutWID);
-			logger.info("Entered RoutWorkID");
+
+			if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
+
+				String RoutWID = getData("RTE", 1, 0);
+				msg.append("RouteWorkID is==" + RoutWID + "\n");
+				isElementPresent("RLRWIDInput_id").clear();
+				isElementPresent("RLRWIDInput_id").sendKeys(RoutWID);
+				logger.info("Entered RoutWorkID");
+			}
+
+			else if (Env.equalsIgnoreCase("Prod")) {
+				String RoutWID = getData("RTE", 2, 0);
+				msg.append("RouteWorkID is==" + RoutWID + "\n");
+				isElementPresent("RLRWIDInput_id").clear();
+				isElementPresent("RLRWIDInput_id").sendKeys(RoutWID);
+				logger.info("Entered RoutWorkID");
+			}
 
 			// --Click on Search
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSearch")));
@@ -128,8 +186,10 @@ public class RTE extends BaseInit {
 					logger.info("RWTrackingNo is ==" + RWTrackingNo);
 					msg.append("RWTrackingNo is ==" + RWTrackingNo + "\n");
 					setData("RTE", 1, 1, RWTrackingNo);
-					setResultData("Result", 23, 2, RWTrackingNo);
-					setResultData("Result", 23, 4, "PASS");
+//					setResultData("Result", 23, 2, RWTrackingNo);
+//					setResultData("Result", 23, 4, "PASS");
+					setResultData("Result", 27, 2, RWTrackingNo);
+					setResultData("Result", 27, 4, "PASS");
 
 				}
 			}
@@ -140,6 +200,110 @@ public class RTE extends BaseInit {
 			String Error = esearchjob.getMessage();
 			setResultData("Result", 23, 4, "FAIL");
 			setResultData("Result", 23, 5, Error);
+		}
+	}
+
+	public void get_disabled_RTETrackingNo() throws EncryptedDocumentException, InvalidFormatException, IOException {
+		WebDriverWait wait = new WebDriverWait(Driver, 60);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);
+		Actions act = new Actions(Driver);
+		String Env = storage.getProperty("Env");
+		// --Go to RouteList
+		// --Go to Tools tab
+		try {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("a_tools")));
+			WebElement Tools = isElementPresent("Tools_id");
+			act.moveToElement(Tools).click().perform();
+			logger.info("Clicked on Tools");
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+			wait.until(ExpectedConditions
+					.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"OpenCloseClass dropdown open\"]//ul")));
+
+			// --Click on RouteList
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("a_RouteWorkList")));
+			isElementPresent("RouteList_linkText").click();
+			logger.info("Clicked on RouteList");
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+			getScreenshot(Driver, "RouteList");
+
+			int TotalRow = getTotalRow("RTE");
+			logger.info("Total Rows==" + TotalRow);
+
+			// --Enter RoutWorkID
+			wait.until(ExpectedConditions.elementToBeClickable(By.id("txtRouteWorkId")));
+			String RoutWID = getData("RTE", 2, 0);
+			msg.append("RouteWorkID is==" + RoutWID + "\n");
+			isElementPresent("RLRWIDInput_id").clear();
+			isElementPresent("RLRWIDInput_id").sendKeys(RoutWID);
+			logger.info("Entered RoutWorkID");
+
+			// -- Status filter -- disable
+
+			Select status_filter = new Select(isElementPresent("TLRDContacted_id"));
+			status_filter.selectByValue("string:Disabled");
+			logger.info("Rooute List status select as Disabled");
+
+			// --Click on Search
+			wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSearch")));
+			isElementPresent("RLSearch_id").click();
+			logger.info("Click on Search button");
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+			try {
+				WebElement NoData = isElementPresent("NoData_className");
+				wait2.until(ExpectedConditions.visibilityOf(NoData));
+				if (NoData.isDisplayed()) {
+					logger.info("There is no Data with Search parameter");
+
+				}
+			} catch (Exception NoData1) {
+
+				logger.info("Data is exist with search parameter");
+				String RWTrackingNo = isElementPresent("RLRWTrackingNo_xpath").getText();
+
+				if (RWTrackingNo.isEmpty()) {
+					logger.info("RWTrackingNo is still not generated");
+
+				} else {
+					logger.info("RWTrackingNo is generated");
+					RWTrackingNo = isElementPresent("RLRWTrackingNo_xpath").getText();
+					logger.info("RWTrackingNo is ==" + RWTrackingNo);
+					msg.append("RWTrackingNo is ==" + RWTrackingNo + "\n");
+					setData("RTE", 1, 1, RWTrackingNo);
+
+					if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
+
+						setResultData("Result", 23, 2, RWTrackingNo);
+						setResultData("Result", 23, 4, "PASS");
+
+					} else if (Env.equalsIgnoreCase("PROD")) {
+
+						setResultData("Result", 27, 2, RWTrackingNo);
+						setResultData("Result", 27, 4, "PASS");
+
+					}
+
+				}
+			}
+
+		} catch (Exception esearchjob) {
+			logger.error(esearchjob);
+			getScreenshot(Driver, "getRTETrackingIDError");
+			String Error = esearchjob.getMessage();
+
+			if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
+
+				setResultData("Result", 23, 4, "FAIL");
+				setResultData("Result", 23, 5, Error);
+
+			} else if (Env.equalsIgnoreCase("PROD")) {
+
+				setResultData("Result", 27, 4, "FAIL");
+				setResultData("Result", 27, 5, Error);
+
+			}
 		}
 	}
 
@@ -214,13 +378,30 @@ public class RTE extends BaseInit {
 
 			// --RouteTrackingNo
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("txtRouteTrackingNum")));
-			String RouteTrackingNo = getData("RTE", 1, 1);
-			logger.info("Route Tracking No==" + RouteTrackingNo);
-			msg.append("\n");
-			msg.append("Route Tracking No==" + RouteTrackingNo + "\n");
-			isElementPresent("TLSARoutTrackNo_id").sendKeys(RouteTrackingNo);
-			logger.info("Entered RouteTrackingID");
 
+			String Env = storage.getProperty("Env");
+
+			if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
+
+				String RouteTrackingNo = getData("RTE", 1, 1);
+
+				logger.info("Route Tracking No==" + RouteTrackingNo);
+				msg.append("\n");
+				msg.append("Route Tracking No==" + RouteTrackingNo + "\n");
+				isElementPresent("TLSARoutTrackNo_id").sendKeys(RouteTrackingNo);
+				logger.info("Entered RouteTrackingID");
+			}
+
+			else if (Env.equalsIgnoreCase("PROD")) {
+
+				String RouteTrackingNo = getData("RTE", 2, 1);
+
+				logger.info("Route Tracking No==" + RouteTrackingNo);
+				msg.append("\n");
+				msg.append("Route Tracking No==" + RouteTrackingNo + "\n");
+				isElementPresent("TLSARoutTrackNo_id").sendKeys(RouteTrackingNo);
+				logger.info("Entered RouteTrackingID");
+			}
 			// --Click on Search
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSearch")));
 			isElementPresent("RLSearch_id").click();
@@ -261,16 +442,33 @@ public class RTE extends BaseInit {
 					msg.append("PickUpID is==" + PickUpIDValue + "\n");
 					msg.append("BOLNo is==" + BOLNoValue + "\n");
 
-					int RT = RTE + 1;
-					System.out.println("RT==" + RT);
-					logger.info("JobID is==" + JobIDValue);
-					setData("RTE", 1, 2, JobIDValue);
+					if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
 
-					logger.info("PickUpID is==" + PickUpIDValue);
-					setData("RTE", 1, 3, PickUpIDValue);
+						int RT = RTE + 1;
+						System.out.println("RT==" + RT);
+						logger.info("JobID is==" + JobIDValue);
+						setData("RTE", 1, 2, JobIDValue);
 
-					logger.info("BOLNo is==" + BOLNoValue);
-					setData("RTE", 1, 4, BOLNoValue);
+						logger.info("PickUpID is==" + PickUpIDValue);
+						setData("RTE", 1, 3, PickUpIDValue);
+
+						logger.info("BOLNo is==" + BOLNoValue);
+						setData("RTE", 1, 4, BOLNoValue);
+					}
+
+					else if (Env.equalsIgnoreCase("PROD")) {
+
+						int RT = RTE + 1;
+						System.out.println("RT==" + RT);
+						logger.info("JobID is==" + JobIDValue);
+						setData("RTE", 1, 2, JobIDValue);
+
+						logger.info("PickUpID is==" + PickUpIDValue);
+						setData("RTE", 1, 3, PickUpIDValue);
+
+						logger.info("BOLNo is==" + BOLNoValue);
+						setData("RTE", 1, 4, BOLNoValue);
+					}
 
 					// --Not working in jenkins because of window size
 					js.executeScript("document.body.style.zoom='80%';");
@@ -287,10 +485,14 @@ public class RTE extends BaseInit {
 
 					wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("RouteWorkFlow")));
 					getScreenshot(Driver, "JobEditor_RWTrackingID");
-					setResultData("Result", 24, 4, "PASS");
+					if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
+						setResultData("Result", 24, 4, "PASS");
+					}
 
+					else if (Env.equalsIgnoreCase("PROD")) {
+						setResultData("Result", 25, 4, "PASS");
+					}
 				}
-
 			}
 		} catch (Exception ewait) {
 			getScreenshot(Driver, "SearchRTEError");
@@ -384,7 +586,8 @@ public class RTE extends BaseInit {
 		WebDriverWait wait2 = new WebDriverWait(Driver, 7);
 		Actions act = new Actions(Driver);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
-
+		String Env = storage.getProperty("Env");
+		
 		// search job
 		try {
 			searchRTEJob();
@@ -479,13 +682,20 @@ public class RTE extends BaseInit {
 							logger.info("Validation is displayed==" + Val);
 
 							if (Val.contains(
-									"Actual route end date should be same or greater then last stop's pod time."))
-								;
+									"Actual route end date should be same or greater then last stop's pod time."));
+								
 							{
 								logger.info(
 										"Validation is displayed for route end date should be same or greater then last stop's pod time==PASS");
-
+try {
 								routeEndDateValidation();
+}
+
+catch (Exception e) {
+	// TODO: handle exception
+	
+	logger.info("Validation is not displayed for Route End Date and Time");
+}
 							}
 
 						} catch (Exception EndTimeIssue) {
@@ -541,6 +751,13 @@ public class RTE extends BaseInit {
 						jobStatus = isElementPresent("EOStageName_id").getText();
 						logger.info("Job status is==" + jobStatus);
 						msg.append("Job status is==" + jobStatus + "\n");
+						
+						
+
+						if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
+						
+						
+				// --	verify bill only for STG and TEST
 
 						if (jobStatus.contains("VERIFY CUSTOMER BILL")) {
 							logger.info("Job is moved to Verify Customer Bill stage");
@@ -642,7 +859,12 @@ public class RTE extends BaseInit {
 							logger.info("Clicked on Exit Without Save");
 
 						}
-
+						}
+						
+						else if(Env.equalsIgnoreCase("Prod")) {
+							logger .info("Not perform verify bill on Production Env");
+							msg.append("Not perform verify bill on Production Env"+"\n");
+						}
 					}
 
 					//

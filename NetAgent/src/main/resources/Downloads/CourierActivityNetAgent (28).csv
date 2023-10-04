@@ -1,4 +1,0 @@
-﻿FromDate,ToDate
-
-JobID,BOLType,CityState,SRVC,Miles,AlertMiles,BillMiles,Wait,ATT,WTPCS,ActualDTTM,Late,Interco,RE,Vehicle,Mileagesource,BaseRate2,ExcessMileage,ExcessMileageCharge,AttemptCharge,WaitCharge,ExcessWeight,ExcessWeight1,HolidayCharge,AddStopcharge,HoldCharge,ID2ndmanHrcharge,FSC,TotalAgentCost,Note1,GrandTotal,TotalLate,TotalCostInterco,TotalAgentCost2
-

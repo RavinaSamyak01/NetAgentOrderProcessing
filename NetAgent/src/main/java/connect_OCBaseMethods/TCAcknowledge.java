@@ -19,7 +19,7 @@ public class TCAcknowledge extends BaseInit {
 	@Test
 	public void tcAcknowledge() throws Exception {
 		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
-		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		Actions act = new Actions(Driver);
 
@@ -29,7 +29,7 @@ public class TCAcknowledge extends BaseInit {
 		System.out.println(svc);
 		logger.info("ServiceID=" + svc);
 		try {
-			wait.until(ExpectedConditions
+			wait2.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//*[@id=\"lblStages\"][contains(text(),'Acknowledge')]")));
 
 			// --Get StageName
@@ -61,7 +61,7 @@ public class TCAcknowledge extends BaseInit {
 				try {
 
 					wait2.until(ExpectedConditions.visibilityOfElementLocated(
-							By.xpath("//*[@id=\"idValidationforMain\"]//ul[@id=\"errorid\"]")));
+							By.xpath("//*[@id='idValidationforMain']//ul[@id='errorid']")));
 					String Validmsg = isElementPresent("OCValOnePack_xpath").getText();
 					logger.info("Validation message is displayed=" + Validmsg);
 					if (Validmsg.contains("Please enter Last Quoted Delivery Time through Edit Order.")) {
@@ -393,7 +393,7 @@ public class TCAcknowledge extends BaseInit {
 
 			try {
 
-				wait.until(ExpectedConditions
+				wait2.until(ExpectedConditions
 						.visibilityOfElementLocated(By.xpath("//*[@id=\"idValidationforMain\"]//ul[@id=\"errorid\"]")));
 				String Validmsg = isElementPresent("OCValOnePack_xpath").getText();
 				logger.info("Validation message is displayed=" + Validmsg);

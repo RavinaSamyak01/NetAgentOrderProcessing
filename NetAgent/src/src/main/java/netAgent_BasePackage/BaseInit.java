@@ -627,30 +627,7 @@ public class BaseInit {
 		}
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("welcomecontent")));
 
-		// --Get data from excel by GetData Method
-		PUId = getData("Sheet1", 2, 0);
-		JobId = getData("Sheet1", 2, 1);
-		Client = getData("Sheet1", 2, 2);
-		FSLName = getData("Sheet1", 2, 3);
-		Agent = getData("Sheet1", 2, 18);
-
-		Part1 = getData("Sheet1", 2, 4);
-		Part1Name = getData("Sheet1", 2, 5);
-		Part2 = getData("Sheet1", 2, 6);
-		Part2Name = getData("Sheet1", 2, 7);
-		P2Field2 = getData("Sheet1", 2, 8);
-		P2Field3 = getData("Sheet1", 2, 9);
-		P2Field4 = getData("Sheet1", 2, 10);
-		P2Field5 = getData("Sheet1", 2, 11);
-
-		LOCCode1 = getData("Sheet1", 2, 12);
-		LOC1LEN = getData("Sheet1", 2, 13);
-		LOC1WID = getData("Sheet1", 2, 14);
-		LOC1HGT = getData("Sheet1", 2, 15);
-		LOCCode2 = getData("Sheet1", 2, 16);
-		LOC2Part = getData("Sheet1", 2, 17);
-
-		Thread.sleep(2000);
+	
 		getScreenshot(Driver, "HomeScreen");
 
 	}

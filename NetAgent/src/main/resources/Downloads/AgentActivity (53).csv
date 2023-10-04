@@ -1,9 +1,0 @@
-﻿From_Date,To_Date
-04/08/2023,04/18/2023
-
-CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
-34769 -  PACIFIC COAST LOGISTIX,,,,,,,,,,,,,,,,           TotalShipment : 2        Total PCS : 3        Total WT :  40      
-,33186938 / 04/12/2023,PU,PCS : 1     WT : 24.00,PU#   10004987,NOTHING BUNDT CAKES,304 W BAY AREA BLVD.,,"FONDREN, TX 77598",PU TM : 4/12/2023 09:10,"PARKHILL, PHYLLIS",2100 SPACE PARK DR.,,"CLEAR LAKE, TX 77058",DEL TM : 4/12/2023 09:12,,           TotalShipment : 2        Total PCS : 3        Total WT :  40      
-,33189095 / 04/13/2023,PU,PCS : 2     WT : 16.00,PU#   10007144,ST JAMES HOSPITAL - OLYMPIA FIELDS,20201 South Crawford,,"SAN FRANCISCO, CA 94128",PU TM : ,DePuy - Chicago,1862 BRUMMEL AVE,,"SAN FRANCISCO, CA 94128",DEL TM : ,,           TotalShipment : 2        Total PCS : 3        Total WT :  40      
-,,,,,,,,,,,,,,,           Shipment : 2        SubTotal PCS : 3        SubTotal WT :  40      ,           TotalShipment : 2        Total PCS : 3        Total WT :  40      
-

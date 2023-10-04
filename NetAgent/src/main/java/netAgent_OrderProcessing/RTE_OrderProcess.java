@@ -24,9 +24,12 @@ public class RTE_OrderProcess extends BaseInit {
 	public void orderProcessRTEJOB() throws EncryptedDocumentException, InvalidFormatException, IOException {
 
 		WebDriverWait wait = new WebDriverWait(Driver, 50);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
-
+		String Env = storage.getProperty("Env");
+		String PUID = null;
+		String RWTrackNo = null ;
 		try {
 		
 			// Go To TaskLog
@@ -49,10 +52,22 @@ public class RTE_OrderProcess extends BaseInit {
 			//String ServiceID = getData("OrderProcessing", 9, 0);
 			//logger.info("ServiceID is==" + ServiceID);
 		//	msg.append("ServiceID==" + ServiceID + "\n");
-			String PUID = getData("RTE", 1, 3);
+			
+			
+
+			if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
+
+			 PUID = getData("RTE", 1, 3);
 			logger.info("PickUpID is==" + PUID);
 			msg.append("PickUpID==" + PUID + "\n");
-
+			}
+			
+			else if (Env.equalsIgnoreCase("Prod")) {
+				PUID = getData("RTE", 2, 3);
+				logger.info("PickUpID is==" + PUID);
+				msg.append("PickUpID==" + PUID + "\n");
+				}
+			
 			try {// --Click on RTE tab
 				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-model=\"RTE\"]")));
 				WebElement RTETab = Driver.findElement(By.xpath("//*[@ng-model=\"RTE\"]"));
@@ -66,7 +81,18 @@ public class RTE_OrderProcess extends BaseInit {
 				// --Search
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 				Driver.findElement(By.id("txtBasicSearchRTE")).clear();
-				String RWTrackNo = getData("RTE", 1, 1);
+				
+				if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
+				
+				 RWTrackNo = getData("RTE", 1, 1);
+				}
+				
+				else if (Env.equalsIgnoreCase("PROD")) {
+					RWTrackNo = getData("RTE", 2, 1);
+					
+					}
+				
+				
 				logger.info("RW Tracking No===" + RWTrackNo);
 				Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(RWTrackNo);
 				logger.info("RW Tracking No===" + RWTrackNo+"is entered in Net agent RTE TAB");
@@ -176,12 +202,13 @@ public class RTE_OrderProcess extends BaseInit {
 
 								WebElement ActPUTime = Driver.findElement(By.id("txtActPuTime"));
 								ActPUTime.clear();
-								Date date = new Date();
-								SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
-								dateFormat.setTimeZone(TimeZone.getTimeZone(ZOneID));
-								logger.info(dateFormat.format(date));
-								ActPUTime.sendKeys(dateFormat.format(date));
-								ActPUTime.sendKeys(Keys.TAB);
+								
+								BaseInit timezone = new BaseInit();
+								String time = timezone.getTimeAsTZoneplus2min(ZOneID);
+								Thread.sleep(500);
+								logger.info("Route End time :" + time);
+								ActPUTime.sendKeys(time,Keys.TAB);
+								Thread.sleep(1000);
 
 								// --Click on save
 								Save = Driver.findElement(By.id("idiconsave"));
@@ -262,12 +289,13 @@ public class RTE_OrderProcess extends BaseInit {
 									}
 									WebElement ActDelTime = Driver.findElement(By.id("txtActDlTime"));
 									ActDelTime.clear();
-									Date date = new Date();
-									SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
-									dateFormat.setTimeZone(TimeZone.getTimeZone(ZOneID));
-									logger.info(dateFormat.format(date));
-									ActDelTime.sendKeys(dateFormat.format(date));
-									ActDelTime.sendKeys(Keys.TAB);
+									BaseInit timezone = new BaseInit();
+									String del_time = timezone.getTimeAsTZoneplus2min(ZOneID);
+									Thread.sleep(500);
+									logger.info("Route End time :" + del_time);
+									ActDelTime.sendKeys(del_time,Keys.TAB);
+									Thread.sleep(1000);
+								
 
 									// --Click on save
 									try {
@@ -319,7 +347,7 @@ public class RTE_OrderProcess extends BaseInit {
 										wait.until(ExpectedConditions.invisibilityOfElementLocated(
 												By.xpath("//*[@class=\"ajax-loadernew\"]")));
 										try {
-											wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("errorid")));
+											wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("errorid")));
 											Errmsg = Driver.findElement(By.id("errorid")).getText();
 											logger.info("validation message=" + Errmsg);
 
@@ -381,7 +409,7 @@ public class RTE_OrderProcess extends BaseInit {
 								wait.until(ExpectedConditions
 										.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
 								try {
-									wait.until(ExpectedConditions
+									wait2.until(ExpectedConditions
 											.visibilityOfElementLocated(By.className("dx-datagrid-nodata")));
 									NoData = Driver.findElement(By.className("dx-datagrid-nodata"));
 									if (NoData.isDisplayed()) {
@@ -816,7 +844,7 @@ public class RTE_OrderProcess extends BaseInit {
 				try {
 					logger.error(NoData1);
 					getScreenshot(Driver, "NoData1_RTE_Error");
-					wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("dx-datagrid-nodata")));
+					wait2.until(ExpectedConditions.visibilityOfElementLocated(By.className("dx-datagrid-nodata")));
 					WebElement NoData = Driver.findElement(By.className("dx-datagrid-nodata"));
 					if (NoData.isDisplayed()) {
 						logger.info("Job is not exist with the search parameters");

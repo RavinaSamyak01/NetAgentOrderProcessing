@@ -95,9 +95,11 @@ public class NAConfirmPULLstg extends BaseInit {
 						wait.until(ExpectedConditions
 								.visibilityOfElementLocated(By.xpath("//label[contains(@class,'error-messages')]")));
 						String Validmsg = isElementPresent("NAPartsVal_xpath").getText();
-						logger.info("Validation message is displayed=" + Validmsg);
+						logger.info("Validation message is displayed = " + Validmsg);
 						// --Get the serial NO
-						String SerialNo = isElementPresent("NAPartSerNo_xpath").getText();
+//						String SerialNo = isElementPresent("NAPartSerNo_xpath").getText();
+						String SerialNo = isElementPresent("part_master_no_xpath").getText();
+						
 						logger.info("Serial No of Part is==" + SerialNo + "\n");
 						// enter serial number in scan
 						WebElement SerialNoBar = isElementPresent("NASerTextBox_id");

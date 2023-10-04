@@ -1,8 +1,0 @@
-﻿From_Date,To_Date
-01/03/2023,01/13/2023
-
-CourierId,VoucherNum,Courier_type,pieces,PickupId,VoucherNum2,pAddr1,Paddr21,City_State,Pu_Tm,VoucherNum3,dAddr1,Paddr22,Dcity_Dstate,Del_Tm,Textbox37,Total_Amount
-34769 -  PACIFIC COAST LOGISTIX,,,,,,,,,,,,,,,,           TotalShipment : 1        Total PCS : 2        Total WT :  20      
-,32955071 / 01/05/2023,PU,PCS : 2     WT : 20.00,PU#   9773124,Automation,612 E Dallas Rd,Ste 200,"GRAPEVINE, TX 76051",PU TM : 1/5/2023 06:02,AutoTest,44 Folly Road,,"Charleston, SC 29407",DEL TM : 1/5/2023 07:03,,           TotalShipment : 1        Total PCS : 2        Total WT :  20      
-,,,,,,,,,,,,,,,           Shipment : 1        SubTotal PCS : 2        SubTotal WT :  20      ,           TotalShipment : 1        Total PCS : 2        Total WT :  20      
-

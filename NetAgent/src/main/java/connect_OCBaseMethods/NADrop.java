@@ -17,16 +17,16 @@ public class NADrop extends OrderCreation {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		Actions act = new Actions(Driver);
-		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver,20);// wait time
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-		String svc = null;
+		String svc = null;	
 		try {
 			try {
-				wait2.until(ExpectedConditions
+				wait.until(ExpectedConditions
 						.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Drop @ Origin')]")));
 
 			} catch (Exception stage) {
-				wait2.until(ExpectedConditions
+				wait.until(ExpectedConditions
 						.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Tender to 3P')]")));
 
 			}

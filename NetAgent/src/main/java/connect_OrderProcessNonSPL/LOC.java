@@ -14,15 +14,15 @@ import connect_OCBaseMethods.OrderCreation;
 import connect_OCBaseMethods.ReadyForDispatch;
 import connect_OCBaseMethods.TCAcknowledge;
 import connect_OCBaseMethods.VerifyCustomerBill;
+import connect_OCBaseMethods.cancel_job;
 import netAgent_BasePackage.BaseInit;
-import java.util.ArrayList;
-import java.util.ArrayList;
 
 public class LOC extends BaseInit {
 	@Test
 	public void locLocal() throws Exception {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time
+		String Env = storage.getProperty("Env");
 
 		// --Order Creation
 		OrderCreation OC = new OrderCreation();
@@ -69,8 +69,27 @@ public class LOC extends BaseInit {
 
 		VerifyCustomerBill VFCB = new VerifyCustomerBill();
 		VFCB.verifyCustomerBill(1);
+		
+		
+		if (Env.equalsIgnoreCase("PROD")) {
 
-		// ConnectlogOut();
+		
+		
+		// -- cancel job
+		cancel_job cb = new cancel_job();
+		cb.job_cancel(1);
+				
+		}
+		
+		else {
+			
+			logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+		}
+		
+		
+		//-- navigae to NA tab
+		
+		//OC.naTab();
 
 	}
 

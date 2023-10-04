@@ -23,6 +23,8 @@ import connect_OCBaseMethods.WaitForArrival;
 import connect_OCBaseMethods.WaitForDeptarture;
 import connect_OCBaseMethods.XerWaitForArrival;
 import connect_OCBaseMethods.XerWaitForDeparture;
+import connect_OCBaseMethods.cancel_job;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SD extends OrderCreation {
@@ -32,6 +34,7 @@ public class SD extends OrderCreation {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time
 		Actions act = new Actions(Driver);
+		String Env = storage.getProperty("Env");
 
 		// --Order Creation
 		OrderCreation OC = new OrderCreation();
@@ -123,6 +126,23 @@ public class SD extends OrderCreation {
 		// Verify Customer Bill
 		VerifyCustomerBill VCB = new VerifyCustomerBill();
 		VCB.verifyCustomerBill(2);
+
+		if (Env.equalsIgnoreCase("PROD")) {
+
+			// -- cancel job
+			cancel_job cb = new cancel_job();
+			cb.job_cancel(2);
+
+		}
+
+		else {
+
+			logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+		}
+		
+	//-- navigae to NA tab
+		
+		//OC.naTab();
 
 		// --Refresh App
 		refreshApp();

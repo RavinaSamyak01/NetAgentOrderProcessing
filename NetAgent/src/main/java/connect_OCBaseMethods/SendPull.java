@@ -15,7 +15,9 @@ public class SendPull extends BaseInit {
 	public void sendPull() throws Exception {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time
 		Actions act = new Actions(Driver);
+		String Env = storage.getProperty("Env");
 
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		OrderCreation OC = new OrderCreation();
@@ -36,7 +38,10 @@ public class SendPull extends BaseInit {
 
 			
 			//--Verify Courier
+			
+			if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
 			String ExpCourier="34769";
+			
 			String ActCourier=isElementPresent("PDCouriervalue_xpath").getText();
 			logger.info("Actual Courier="+ActCourier);
 			
@@ -45,7 +50,24 @@ public class SendPull extends BaseInit {
 			}else {
 				OC.EditDriver();
 			}
-
+			}
+			
+			else if (Env.equalsIgnoreCase("PROD")) {
+				
+				
+				String ExpCourier="30738";
+				
+				String ActCourier=isElementPresent("PDCouriervalue_xpath").getText();
+				logger.info("Actual Courier="+ActCourier);
+				
+				if(ExpCourier.equalsIgnoreCase(ActCourier)) {
+					logger.info("By default Automation courier is selected ");
+				}else {
+					OC.EditDriver();
+				}
+			}
+			
+			
 			// --Check Contacted
 			if (isElementPresent("TLRDContacted_id").isDisplayed()) {
 				WebElement email = isElementPresent("TLRDContacted_id");
@@ -82,8 +104,25 @@ public class SendPull extends BaseInit {
 			WebElement Sendpullalert = isElementPresent("TLRDSPUALert_id");
 			act.moveToElement(Sendpullalert).build().perform();
 			jse.executeScript("arguments[0].click();", Sendpullalert);
-			logger.info("Clicked on Send Pull button");
+			logger.info("Clicked on Send Pull Alert button");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			try {
+				
+				if(Driver.findElement(By.xpath("//button[normalize-space()='Proceed']")).isDisplayed()) {
+					getScreenshot(Driver, "Pull_proceed");
+					Driver.findElement(By.xpath("//button[normalize-space()='Proceed']")).click();
+					logger.info("Click on Proceed button on popup visible");
+					
+				}
+				else {
+					logger.info("No popup visible ");
+				}
+			}
+			
+			catch (Exception e) {
+				// TODO: handle exception
+				logger.info("No popup visible ");
+			}
 
 			/*
 			 * } catch (Exception e) { WebElement Sendpualert =

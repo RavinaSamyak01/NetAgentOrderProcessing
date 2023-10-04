@@ -92,7 +92,8 @@ public class TenderTo3P extends BaseInit {
 
 				}
 
-			} else if (svc.equalsIgnoreCase("P3P") && stage.equalsIgnoreCase("Tender to 3P")) {
+			} else if (svc.equalsIgnoreCase("P3P") && stage.equalsIgnoreCase("Tender to 3P")
+					|| (svc.equalsIgnoreCase("3PLAST") && stage.equalsIgnoreCase("Tender to 3P"))) {
 
 				try {
 					WebElement POD = isElementPresent("TT3POD_id");
@@ -176,7 +177,7 @@ public class TenderTo3P extends BaseInit {
 					Ten3P = isElementPresent("TT3Button_id");
 					wait.until(ExpectedConditions.elementToBeClickable(Ten3P));
 					js.executeScript("arguments[0].click();", Ten3P);
-					logger.info("Clicked on Tender To 3P button");
+					logger.info("Clicked on Tender To 3P/ 3rd Party Delivery button");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 				}
@@ -191,6 +192,10 @@ public class TenderTo3P extends BaseInit {
 			logger.info("Tender to 3P Not Exist in Flow!!");
 
 		}
+Driver.navigate().refresh();
+wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+Thread.sleep(1500);
+logger.info("page is refreshed");
 
 	}
 

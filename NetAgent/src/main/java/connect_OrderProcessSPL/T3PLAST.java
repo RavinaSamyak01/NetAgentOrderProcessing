@@ -22,6 +22,7 @@ import connect_OCBaseMethods.T3rdPartyDelivery;
 import connect_OCBaseMethods.TCAcknowledge;
 import connect_OCBaseMethods.TenderTo3P;
 import connect_OCBaseMethods.VerifyCustomerBill;
+import connect_OCBaseMethods.cancel_job;
 import netAgent_BasePackage.BaseInit;
 
 public class T3PLAST extends BaseInit {
@@ -31,6 +32,9 @@ public class T3PLAST extends BaseInit {
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		// Actions act = new Actions(Driver);
 		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time
+		
+		String Env = storage.getProperty("Env");
+		
 		// --Order Creation
 		OrderCreation OC = new OrderCreation();
 
@@ -103,7 +107,7 @@ public class T3PLAST extends BaseInit {
 
 		OC.searchJob(12);
 
-		// Tender to 3P
+		// Tender to 3P/ 3rd party delivery	
 		TenderTo3P t3p = new TenderTo3P();
 		t3p.tndrTo3P();
 
@@ -120,7 +124,25 @@ public class T3PLAST extends BaseInit {
 		// Verify Customer Bill
 		VerifyCustomerBill VCB = new VerifyCustomerBill();
 		VCB.verifyCustomerBill(12);
+		
+		
+		if (Env.equalsIgnoreCase("PROD")) {
 
+			// -- cancel job
+			cancel_job cb = new cancel_job();
+			cb.job_cancel(12);
+
+		}
+
+		else {
+
+			logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+		}
+
+	//-- navigae to NA tab
+		
+		OC.naTab();
+		
 		// --Refresh App
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		OC.refreshApp();
@@ -172,6 +194,26 @@ public class T3PLAST extends BaseInit {
 		CDA.confDelAlert();
 
 		OC.narefreshApp();
+		
+//		// -- 3 rd party stage process 
+//		try {
+//			
+//			T3rdPartyDelivery t3pdel = new T3rdPartyDelivery();
+//			
+//			// --COnnect Tab
+//			OC.connectTab();
+//
+//
+//			OC.searchJob(12);
+//			
+//			t3pdel.t3rdPartyDel();
+//		}
+//		
+//		
+//		catch (Exception e) {
+//			// TODO: handle exception
+//			logger.info("3rd Party Delivery flow not processed");
+//		}
 	}
 
 	public void t3PlastRecoverstages() throws Exception {

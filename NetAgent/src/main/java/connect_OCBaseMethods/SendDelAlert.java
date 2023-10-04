@@ -68,6 +68,9 @@ public class SendDelAlert extends BaseInit {
 				jse.executeScript("arguments[0].click();", AlConfirm);
 				logger.info("CLicked on Alert and Confirm Button");
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				Thread.sleep(1500);
+				
+			
 
 			} catch (Exception ee) {
 				WebElement AlConfirm = isElementPresent("TLRDAlConfrm_id");
@@ -85,5 +88,11 @@ public class SendDelAlert extends BaseInit {
 			logger.info("SEND DEL ALERT Not Exist in Flow!!");
 
 		}
+		
+		Driver.navigate().refresh();
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+		logger.info("Page is refreshed");
+		Thread.sleep(1000);
+		
 	}
 }

@@ -16,7 +16,7 @@ public class NAConfirmPUAlert extends BaseInit {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time
 		Actions act = new Actions(Driver);
-		WebDriverWait wait2 = new WebDriverWait(Driver, 30);// wait time;
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time;
 
 		/*
 		 * try { wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(

@@ -24,6 +24,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -76,9 +77,6 @@ public class BaseInit {
 	public String EmailID = rb.getString("MainEmailAddress");
 
 	public static String PUId, JobId, Client, FSLName, Agent;
-	public static String Part1, Part1Name, Part2, Part2Name, P2Field2, P2Field3, P2Field4, P2Field5;
-	public static String LOCCode1, LOC1LEN, LOC1WID, LOC1HGT, LOCCode2, LOC2Part;
-
 	public static Logger logger;
 	public static ExtentReports report;
 	public static ExtentTest test;
@@ -101,7 +99,7 @@ public class BaseInit {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
-			options.addArguments("--headless", "--window-size=1920, 1080");
+			// options.addArguments("--headless", "--window-size=1920, 1080");
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
@@ -187,6 +185,8 @@ public class BaseInit {
 
 	public void Connectlogin() throws Exception {
 		WebDriverWait wait = new WebDriverWait(Driver, 60);
+		WebDriverWait wait2 = new WebDriverWait(Driver, 10);
+
 		// Actions act = new Actions(driver);
 		String Env = storage.getProperty("Env");
 		System.out.println("Env " + Env);
@@ -317,18 +317,19 @@ public class BaseInit {
 			}
 
 		} else if (Env.equalsIgnoreCase("PROD")) {
-			baseUrl = storage.getProperty("ConnectPRODURL");
+			baseUrl = storage.getProperty("Connect_PROD_URL");
 			Driver.get(baseUrl);
+			logger.info("URL use for Connect  " + Env + " test is : " + baseUrl);
 			Thread.sleep(2000);
 			try {
-				//Driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+				// Driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("login")));
-				String UserName = storage.getProperty("ConnectPRODUserName");
+				String UserName = storage.getProperty("Connect_PROD_UserName");
 				highLight(isElementPresent("ConnectUserName_id"), Driver);
 				isElementPresent("ConnectUserName_id").sendKeys(UserName);
 				logger.info("Entered UserName");
 
-				String Password = storage.getProperty("ConnectPRODPassword");
+				String Password = storage.getProperty("Connect_PROD_Password");
 				highLight(isElementPresent("ConnectPassword_id"), Driver);
 				isElementPresent("ConnectPassword_id").sendKeys(Password);
 				logger.info("Entered Password");
@@ -346,14 +347,14 @@ public class BaseInit {
 		isElementPresent("ConnectLogin_id").click();
 		logger.info("Login done");
 		getScreenshot(Driver, "ConnectLogin");
-		wait.until(
-				ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Logging In...')]")));
+//		wait.until(
+//				ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Logging In...')]")));
 		try {
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 		} catch (Exception ee) {
 			WebDriverWait wait1 = new WebDriverWait(Driver, 50);
-			wait1.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			wait2.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 		}
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("welcomecontent")));
@@ -789,29 +790,6 @@ public class BaseInit {
 		}
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("welcomecontent")));
 
-		// --Get data from excel by GetData Method
-		PUId = getData("Sheet1", 2, 0);
-		JobId = getData("Sheet1", 2, 1);
-		Client = getData("Sheet1", 2, 2);
-		FSLName = getData("Sheet1", 2, 3);
-		Agent = getData("Sheet1", 2, 18);
-
-		Part1 = getData("Sheet1", 2, 4);
-		Part1Name = getData("Sheet1", 2, 5);
-		Part2 = getData("Sheet1", 2, 6);
-		Part2Name = getData("Sheet1", 2, 7);
-		P2Field2 = getData("Sheet1", 2, 8);
-		P2Field3 = getData("Sheet1", 2, 9);
-		P2Field4 = getData("Sheet1", 2, 10);
-		P2Field5 = getData("Sheet1", 2, 11);
-
-		LOCCode1 = getData("Sheet1", 2, 12);
-		LOC1LEN = getData("Sheet1", 2, 13);
-		LOC1WID = getData("Sheet1", 2, 14);
-		LOC1HGT = getData("Sheet1", 2, 15);
-		LOCCode2 = getData("Sheet1", 2, 16);
-		LOC2Part = getData("Sheet1", 2, 17);
-
 		Thread.sleep(2000);
 		getScreenshot(Driver, "HomeScreen");
 
@@ -906,6 +884,7 @@ public class BaseInit {
 
 	public static String getData(String sheetName, int row, int col)
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
+
 		String Cell = null;
 		String Env = storage.getProperty("Env");
 		String FilePath = null;
@@ -913,12 +892,11 @@ public class BaseInit {
 			FilePath = storage.getProperty("PrePRODFile");
 		} else if (Env.equalsIgnoreCase("STG")) {
 			FilePath = storage.getProperty("STGFile");
-		} else if (Env.equalsIgnoreCase("Test")) {
-			FilePath = storage.getProperty("TestFile");
-		} else if (Env.equalsIgnoreCase("PROD")) {
+		} else if (Env.equalsIgnoreCase("Prod")) {
 			FilePath = storage.getProperty("PRDFile");
+		} else if (Env.equalsIgnoreCase("TEST")) {
+			FilePath = storage.getProperty("TESTFile");
 		}
-
 		File src = new File(FilePath);
 
 		FileInputStream FIS = new FileInputStream(src);
@@ -932,11 +910,35 @@ public class BaseInit {
 
 		} catch (Exception e) {
 			FIS.close();
-			logger.info("Issue in GetData" + e);
+			logger.info("Issue in GetData " + e);
 
 		}
 		return Cell;
+
 	}
+
+	/*
+	 * public static void setData(String sheetName, int row, int col, String value)
+	 * throws EncryptedDocumentException, InvalidFormatException, IOException {
+	 * String Env = storage.getProperty("Env"); String FilePath = null; if
+	 * (Env.equalsIgnoreCase("Pre-Prod")) { FilePath =
+	 * storage.getProperty("PrePRODFile"); } else if (Env.equalsIgnoreCase("STG")) {
+	 * FilePath = storage.getProperty("STGFile"); } else if
+	 * (Env.equalsIgnoreCase("Test")) { FilePath = storage.getProperty("TestFile");
+	 * } else if (Env.equalsIgnoreCase("PROD")) { FilePath =
+	 * storage.getProperty("PRDFile"); } File src = new File(FilePath);
+	 * FileInputStream fis = new FileInputStream(src); Workbook workbook =
+	 * WorkbookFactory.create(fis); FileOutputStream fos1 = new
+	 * FileOutputStream(src); Sheet sh = workbook.getSheet(sheetName);
+	 * 
+	 * try { sh.getRow(row).createCell(col).setCellValue(value);
+	 * workbook.write(fos1); fos1.close(); fis.close();
+	 * 
+	 * } catch (Exception e) { fos1.close(); fis.close();
+	 * logger.info("Issue in SetData" + e);
+	 * 
+	 * } }
+	 */
 
 	public static void setData(String sheetName, int row, int col, String value)
 			throws EncryptedDocumentException, InvalidFormatException, IOException {
@@ -958,7 +960,15 @@ public class BaseInit {
 		Sheet sh = workbook.getSheet(sheetName);
 
 		try {
-			sh.getRow(row).createCell(col).setCellValue(value);
+			Row dataRow = sh.getRow(row);
+			if (dataRow == null) {
+				// If the row doesn't exist, create a new one
+				dataRow = sh.createRow(row);
+			}
+
+			Cell cell = dataRow.createCell(col);
+			cell.setCellValue(value);
+
 			workbook.write(fos1);
 			fos1.close();
 			fis.close();
@@ -967,7 +977,6 @@ public class BaseInit {
 			fos1.close();
 			fis.close();
 			logger.info("Issue in SetData" + e);
-
 		}
 	}
 
@@ -1014,6 +1023,8 @@ public class BaseInit {
 			FilePath = storage.getProperty("STGFile");
 		} else if (Env.equalsIgnoreCase("Test")) {
 			FilePath = storage.getProperty("TestFile");
+		} else if (Env.equalsIgnoreCase("PROD")) {
+			FilePath = storage.getProperty("PRDFile");
 		}
 		File src = new File(FilePath);
 
@@ -1129,15 +1140,19 @@ public class BaseInit {
 		String File = null;
 		if (Env.equalsIgnoreCase("Test")) {
 			File = ".\\src\\main\\resources\\NAResult_Test.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgentLog.html";
+			SendEmail.sendMail(EmailID, subject, msg.toString(), File);
+
 		} else if (Env.equalsIgnoreCase("STG")) {
 			File = ".\\src\\main\\resources\\NAResult_STG.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgentLog.html";
+			SendEmail.sendMail(EmailID, subject, msg.toString(), File);
 
 		} else if (Env.equalsIgnoreCase("Pre-Prod")) {
 			File = ".\\src\\main\\resources\\NAResult_PreProd.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgentLog.html";
+			SendEmail.sendMail(EmailID, subject, msg.toString(), File);
 
 		} else if (Env.equalsIgnoreCase("PROD")) {
 			File = ".\\src\\main\\resources\\NAResult_Prod.xlsx,.\\Report\\ExtentReport\\ExtentReportResults.html,.\\Report\\log\\NetAgentLog.html";
-
+			SendEmail.sendMail(EmailID, subject, msg.toString(), File);
 		}
 
 		try {
@@ -1281,6 +1296,34 @@ public class BaseInit {
 
 	}
 
+	public String getTimeAsTZoneplus2min(String timeZone) {
+
+		System.out.println("ZoneID of is==" + timeZone);
+		logger.info("ZoneID of is==" + timeZone);
+		if (timeZone.equalsIgnoreCase("EDT")) {
+			timeZone = "America/New_York";
+		} else if (timeZone.equalsIgnoreCase("CDT")) {
+			timeZone = "CST";
+		} else if (timeZone.equalsIgnoreCase("PDT")) {
+			timeZone = "PST";
+		} else if (timeZone.equalsIgnoreCase("MDT")) {
+			timeZone = "America/Denver";
+		}
+
+		Date date = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+		dateFormat.setTimeZone(TimeZone.getTimeZone(timeZone));
+		// logs.info(dateFormat.format(date));
+		// String Time = dateFormat.format(date);
+		// System.out.println("Time==" + Time);
+		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(timeZone));
+		cal.add(Calendar.MINUTE, 2);
+		logger.info(dateFormat.format(cal.getTime()));
+		String Time = dateFormat.format(cal.getTime());
+		System.out.println("Added Time ==" + Time);
+		return Time;
+	}
+
 	public void ActivateAccount()
 			throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException {
 		WebDriverWait wait = new WebDriverWait(Driver, 50);
@@ -1310,6 +1353,8 @@ public class BaseInit {
 		} else if (Env.equalsIgnoreCase("STG")) {
 			FedExAC = getData("OrderCreation", 5, 2);
 		} else if (Env.equalsIgnoreCase("Test")) {
+			FedExAC = getData("OrderCreation", 5, 2);
+		} else if (Env.equalsIgnoreCase("PROD")) {
 			FedExAC = getData("OrderCreation", 5, 2);
 		}
 

@@ -9,7 +9,7 @@ import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.*;
 
-public class SendEmail {
+public class SendEmail extends BaseInit {
 
 	public static boolean sendMail(String toAddresses, String subject, String msg, String fileAttachments)
 			throws Exception {
@@ -22,11 +22,28 @@ public class SendEmail {
 		String bccAddresses = null;
 		Properties props = System.getProperties();
 
-		try {
-			hostName = "relay.mnx.com";
-			fromAddress = "noreply@mnx.com";
-			bccAddresses = "noreply@mnx.com";
+		String Env = storage.getProperty("Env");
+		System.out.println("Env " + Env);
 
+		String RunConfig = storage.getProperty("RunConf");
+		System.out.println("RunConfig " + RunConfig);
+
+		if (RunConfig.equalsIgnoreCase("Pipeline")) {
+
+			if (Env.equalsIgnoreCase("Prod")) {
+				fromAddress = "noreply-prod@mnx.com";
+				bccAddresses = "noreply-prod@mnx.com";
+
+			} else if (Env.equalsIgnoreCase("STG")) {
+				fromAddress = "noreply-staging@mnx.com";
+				bccAddresses = "noreply-staging@mnx.com";
+
+			} else if (Env.equalsIgnoreCase("Test")) {
+				fromAddress = "noreply-test@mnx.com";
+				bccAddresses = "noreply-test@mnx.com";
+			}
+
+			hostName = "relay.mnx.com";
 			// connect to SMTP server
 			props = System.getProperties();
 			props.setProperty("mail.smtp.starttls.enable", "true");
@@ -39,32 +56,50 @@ public class SendEmail {
 
 			session = Session.getInstance(props, null);
 			transport = session.getTransport("smtp");
-			transport.connect(hostName, "noreply@mnx.com", null);
+			transport.connect(hostName, fromAddress, null);
 			System.out.println("Able to send email from relay.mnx.com ");
 
-		} catch (Exception eEmail) {
-			System.out.println(eEmail);
-			System.out.println("unable to send email from relay.mnx.com ");
-			//hostName = "10.100.112.1";
-			 hostName = "outlook.office365.com";
+		} else if (RunConfig.equalsIgnoreCase("local")) {
+			
+			hostName = "10.100.112.1";
 			fromAddress = "ravina.prajapati@samyak.com";
-			bccAddresses = "ravina.prajapati@samyak.com";
+		//	bccAddresses = "ravina.prajapati@samyak.com,parth.shah@samyak.com";
+			bccAddresses = "ravina.prajapati@samyak.com,parth.shah@samyak.com,asharma@samyak.com,parth.doshi@samyak.com";
 
 			// connect to SMTP server
 			props = System.getProperties();
 			props.setProperty("mail.smtp.starttls.enable", "true");
-			props.setProperty("mail.smtp.auth", "false");
+			props.setProperty("mail.smtp.auth", "true");
 
 			// Setup mail server //
-			//props.put("mail.smtp.host", hostName);
-			props.put("smtp.office365.com", hostName);
+			props.put("mail.smtp.host", hostName);
 
 			// Get session
 			session = Session.getInstance(props, null);
 			transport = session.getTransport("smtp");
-			transport.connect(hostName, "ravina.prajapati@samyak.com", null);
-
+			transport.connect(hostName, "ravina.prajapati@samyak.com", "ravina.prajapati");
+				System.out.println("Able to send email from internal email ");
 		}
+
+		// ---Sending email from outlook external emailid
+
+		/*
+		 * hostName = "outlook.office365.com"; fromAddress =
+		 * "ravina.prajapati@samyak.com"; bccAddresses =
+		 * "ravina.prajapati@samyak.com,asharma@samyak.com,parth.doshi@samyak.com,parth.shah@samyak.com";
+		 * 
+		 * // connect to SMTP server props = System.getProperties();
+		 * props.setProperty("mail.smtp.starttls.enable", "true");
+		 * props.setProperty("mail.smtp.auth", "true");
+		 * 
+		 * // Setup mail server // // props.put("mail.smtp.host", hostName);
+		 * props.put("smtp.office365.com", hostName); props.put("mail.smtp.ssl.trust",
+		 * "smtp.office365.com");
+		 * 
+		 * // Get session session = Session.getInstance(props, null); transport =
+		 * session.getTransport("smtp"); transport.connect(hostName,
+		 * "ravina.prajapati@samyak.com", "dsas+");
+		 */
 
 		// Define message object
 		MimeMessage message = new MimeMessage(session);

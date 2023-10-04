@@ -18,14 +18,23 @@ public class ReadyForDispatch extends BaseInit {
 	@Test
 	public void pickupAlert() throws Exception {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
+		WebDriverWait wait;
+		try {
+			wait = new WebDriverWait(Driver, 30);// wait time
+
+		} catch (Exception ewait) {
+			wait = new WebDriverWait(Driver, 60);// wait time
+
+		}
+		//WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time
 		Actions act = new Actions(Driver);
 
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		OrderCreation OC = new OrderCreation();
 		String svc = OC.getServiceID();
 		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(
+			wait2.until(ExpectedConditions.visibilityOfElementLocated(
 					By.xpath("//*[@id=\"lblStages\"][contains(text(),'Ready For Dispatch')]")));
 
 			// --Get StageName
@@ -88,19 +97,24 @@ public class ReadyForDispatch extends BaseInit {
 
 			try {
 				try {
+					
 
-					WebElement Sendpualert = isElementPresent("TLRDSPUALert_id");
+
+					 WebElement Sendpualert = new WebDriverWait(Driver, 7)
+							    .until(ExpectedConditions.visibilityOfElementLocated(By.id("TLRDSPUALert_id")));
+
 					act.moveToElement(Sendpualert).build().perform();
-					wait.until(ExpectedConditions.elementToBeClickable(Sendpualert));
+					wait2.until(ExpectedConditions.elementToBeClickable(Sendpualert));
 					Sendpualert = isElementPresent("TLRDSPUALert_id");
 					Sendpualert.sendKeys(Keys.ENTER);
 					logger.info("Clicked on Alert&Confirm button");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 				} catch (Exception e) {
-					WebElement Sendpualert = isElementPresent("TLRDAlConfrmBtn_id");
+					WebElement Sendpualert = new WebDriverWait(Driver, 7)
+						    .until(ExpectedConditions.visibilityOfElementLocated(By.id("TLRDSPUALert_id")));
 					act.moveToElement(Sendpualert).build().perform();
-					wait.until(ExpectedConditions.elementToBeClickable(Sendpualert));
+					wait2.until(ExpectedConditions.elementToBeClickable(Sendpualert));
 					Sendpualert = isElementPresent("TLRDSPUALert_id");
 					Sendpualert.sendKeys(Keys.ENTER);
 					logger.info("Clicked on Alert&Confirm button");

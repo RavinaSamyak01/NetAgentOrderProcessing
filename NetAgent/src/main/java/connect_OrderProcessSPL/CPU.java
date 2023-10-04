@@ -17,6 +17,7 @@ import connect_OCBaseMethods.OrderCreation;
 import connect_OCBaseMethods.SendPull;
 import connect_OCBaseMethods.TCAcknowledge;
 import connect_OCBaseMethods.VerifyCustomerBill;
+import connect_OCBaseMethods.cancel_job;
 import netAgent_BasePackage.BaseInit;
 
 public class CPU extends BaseInit {
@@ -24,9 +25,10 @@ public class CPU extends BaseInit {
 	@Test
 	public void FedExCpu() throws Exception {
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time
 		// Actions act = new Actions(Driver);
-
+		String Env = storage.getProperty("Env");
 		// --Order Creation
 		OrderCreation OC = new OrderCreation();
 
@@ -43,7 +45,7 @@ public class CPU extends BaseInit {
 
 		// --Error Pop Up
 		try {
-			wait.until(ExpectedConditions
+			wait2.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//*[@class=\"ngdialog-content ui-draggable\"]")));
 			getScreenshot(Driver, "ErrorPopUp_" + ServiceID);
 			WebElement ErrorPUp = isElementPresent("EOErrorPUp_id");
@@ -90,6 +92,23 @@ public class CPU extends BaseInit {
 		// Verify Customer Bill
 		VerifyCustomerBill VCB = new VerifyCustomerBill();
 		VCB.verifyCustomerBill(13);
+		
+		if (Env.equalsIgnoreCase("PROD")) {
+
+			// -- cancel job
+			cancel_job cb = new cancel_job();
+			cb.job_cancel(13);
+
+		}
+
+		else {
+
+			logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+		}
+		
+	//-- navigae to NA tab
+		
+		OC.naTab();
 
 		OC.refreshApp();
 

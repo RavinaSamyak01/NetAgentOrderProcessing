@@ -60,7 +60,7 @@ public class NADeliver extends OrderCreation {
 				logger.info("Clicked on Confirm DEL button");
 
 				try {
-					wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("modal-dialog")));
+					wait2.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("modal-dialog")));
 					WebElement DOK = Driver.findElement(By.id("iddataok"));
 					jse.executeScript("arguments[0].click();", DOK);
 					logger.info("Click on OK of Dialogue box");
