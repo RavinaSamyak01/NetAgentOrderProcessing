@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-NetAgentOrderProcess" class="navigator-link">
-              <span class="suite-name border-passed">NetAgentOrderProcess</span>
+              <span class="suite-name border-skipped">NetAgentOrderProcess</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-NetAgentOrderProcess" class="hide-methods passed suite-NetAgentOrderProcess"> (hide)</a> <!-- hide-methods passed suite-NetAgentOrderProcess -->
-                      <a href="#" panel-name="suite-NetAgentOrderProcess" class="show-methods passed suite-NetAgentOrderProcess"> (show)</a> <!-- show-methods passed suite-NetAgentOrderProcess -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-NetAgentOrderProcess" class="hide-methods skipped suite-NetAgentOrderProcess"> (hide)</a> <!-- hide-methods skipped suite-NetAgentOrderProcess -->
+                      <a href="#" panel-name="suite-NetAgentOrderProcess" class="show-methods skipped suite-NetAgentOrderProcess"> (show)</a> <!-- show-methods skipped suite-NetAgentOrderProcess -->
                     </span>
-                    <div class="method-list-content passed suite-NetAgentOrderProcess">
+                    <div class="method-list-content skipped suite-NetAgentOrderProcess">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-NetAgentOrderProcess" title="netAgent_OrderProcess.AllOrderCreation" class="method navigator-link" hash-for-method="allOrderCreation">allOrderCreation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-NetAgentOrderProcess -->
+                    </div> <!-- method-list-content skipped suite-NetAgentOrderProcess -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,9 +119,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-NetAgentOrderProcess" class="panel NetAgentOrderProcess">
-          <div class="suite-NetAgentOrderProcess-class-passed">
+          <div class="suite-NetAgentOrderProcess-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">netAgent_OrderProcess.AllOrderCreation</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -130,10 +130,28 @@
                   <a name="allOrderCreation">
                   </a> <!-- allOrderCreation -->
                   <span class="method-name">allOrderCreation</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: unknown error: failed to change window state to &apos;normal&apos;, current state is &apos;maximized&apos;
+  (Session info: chrome=117.0.5938.132)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;SIPL92&apos;, ip: &apos;10.212.130.3&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 117.0.5938.149 (e3344ddefa1..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59635}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 17a88ef6fac315b4597bdb69d526a6d3
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:837)
+	at netAgent_BasePackage.BaseInit.beforeMethod(BaseInit.java:130)
+... Removed 20 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-NetAgentOrderProcess-class-passed -->
+          </div> <!-- suite-NetAgentOrderProcess-class-skipped -->
         </div> <!-- panel NetAgentOrderProcess -->
         <div panel-name="test-xml-NetAgentOrderProcess" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -190,12 +208,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'allOrderCreation')
 data.setCell(0, 2, 'netAgent_OrderProcess.AllOrderCreation')
-data.setCell(0, 3, 28259);
+data.setCell(0, 3, 0);
 window.suiteTableData['NetAgentOrderProcess']= { tableData: data, tableDiv: 'times-div-NetAgentOrderProcess'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 28 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-NetAgentOrderProcess">
               </div> <!-- times-div-NetAgentOrderProcess -->
             </div> <!-- times-div -->
@@ -223,24 +241,26 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">netAgent_OrderProcess.AllOrderCreation</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">beforeMethod</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
-                <span class="method-name">testMethodName(public void netAgent_OrderProcess.AllOrderCreation.allOrderCreation() throws java.lang.Exception)</span>
-                <span class="method-start">32913 ms</span>
+                <span class="method-name">testMethodName</span>
+                <span class="method-start">9171 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">allOrderCreation</span>
-                <span class="method-start">32921 ms</span>
+                <span class="method-start">9180 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">getResult([TestResult name=allOrderCreation status=SUCCESS method=AllOrderCreation.allOrderCreation()[pri:0, i...)</span>
-                <span class="method-start">61183 ms</span>
+                <span class="method-name">getResult</span>
+                <span class="method-start">9199 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">SendEmail</span>
-                <span class="method-start">61354 ms</span>
+                <span class="method-start">9276 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

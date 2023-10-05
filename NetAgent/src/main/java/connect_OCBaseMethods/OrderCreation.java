@@ -180,6 +180,8 @@ public class OrderCreation extends BaseInit {
 					wait2.until(ExpectedConditions.invisibilityOfElementLocated(
 							By.xpath("//input[contains(@class,'ng-invalid ng-invalid-required')]")));
 					logger.info("PU Ready time is blank");
+					msg.append("\n" + "PU Ready time is blank" + "\n");
+
 				} catch (Exception PUTimeNotExist) {
 					logger.error(PUTimeNotExist);
 					logger.info("Line number is: " + PUTimeNotExist.getStackTrace()[0].getLineNumber());
@@ -511,7 +513,7 @@ public class OrderCreation extends BaseInit {
 						// --CLick on Select Flight
 						WebElement Select1stFlight = isElementPresent("TLSelect1stFlgt_id");
 						wait.until(ExpectedConditions.elementToBeClickable(Select1stFlight));
-						Select1stFlight.click();
+							Select1stFlight.click();
 						logger.info("Selected 1st flight");
 						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 

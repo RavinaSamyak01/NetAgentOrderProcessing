@@ -108,7 +108,7 @@ public class H3P extends BaseInit {
 			
 	//-- navigae to NA tab
 		
-		OC.naTab();
+		//OC.naTab();
 		
 		// --Refresh App
 

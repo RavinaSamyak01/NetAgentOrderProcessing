@@ -1,31 +1,3 @@
-2023-10-04 16:29:40,995 [main] INFO AllOrderCreation - initialization of the properties file is done
-2023-10-04 16:29:41,794 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 117.0.5938.92 (resolved driver for Chrome 117)
-2023-10-04 16:29:41,849 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\rprajapati\.cache\selenium\chromedriver\win64\117.0.5938.92\chromedriver.exe
-2023-10-04 16:29:58,739 [main] INFO AllOrderCreation - Env : Test
-2023-10-04 16:29:58,740 [main] INFO AllOrderCreation - URL use for Test test is : http://testdevna.nglog.com/login
-2023-10-04 16:29:58,740 [main] INFO AllOrderCreation - Url opened
-2023-10-04 16:30:20,650 [main] INFO AllOrderCreation - Entered UserName
-2023-10-04 16:30:22,247 [main] INFO AllOrderCreation - Entered Password
-2023-10-04 16:30:23,616 [main] INFO AllOrderCreation - Login done
-2023-10-04 16:30:38,471 [main] INFO AllOrderCreation - Click on Customers menu
-2023-10-04 16:30:41,537 [main] INFO AllOrderCreation - Click on Customer
-2023-10-04 16:30:41,538 [main] ERROR AllOrderCreation - java.lang.NullPointerException
-2023-10-04 16:30:41,539 [main] INFO AllOrderCreation - Line number is: 278class java.lang.NullPointerException
-2023-10-04 16:30:41,689 [main] INFO AllOrderCreation - Issue in Order Creation and processing from connect
-2023-10-04 16:31:32,266 [AsyncHttpClient-1-4] WARN org.asynchttpclient.netty.handler.WebSocketHandler - onError
-java.net.SocketException: Connection reset
-	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
-	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
-	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256)
-	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
-	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.base/java.lang.Thread.run(Thread.java:1623)
-2023-10-04 16:31:32,592 [main] INFO AllOrderCreation - ====Sending Email=====
+2023-10-05 19:03:06,896 [main] INFO AllOrderCreation - initialization of the properties file is done
+2023-10-05 19:03:08,070 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 117.0.5938.149 (resolved driver for Chrome 117)
+2023-10-05 19:03:08,160 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\rprajapati\.cache\selenium\chromedriver\win64\117.0.5938.149\chromedriver.exe

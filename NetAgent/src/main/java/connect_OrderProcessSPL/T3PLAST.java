@@ -141,7 +141,7 @@ public class T3PLAST extends BaseInit {
 
 	//-- navigae to NA tab
 		
-		OC.naTab();
+	//	OC.naTab();
 		
 		// --Refresh App
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));

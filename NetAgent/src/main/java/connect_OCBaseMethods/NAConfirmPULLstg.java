@@ -97,9 +97,17 @@ public class NAConfirmPULLstg extends BaseInit {
 						String Validmsg = isElementPresent("NAPartsVal_xpath").getText();
 						logger.info("Validation message is displayed = " + Validmsg);
 						// --Get the serial NO
-//						String SerialNo = isElementPresent("NAPartSerNo_xpath").getText();
-						String SerialNo = isElementPresent("part_master_no_xpath").getText();
-						
+
+						String Env = storage.getProperty("Env");
+						System.out.println("Env " + Env);
+						String SerialNo = null;
+						if (Env.equalsIgnoreCase("PROD")) {
+							SerialNo = isElementPresent("part_master_no_xpath").getText();
+
+						} else {
+							SerialNo = isElementPresent("NAPartSerNo_xpath").getText();
+						}
+
 						logger.info("Serial No of Part is==" + SerialNo + "\n");
 						// enter serial number in scan
 						WebElement SerialNoBar = isElementPresent("NASerTextBox_id");

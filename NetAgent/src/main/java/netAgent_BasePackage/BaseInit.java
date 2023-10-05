@@ -59,9 +59,6 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import connect_OCBaseMethods.OrderCreation;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class BaseInit {
 
@@ -73,7 +70,7 @@ public class BaseInit {
 	public static String SuccMsgReplnsh;
 	public static String WOID;
 	public static String WOTP;
-	public ResourceBundle rb = ResourceBundle.getBundle("config");
+	public static ResourceBundle rb = ResourceBundle.getBundle("config");
 	public String EmailID = rb.getString("MainEmailAddress");
 
 	public static String PUId, JobId, Client, FSLName, Agent;
@@ -99,7 +96,7 @@ public class BaseInit {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
-			// options.addArguments("--headless", "--window-size=1920, 1080");
+			options.addArguments("--headless", "--window-size=1920, 1080");
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
@@ -924,7 +921,7 @@ public class BaseInit {
 	 * (Env.equalsIgnoreCase("Pre-Prod")) { FilePath =
 	 * storage.getProperty("PrePRODFile"); } else if (Env.equalsIgnoreCase("STG")) {
 	 * FilePath = storage.getProperty("STGFile"); } else if
-	 * (Env.equalsIgnoreCase("Test")) { FilePath = storage.getProperty("TestFile");
+	 * (Env.equalsIgnoreCase("Test")) { FilePath = storage.getProperty("TESTFile");
 	 * } else if (Env.equalsIgnoreCase("PROD")) { FilePath =
 	 * storage.getProperty("PRDFile"); } File src = new File(FilePath);
 	 * FileInputStream fis = new FileInputStream(src); Workbook workbook =
@@ -949,7 +946,7 @@ public class BaseInit {
 		} else if (Env.equalsIgnoreCase("STG")) {
 			FilePath = storage.getProperty("STGFile");
 		} else if (Env.equalsIgnoreCase("Test")) {
-			FilePath = storage.getProperty("TestFile");
+			FilePath = storage.getProperty("TESTFile");
 		} else if (Env.equalsIgnoreCase("PROD")) {
 			FilePath = storage.getProperty("PRDFile");
 		}
@@ -1022,7 +1019,7 @@ public class BaseInit {
 		} else if (Env.equalsIgnoreCase("STG")) {
 			FilePath = storage.getProperty("STGFile");
 		} else if (Env.equalsIgnoreCase("Test")) {
-			FilePath = storage.getProperty("TestFile");
+			FilePath = storage.getProperty("TESTFile");
 		} else if (Env.equalsIgnoreCase("PROD")) {
 			FilePath = storage.getProperty("PRDFile");
 		}
@@ -1046,7 +1043,7 @@ public class BaseInit {
 		} else if (Env.equalsIgnoreCase("STG")) {
 			FilePath = storage.getProperty("STGFile");
 		} else if (Env.equalsIgnoreCase("Test")) {
-			FilePath = storage.getProperty("TestFile");
+			FilePath = storage.getProperty("TESTFile");
 		}
 		File src = new File(FilePath);
 
@@ -1401,13 +1398,6 @@ public class BaseInit {
 		OrderCreation OC = new OrderCreation();
 		OC.refreshApp();
 
-	}
-
-	public void Ashotscreenshot(String screenshotName) throws IOException {
-		Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000))
-				.takeScreenshot(Driver);
-		String destination = System.getProperty("user.dir") + "/Report/NA_Screenshot/" + screenshotName + ".png";
-		ImageIO.write(fpScreenshot.getImage(), "PNG", new File(destination));
 	}
 
 	public void resetResultofExcel() throws EncryptedDocumentException, InvalidFormatException, IOException {

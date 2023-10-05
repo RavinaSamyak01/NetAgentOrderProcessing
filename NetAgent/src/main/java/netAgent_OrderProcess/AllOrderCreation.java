@@ -55,7 +55,7 @@ public class AllOrderCreation extends BaseInit {
 				try {
 					LOC LocJob = new LOC();
 					LocJob.locLocal();
-					
+
 					setResultData("Result", 1, 4, "PASS");
 
 				} catch (Exception LOC) {

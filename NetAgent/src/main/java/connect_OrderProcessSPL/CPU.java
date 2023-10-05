@@ -108,7 +108,7 @@ public class CPU extends BaseInit {
 		
 	//-- navigae to NA tab
 		
-		OC.naTab();
+	//	OC.naTab();
 
 		OC.refreshApp();
 

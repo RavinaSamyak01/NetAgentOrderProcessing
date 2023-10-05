@@ -25,7 +25,7 @@ public class NAPickup extends OrderCreation {
 		logger.info("ServiceID=" + svc);
 
 		try {
-			wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Pickup')]")));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Pickup')]")));
 
 			OrderCreation OC = new OrderCreation();
 			OC.getNAStageName();
