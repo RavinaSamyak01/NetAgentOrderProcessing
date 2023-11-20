@@ -43,6 +43,9 @@ public class VerifyCustomerBill extends BaseInit {
 
 			// --Get StageName
 			OC.getStageName();
+			
+			OC.memoAuditHistory(svc);
+
 
 		} catch (Exception e) {
 			logger.error(e);

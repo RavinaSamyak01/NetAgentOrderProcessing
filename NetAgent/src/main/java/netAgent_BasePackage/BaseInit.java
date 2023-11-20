@@ -1402,18 +1402,16 @@ public class BaseInit {
 
 	public void resetResultofExcel() throws EncryptedDocumentException, InvalidFormatException, IOException {
 		String Env = storage.getProperty("Env");
-		System.out.println(Env);
 		String FilePath = null;
 
 		if (Env.equalsIgnoreCase("Pre-Prod")) {
 			FilePath = storage.getProperty("PrePRODResultFile");
 		} else if (Env.equalsIgnoreCase("STG")) {
 			FilePath = storage.getProperty("STGResultFile");
-		} else if (Env.equalsIgnoreCase("Prod")) {
-			FilePath = storage.getProperty("PRODResultFile");
 		} else if (Env.equalsIgnoreCase("TEST")) {
 			FilePath = storage.getProperty("TESTResultFile");
-			System.out.println("Env Test");
+		} else if (Env.equalsIgnoreCase("Prod")) {
+			FilePath = storage.getProperty("PRODResultFile");
 		}
 
 		File src = new File(FilePath);
@@ -1440,11 +1438,11 @@ public class BaseInit {
 
 			System.out.println("Colname==" + Colname);
 
-			if (Colname.contains("Result")) {
+			if (Colname.equalsIgnoreCase("Result")) {
 				ResultColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
 				System.out.println("Index of the column==" + ResultColIndex);
 
-			} else if (Colname.contains("Fail Log")) {
+			} else if (Colname.equalsIgnoreCase("Fail Log")) {
 				FailLogColIndex = sh.getRow(0).getCell(tcol).getColumnIndex();
 				System.out.println("Index of the column==" + FailLogColIndex);
 				break;
@@ -1464,7 +1462,7 @@ public class BaseInit {
 				fos1.close();
 				fis.close();
 			} catch (Exception e) {
-				fos1.close();
+				fos1.close();	
 				fis.close();
 				logger.info("Issue in SetData" + e);
 

@@ -513,7 +513,7 @@ public class OrderCreation extends BaseInit {
 						// --CLick on Select Flight
 						WebElement Select1stFlight = isElementPresent("TLSelect1stFlgt_id");
 						wait.until(ExpectedConditions.elementToBeClickable(Select1stFlight));
-							Select1stFlight.click();
+						Select1stFlight.click();
 						logger.info("Selected 1st flight");
 						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
@@ -522,9 +522,27 @@ public class OrderCreation extends BaseInit {
 					// --Click on Assign button
 					WebElement AssignFlight = isElementPresent("TLAssignFlght_xpath");
 					wait.until(ExpectedConditions.elementToBeClickable(AssignFlight));
-					AssignFlight.click();
+					jse.executeScript("arguments[0].click();", AssignFlight);
 					logger.info("Clicked on Assign button");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+					// --station hr validation
+					try {
+						// --Click on Yes button
+						WebElement STationHR = isElementPresent("AIrstHrPup_xpath");
+						wait2.until(ExpectedConditions.visibilityOf(STationHR));
+						String StHMsg = STationHR.getText();
+						logger.info("Message==" + StHMsg);
+						BtnYes = isElementPresent("CPUDYesPrc_xpath");
+						wait2.until(ExpectedConditions.elementToBeClickable(BtnYes));
+						act.moveToElement(BtnYes).build().perform();
+						jse.executeScript("arguments[0].click();", BtnYes);
+						logger.info("Clicked on OK button");
+						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+					} catch (Exception ee) {
+
+					}
 
 					try {
 
@@ -699,7 +717,9 @@ public class OrderCreation extends BaseInit {
 				jse.executeScript("arguments[0].scrollIntoView();", order);
 				Thread.sleep(2000);
 				act.moveToElement(order).build().perform();
+				order = isElementPresent("OCOProcess_id");
 				wait.until(ExpectedConditions.elementToBeClickable(order));
+				Thread.sleep(2000);
 				jse.executeScript("arguments[0].click();", order);
 				logger.info("Click on Create Order button");
 				WebDriverWait wait3 = new WebDriverWait(Driver, 30);// wait time
@@ -828,6 +848,7 @@ public class OrderCreation extends BaseInit {
 					logger.info("Validation for Package is not displayed");
 
 				}
+
 				// --Scroll down
 				/*
 				 * r.keyPress(KeyEvent.VK_TAB); jse.executeScript("window.scrollBy(0,250)", "");
@@ -859,13 +880,15 @@ public class OrderCreation extends BaseInit {
 						 * jse.executeScript("arguments[0].scrollIntoView();", order);
 						 * Thread.sleep(2000);
 						 */
-						order = isElementPresent("OCOProcess_id");
-						act.moveToElement(order).build().perform();
-						wait.until(ExpectedConditions.elementToBeClickable(order));
-						jse.executeScript("arguments[0].click();", order);
-						logger.info("Click on Create Order button");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-						Thread.sleep(2000);
+						/*
+						 * order = isElementPresent("OCOProcess_id");
+						 * act.moveToElement(order).build().perform();
+						 * wait.until(ExpectedConditions.elementToBeClickable(order));
+						 * jse.executeScript("arguments[0].click();", order);
+						 * logger.info("Click on Create Order button");
+						 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
+						 * )); Thread.sleep(2000);
+						 */
 
 						try {
 							WebDriverWait wait5 = new WebDriverWait(Driver, 5);
@@ -887,7 +910,42 @@ public class OrderCreation extends BaseInit {
 						} catch (Exception eee) {
 
 						}
-						WebDriverWait wait1 = new WebDriverWait(Driver, 40);// wait time
+
+						try {
+							wait.until(ExpectedConditions
+									.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"modal-dialog\"]")));
+							String DialogueContent = isElementPresent("AirSTationH_xpath").getText();
+							logger.info("Content of the Dialogue is==" + DialogueContent);
+
+							if (DialogueContent
+									.contains("Quoted Pickup time cannot be greater than Schedule Drop time.")) {
+								msg.append("Wrong QPT QDT set==FAIL" + "\n");
+								try {
+									// --CLick on Yes button
+									WebElement YesProceed = isElementPresent("CPUDYesPrc_xpath");
+									wait2.until(ExpectedConditions.elementToBeClickable(YesProceed));
+									jse.executeScript("arguments[0].click();", YesProceed);
+									logger.info("Click on Yes Proceed button");
+									wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+									wait.until(ExpectedConditions
+											.invisibilityOfElementLocated(By.xpath("//*[@class=\"modal-dialog\"]")));
+
+								} catch (Exception YesBTN) {
+									// --CLick on Yes button
+									WebElement YesProceed = isElementPresent("EOCont_xpath");
+									wait2.until(ExpectedConditions.elementToBeClickable(YesProceed));
+									act.moveToElement(YesProceed).click().build().perform();
+									logger.info("Click on Yes Proceed button");
+									wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+								}
+
+							}
+
+						} catch (Exception e) {
+							logger.info("QPT QDT validation not displayed");
+						}
+						WebDriverWait wait1 = new WebDriverWait(Driver, 50);// wait time
 						wait1.until(ExpectedConditions
 								.visibilityOfElementLocated(By.xpath("//*[@class=\"modal-dialog modal-sm\"]")));
 
@@ -1990,6 +2048,23 @@ public class OrderCreation extends BaseInit {
 			logger.info("Clicked on Assign button");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
+			// --station hr validation
+			try {
+				// --Click on Yes button
+				WebElement STationHR = isElementPresent("AIrstHrPup_xpath");
+				wait.until(ExpectedConditions.visibilityOf(STationHR));
+				String StHMsg = STationHR.getText();
+				logger.info("Message==" + StHMsg);
+				WebElement BtnYes = isElementPresent("CPUDYesPrc_xpath");
+				wait.until(ExpectedConditions.elementToBeClickable(BtnYes));
+				act.moveToElement(BtnYes).build().perform();
+				js.executeScript("arguments[0].click();", BtnYes);
+				logger.info("Clicked on OK button");
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+			} catch (Exception ee) {
+
+			}
 			try {
 
 				WebElement Validation = isElementPresent("Error_id");
@@ -3652,6 +3727,7 @@ public class OrderCreation extends BaseInit {
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
 		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time;
+		WebDriverWait wait3 = new WebDriverWait(Driver, 60);// wait time
 
 		// --NetAgent Login
 
@@ -3675,7 +3751,7 @@ public class OrderCreation extends BaseInit {
 		wait.until(ExpectedConditions.elementToBeClickable(TaskLogMenu));
 		js.executeScript("arguments[0].click();", TaskLogMenu);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class='ajax-loadernew']")));
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("panel-body")));
+		wait3.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("panel-body")));
 		logger.info("Click on Task Log");
 
 		String PUID = getData("OrderCreation", i, 32);
@@ -3800,8 +3876,8 @@ public class OrderCreation extends BaseInit {
 				WebElement InvSearch = isElementPresent("NAInvSearchBtn_id");
 				act.moveToElement(InvSearch).build().perform();
 				wait.until(ExpectedConditions.elementToBeClickable(InvSearch));
-				InvSearch.click();
-				// js.executeScript("arguments[0].click();", InvSearch);
+				// InvSearch.click();
+				js.executeScript("arguments[0].click();", InvSearch);
 				logger.info("Click on Search button");
 				try {
 					wait.until(
@@ -4798,4 +4874,191 @@ public class OrderCreation extends BaseInit {
 
 	}
 
+	public void memoAuditHistory(String Service) throws IOException, InterruptedException {
+		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
+		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
+		WebDriverWait wait1 = new WebDriverWait(Driver, 10);
+		Actions act = new Actions(Driver);
+		
+		
+		//--Go to Edit job
+		try {
+			// --Go to Edit Job tab
+			WebElement EditOrTab = isElementPresent("EOEditOrderTab_id");
+			act.moveToElement(EditOrTab).build().perform();
+			wait.until(ExpectedConditions.elementToBeClickable(EditOrTab));
+			act.moveToElement(EditOrTab).click().perform();
+			logger.info("Click on Edit Order Tab");
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+
+		}catch(Exception ee) {
+			logger.info("Already Edit Job");
+
+		}
+
+		// --Click on Memo
+		WebElement EMemo = isElementPresent("edit_tab_memo_id");
+		wait1.until(ExpectedConditions.visibilityOf(EMemo));
+		wait1.until(ExpectedConditions.elementToBeClickable(EMemo));
+		EMemo.click();
+		logger.info("Click on Memo");
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("MemoPopup")));
+
+		// --Click on AuditHistory
+		WebElement AHistory = isElementPresent("EOAuditH_id");
+		wait1.until(ExpectedConditions.visibilityOf(AHistory));
+		wait1.until(ExpectedConditions.elementToBeClickable(AHistory));
+		AHistory.click();
+		logger.info("Click on Audit History");
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("idAuditReportList")));
+
+		// --Screenshot
+		getScreenshot(Driver, "AUditHistory_0_" + Service);
+
+		// --Scroll down
+		// --Get total rows
+
+		List<WebElement> AHRows = Driver.findElements(By.xpath("//*[@id=\"idAuditReportList\"]//tbody//tr"));
+		int HistoryRows = AHRows.size();
+		logger.info("Total rows==" + HistoryRows);
+
+		int TotalRows = HistoryRows - 1;
+		if (TotalRows > 10) {
+
+			for (int Hrow = 11; Hrow < TotalRows; Hrow++) {
+				WebElement currentRow = AHRows.get(Hrow);
+				highLight(currentRow, Driver);
+				logger.info("Row==" + Hrow);
+				int NewHRow = Hrow;
+				try {
+					if (Hrow == 11 || Hrow == 21 || Hrow == 31 || Hrow == 41 || Hrow == 51 || Hrow == 61 || Hrow == 71
+							|| Hrow == 81 || Hrow == 91 || Hrow == 101) {
+
+						currentRow = AHRows.get(Hrow);
+						act.moveToElement(currentRow).build().perform();
+						Thread.sleep(2000);
+
+						// --scroll to row no.11
+						AHRows.get(Hrow);
+						jse.executeScript("arguments[0].scrollIntoView(true);", currentRow);
+						Thread.sleep(2000);
+						logger.info("Scroll Next" + Hrow);
+
+						int Sno = 0;
+						if (Hrow == 11) {
+							Sno = 1;
+							NewHRow = 21;
+						} else if (Hrow == 21) {
+							Sno = 2;
+							NewHRow = 31;
+
+						} else if (Hrow == 31) {
+							Sno = 3;
+							NewHRow = 41;
+
+						} else if (Hrow == 41) {
+							Sno = 4;
+							NewHRow = 51;
+
+						} else if (Hrow == 51) {
+							Sno = 5;
+							NewHRow = 61;
+
+						} else if (Hrow == 61) {
+							Sno = 6;
+							NewHRow = 71;
+
+						} else if (Hrow == 71) {
+							Sno = 7;
+							NewHRow = 81;
+
+						} else if (Hrow == 81) {
+							Sno = 8;
+							NewHRow = 91;
+
+						} else if (Hrow == 91) {
+							Sno = 9;
+							NewHRow = 101;
+
+						} else if (Hrow == 101) {
+							Sno = 10;
+
+						}
+
+						getScreenshot(Driver, "AUditHi1tory_" + Sno + "_" + Service);
+
+					}
+
+				} catch (Exception stalelement) {
+					List<WebElement> AHRows1 = Driver
+							.findElements(By.xpath("//*[@id=\"idAuditReportList\"]//tbody//tr"));
+					int HistoryRows1 = AHRows1.size();
+					logger.info("Total rows==" + HistoryRows1);
+
+					int TotalRows1 = HistoryRows1 - 1;
+
+					for (int Hrow1 = Hrow; Hrow1 <= TotalRows1; Hrow1++) {
+						WebElement currentRow1 = AHRows1.get(Hrow1);
+						highLight(currentRow, Driver);
+
+						if (Hrow1 == 11 || Hrow1 == 21 || Hrow1 == 31 || Hrow1 == 41 || Hrow1 == 51 || Hrow1 == 61
+								|| Hrow1 == 71 || Hrow1 == 81 || Hrow1 == 91 || Hrow1 == 101) {
+
+							currentRow1 = AHRows1.get(Hrow1);
+							act.moveToElement(currentRow1).build().perform();
+							Thread.sleep(2000);
+
+							int Sno = 0;
+							if (Hrow1 == 11) {
+								Sno = 1;
+							} else if (Hrow1 == 21) {
+								Sno = 2;
+							} else if (Hrow1 == 31) {
+								Sno = 3;
+							} else if (Hrow1 == 41) {
+								Sno = 4;
+							} else if (Hrow1 == 51) {
+								Sno = 5;
+							} else if (Hrow1 == 61) {
+								Sno = 6;
+							} else if (Hrow1 == 71) {
+								Sno = 7;
+							} else if (Hrow1 == 81) {
+								Sno = 8;
+							} else if (Hrow1 == 91) {
+								Sno = 9;
+							} else if (Hrow1 == 101) {
+								Sno = 10;
+							}
+
+							// --scroll to row no.11
+							jse.executeScript("arguments[0].scrollIntoView(true);", currentRow);
+							Thread.sleep(2000);
+							logger.info("Scroll to page");
+							getScreenshot(Driver, "AUditHi1tory_" + Sno + "_" + Service);
+							break;
+						}
+					}
+				}
+				Hrow = NewHRow;
+				logger.info("Next Row==" + NewHRow);
+
+			}
+		}
+
+		// --Close memo pop up
+		WebElement AHClose = isElementPresent("EOAuditClose_xpath");
+		wait1.until(ExpectedConditions.visibilityOf(AHClose));
+		wait1.until(ExpectedConditions.elementToBeClickable(AHClose));
+		AHClose.click();
+		logger.info("Click on Close button of Audit History");
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+		refreshApp();
+	}
 }

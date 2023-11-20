@@ -72,10 +72,10 @@ public class AllOrderCreation extends BaseInit {
 
 					setResultData("Result", 2, 4, "PASS");
 
-				} catch (Exception LOC) {
-					logger.info(LOC);
+				} catch (Exception SD) {
+					logger.info(SD);
 					getScreenshot(Driver, "LOCIssue");
-					String Error = LOC.getMessage();
+					String Error = SD.getMessage();
 					setResultData("Result", 2, 4, "FAIL");
 					setResultData("Result", 2, 5, Error);
 				}

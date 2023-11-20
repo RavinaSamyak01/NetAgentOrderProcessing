@@ -36,22 +36,25 @@ public class RTE extends BaseInit {
 		String Env = storage.getProperty("Env");
 		OrderCreation OC = new OrderCreation();
 
+		logger.info("=====Service:- RTE=====");
+		msg.append("\n\n" + "=====Service:- RTE=====" + "\n");
+
 		if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
 
-			// Get Tracking No 
+			// Get Tracking No
 			getRTETrackingNo();
 
-			// -Search RTE job 
+			// -Search RTE job
 			searchRTEJob();
 
-			// -Process From Connect 
+			// -Process From Connect
 			rteConnectProcess();
 
 			// --Refresh App
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 			OC.refreshApp();
 
-			// --NetAgent Tab 
+			// --NetAgent Tab
 			OC.naTab();
 
 			RTE_OrderProcess RTEO = new RTE_OrderProcess();
@@ -70,44 +73,44 @@ public class RTE extends BaseInit {
 		{
 			// -- create loc --> merge and create new RTE
 
-						OC.create_Loc_merge_loc_create_rte();
-						
-						// -Process From Connect
-						rteConnectProcess();
+			OC.create_Loc_merge_loc_create_rte();
 
-						// --Refresh App
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-						OC.refreshApp();
+			// -Process From Connect
+			rteConnectProcess();
 
-						// --NetAgent Tab
-						OC.naTab();
+			// --Refresh App
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			OC.refreshApp();
 
-						RTE_OrderProcess RTEO = new RTE_OrderProcess();
-						RTEO.orderProcessRTEJOB();
+			// --NetAgent Tab
+			OC.naTab();
 
-						// --COnnect Tab
-						OC.connectTab();
+			RTE_OrderProcess RTEO = new RTE_OrderProcess();
+			RTEO.orderProcessRTEJOB();
 
-						// Process from connect
-						rteVerifyConnect();
-						
-						if (Env.equalsIgnoreCase("PROD")) {
+			// --COnnect Tab
+			OC.connectTab();
 
-							// -- cancel job
-							cancel_job cb = new cancel_job();
-							cb.job_cancel(23);
+			// Process from connect
+			rteVerifyConnect();
 
-						}
+			if (Env.equalsIgnoreCase("PROD")) {
 
-						else {
+				// -- cancel job
+				cancel_job cb = new cancel_job();
+				cb.job_cancel(23);
 
-							logger.info("Current Enviornment is not Production , so job cancellation is not handled");
-						}
-						
-						// --NetAgent Tab 
-						OC.naTab();
-						Thread.sleep(2500);
-						
+			}
+
+			else {
+
+				logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+			}
+
+			// --NetAgent Tab
+			OC.naTab();
+			Thread.sleep(2500);
+
 		}
 	}
 
@@ -186,10 +189,10 @@ public class RTE extends BaseInit {
 					logger.info("RWTrackingNo is ==" + RWTrackingNo);
 					msg.append("RWTrackingNo is ==" + RWTrackingNo + "\n");
 					setData("RTE", 1, 1, RWTrackingNo);
-//					setResultData("Result", 23, 2, RWTrackingNo);
-//					setResultData("Result", 23, 4, "PASS");
-					setResultData("Result", 27, 2, RWTrackingNo);
-					setResultData("Result", 27, 4, "PASS");
+					setResultData("Result", 23, 2, RWTrackingNo);
+					setResultData("Result", 23, 4, "PASS");
+					// setResultData("Result", 27, 2, RWTrackingNo);
+					// setResultData("Result", 27, 4, "PASS");
 
 				}
 			}
@@ -534,10 +537,11 @@ public class RTE extends BaseInit {
 		getScreenshot(Driver, "JobEditor_TCACK");
 
 		// --Click on Acknowledge button
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("GreyTick")));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-		isElementPresent("TLAcknoldge_id").click();
-
+		WebElement TCACK = isElementPresent("TLAcknoldge_id");
+		wait.until(ExpectedConditions.visibilityOf(TCACK));
+		wait.until(ExpectedConditions.elementToBeClickable(TCACK));
+		js.executeScript("arguments[0].click();", TCACK);
 		logger.info("Clicked on Acknowledge button");
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
@@ -587,7 +591,7 @@ public class RTE extends BaseInit {
 		Actions act = new Actions(Driver);
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		String Env = storage.getProperty("Env");
-		
+
 		// search job
 		try {
 			searchRTEJob();
@@ -682,20 +686,21 @@ public class RTE extends BaseInit {
 							logger.info("Validation is displayed==" + Val);
 
 							if (Val.contains(
-									"Actual route end date should be same or greater then last stop's pod time."));
-								
+									"Actual route end date should be same or greater then last stop's pod time."))
+								;
+
 							{
 								logger.info(
 										"Validation is displayed for route end date should be same or greater then last stop's pod time==PASS");
-try {
-								routeEndDateValidation();
-}
+								try {
+									routeEndDateValidation();
+								}
 
-catch (Exception e) {
-	// TODO: handle exception
-	
-	logger.info("Validation is not displayed for Route End Date and Time");
-}
+								catch (Exception e) {
+									// TODO: handle exception
+
+									logger.info("Validation is not displayed for Route End Date and Time");
+								}
 							}
 
 						} catch (Exception EndTimeIssue) {
@@ -751,91 +756,101 @@ catch (Exception e) {
 						jobStatus = isElementPresent("EOStageName_id").getText();
 						logger.info("Job status is==" + jobStatus);
 						msg.append("Job status is==" + jobStatus + "\n");
-						
-						
 
 						if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
-						
-						
-				// --	verify bill only for STG and TEST
 
-						if (jobStatus.contains("VERIFY CUSTOMER BILL")) {
-							logger.info("Job is moved to Verify Customer Bill stage");
-							getScreenshot(Driver, "JobEditor_VerifyCustBill");
+							// -- verify bill only for STG and TEST
 
-							// --Verify
-							// --Zoom Out
-							/*
-							 * js.executeScript("document.body.style.zoom='80%';"); Thread.sleep(2000);
-							 */
-							// --Click on Verify button
-							WebElement Verify = isElementPresent("TLVerify_id");
-							wait.until(ExpectedConditions.visibilityOf(Verify));
-							js.executeScript("arguments[0].click();", Verify);
-							logger.info("Clicked on Verify button");
-							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+							if (jobStatus.contains("VERIFY CUSTOMER BILL")) {
+								logger.info("Job is moved to Verify Customer Bill stage");
+								getScreenshot(Driver, "JobEditor_VerifyCustBill");
 
-							// --Verified
-							// --Zoom IN
-							/*
-							 * js.executeScript("document.body.style.zoom='100%';"); Thread.sleep(2000);
-							 */
-
-							try {
+								// --Verify
+								// --Zoom Out
 								/*
-								 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtContains")
-								 * )); PickUpID = getData("SearchRTE", 1, 2);
-								 * isElementPresent("TLBasicSearch_id").clear();
-								 * isElementPresent("TLBasicSearch_id").sendKeys(PickUpID);
-								 * logger.info("Entered PickUpID in basic search");
+								 * js.executeScript("document.body.style.zoom='80%';"); Thread.sleep(2000);
 								 */
-								// --Click on Search
-								searchRTEJob();
+								// --Click on Verify button
+								WebElement Verify = isElementPresent("TLVerify_id");
+								wait.until(ExpectedConditions.visibilityOf(Verify));
+								js.executeScript("arguments[0].click();", Verify);
+								logger.info("Clicked on Verify button");
+								wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+								// --Verified
+								// --Zoom IN
+								/*
+								 * js.executeScript("document.body.style.zoom='100%';"); Thread.sleep(2000);
+								 */
 
 								try {
-									WebElement NoDataV = isElementPresent("	");
-									wait.until(ExpectedConditions.visibilityOf(NoDataV));
-									if (NoDataV.isDisplayed()) {
-										logger.info("There is no Data with Search parameter");
+									/*
+									 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtContains")
+									 * )); PickUpID = getData("SearchRTE", 1, 2);
+									 * isElementPresent("TLBasicSearch_id").clear();
+									 * isElementPresent("TLBasicSearch_id").sendKeys(PickUpID);
+									 * logger.info("Entered PickUpID in basic search");
+									 */
+									// --Click on Search
+									searchRTEJob();
 
-									}
+									try {
+										WebElement NoDataV = isElementPresent("NoData_className");
+										wait.until(ExpectedConditions.visibilityOf(NoDataV));
+										if (NoDataV.isDisplayed()) {
+											logger.info("There is no Data with Search parameter");
 
-								} catch (Exception NoDataee) {
-									logger.info("Data is exist with search parameter");
-									wait.until(ExpectedConditions
-											.visibilityOfAllElementsLocatedBy(By.id("RouteWorkFlow")));
-									getScreenshot(Driver, "JobEditor_Delivered");
-									jobStatus = isElementPresent("EOStageName_id").getText();
-									logger.info("Job status is==" + jobStatus);
+										}
 
-									if (jobStatus.contains("VERIFIED")) {
-										logger.info("Job is moved to VERIFIED stage");
-										getScreenshot(Driver, "JobEditor_Verified");
-										// PickUpID = getData("SearchRTE", 1, 2);
-										msg.append("Job status is==." + jobStatus + "\n");
-										msg.append("Job is Proceed successfully." + "\n");
-
-									} else {
-										logger.info("Job is not moved to VERIFIED stage");
+									} catch (Exception NoDataee) {
+										logger.info("Data is exist with search parameter");
+										wait.until(ExpectedConditions
+												.visibilityOfAllElementsLocatedBy(By.id("RouteWorkFlow")));
+										getScreenshot(Driver, "JobEditor_Delivered");
 										jobStatus = isElementPresent("EOStageName_id").getText();
 										logger.info("Job status is==" + jobStatus);
 
-										WebElement EWSave = isElementPresent("TLQCExitWSave_id");
-										wait.until(ExpectedConditions.visibilityOf(EWSave));
-										act.moveToElement(EWSave).build().perform();
-										act.moveToElement(EWSave).click().perform();
-										logger.info("Clicked on Exit Without Save");
+										if (jobStatus.contains("VERIFIED")) {
+											logger.info("Job is moved to VERIFIED stage");
+											getScreenshot(Driver, "JobEditor_Verified");
+											// PickUpID = getData("SearchRTE", 1, 2);
+											msg.append("Job status is==." + jobStatus + "\n");
+											msg.append("Job is Proceed successfully." + "\n");
+
+										} else {
+											logger.info("Job is not moved to VERIFIED stage");
+											jobStatus = isElementPresent("EOStageName_id").getText();
+											logger.info("Job status is==" + jobStatus);
+
+											WebElement EWSave = isElementPresent("TLQCExitWSave_id");
+											wait.until(ExpectedConditions.visibilityOf(EWSave));
+											act.moveToElement(EWSave).build().perform();
+											act.moveToElement(EWSave).click().perform();
+											logger.info("Clicked on Exit Without Save");
+
+										}
 
 									}
 
+									//
+
+								} catch (Exception VerifyCBill) {
+									logger.error(VerifyCBill);
+									getScreenshot(Driver, "VerifyBillError");
+									logger.info("job is not moved to VERIFIED stage");
+									jobStatus = isElementPresent("EOStageName_id").getText();
+									logger.info("Job status is==" + jobStatus);
+
+									WebElement EWSave = isElementPresent("TLQCExitWSave_id");
+									wait.until(ExpectedConditions.visibilityOf(EWSave));
+									act.moveToElement(EWSave).build().perform();
+									act.moveToElement(EWSave).click().perform();
+									logger.info("Clicked on Exit Without Save");
+
 								}
 
-								//
-
-							} catch (Exception VerifyCBill) {
-								logger.error(VerifyCBill);
-								getScreenshot(Driver, "VerifyBillError");
-								logger.info("job is not moved to VERIFIED stage");
+							} else {
+								logger.info("Job is not moved to Verify Customer Bill stage");
 								jobStatus = isElementPresent("EOStageName_id").getText();
 								logger.info("Job status is==" + jobStatus);
 
@@ -846,24 +861,11 @@ catch (Exception e) {
 								logger.info("Clicked on Exit Without Save");
 
 							}
-
-						} else {
-							logger.info("Job is not moved to Verify Customer Bill stage");
-							jobStatus = isElementPresent("EOStageName_id").getText();
-							logger.info("Job status is==" + jobStatus);
-
-							WebElement EWSave = isElementPresent("TLQCExitWSave_id");
-							wait.until(ExpectedConditions.visibilityOf(EWSave));
-							act.moveToElement(EWSave).build().perform();
-							act.moveToElement(EWSave).click().perform();
-							logger.info("Clicked on Exit Without Save");
-
 						}
-						}
-						
-						else if(Env.equalsIgnoreCase("Prod")) {
-							logger .info("Not perform verify bill on Production Env");
-							msg.append("Not perform verify bill on Production Env"+"\n");
+
+						else if (Env.equalsIgnoreCase("Prod")) {
+							logger.info("Not perform verify bill on Production Env");
+							msg.append("Not perform verify bill on Production Env" + "\n");
 						}
 					}
 

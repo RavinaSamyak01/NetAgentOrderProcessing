@@ -29,9 +29,9 @@ public class RTE_OrderProcess extends BaseInit {
 		Actions act = new Actions(Driver);
 		String Env = storage.getProperty("Env");
 		String PUID = null;
-		String RWTrackNo = null ;
+		String RWTrackNo = null;
 		try {
-		
+
 			// Go To TaskLog
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@id=\"idOperations\"]")));
 			WebElement OperationMenu = Driver.findElement(By.xpath("//a[@id=\"idOperations\"]"));
@@ -49,25 +49,23 @@ public class RTE_OrderProcess extends BaseInit {
 
 			getScreenshot(Driver, "TaskLog_OperationsRTE");
 
-			//String ServiceID = getData("OrderProcessing", 9, 0);
-			//logger.info("ServiceID is==" + ServiceID);
-		//	msg.append("ServiceID==" + ServiceID + "\n");
-			
-			
+			// String ServiceID = getData("OrderProcessing", 9, 0);
+			// logger.info("ServiceID is==" + ServiceID);
+			// msg.append("ServiceID==" + ServiceID + "\n");
 
 			if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
 
-			 PUID = getData("RTE", 1, 3);
-			logger.info("PickUpID is==" + PUID);
-			msg.append("PickUpID==" + PUID + "\n");
+				PUID = getData("RTE", 1, 3);
+				logger.info("PickUpID is==" + PUID);
+				msg.append("PickUpID==" + PUID + "\n");
 			}
-			
+
 			else if (Env.equalsIgnoreCase("Prod")) {
 				PUID = getData("RTE", 2, 3);
 				logger.info("PickUpID is==" + PUID);
 				msg.append("PickUpID==" + PUID + "\n");
-				}
-			
+			}
+
 			try {// --Click on RTE tab
 				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-model=\"RTE\"]")));
 				WebElement RTETab = Driver.findElement(By.xpath("//*[@ng-model=\"RTE\"]"));
@@ -81,30 +79,29 @@ public class RTE_OrderProcess extends BaseInit {
 				// --Search
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 				Driver.findElement(By.id("txtBasicSearchRTE")).clear();
-				
+
 				if (Env.equalsIgnoreCase("Test") || Env.equalsIgnoreCase("STG")) {
-				
-				 RWTrackNo = getData("RTE", 1, 1);
+
+					RWTrackNo = getData("RTE", 1, 1);
 				}
-				
+
 				else if (Env.equalsIgnoreCase("PROD")) {
 					RWTrackNo = getData("RTE", 2, 1);
-					
-					}
-				
-				
+
+				}
+
 				logger.info("RW Tracking No===" + RWTrackNo);
 				Driver.findElement(By.id("txtBasicSearchRTE")).sendKeys(RWTrackNo);
-				logger.info("RW Tracking No===" + RWTrackNo+"is entered in Net agent RTE TAB");
-				
-					WebElement RTESearch = Driver.findElement(By.id("btnRTESearch2"));
+				logger.info("RW Tracking No===" + RWTrackNo + "is entered in Net agent RTE TAB");
+
+				WebElement RTESearch = Driver.findElement(By.id("btnRTESearch2"));
 				act.moveToElement(RTESearch).build().perform();
 				js.executeScript("arguments[0].click();", RTESearch);
 				logger.info("Click on Search button");
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
-				
+
 				Thread.sleep(1000);
-				
+
 				WebElement NoData = Driver.findElement(By.className("dx-datagrid-nodata"));
 				if (NoData.isDisplayed()) {
 					logger.info("Record is not available with search parameters");
@@ -147,8 +144,7 @@ public class RTE_OrderProcess extends BaseInit {
 						}
 						wait.until(ExpectedConditions
 								.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
-						
-				
+
 						// ---Pickup@Stop 1 of 2 stage
 						wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtBasicSearchRTE")));
 						Driver.findElement(By.id("txtBasicSearchRTE")).clear();
@@ -202,12 +198,12 @@ public class RTE_OrderProcess extends BaseInit {
 
 								WebElement ActPUTime = Driver.findElement(By.id("txtActPuTime"));
 								ActPUTime.clear();
-								
+
 								BaseInit timezone = new BaseInit();
 								String time = timezone.getTimeAsTZoneplus2min(ZOneID);
 								Thread.sleep(500);
 								logger.info("Route End time :" + time);
-								ActPUTime.sendKeys(time,Keys.TAB);
+								ActPUTime.sendKeys(time, Keys.TAB);
 								Thread.sleep(1000);
 
 								// --Click on save
@@ -293,9 +289,8 @@ public class RTE_OrderProcess extends BaseInit {
 									String del_time = timezone.getTimeAsTZoneplus2min(ZOneID);
 									Thread.sleep(500);
 									logger.info("Route End time :" + del_time);
-									ActDelTime.sendKeys(del_time,Keys.TAB);
+									ActDelTime.sendKeys(del_time, Keys.TAB);
 									Thread.sleep(1000);
-								
 
 									// --Click on save
 									try {
@@ -304,8 +299,8 @@ public class RTE_OrderProcess extends BaseInit {
 										wait.until(ExpectedConditions.elementToBeClickable(RTESAve));
 										act.moveToElement(RTESAve).click().perform();
 										logger.info("Clicked on Accept button");
-										wait.until(ExpectedConditions
-												.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
+										wait.until(ExpectedConditions.invisibilityOfElementLocated(
+												By.xpath("//*[@class=\"ajax-loadernew\"]")));
 									} catch (Exception Saveb) {
 										WebElement RTESAve = Driver.findElement(By.id("idiconsave"));
 										act.moveToElement(RTESAve).build().perform();
@@ -347,7 +342,8 @@ public class RTE_OrderProcess extends BaseInit {
 										wait.until(ExpectedConditions.invisibilityOfElementLocated(
 												By.xpath("//*[@class=\"ajax-loadernew\"]")));
 										try {
-											wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("errorid")));
+											wait2.until(
+													ExpectedConditions.visibilityOfElementLocated(By.id("errorid")));
 											Errmsg = Driver.findElement(By.id("errorid")).getText();
 											logger.info("validation message=" + Errmsg);
 
@@ -552,18 +548,13 @@ public class RTE_OrderProcess extends BaseInit {
 								String ZOneID = Driver.findElement(By.xpath("//span[contains(@ng-bind,'PUTimeZone')]"))
 										.getText();
 								logger.info("ZoneID of is==" + ZOneID);
-								if (ZOneID.equalsIgnoreCase("EDT")) {
-									ZOneID = "America/New_York";
-								} else if (ZOneID.equalsIgnoreCase("CDT")) {
-									ZOneID = "CST";
-								}
+
+								String Time = getTimeAsTZoneplus2min(ZOneID);
+
+								System.out.println(Time);
 								WebElement ActDelTime = Driver.findElement(By.id("txtActDlTime"));
 								ActDelTime.clear();
-								Date date = new Date();
-								SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
-								dateFormat.setTimeZone(TimeZone.getTimeZone(ZOneID));
-								logger.info(dateFormat.format(date));
-								ActDelTime.sendKeys(dateFormat.format(date));
+								ActDelTime.sendKeys(Time);
 								ActDelTime.sendKeys(Keys.TAB);
 
 								// --Click on save
@@ -878,7 +869,7 @@ public class RTE_OrderProcess extends BaseInit {
 		}
 
 		logger.info("=====RTE Order Processing Test End=====");
-		//msg.append("=====RTE Order Processing Test End=====" + "\n\n");
+		// msg.append("=====RTE Order Processing Test End=====" + "\n\n");
 
 		// --Refresh the App
 		narefreshApp();

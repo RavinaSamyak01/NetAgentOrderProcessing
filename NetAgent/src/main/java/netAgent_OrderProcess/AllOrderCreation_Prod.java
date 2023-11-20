@@ -47,15 +47,16 @@ public class AllOrderCreation_Prod extends BaseInit {
 
 			// -- Activate Account
 
+			ActivateAccount();
+
 			/*
-			 * ActivateAccount();
-			 * 
 			 * try { RTE rteJob = new RTE(); rteJob.rtejobcreationprocess();
 			 * 
 			 * } catch (Exception RTE) { logger.info(RTE); getScreenshot(Driver,
 			 * "RTEIssue"); String Error = RTE.getMessage(); setResultData("Result", 25, 4,
 			 * "FAIL"); setResultData("Result", 25, 5, Error); }
 			 */
+
 			try {
 				LOC LocJob = new LOC();
 				LocJob.locLocal();

@@ -1,8 +1,10 @@
 package connect_OCBaseMethods;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -11,23 +13,23 @@ public class Recover extends OrderCreation {
 
 	@Test
 	public void recoverAtDestination() throws Exception {
-		// JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
+		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time;
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		String svc = Driver.findElement(By.id("lblServiceID")).getText();
 		System.out.println(svc);
-	
+		Actions act = new Actions(Driver);
+
 		try {
-			wait2.until(ExpectedConditions.visibilityOfElementLocated(
+			wait.until(ExpectedConditions.visibilityOfElementLocated(
 					By.xpath("//*[@id=\"lblStages\"][contains(text(),'Recover @ Destination')]")));
 
 			// --Get StageName
 			OrderCreation OC = new OrderCreation();
 			OC.getStageName();
-			
-			OC.movjobstatus();
 
+			OC.movjobstatus();
 
 			// --Actual Recover Time
 
@@ -45,12 +47,13 @@ public class Recover extends OrderCreation {
 			logger.info("Enter Arrival Time");
 
 			// --Recover Date
-			isElementPresent("TLRADRecDate_id").sendKeys(Keys.TAB);
+			// isElementPresent("TLRADRecDate_id").sendKeys(Keys.TAB);
 
 			// --Click on COnfirm Recover
 			WebElement ConfRecover = isElementPresent("TLRADConfRecover_id");
+			act.moveToElement(ConfRecover).build().perform();
 			wait.until(ExpectedConditions.elementToBeClickable(ConfRecover));
-			ConfRecover.click();
+			jse.executeScript("arguments[0].click();", ConfRecover);
 			logger.info("Click on Confirm Recover button");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 

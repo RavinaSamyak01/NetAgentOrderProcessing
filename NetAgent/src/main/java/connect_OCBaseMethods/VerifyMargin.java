@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 
 import netAgent_BasePackage.BaseInit;
 
-
 public class VerifyMargin extends BaseInit {
 	@Test
 	public void verifyMargin(int i) throws Exception {
@@ -29,6 +28,8 @@ public class VerifyMargin extends BaseInit {
 
 			// --Get StageName
 			OC.getStageName();
+
+			OC.memoAuditHistory(svc);
 
 		} catch (Exception e) {
 			logger.error(e);
