@@ -5,16 +5,12 @@ import java.util.ArrayList;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
-import connect_OrderProcessNonSPL.AIR;
-import connect_OrderProcessNonSPL.DRV;
-import connect_OrderProcessNonSPL.FRA;
-import connect_OrderProcessNonSPL.FRG;
+
 import connect_OrderProcessNonSPL.LOC;
 import connect_OrderProcessNonSPL.P3P;
 import connect_OrderProcessNonSPL.PA;
 import connect_OrderProcessNonSPL.RTE;
 import connect_OrderProcessNonSPL.SD;
-import connect_OrderProcessNonSPL.SDC;
 import connect_OrderProcessSPL.CPU;
 import connect_OrderProcessSPL.D3P;
 import connect_OrderProcessSPL.H3P;

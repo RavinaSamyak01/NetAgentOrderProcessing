@@ -404,311 +404,8 @@ public class OrderCreation extends BaseInit {
 					logger.info("Enter PA service in Service input");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-				} else if (i == 6) {
-					// AIR
-					jse.executeScript("window.scrollBy(0,-450)", "");
-
-					// --Click on Unknow Shipper
-					WebElement UnShipper = isElementPresent("EOAIRUnShipper_id");
-					wait.until(ExpectedConditions.visibilityOf(UnShipper));
-					wait.until(ExpectedConditions.elementToBeClickable(UnShipper));
-					act.moveToElement(UnShipper).build().perform();
-					jse.executeScript("arguments[0].click();", UnShipper);
-					logger.info("Clicked on Unknown Shipper");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-					Thread.sleep(1500);
-					wait.until(ExpectedConditions
-							.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"modal-content ui-draggable\"]")));
-
-					// --Enter value in FedEx Verify
-					WebElement VerifyFedEx = isElementPresent("EOAIRVeryFedEx_id");
-					wait.until(ExpectedConditions.visibilityOf(VerifyFedEx));
-					VerifyFedEx.clear();
-					VerifyFedEx.sendKeys("KSMS DONE");
-					logger.info("Entered value in FedEx Verify Input");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					// --Click on Yes button
-					wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnYes")));
-					WebElement BtnYes = isElementPresent("EOAIRUnSHYes_id");
-					wait.until(ExpectedConditions.elementToBeClickable(BtnYes));
-					act.moveToElement(BtnYes).build().perform();
-					jse.executeScript("arguments[0].click();", BtnYes);
-					logger.info("Clicked on Yes button");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					// --Click on Select Flight
-					WebElement SelectFlight = isElementPresent("TLSelFlight_id");
-					wait.until(ExpectedConditions.elementToBeClickable(SelectFlight));
-					// SelectFlight.click();
-					jse.executeScript("arguments[0].scrollIntoView(true);", SelectFlight);
-					Thread.sleep(1500);
-					jse.executeScript("arguments[0].click();", SelectFlight);
-					logger.info("Clicked on Select Flight button");
-
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-					Thread.sleep(1500);
-
-					try {
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					} catch (Exception ExtraWait) {
-						WebDriverWait wait1 = new WebDriverWait(Driver, 50);// wait time
-						wait1.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					}
-
-					wait.until(ExpectedConditions
-							.visibilityOfAllElementsLocatedBy(By.xpath("//*[@ng-form=\"ItineraryForm\"]")));
-
-					// --Check the checkbox
-					WebElement DirectOnly = isElementPresent("TLFliDirectON_xpath");
-					wait.until(ExpectedConditions.visibilityOf(DirectOnly));
-					wait.until(ExpectedConditions.elementToBeClickable(DirectOnly));
-					act.moveToElement(DirectOnly).build().perform();
-					jse.executeScript("arguments[0].click();", DirectOnly);
-					logger.info("Clicked on DirectOnly Checkbox");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					// --Click on Request route
-					WebElement ReqRoute = isElementPresent("TLFlighReqR_id");
-					wait.until(ExpectedConditions.visibilityOf(ReqRoute));
-					wait.until(ExpectedConditions.elementToBeClickable(ReqRoute));
-					act.moveToElement(ReqRoute).build().perform();
-					jse.executeScript("arguments[0].click();", ReqRoute);
-					logger.info("Clicked on ReqRoute button");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-					Thread.sleep(1500);
-					try {
-						WebElement Flights = isElementPresent("TLFligRecord_xpath");
-						wait.until(ExpectedConditions.visibilityOf(ReqRoute));
-						logger.info("Direct flights are available");
-
-						// --CLick on Select Flight
-						WebElement Select1stFlight = isElementPresent("TLSelect1stFlgt_id");
-						wait.until(ExpectedConditions.elementToBeClickable(Select1stFlight));
-						Select1stFlight.click();
-						logger.info("Selected 1st flight");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					} catch (Exception ee) {
-						// --UnCheck the checkbox
-						DirectOnly = isElementPresent("TLFliDirectON_xpath");
-						wait.until(ExpectedConditions.visibilityOf(DirectOnly));
-						wait.until(ExpectedConditions.elementToBeClickable(DirectOnly));
-						act.moveToElement(DirectOnly).build().perform();
-						jse.executeScript("arguments[0].click();", DirectOnly);
-						logger.info("Clicked on DirectOnly Checkbox");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-						Thread.sleep(1500);
-						// --Click on Request route
-						ReqRoute = isElementPresent("TLFlighReqR_id");
-						wait.until(ExpectedConditions.visibilityOf(ReqRoute));
-						wait.until(ExpectedConditions.elementToBeClickable(ReqRoute));
-						act.moveToElement(ReqRoute).build().perform();
-						jse.executeScript("arguments[0].click();", ReqRoute);
-						logger.info("Clicked on ReqRoute button");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-						// --CLick on Select Flight
-						WebElement Select1stFlight = isElementPresent("TLSelect1stFlgt_id");
-						wait.until(ExpectedConditions.elementToBeClickable(Select1stFlight));
-						Select1stFlight.click();
-						logger.info("Selected 1st flight");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					}
-
-					// --Click on Assign button
-					WebElement AssignFlight = isElementPresent("TLAssignFlght_xpath");
-					wait.until(ExpectedConditions.elementToBeClickable(AssignFlight));
-					jse.executeScript("arguments[0].click();", AssignFlight);
-					logger.info("Clicked on Assign button");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					// --station hr validation
-					try {
-						// --Click on Yes button
-						WebElement STationHR = isElementPresent("AIrstHrPup_xpath");
-						wait2.until(ExpectedConditions.visibilityOf(STationHR));
-						String StHMsg = STationHR.getText();
-						logger.info("Message==" + StHMsg);
-						BtnYes = isElementPresent("CPUDYesPrc_xpath");
-						wait2.until(ExpectedConditions.elementToBeClickable(BtnYes));
-						act.moveToElement(BtnYes).build().perform();
-						jse.executeScript("arguments[0].click();", BtnYes);
-						logger.info("Clicked on OK button");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					} catch (Exception ee) {
-
-					}
-
-					try {
-
-						WebElement Validation = isElementPresent("Error_id");
-						wait.until(ExpectedConditions.visibilityOf(Validation));
-						String ValMsg = Validation.getText();
-						logger.info("Validation==" + ValMsg);
-
-						if (ValMsg.equalsIgnoreCase(
-								"Please select the appropriate Product Code before assigning the flight.")) {
-
-							// --Select Product Code
-							WebElement ProductCode = isElementPresent("TLSFProdCode_id");
-							wait.until(ExpectedConditions.elementToBeClickable(ProductCode));
-							Select FSLdrp = new Select(ProductCode);
-							FSLdrp.selectByIndex(1);
-							logger.info("Selected Product Code");
-							Thread.sleep(2000);
-
-							// --Click on Assign button
-							AssignFlight = isElementPresent("TLAssignFlght_xpath");
-							wait.until(ExpectedConditions.elementToBeClickable(AssignFlight));
-							act.moveToElement(AssignFlight).build().perform();
-							jse.executeScript("arguments[0].click();", AssignFlight);
-							logger.info("Clicked on Assign button");
-							logger.info("Clicked on Assign button");
-							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-							setResultData("Result", 15, 4, "PASS");
-							getScreenshot(Driver, "SelectFlight");
-
-							try {
-								try {
-									// --Click on Yes button
-									wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnYes")));
-									BtnYes = isElementPresent("EOAIRUnSHYes_id");
-									wait.until(ExpectedConditions.elementToBeClickable(BtnYes));
-									act.moveToElement(BtnYes).build().perform();
-									jse.executeScript("arguments[0].click();", BtnYes);
-									logger.info("Clicked on Yes button");
-									wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-								} catch (Exception ee) {
-									// --Click on Yes button
-									wait.until(ExpectedConditions
-											.visibilityOfElementLocated(By.xpath("//*[@ng-click=\"ok()\"]")));
-									String StHMsg = isElementPresent("AirSTationH_xpath").getText();
-									logger.info("Message==" + StHMsg);
-									BtnYes = isElementPresent("CPUDYesPrc_xpath");
-									wait.until(ExpectedConditions.elementToBeClickable(BtnYes));
-									act.moveToElement(BtnYes).build().perform();
-									jse.executeScript("arguments[0].click();", BtnYes);
-									logger.info("Clicked on Yes button");
-									wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-								}
-
-							} catch (Exception e) {
-
-							}
-
-						}
-
-					} catch (Exception ee) {
-
-					}
-					try {
-						// --Click on Yes button
-						wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnYes")));
-						BtnYes = isElementPresent("EOAIRUnSHYes_id");
-						wait.until(ExpectedConditions.elementToBeClickable(BtnYes));
-						act.moveToElement(BtnYes).build().perform();
-						jse.executeScript("arguments[0].click();", BtnYes);
-						logger.info("Clicked on Yes button");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					} catch (Exception e) {
-
-					}
-
-					// --Click on HAA checkbox
-					WebElement HAA = isElementPresent("EOAIRHAA_id");
-					wait.until(ExpectedConditions.visibilityOf(HAA));
-					wait.until(ExpectedConditions.elementToBeClickable(HAA));
-					act.moveToElement(HAA).build().perform();
-					jse.executeScript("arguments[0].click();", HAA);
-					logger.info("Clicked on HAA Checkbox");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					// --Scroll Down
-					jse.executeScript("window.scrollBy(0,450)", "");
-					Thread.sleep(2000);
-
-					// --Scroll Down
-					jse.executeScript("window.scrollBy(0,450)", "");
-					Thread.sleep(2000);
-
-					// --Click on Recal button
-					WebElement ReCal = isElementPresent("EOAIRRecal_xpath");
-					wait.until(ExpectedConditions.visibilityOf(ReCal));
-					wait.until(ExpectedConditions.elementToBeClickable(ReCal));
-					act.moveToElement(ReCal).build().perform();
-					jse.executeScript("arguments[0].click();", ReCal);
-					logger.info("Clicked on ReCalculate button");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-				} else if (i == 7) {
-					// SDC
-					jse.executeScript("window.scrollBy(0,-350)", "");
-					Thread.sleep(2000);
-
-					// --Enter P3P service
-					WebElement ServiceInpt = isElementPresent("EOServiceInp_id");
-					wait.until(ExpectedConditions.elementToBeClickable(ServiceInpt));
-					ServiceInpt.clear();
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-					ServiceInpt.sendKeys("SDC");
-					ServiceInpt.sendKeys(Keys.TAB);
-					logger.info("Enter SDC service in Service input");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-					Thread.sleep(500);
-				} else if (i == 8) {
-					// FRA
-					jse.executeScript("window.scrollBy(0,-350)", "");
-					Thread.sleep(2000);
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					// --Enter FRA service
-					WebElement ServiceInpt = isElementPresent("EOServiceInp_id");
-					wait.until(ExpectedConditions.elementToBeClickable(ServiceInpt));
-					ServiceInpt.clear();
-					Thread.sleep(2000);
-					ServiceInpt.clear();
-					ServiceInpt.sendKeys("FRA");
-					Thread.sleep(2000);
-					ServiceInpt.sendKeys(Keys.TAB);
-					Thread.sleep(2000);
-					logger.info("Enter FRA service in Service input");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					// --Click on Unknow Shipper
-					WebElement UnShipper = isElementPresent("EOAIRUnShipper_id");
-					wait.until(ExpectedConditions.visibilityOf(UnShipper));
-					wait.until(ExpectedConditions.elementToBeClickable(UnShipper));
-					act.moveToElement(UnShipper).build().perform();
-					jse.executeScript("arguments[0].click();", UnShipper);
-					logger.info("Clicked on Unknown Shipper");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-					wait.until(ExpectedConditions
-							.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"modal-content ui-draggable\"]")));
-
-					// --Enter value in FedEx Verify
-					WebElement VerifyFedEx = isElementPresent("EOAIRVeryFedEx_id");
-					wait.until(ExpectedConditions.visibilityOf(VerifyFedEx));
-					VerifyFedEx.clear();
-					VerifyFedEx.sendKeys("KSMS DONE");
-					logger.info("Entered value in FedEx Verify Input");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					// --Click on Yes button
-					wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnYes")));
-					WebElement BtnYes = isElementPresent("EOAIRUnSHYes_id");
-					wait.until(ExpectedConditions.elementToBeClickable(BtnYes));
-					act.moveToElement(BtnYes).build().perform();
-					jse.executeScript("arguments[0].click();", BtnYes);
-					logger.info("Clicked on Yes button");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				} else if ((i == 5) || (i == 6) || (i == 7) || (i == 8) || (i == 9)) {
+					logger.info("No need to run FedExSameDay services");
 
 				}
 
@@ -2235,8 +1932,7 @@ public class OrderCreation extends BaseInit {
 				 * isElementPresent("TLDSignature_id").sendKeys(Keys.TAB);
 				 * logger.info("Enter Signature");
 				 */
-				if (svc.equals("LOC") || svc.equals("DRV") || svc.equals("SDC") || svc.equals("FRG")
-						|| svc.equals("3PLAST")) {
+				if (svc.equals("LOC") || svc.equals("3PLAST")) {
 					// --Get the timeZone
 					String tzone = isElementPresent("TLLOCDActTimZone_id").getText();
 					logger.info("Actual DL TimeZone==" + tzone);
@@ -2256,7 +1952,7 @@ public class OrderCreation extends BaseInit {
 					act.moveToElement(ConfDL).click().build().perform();
 					logger.info("Click on Confirm DEL button");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-				} else if (svc.equals("SD") || svc.equals("PA") || svc.equals("FRA")) {
+				} else if (svc.equals("SD") || svc.equals("PA")) {
 
 					// --Enter SIgnature
 					wait.until(ExpectedConditions.elementToBeClickable(By.id("txtDeliverySignature")));
@@ -2276,29 +1972,6 @@ public class OrderCreation extends BaseInit {
 					wait.until(ExpectedConditions.elementToBeClickable(By.id("txtActualDeliveryTime")));
 					isElementPresent("TLDActDLTime_id").clear();
 					isElementPresent("TLDActDLTime_id").sendKeys(rectime);
-					logger.info("Enter Actual DL Time");
-
-					// --Click on Confirm DL button
-					WebElement ConfDL = isElementPresent("TLDConfDL2_id");
-					wait.until(ExpectedConditions.elementToBeClickable(ConfDL));
-					Thread.sleep(2000);
-					act.moveToElement(ConfDL).click().build().perform();
-					logger.info("Click on Confirm DEL button");
-					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-				} else if (svc.equals("AIR")) {
-					Thread.sleep(5000);
-
-					// --Get the timeZone
-					String tzone = isElementPresent("TLDAIRTZone_id").getText();
-					logger.info("Actual DL TimeZone==" + tzone);
-					String rectime = getTimeAsTZone(tzone);
-					logger.info("Actual DL Time==" + rectime);
-
-					// --Enter Actual DL time
-					wait.until(ExpectedConditions.elementToBeClickable(By.id("txtOnHandActualDeliveryTime")));
-					isElementPresent("TLDAIRActualDTime_id").clear();
-					isElementPresent("TLDAIRActualDTime_id").sendKeys(rectime);
 					logger.info("Enter Actual DL Time");
 
 					// --Click on Confirm DL button
@@ -4879,9 +4552,8 @@ public class OrderCreation extends BaseInit {
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		WebDriverWait wait1 = new WebDriverWait(Driver, 10);
 		Actions act = new Actions(Driver);
-		
-		
-		//--Go to Edit job
+
+		// --Go to Edit job
 		try {
 			// --Go to Edit Job tab
 			WebElement EditOrTab = isElementPresent("EOEditOrderTab_id");
@@ -4891,8 +4563,7 @@ public class OrderCreation extends BaseInit {
 			logger.info("Click on Edit Order Tab");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-
-		}catch(Exception ee) {
+		} catch (Exception ee) {
 			logger.info("Already Edit Job");
 
 		}

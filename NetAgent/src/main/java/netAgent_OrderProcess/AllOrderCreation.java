@@ -6,16 +6,11 @@ import java.util.ArrayList;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
-import connect_OrderProcessNonSPL.AIR;
-import connect_OrderProcessNonSPL.DRV;
-import connect_OrderProcessNonSPL.FRA;
-import connect_OrderProcessNonSPL.FRG;
 import connect_OrderProcessNonSPL.LOC;
 import connect_OrderProcessNonSPL.P3P;
 import connect_OrderProcessNonSPL.PA;
 import connect_OrderProcessNonSPL.RTE;
 import connect_OrderProcessNonSPL.SD;
-import connect_OrderProcessNonSPL.SDC;
 import connect_OrderProcessSPL.CPU;
 import connect_OrderProcessSPL.D3P;
 import connect_OrderProcessSPL.H3P;
@@ -107,76 +102,55 @@ public class AllOrderCreation extends BaseInit {
 					setResultData("Result", 4, 5, Error);
 
 				}
+				
+				//==remove fedex services
 
-				try {
-					DRV DRVJob = new DRV();
-					DRVJob.drvDriver();
-					setResultData("Result", 5, 4, "PASS");
-
-				} catch (Exception DRV) {
-					logger.info(DRV);
-					getScreenshot(Driver, "DRVIssue");
-					String Error = DRV.getMessage();
-					setResultData("Result", 5, 4, "FAIL");
-					setResultData("Result", 5, 5, Error);
-
-				}
-
-				try {
-					AIR AIRJob = new AIR();
-					AIRJob.airService();
-					setResultData("Result", 6, 4, "PASS");
-
-				} catch (Exception AIR) {
-					logger.info(AIR);
-					getScreenshot(Driver, "AIRIssue");
-					String Error = AIR.getMessage();
-					setResultData("Result", 6, 4, "FAIL");
-					setResultData("Result", 6, 5, Error);
-
-				}
-
-				try {
-					SDC SDCJob = new SDC();
-					SDCJob.sdcSameDayCity();
-					setResultData("Result", 7, 4, "PASS");
-
-				} catch (Exception SDC) {
-					logger.info(SDC);
-					String Error = SDC.getMessage();
-					setResultData("Result", 7, 4, "FAIL");
-					setResultData("Result", 7, 5, Error);
-					getScreenshot(Driver, "SDCIssue");
-
-				}
-
-				try {
-					FRA FRAJob = new FRA();
-					FRAJob.fraFreight();
-					setResultData("Result", 8, 4, "PASS");
-
-				} catch (Exception FRA) {
-					logger.info(FRA);
-					getScreenshot(Driver, "FRAIssue");
-					String Error = FRA.getMessage();
-					setResultData("Result", 8, 4, "FAIL");
-					setResultData("Result", 8, 5, Error);
-
-				}
-
-				try {
-					FRG FRGJob = new FRG();
-					FRGJob.frgFreight();
-					setResultData("Result", 9, 4, "PASS");
-
-				} catch (Exception FRG) {
-					logger.info(FRG);
-					getScreenshot(Driver, "FRGIssue");
-					String Error = FRG.getMessage();
-					setResultData("Result", 9, 4, "FAIL");
-					setResultData("Result", 9, 5, Error);
-
-				}
+				/*
+				 * try { DRV DRVJob = new DRV(); DRVJob.drvDriver(); setResultData("Result", 5,
+				 * 4, "PASS");
+				 * 
+				 * } catch (Exception DRV) { logger.info(DRV); getScreenshot(Driver,
+				 * "DRVIssue"); String Error = DRV.getMessage(); setResultData("Result", 5, 4,
+				 * "FAIL"); setResultData("Result", 5, 5, Error);
+				 * 
+				 * }
+				 * 
+				 * try { AIR AIRJob = new AIR(); AIRJob.airService(); setResultData("Result", 6,
+				 * 4, "PASS");
+				 * 
+				 * } catch (Exception AIR) { logger.info(AIR); getScreenshot(Driver,
+				 * "AIRIssue"); String Error = AIR.getMessage(); setResultData("Result", 6, 4,
+				 * "FAIL"); setResultData("Result", 6, 5, Error);
+				 * 
+				 * }
+				 * 
+				 * try { SDC SDCJob = new SDC(); SDCJob.sdcSameDayCity();
+				 * setResultData("Result", 7, 4, "PASS");
+				 * 
+				 * } catch (Exception SDC) { logger.info(SDC); String Error = SDC.getMessage();
+				 * setResultData("Result", 7, 4, "FAIL"); setResultData("Result", 7, 5, Error);
+				 * getScreenshot(Driver, "SDCIssue");
+				 * 
+				 * }
+				 * 
+				 * try { FRA FRAJob = new FRA(); FRAJob.fraFreight(); setResultData("Result", 8,
+				 * 4, "PASS");
+				 * 
+				 * } catch (Exception FRA) { logger.info(FRA); getScreenshot(Driver,
+				 * "FRAIssue"); String Error = FRA.getMessage(); setResultData("Result", 8, 4,
+				 * "FAIL"); setResultData("Result", 8, 5, Error);
+				 * 
+				 * }
+				 * 
+				 * try { FRG FRGJob = new FRG(); FRGJob.frgFreight(); setResultData("Result", 9,
+				 * 4, "PASS");
+				 * 
+				 * } catch (Exception FRG) { logger.info(FRG); getScreenshot(Driver,
+				 * "FRGIssue"); String Error = FRG.getMessage(); setResultData("Result", 9, 4,
+				 * "FAIL"); setResultData("Result", 9, 5, Error);
+				 * 
+				 * }
+				 */
 
 				try {
 					H3P H3PJob = new H3P();
