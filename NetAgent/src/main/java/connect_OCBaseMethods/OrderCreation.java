@@ -410,19 +410,16 @@ public class OrderCreation extends BaseInit {
 				}
 
 				// --Click on Create Order button
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 				WebElement order = isElementPresent("OCOProcess_id");
 				jse.executeScript("arguments[0].scrollIntoView();", order);
-				Thread.sleep(2000);
-				act.moveToElement(order).build().perform();
+				Thread.sleep(5000);
+				// act.moveToElement(order).build().perform();
 				order = isElementPresent("OCOProcess_id");
 				wait.until(ExpectedConditions.elementToBeClickable(order));
-				Thread.sleep(2000);
 				jse.executeScript("arguments[0].click();", order);
 				logger.info("Click on Create Order button");
-				WebDriverWait wait3 = new WebDriverWait(Driver, 30);// wait time
-				wait3.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-				Thread.sleep(2000);
-
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 				try {
 
 					WebDriverWait wait5 = new WebDriverWait(Driver, 5);
