@@ -144,7 +144,7 @@ public class BaseInit {
 			// options.addArguments("window-size=1036x776");
 
 			// --Reset result excel
-			resetResultofExcel();
+			//resetResultofExcel();
 			// --NetAgent Login
 			Login();
 
@@ -1408,7 +1408,7 @@ public class BaseInit {
 			FilePath = storage.getProperty("PrePRODResultFile");
 		} else if (Env.equalsIgnoreCase("STG")) {
 			FilePath = storage.getProperty("STGResultFile");
-		} else if (Env.equalsIgnoreCase("TEST")) {
+		} else if (Env.equalsIgnoreCase("Test")) {
 			FilePath = storage.getProperty("TESTResultFile");
 		} else if (Env.equalsIgnoreCase("Prod")) {
 			FilePath = storage.getProperty("PRODResultFile");
