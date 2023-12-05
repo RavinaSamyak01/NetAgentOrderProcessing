@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-04T11:47:41 IST" name="NetAgentOrderProcess" finished-at="2023-12-04T12:22:52 IST" duration-ms="2111087">
+  <suite started-at="2023-12-05T14:28:37 IST" name="NetAgentOrderProcess" finished-at="2023-12-05T14:37:27 IST" duration-ms="530684">
     <groups>
     </groups>
-    <test started-at="2023-12-04T11:47:41 IST" name="OrderProcessing" finished-at="2023-12-04T12:22:52 IST" duration-ms="2111087">
+    <test started-at="2023-12-05T14:28:37 IST" name="OrderProcessing" finished-at="2023-12-05T14:37:27 IST" duration-ms="530684">
       <class name="netAgent_OrderProcess.AllOrderCreation">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-04T11:47:12 IST" name="beforeMethod" finished-at="2023-12-04T11:47:41 IST" duration-ms="28709" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-05T14:28:06 IST" name="beforeMethod" finished-at="2023-12-05T14:28:37 IST" duration-ms="30171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="testMethodName(java.lang.reflect.Method)[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-04T11:47:41 IST" name="testMethodName" finished-at="2023-12-04T11:47:41 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="testMethodName(java.lang.reflect.Method)[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-05T14:28:37 IST" name="testMethodName" finished-at="2023-12-05T14:28:37 IST" duration-ms="7" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,11 +22,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMethodName -->
-        <test-method signature="allOrderCreation()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-04T11:47:41 IST" name="allOrderCreation" finished-at="2023-12-04T12:22:51 IST" duration-ms="2110701" status="PASS">
+        <test-method signature="allOrderCreation()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-05T14:28:37 IST" name="allOrderCreation" finished-at="2023-12-05T14:37:27 IST" duration-ms="530049" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- allOrderCreation -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-04T12:22:51 IST" name="getResult" finished-at="2023-12-04T12:22:52 IST" duration-ms="264" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-05T14:37:27 IST" name="getResult" finished-at="2023-12-05T14:37:27 IST" duration-ms="367" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="SendEmail()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-04T12:22:52 IST" name="SendEmail" finished-at="2023-12-04T12:23:03 IST" duration-ms="10795" status="PASS">
+        <test-method is-config="true" signature="SendEmail()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@25ce9dc4]" started-at="2023-12-05T14:37:27 IST" name="SendEmail" finished-at="2023-12-05T14:37:37 IST" duration-ms="9671" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SendEmail -->

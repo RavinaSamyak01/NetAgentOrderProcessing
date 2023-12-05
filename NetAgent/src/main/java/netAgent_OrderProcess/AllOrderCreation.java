@@ -47,41 +47,61 @@ public class AllOrderCreation extends BaseInit {
 
 				// ActivateAccount();
 
-				/*
-				 * try { LOC LocJob = new LOC(); LocJob.locLocal();
-				 * 
-				 * setResultData("Result", 1, 4, "PASS");
-				 * 
-				 * } catch (Exception LOC) { logger.info(LOC); getScreenshot(Driver,
-				 * "LOCIssue"); String Error = LOC.getMessage(); setResultData("Result", 1, 4,
-				 * "FAIL"); setResultData("Result", 1, 5, Error); }
-				 * 
-				 * try { SD sdJob = new SD(); sdJob.sdSameDay();
-				 * 
-				 * setResultData("Result", 2, 4, "PASS");
-				 * 
-				 * } catch (Exception SD) { logger.info(SD); getScreenshot(Driver, "LOCIssue");
-				 * String Error = SD.getMessage(); setResultData("Result", 2, 4, "FAIL");
-				 * setResultData("Result", 2, 5, Error); }
-				 * 
-				 * try { P3P P3PJob = new P3P(); P3PJob.p3pservice(); setResultData("Result", 3,
-				 * 4, "PASS");
-				 * 
-				 * } catch (Exception P3P) { logger.info(P3P); getScreenshot(Driver,
-				 * "P3PIssue"); String Error = P3P.getMessage(); setResultData("Result", 3, 4,
-				 * "FAIL"); setResultData("Result", 3, 5, Error);
-				 * 
-				 * }
-				 * 
-				 * try { PA PAJob = new PA(); PAJob.paPriorityAir(); setResultData("Result", 4,
-				 * 4, "PASS");
-				 * 
-				 * } catch (Exception PA) { logger.info(PA); getScreenshot(Driver, "PAIssue");
-				 * String Error = PA.getMessage(); setResultData("Result", 4, 4, "FAIL");
-				 * setResultData("Result", 4, 5, Error);
-				 * 
-				 * }
-				 */
+				try {
+					LOC LocJob = new LOC();
+					LocJob.locLocal();
+
+					setResultData("Result", 1, 4, "PASS");
+
+				} catch (Exception LOC) {
+					logger.info(LOC);
+					getScreenshot(Driver, "LOCIssue");
+					String Error = LOC.getMessage();
+					setResultData("Result", 1, 4, "FAIL");
+					setResultData("Result", 1, 5, Error);
+				}
+
+				try {
+					SD sdJob = new SD();
+					sdJob.sdSameDay();
+
+					setResultData("Result", 2, 4, "PASS");
+
+				} catch (Exception SD) {
+					logger.info(SD);
+					getScreenshot(Driver, "LOCIssue");
+					String Error = SD.getMessage();
+					setResultData("Result", 2, 4, "FAIL");
+					setResultData("Result", 2, 5, Error);
+				}
+
+				try {
+					P3P P3PJob = new P3P();
+					P3PJob.p3pservice();
+					setResultData("Result", 3, 4, "PASS");
+
+				} catch (Exception P3P) {
+					logger.info(P3P);
+					getScreenshot(Driver, "P3PIssue");
+					String Error = P3P.getMessage();
+					setResultData("Result", 3, 4, "FAIL");
+					setResultData("Result", 3, 5, Error);
+
+				}
+
+				try {
+					PA PAJob = new PA();
+					PAJob.paPriorityAir();
+					setResultData("Result", 4, 4, "PASS");
+
+				} catch (Exception PA) {
+					logger.info(PA);
+					getScreenshot(Driver, "PAIssue");
+					String Error = PA.getMessage();
+					setResultData("Result", 4, 4, "FAIL");
+					setResultData("Result", 4, 5, Error);
+
+				}
 
 				try {
 					H3P H3PJob = new H3P();
