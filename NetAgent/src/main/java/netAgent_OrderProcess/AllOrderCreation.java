@@ -216,7 +216,7 @@ public class AllOrderCreation extends BaseInit {
 
 				// -- Activate Account
 
-				ActivateAccount();
+				// ActivateAccount();
 
 				try {
 					LOC LocJob = new LOC();
