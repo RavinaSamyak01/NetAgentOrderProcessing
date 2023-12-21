@@ -179,19 +179,17 @@ public class TCAcknowledge extends BaseInit {
 										logger.info("Entered Last quoted Delivery Date");
 										wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
+
 										// --Click on Save Changes button
 										SaveChanges = isElementPresent("TLSaveChanges_id");
 										act.moveToElement(SaveChanges).build().perform();
 										wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
-										Thread.sleep(2000);
-										SaveChanges = isElementPresent("TLSaveChanges_id");
 										wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
 										Thread.sleep(2000);
-										SaveChanges.click();
-										// jse.executeScript("arguments[0].click();", SaveChanges);
+										act.moveToElement(SaveChanges).click().build().perform();
 										logger.info("Click on Save Changes button");
 										wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-										Thread.sleep(5000);
+										Thread.sleep(2000);
 
 									}
 								} catch (Exception ee) {
@@ -227,7 +225,8 @@ public class TCAcknowledge extends BaseInit {
 								// --Click on Save Changes button
 								SaveChanges = isElementPresent("TLSaveChanges_id");
 								act.moveToElement(SaveChanges).build().perform();
-								wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
+								wait.until(
+										ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
 								wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
 								jse.executeScript("arguments[0].click();", SaveChanges);
 								logger.info("Click on Save Changes button");

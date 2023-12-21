@@ -104,22 +104,6 @@ public class AllOrderCreation extends BaseInit {
 				}
 
 				try {
-					H3P H3PJob = new H3P();
-					H3PJob.h3P();
-					setResultData("Result", 10, 4, "PASS");
-
-				} catch (Exception H3P) {
-					logger.info(H3P);
-					getScreenshot(Driver, "LOCIssue");
-					String Error = H3P.getMessage();
-					setResultData("Result", 10, 4, "FAIL");
-					setResultData("Result", 10, 5, Error);
-
-					// --Connect Login
-
-				}
-
-				try {
 					D3P D3PJob = new D3P();
 					D3PJob.d3P();
 					setResultData("Result", 11, 4, "PASS");
@@ -171,6 +155,22 @@ public class AllOrderCreation extends BaseInit {
 					String Error = RTE.getMessage();
 					setResultData("Result", 25, 4, "FAIL");
 					setResultData("Result", 25, 5, Error);
+				}
+
+				try {
+					H3P H3PJob = new H3P();
+					H3PJob.h3P();
+					setResultData("Result", 10, 4, "PASS");
+
+				} catch (Exception H3P) {
+					logger.info(H3P);
+					getScreenshot(Driver, "LOCIssue");
+					String Error = H3P.getMessage();
+					setResultData("Result", 10, 4, "FAIL");
+					setResultData("Result", 10, 5, Error);
+
+					// --Connect Login
+
 				}
 
 				// --Connect LogOut
