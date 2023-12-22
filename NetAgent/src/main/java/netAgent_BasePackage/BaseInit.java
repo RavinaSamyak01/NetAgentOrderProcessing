@@ -351,7 +351,15 @@ public class BaseInit {
 
 		} catch (Exception ee) {
 			WebDriverWait wait1 = new WebDriverWait(Driver, 50);
-			wait2.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			wait1.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+		}
+		try {
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("welcomecontent")));
+
+		} catch (Exception ee) {
+			WebDriverWait wait1 = new WebDriverWait(Driver, 100);
+			wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("welcomecontent")));
 
 		}
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("welcomecontent")));
