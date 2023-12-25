@@ -60,8 +60,8 @@ public class TCAcknowledge extends BaseInit {
 				}
 				try {
 
-					wait2.until(ExpectedConditions
-							.visibilityOfElementLocated(By.xpath("//*[@id='idValidationforMain']//ul[@id='errorid']")));
+					wait2.until(ExpectedConditions.visibilityOfElementLocated(
+							By.xpath("//*[@id=\"idValidationforMain\"]//ul[@id=\"errorid\"]")));
 					String Validmsg = isElementPresent("OCValOnePack_xpath").getText();
 					logger.info("Validation message is displayed=" + Validmsg);
 					if (Validmsg.contains("Please enter Last Quoted Delivery Time through Edit Order.")) {
@@ -99,21 +99,34 @@ public class TCAcknowledge extends BaseInit {
 						DelDate.sendKeys(Keys.TAB);
 						logger.info("Entered Last quoted Delivery Date");
 						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-						// --Click on Save Changes button
 						WebElement SaveChanges = isElementPresent("TLSaveChanges_id");
-						act.moveToElement(SaveChanges).build().perform();
-						wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
-						Thread.sleep(2000);
-						SaveChanges = isElementPresent("TLSaveChanges_id");
-						wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
-						Thread.sleep(2000);
-						SaveChanges.click();
-						// jse.executeScript("arguments[0].click();", SaveChanges);
-						logger.info("Click on Save Changes button");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-						getScreenshot(Driver, "H3PLAstDelSave");
-						Thread.sleep(2000);
+
+						try {
+							// --Click on Save Changes button
+							SaveChanges = isElementPresent("TLSaveChanges_id");
+							act.moveToElement(SaveChanges).build().perform();
+							wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
+							Thread.sleep(2000);
+							wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
+							jse.executeScript("arguments[0].click();", SaveChanges);
+							logger.info("Click on Save Changes button");
+							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+							Thread.sleep(5000);
+							getScreenshot(Driver, "LastQDTValidation");
+						} catch (Exception ee) {
+							// --Click on Save Changes button
+							SaveChanges = isElementPresent("TLSaveChanges_id");
+							act.moveToElement(SaveChanges).build().perform();
+							wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
+							Thread.sleep(2000);
+							wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
+							act.moveToElement(SaveChanges).click().build().perform();
+							logger.info("Click on Save Changes button");
+							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+							Thread.sleep(5000);
+							getScreenshot(Driver, "LastQDTValidation");
+
+						}
 
 						try {
 							WebElement Validation = isElementPresent("EOValidation_id");
@@ -135,17 +148,12 @@ public class TCAcknowledge extends BaseInit {
 								SaveChanges = isElementPresent("TLSaveChanges_id");
 								act.moveToElement(SaveChanges).build().perform();
 								wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
-								Thread.sleep(2000);
-								SaveChanges = isElementPresent("TLSaveChanges_id");
 								wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
 								Thread.sleep(2000);
-								SaveChanges.click();
-								// jse.executeScript("arguments[0].click();", SaveChanges);
+								act.moveToElement(SaveChanges).click().build().perform();
 								logger.info("Click on Save Changes button");
 								wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-								Thread.sleep(5000);
-								getScreenshot(Driver, "LastQDTValidation");
-
+								Thread.sleep(2000);
 								try {
 									Validation = isElementPresent("EOValidation_id");
 									wait.until(ExpectedConditions.visibilityOf(Validation));
@@ -158,12 +166,21 @@ public class TCAcknowledge extends BaseInit {
 										tzone = isElementPresent("TLLastPuTimeZone_xpath").getText();
 										rectime = getTimeAsTZone(tzone) + System.currentTimeMillis();
 
+										// --get QPT
+										String QPT = isElementPresent("TCAQPT_id").getAttribute("value");
+										logger.info("QPT===" + QPT);
+
+										LocalTime t = LocalTime.parse(QPT);
+										LocalTime tn = t.plusMinutes(1);
+										String Time = tn.toString();
+										logger.info("new time==" + Time);
+
 										// --Move to DeliveryDate and Time
 										DelTime = isElementPresent("TLLastQDelTime_id");
 										act.moveToElement(DelTime).build().perform();
 										wait.until(ExpectedConditions.elementToBeClickable(DelTime));
 										DelTime.clear();
-										DelTime.sendKeys(rectime);
+										DelTime.sendKeys(Time);
 										logger.info("EnteredLast  Quoted Delivery Time");
 										wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
@@ -179,11 +196,11 @@ public class TCAcknowledge extends BaseInit {
 										logger.info("Entered Last quoted Delivery Date");
 										wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-
 										// --Click on Save Changes button
 										SaveChanges = isElementPresent("TLSaveChanges_id");
 										act.moveToElement(SaveChanges).build().perform();
-										wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
+										wait.until(
+												ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
 										wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
 										Thread.sleep(2000);
 										act.moveToElement(SaveChanges).click().build().perform();
@@ -202,12 +219,21 @@ public class TCAcknowledge extends BaseInit {
 								tzone = isElementPresent("TLLastPuTimeZone_xpath").getText();
 								rectime = getTimeAsTZone(tzone) + System.currentTimeMillis();
 
+								// --get QPT
+								String QPT = isElementPresent("TCAQPT_id").getAttribute("value");
+								logger.info("QPT===" + QPT);
+
+								LocalTime t = LocalTime.parse(QPT);
+								LocalTime tn = t.plusMinutes(1);
+								String Time = tn.toString();
+								logger.info("new time==" + Time);
+
 								// --Move to DeliveryDate and Time
 								DelTime = isElementPresent("TLLastQDelTime_id");
 								act.moveToElement(DelTime).build().perform();
 								wait.until(ExpectedConditions.elementToBeClickable(DelTime));
 								DelTime.clear();
-								DelTime.sendKeys(rectime);
+								DelTime.sendKeys(Time);
 								logger.info("EnteredLast  Quoted Delivery Time");
 								wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
@@ -225,8 +251,7 @@ public class TCAcknowledge extends BaseInit {
 								// --Click on Save Changes button
 								SaveChanges = isElementPresent("TLSaveChanges_id");
 								act.moveToElement(SaveChanges).build().perform();
-								wait.until(
-										ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
+								wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
 								wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
 								jse.executeScript("arguments[0].click();", SaveChanges);
 								logger.info("Click on Save Changes button");
@@ -236,17 +261,21 @@ public class TCAcknowledge extends BaseInit {
 							}
 
 						} catch (Exception ee) {
+							logger.info(ee);
+							getScreenshot(Driver, "LastQDTPUissue");
 							// --Click on Save Changes button
 							SaveChanges = isElementPresent("TLSaveChanges_id");
 							act.moveToElement(SaveChanges).build().perform();
 							wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
+							Thread.sleep(2000);
+							SaveChanges = isElementPresent("TLSaveChanges_id");
 							wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
-							act.moveToElement(SaveChanges).click().perform();
+							Thread.sleep(2000);
+							SaveChanges.click();
+							// jse.executeScript("arguments[0].click();", SaveChanges);
 							logger.info("Click on Save Changes button");
 							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-							Thread.sleep(2000);
-							getScreenshot(Driver, "H3P_PickupPhone");
-
+							Thread.sleep(5000);
 							logger.info("Validation message is not displayed for Recalculate");
 
 						}
@@ -272,13 +301,13 @@ public class TCAcknowledge extends BaseInit {
 						Thread.sleep(2000);
 
 						// --Enter Commodity
-						WebElement Commodity = isElementPresent("EOCommodity_id");
-						act.moveToElement(Commodity).build().perform();
-						wait.until(ExpectedConditions.elementToBeClickable(Commodity));
-						Commodity.clear();
-						Commodity.sendKeys("Boxes");
-						logger.info("Entered Commodity");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+						WebElement Commo = isElementPresent("EOCommodity_id");
+						act.moveToElement(Commo).build().perform();
+						wait.until(ExpectedConditions.elementToBeClickable(Commo));
+						Commo = isElementPresent("EOCommodity_id");
+						Commo.clear();
+						Commo.sendKeys("BOX");
+						logger.info("Enter Commodity");
 
 						// --Click on Save Changes button
 						WebElement SaveChanges = isElementPresent("TLSaveChanges_id");
@@ -289,6 +318,20 @@ public class TCAcknowledge extends BaseInit {
 						logger.info("Click on Save Changes button");
 						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 						Thread.sleep(5000);
+
+						try {
+							// --Click on Save Changes button
+							SaveChanges = isElementPresent("TLSaveChanges_id");
+							act.moveToElement(SaveChanges).build().perform();
+							wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnSaveChanges")));
+							wait.until(ExpectedConditions.elementToBeClickable(SaveChanges));
+							jse.executeScript("arguments[0].click();", SaveChanges);
+							logger.info("Click on Save Changes button");
+							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+							Thread.sleep(5000);
+						} catch (Exception e) {
+
+						}
 
 						try {
 							WebElement Validation = isElementPresent("EOValidation_id");
