@@ -127,7 +127,7 @@ public class H3P extends BaseInit {
 
 		OC.opFromNetAgent(10);	
 
-		OC.NATaskSearch(PUID);
+		//OC.NATaskSearch(PUID);
 
 		NAConfirmPullAlert CpullALert = new NAConfirmPullAlert();
 		CpullALert.naConfirmPullAlertstage();
