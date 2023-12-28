@@ -146,18 +146,6 @@ public class AllOrderCreation extends BaseInit {
 				}
 
 				try {
-					RTE rteJob = new RTE();
-					rteJob.rtejobcreationprocess();
-
-				} catch (Exception RTE) {
-					logger.info(RTE);
-					getScreenshot(Driver, "RTEIssue");
-					String Error = RTE.getMessage();
-					setResultData("Result", 25, 4, "FAIL");
-					setResultData("Result", 25, 5, Error);
-				}
-
-				try {
 					H3P H3PJob = new H3P();
 					H3PJob.h3P();
 					setResultData("Result", 10, 4, "PASS");
@@ -169,9 +157,22 @@ public class AllOrderCreation extends BaseInit {
 					setResultData("Result", 10, 4, "FAIL");
 					setResultData("Result", 10, 5, Error);
 
-					// --Connect Login
 
 				}
+
+				try {
+					RTE rteJob = new RTE();
+					rteJob.rtejobcreationprocess();
+
+				} catch (Exception RTE) {
+					logger.info(RTE);
+					getScreenshot(Driver, "RTEIssue");
+					String Error = RTE.getMessage();
+					setResultData("Result", 25, 4, "FAIL");
+					setResultData("Result", 25, 5, Error);
+				}
+				// --Connect Login
+
 
 				// --Connect LogOut
 

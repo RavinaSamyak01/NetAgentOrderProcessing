@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="netAgent_OrderProcess.AllOrderCreation">
+      <class name="connect_OrderProcessNonSPL.PA">
         <methods>
           <include name="getResult"/>
           <include name="beforeMethod"/>
-          <include name="allOrderCreation"/>
           <include name="SendEmail"/>
+          <include name="paPriorityAir"/>
           <include name="testMethodName"/>
         </methods>
-      </class> <!-- netAgent_OrderProcess.AllOrderCreation -->
+      </class> <!-- connect_OrderProcessNonSPL.PA -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

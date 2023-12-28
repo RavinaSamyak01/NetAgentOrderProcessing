@@ -1695,20 +1695,22 @@ public class OrderCreation extends BaseInit {
 		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
+		WebDriverWait wait1 = new WebDriverWait(Driver, 30);// wait time
+
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 		try {
 			// --Move to Job Status Tab
 			WebElement JoStatusTab = isElementPresent("TLJobStatusTab_id");
 			wait.until(ExpectedConditions.visibilityOf(JoStatusTab));
-			wait.until(ExpectedConditions.elementToBeClickable(JoStatusTab));
+			wait1.until(ExpectedConditions.elementToBeClickable(JoStatusTab));
 			act.moveToElement(JoStatusTab).click().build().perform();
 			logger.info("Clicked on Job Status Tab");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 			// --Click on Select Flight
 			WebElement SelectFlight = isElementPresent("TLSelFlight_id");
-			wait.until(ExpectedConditions.elementToBeClickable(SelectFlight));
+			wait1.until(ExpectedConditions.elementToBeClickable(SelectFlight));
 			SelectFlight.click();
 			logger.info("Clicked on Select Flight button");
 
@@ -1716,8 +1718,8 @@ public class OrderCreation extends BaseInit {
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 			} catch (Exception ExtraWait) {
-				WebDriverWait wait1 = new WebDriverWait(Driver, 50);// wait time
-				wait1.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+				WebDriverWait wait2 = new WebDriverWait(Driver, 50);// wait time
+				wait2.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 			}
 
@@ -1728,7 +1730,7 @@ public class OrderCreation extends BaseInit {
 			// --CLick on Select Flight
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("hlkSel_0")));
 			WebElement Select1stFlight = isElementPresent("TLSelect1stFlgt_id");
-			wait.until(ExpectedConditions.elementToBeClickable(Select1stFlight));
+			wait1.until(ExpectedConditions.elementToBeClickable(Select1stFlight));
 			act.moveToElement(Select1stFlight).build().perform();
 			js.executeScript("arguments[0].click();", Select1stFlight);
 			logger.info("Selected 1st flight");
@@ -1736,7 +1738,7 @@ public class OrderCreation extends BaseInit {
 
 			// --Click on Assign button
 			WebElement AssignFlight = isElementPresent("TLAssignFlght_xpath");
-			wait.until(ExpectedConditions.elementToBeClickable(AssignFlight));
+			wait1.until(ExpectedConditions.elementToBeClickable(AssignFlight));
 			act.moveToElement(AssignFlight).build().perform();
 			js.executeScript("arguments[0].click();", AssignFlight);
 			logger.info("Clicked on Assign button");
@@ -1750,7 +1752,7 @@ public class OrderCreation extends BaseInit {
 				String StHMsg = STationHR.getText();
 				logger.info("Message==" + StHMsg);
 				WebElement BtnYes = isElementPresent("CPUDYesPrc_xpath");
-				wait.until(ExpectedConditions.elementToBeClickable(BtnYes));
+				wait1.until(ExpectedConditions.elementToBeClickable(BtnYes));
 				act.moveToElement(BtnYes).build().perform();
 				js.executeScript("arguments[0].click();", BtnYes);
 				logger.info("Clicked on OK button");
@@ -1771,7 +1773,7 @@ public class OrderCreation extends BaseInit {
 
 					// --Select Product Code
 					WebElement ProductCode = isElementPresent("TLSFProdCode_id");
-					wait.until(ExpectedConditions.elementToBeClickable(ProductCode));
+					wait1.until(ExpectedConditions.elementToBeClickable(ProductCode));
 					Select FSLdrp = new Select(ProductCode);
 					FSLdrp.selectByIndex(1);
 					logger.info("Selected Product Code");
@@ -1779,7 +1781,7 @@ public class OrderCreation extends BaseInit {
 
 					// --Click on Assign button
 					AssignFlight = isElementPresent("TLAssignFlght_xpath");
-					wait.until(ExpectedConditions.elementToBeClickable(AssignFlight));
+					wait1.until(ExpectedConditions.elementToBeClickable(AssignFlight));
 					act.moveToElement(AssignFlight).build().perform();
 					js.executeScript("arguments[0].click();", AssignFlight);
 					logger.info("Clicked on Assign button");
@@ -1792,9 +1794,9 @@ public class OrderCreation extends BaseInit {
 					try {
 						try {
 							// --Click on Yes button
-							wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnYes")));
+							wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnYes")));
 							WebElement BtnYes = isElementPresent("EOAIRUnSHYes_id");
-							wait.until(ExpectedConditions.elementToBeClickable(BtnYes));
+							wait1.until(ExpectedConditions.elementToBeClickable(BtnYes));
 							act.moveToElement(BtnYes).build().perform();
 							js.executeScript("arguments[0].click();", BtnYes);
 							logger.info("Clicked on Yes button");
@@ -1807,7 +1809,7 @@ public class OrderCreation extends BaseInit {
 							String StHMsg = isElementPresent("AirSTationH_xpath").getText();
 							logger.info("Message==" + StHMsg);
 							WebElement BtnYes = isElementPresent("CPUDYesPrc_xpath");
-							wait.until(ExpectedConditions.elementToBeClickable(BtnYes));
+							wait1.until(ExpectedConditions.elementToBeClickable(BtnYes));
 							act.moveToElement(BtnYes).build().perform();
 							js.executeScript("arguments[0].click();", BtnYes);
 							logger.info("Clicked on Yes button");
