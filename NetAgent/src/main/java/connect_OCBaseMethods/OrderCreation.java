@@ -1781,8 +1781,8 @@ public class OrderCreation extends BaseInit {
 
 					// --Click on Assign button
 					AssignFlight = isElementPresent("TLAssignFlght_xpath");
-					wait1.until(ExpectedConditions.elementToBeClickable(AssignFlight));
 					act.moveToElement(AssignFlight).build().perform();
+					wait1.until(ExpectedConditions.elementToBeClickable(AssignFlight));
 					js.executeScript("arguments[0].click();", AssignFlight);
 					logger.info("Clicked on Assign button");
 					wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));

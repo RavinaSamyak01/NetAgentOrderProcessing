@@ -96,7 +96,7 @@ public class BaseInit {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
-			options.addArguments("--headless", "--window-size=1920, 1080");
+			//options.addArguments("--headless", "--window-size=1920, 1080");
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
@@ -107,20 +107,45 @@ public class BaseInit {
 			options.addArguments("--disable-logging");
 			options.addArguments("--log-level=3");
 			options.addArguments("--remote-allow-origins=*");
+			options.addArguments("--disable-notifications");
 
-			System.setProperty("webDriver.chrome.silentOutput", "true");
-			// options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-			// options.setProxy(null);
-			// options.setPageLoadStrategy(PageLoadStrategy.NONE);
-			// options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-			String downloadFilepath = System.getProperty("user.dir") + "\\src\\main\\resources\\Downloads";
+			/*
+			 * options.addArguments("--headless", "--window-size=1920, 1080"); //
+			 * options.addArguments("--incognito"); // options.addArguments("--test-type");
+			 * options.addArguments("--disable-extensions");
+			 * options.addArguments("--no-sandbox");
+			 * options.addArguments("enable-automation");
+			 * options.addArguments("--dns-prefetch-disable");
+			 * options.addArguments("--disable-gpu");
+			 * options.addArguments("enable-features=NetworkServiceInProcess");
+			 * options.addArguments("--disable-infobars");
+			 * options.addArguments("--disable-dev-shm-usage");
+			 * options.addArguments("--force-device-scale-factor=1"); //
+			 * options.addArguments("--aggressive-cache-discard"); //
+			 * options.addArguments("--disable-cache"); //
+			 * options.addArguments("--disable-application-cache"); //
+			 * options.addArguments("--disable-offline-load-stale-cache"); //
+			 * options.addArguments("--disk-cache-size=0");
+			 * options.addArguments("--no-proxy-server");
+			 * options.addArguments("--log-level=3"); options.addArguments("--silent"); //
+			 * options.addArguments("--disable-browser-side-navigation");
+			 * options.addArguments("--no-proxy-server");
+			 * options.addArguments("--proxy-bypass-list=*"); //
+			 * options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+			 * 
+			 * System.setProperty("webDriver.chrome.silentOutput", "true"); //
+			 * options.setPageLoadStrategy(PageLoadStrategy.NORMAL); //
+			 * options.setProxy(null); //
+			 * options.setPageLoadStrategy(PageLoadStrategy.NONE); //
+			 * options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+			 */String downloadFilepath = System.getProperty("user.dir") + "\\src\\main\\resources\\Downloads";
 			HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
 			chromePrefs.put("profile.default_content_settings.popups", 0);
-			// chromePrefs.put("download.prompt_for_download", "false");
+			chromePrefs.put("download.prompt_for_download", "false");
 			chromePrefs.put("safebrowsing.enabled", "false");
 			chromePrefs.put("download.default_directory", downloadFilepath);
 			options.setExperimentalOption("prefs", chromePrefs);
-			// capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+			capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
 			capabilities.setPlatform(Platform.ANY);
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			Driver = new ChromeDriver(options);
@@ -144,7 +169,7 @@ public class BaseInit {
 			// options.addArguments("window-size=1036x776");
 
 			// --Reset result excel
-			//resetResultofExcel();
+			// resetResultofExcel();
 			// --NetAgent Login
 			Login();
 
@@ -780,7 +805,7 @@ public class BaseInit {
 
 		}
 		String BaseUrl = baseUrl;
-		msg.append(baseUrl + "\n\n");
+		msg.append(baseUrl + "\n\n");	
 		isElementPresent("Login_id").click();
 		Thread.sleep(10000);
 		try {
@@ -1470,7 +1495,7 @@ public class BaseInit {
 				fos1.close();
 				fis.close();
 			} catch (Exception e) {
-				fos1.close();	
+				fos1.close();
 				fis.close();
 				logger.info("Issue in SetData" + e);
 

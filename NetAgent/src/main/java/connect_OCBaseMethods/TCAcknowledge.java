@@ -229,6 +229,8 @@ public class TCAcknowledge extends BaseInit {
 
 									}
 								} catch (Exception ee) {
+									logger.info(ee);
+									getScreenshot(Driver, "H3PTCAckIssue");
 
 								}
 
@@ -456,7 +458,7 @@ public class TCAcknowledge extends BaseInit {
 			}
 
 			if (svc.equals("SD") || svc.equals("PA") || svc.equals("AIR") || svc.equals("FRA")) {
-				
+
 				WebElement TCAckBtn = isElementPresent("TLAckBTn2_id");
 				act.moveToElement(TCAckBtn).build().perform();
 				Thread.sleep(2000);
