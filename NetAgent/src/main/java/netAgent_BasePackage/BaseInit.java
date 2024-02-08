@@ -805,7 +805,7 @@ public class BaseInit {
 
 		}
 		String BaseUrl = baseUrl;
-		msg.append(baseUrl + "\n\n");	
+		msg.append(baseUrl + "\n\n");
 		isElementPresent("Login_id").click();
 		Thread.sleep(10000);
 		try {

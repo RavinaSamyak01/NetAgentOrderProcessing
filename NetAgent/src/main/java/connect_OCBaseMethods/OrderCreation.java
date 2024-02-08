@@ -3573,6 +3573,7 @@ public class OrderCreation extends BaseInit {
 				}
 			} catch (Exception e1) {
 				logger.info("Job is available in NetAgent");
+				Thread.sleep(7000);
 			}
 		}
 //		try {
