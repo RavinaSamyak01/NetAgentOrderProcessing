@@ -1236,6 +1236,7 @@ public class OrderCreation extends BaseInit {
 			act.moveToElement(JoStatusTab).click().build().perform();
 			logger.info("Clicked on Job Status Tab");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			Thread.sleep(5000);
 
 		} catch (Exception e) {
 
@@ -3390,7 +3391,7 @@ public class OrderCreation extends BaseInit {
 	public void opFromNetAgent(int i) throws Exception {
 		WebDriverWait wait;
 		try {
-			wait = new WebDriverWait(Driver, 40);// wait time
+			wait = new WebDriverWait(Driver, 60);// wait time
 
 		} catch (Exception ewait) {
 			wait = new WebDriverWait(Driver, 60);// wait time
@@ -3416,7 +3417,7 @@ public class OrderCreation extends BaseInit {
 		wait.until(ExpectedConditions.elementToBeClickable(OperationMenu));
 		act.moveToElement(OperationMenu).build().perform();
 		js.executeScript("arguments[0].click();", OperationMenu);
-		logger.info("Click on Operations");
+			logger.info("Click on Operations");
 
 		WebElement TaskLogMenu = isElementPresent("NTTasklog_xpath");
 		act.moveToElement(TaskLogMenu).build().perform();
