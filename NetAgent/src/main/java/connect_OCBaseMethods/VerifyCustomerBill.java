@@ -13,23 +13,24 @@ public class VerifyCustomerBill extends BaseInit {
 	@Test
 	public void verifyCustomerBill(int i) throws Exception {
 		WebDriverWait wait = new WebDriverWait(Driver, 30);//
-		WebDriverWait wait2 = new WebDriverWait(Driver,20);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 20);// wait time
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 		// --Search the Job
 		OrderCreation OC = new OrderCreation();
 		OC.searchJob(i);
 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("lblServiceID")));
 		String svc = Driver.findElement(By.id("lblServiceID")).getText();
 		System.out.println(svc);
 
 		try {
-			try {
-				wait2.until(ExpectedConditions.visibilityOfElementLocated(
+			try {		
+				wait.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("//*[@id=\"lblStages\"][contains(text(),'Verify Customer Bill')]")));
 
 			} catch (Exception eStage) {
-				wait2.until(ExpectedConditions.visibilityOfElementLocated(
+				wait.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("//*[@id=\"lblStages\"][contains(text(),'VFY CUST BILL')]")));
 
 			}
@@ -43,9 +44,8 @@ public class VerifyCustomerBill extends BaseInit {
 
 			// --Get StageName
 			OC.getStageName();
-			
-			OC.memoAuditHistory(svc);
 
+			OC.memoAuditHistory(svc);
 
 		} catch (Exception e) {
 			logger.error(e);

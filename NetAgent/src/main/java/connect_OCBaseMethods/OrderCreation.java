@@ -3417,7 +3417,7 @@ public class OrderCreation extends BaseInit {
 		wait.until(ExpectedConditions.elementToBeClickable(OperationMenu));
 		act.moveToElement(OperationMenu).build().perform();
 		js.executeScript("arguments[0].click();", OperationMenu);
-			logger.info("Click on Operations");
+		logger.info("Click on Operations");
 
 		WebElement TaskLogMenu = isElementPresent("NTTasklog_xpath");
 		act.moveToElement(TaskLogMenu).build().perform();
