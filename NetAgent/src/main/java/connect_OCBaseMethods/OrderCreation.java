@@ -1673,6 +1673,7 @@ public class OrderCreation extends BaseInit {
 					setData("TC_OrderProcess", 13, 5, "PASS");
 				}
 			} catch (Exception e) {
+				logger.info(e);
 				getScreenshot(Driver, "UnknownShippereRROR");
 				// --Set result in test scenarios
 				if (i == 2) {

@@ -1,158 +1,1751 @@
-2024-02-20 17:20:14,020 [main] INFO AllOrderCreation - initialization of the properties file is done
-2024-02-20 17:20:14,911 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 121.0.6167.184 (resolved driver for Chrome 121)
-2024-02-20 17:20:14,964 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\rprajapati\.cache\selenium\chromedriver\win64\121.0.6167.184\chromedriver.exe
-2024-02-20 17:20:26,605 [main] INFO AllOrderCreation - Env : STG
-2024-02-20 17:20:26,608 [main] INFO AllOrderCreation - URL use for STG test is : https://stagingna.nglog.com/
-2024-02-20 17:20:26,608 [main] INFO AllOrderCreation - Url opened
-2024-02-20 17:20:53,406 [main] INFO AllOrderCreation - Entered UserName
-2024-02-20 17:20:54,683 [main] INFO AllOrderCreation - Entered Password
-2024-02-20 17:20:55,920 [main] INFO AllOrderCreation - Login done
-2024-02-20 17:23:35,290 [main] INFO AllOrderCreation - Click on Operation
-2024-02-20 17:23:58,591 [main] INFO AllOrderCreation - Click on Tasklog
-2024-02-20 17:24:02,277 [main] INFO AllOrderCreation - Click on New Order
-2024-02-20 17:24:31,518 [main] INFO AllOrderCreation - =====Service:- P3P=====
-2024-02-20 17:24:41,377 [main] INFO AllOrderCreation - Entered CallerName
-2024-02-20 17:24:54,277 [main] INFO AllOrderCreation - Entered Contact/Phone
-2024-02-20 17:25:03,877 [main] INFO AllOrderCreation - Entered Customer Code
-2024-02-20 17:25:13,829 [main] INFO AllOrderCreation - Dialogue is not displayed for Customer
-2024-02-20 17:25:23,741 [main] INFO AllOrderCreation - Entered PU Zip
-2024-02-20 17:25:30,712 [main] INFO AllOrderCreation - Click on PU Address
-2024-02-20 17:25:40,518 [main] INFO AllOrderCreation - Entered PU Company
-2024-02-20 17:25:48,232 [main] INFO AllOrderCreation - Entered PU AddressLine1
-2024-02-20 17:25:56,700 [main] INFO AllOrderCreation - Entered PU Attention
-2024-02-20 17:26:05,112 [main] INFO AllOrderCreation - Entered PU Phone
-2024-02-20 17:26:12,375 [main] ERROR AllOrderCreation - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //input[contains(@class,'ng-invalid ng-invalid-required')] (tried for 5 second(s) with 500 milliseconds interval)
+2024-02-23 11:00:01,112 [main] INFO AllOrderCreation - initialization of the properties file is done
+2024-02-23 11:00:02,920 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 121.0.6167.184 (resolved driver for Chrome 121)
+2024-02-23 11:00:02,953 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\rprajapati\.cache\selenium\chromedriver\win64\121.0.6167.184\chromedriver.exe
+2024-02-23 11:00:19,913 [main] INFO AllOrderCreation - Env : Test
+2024-02-23 11:00:19,914 [main] INFO AllOrderCreation - URL use for Test test is : http://testdevna.nglog.com/login
+2024-02-23 11:00:19,915 [main] INFO AllOrderCreation - Url opened
+2024-02-23 11:00:42,380 [main] INFO AllOrderCreation - Entered UserName
+2024-02-23 11:00:43,491 [main] INFO AllOrderCreation - Entered Password
+2024-02-23 11:00:44,601 [main] INFO AllOrderCreation - Login done
+2024-02-23 11:00:59,766 [main] INFO AllOrderCreation - Click on Operation
+2024-02-23 11:01:14,817 [main] INFO AllOrderCreation - Click on Tasklog
+2024-02-23 11:01:15,001 [main] INFO AllOrderCreation - Click on New Order
+2024-02-23 11:01:21,312 [main] INFO AllOrderCreation - =====Service:- LOC=====
+2024-02-23 11:01:21,691 [main] INFO AllOrderCreation - Entered CallerName
+2024-02-23 11:01:22,045 [main] INFO AllOrderCreation - Entered Contact/Phone
+2024-02-23 11:01:22,470 [main] INFO AllOrderCreation - Entered Customer Code
+2024-02-23 11:01:30,270 [main] INFO AllOrderCreation - Dialogue is not displayed for Customer
+2024-02-23 11:01:32,751 [main] INFO AllOrderCreation - Entered PU Zip
+2024-02-23 11:01:32,851 [main] INFO AllOrderCreation - Click on PU Address
+2024-02-23 11:01:33,289 [main] INFO AllOrderCreation - Entered PU Company
+2024-02-23 11:01:33,706 [main] INFO AllOrderCreation - Entered PU AddressLine1
+2024-02-23 11:01:34,012 [main] INFO AllOrderCreation - Entered PU Attention
+2024-02-23 11:01:34,329 [main] INFO AllOrderCreation - Entered PU Phone
+2024-02-23 11:01:39,351 [main] ERROR AllOrderCreation - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //input[contains(@class,'ng-invalid ng-invalid-required')] (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SIPL92', ip: '10.212.130.38', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+System info: host: 'SIPL92', ip: '10.212.130.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.185, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49879}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7b9b0353c9f1f3cff32cc24869679102
-2024-02-20 17:26:12,383 [main] INFO AllOrderCreation - Line number is: 95
-2024-02-20 17:26:12,387 [main] INFO AllOrderCreation - PU Ready time is exist
-2024-02-20 17:26:12,807 [main] INFO AllOrderCreation - PU Ready Time==06:55
-2024-02-20 17:26:32,771 [main] INFO AllOrderCreation - PU Receive Time==06:55
-2024-02-20 17:26:47,719 [main] INFO AllOrderCreation - PU Arrival Time==06:55
-2024-02-20 17:27:00,233 [main] INFO AllOrderCreation - PU Mileage==6
-2024-02-20 17:27:09,861 [main] INFO AllOrderCreation - Entered DL Zip
-2024-02-20 17:27:14,275 [main] INFO AllOrderCreation - Entered DL Address
-2024-02-20 17:27:22,594 [main] INFO AllOrderCreation - Entered DL Company
-2024-02-20 17:27:30,222 [main] INFO AllOrderCreation - Entered DL Address Line1
-2024-02-20 17:27:37,804 [main] INFO AllOrderCreation - Entered DL Attention
-2024-02-20 17:27:44,942 [main] INFO AllOrderCreation - Entered DL Phone
-2024-02-20 17:27:49,443 [main] INFO AllOrderCreation - DL Miles==64
-2024-02-20 17:27:55,063 [main] INFO AllOrderCreation - Entered Total Qty
-2024-02-20 17:28:01,250 [main] INFO AllOrderCreation - Entered Weight
-2024-02-20 17:28:08,936 [main] INFO AllOrderCreation - Entered Length
-2024-02-20 17:28:16,287 [main] INFO AllOrderCreation - Entered Width
-2024-02-20 17:28:22,015 [main] INFO AllOrderCreation - Entered Height
-2024-02-20 17:28:25,633 [main] INFO AllOrderCreation - comodity dropdown is selected
-2024-02-20 17:28:38,232 [main] INFO AllOrderCreation - Entered Commodity
-2024-02-20 17:28:44,847 [main] INFO AllOrderCreation - Total Mileage==778
-2024-02-20 17:29:27,540 [main] INFO AllOrderCreation - Enter P3P service in Service input
-2024-02-20 17:29:37,556 [main] INFO AllOrderCreation - Selected 3P account
-2024-02-20 17:29:46,380 [main] INFO AllOrderCreation - Selected 3P Service
-2024-02-20 17:30:10,048 [main] INFO AllOrderCreation - Click on Select Drop-Off Location
-2024-02-20 17:30:14,948 [main] INFO AllOrderCreation - Select 1st drop off location
-2024-02-20 17:30:23,365 [main] INFO AllOrderCreation - Drop Off Location Test= PASS
-2024-02-20 17:30:36,681 [main] INFO AllOrderCreation - Click on Create Order button
-2024-02-20 17:30:53,017 [main] INFO AllOrderCreation - Validation for Package is not displayed
-2024-02-20 17:30:59,069 [main] INFO AllOrderCreation - =====Pickup =10598893=====
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64204}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0573a0bb2d0a24217e567e8bd202d352
+2024-02-23 11:01:39,353 [main] INFO AllOrderCreation - Line number is: 95
+2024-02-23 11:01:39,354 [main] INFO AllOrderCreation - PU Ready time is exist
+2024-02-23 11:01:39,406 [main] INFO AllOrderCreation - PU Ready Time==23:31
+2024-02-23 11:01:40,099 [main] INFO AllOrderCreation - PU Receive Time==23:31
+2024-02-23 11:01:40,483 [main] INFO AllOrderCreation - PU Arrival Time==23:31
+2024-02-23 11:01:41,051 [main] INFO AllOrderCreation - PU Mileage==13
+2024-02-23 11:01:44,384 [main] INFO AllOrderCreation - Entered DL Zip
+2024-02-23 11:01:44,593 [main] INFO AllOrderCreation - Entered DL Address
+2024-02-23 11:01:44,887 [main] INFO AllOrderCreation - Entered DL Company
+2024-02-23 11:01:45,190 [main] INFO AllOrderCreation - Entered DL Address Line1
+2024-02-23 11:01:45,505 [main] INFO AllOrderCreation - Entered DL Attention
+2024-02-23 11:01:45,760 [main] INFO AllOrderCreation - Entered DL Phone
+2024-02-23 11:01:47,841 [main] INFO AllOrderCreation - DL Miles==19
+2024-02-23 11:01:52,047 [main] INFO AllOrderCreation - Entered Total Qty
+2024-02-23 11:01:52,290 [main] INFO AllOrderCreation - Entered Weight
+2024-02-23 11:01:52,518 [main] INFO AllOrderCreation - Entered Length
+2024-02-23 11:01:52,744 [main] INFO AllOrderCreation - Entered Width
+2024-02-23 11:01:53,039 [main] INFO AllOrderCreation - Entered Height
+2024-02-23 11:01:58,544 [main] INFO AllOrderCreation - comodity dropdown is selected
+2024-02-23 11:02:02,006 [main] INFO AllOrderCreation - Entered Commodity
+2024-02-23 11:02:05,653 [main] INFO AllOrderCreation - Total Mileage==4
+2024-02-23 11:02:11,373 [main] INFO AllOrderCreation - Click on Create Order button
+2024-02-23 11:02:24,165 [main] INFO AllOrderCreation - Validation for Package is not displayed
+2024-02-23 11:02:24,296 [main] INFO AllOrderCreation - =====Pickup =10273691=====
 
-2024-02-20 17:31:18,443 [main] INFO AllOrderCreation - Clicked on Edit Order
-2024-02-20 17:31:39,028 [main] INFO AllOrderCreation - Scroll down to Get the Rate
-2024-02-20 17:31:40,790 [main] INFO AllOrderCreation - Clicked on Job Status Tab
-2024-02-20 17:31:53,394 [main] INFO AllOrderCreation - Stage=CSR ACKNOWLEDGE
-2024-02-20 17:31:58,555 [main] INFO AllOrderCreation - Clicked on Job Status Tab
-2024-02-20 17:32:14,821 [main] INFO AllOrderCreation - Validation message is displayed=The Commodity field is required.
-2024-02-20 17:32:18,318 [main] INFO AllOrderCreation - Click on Edit Order Tab
-2024-02-20 17:32:37,557 [main] INFO AllOrderCreation - comodity dropdown is selected
-2024-02-20 17:32:44,442 [main] INFO AllOrderCreation - Enter Commodity
-2024-02-20 17:32:49,054 [main] INFO AllOrderCreation - Click on Save Changes button
-2024-02-20 17:33:12,982 [main] INFO AllOrderCreation - Click on Job Overview Tab
-2024-02-20 17:33:27,012 [main] INFO AllOrderCreation - ServiceID=P3P
-2024-02-20 17:33:31,651 [main] INFO AllOrderCreation - Stage=TC ACKNOWLEDGE
-2024-02-20 17:33:35,633 [main] INFO AllOrderCreation - Clicked on Job Status Tab
-2024-02-20 17:33:44,586 [main] INFO AllOrderCreation - Clicked on TC Acknowledge button
-2024-02-20 17:33:58,159 [main] INFO AllOrderCreation - Service is==P3P
-2024-02-20 17:34:02,068 [main] INFO AllOrderCreation - Stage=READY FOR DISPATCH
-2024-02-20 17:34:05,995 [main] INFO AllOrderCreation - Clicked on Job Status Tab
-2024-02-20 17:34:13,105 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
-2024-02-20 17:34:18,886 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
-2024-02-20 17:34:34,252 [main] INFO AllOrderCreation - Enter CourierID
-2024-02-20 17:34:36,569 [main] INFO AllOrderCreation - Enter Agent Key
-2024-02-20 17:34:36,767 [main] INFO AllOrderCreation - Clicked on search button
-2024-02-20 17:34:38,749 [main] INFO AllOrderCreation - Total Agent==8
-2024-02-20 17:34:39,208 [main] INFO AllOrderCreation - There is no Agent with search parameter
-2024-02-20 17:34:39,645 [main] INFO AllOrderCreation - There is no Agent with search parameter
-2024-02-20 17:34:40,083 [main] INFO AllOrderCreation - There is no Agent with search parameter
-2024-02-20 17:34:40,484 [main] INFO AllOrderCreation - There is no Agent with search parameter
-2024-02-20 17:34:40,919 [main] INFO AllOrderCreation - There is no Agent with search parameter
-2024-02-20 17:34:41,321 [main] INFO AllOrderCreation - There is no Agent with search parameter
-2024-02-20 17:34:41,749 [main] INFO AllOrderCreation - There is no Agent with search parameter
-2024-02-20 17:34:42,158 [main] INFO AllOrderCreation - Searched Agent is exist
-2024-02-20 17:34:42,640 [main] INFO AllOrderCreation - Select the AgentID
-2024-02-20 17:34:46,443 [main] INFO AllOrderCreation - Selected agent is==AUTOMATION
-2024-02-20 17:34:46,447 [main] INFO AllOrderCreation - Selected Agent is not displayed in Driver section
-2024-02-20 17:34:46,450 [main] INFO AllOrderCreation - == Edit Driver Test End==
-2024-02-20 17:34:50,792 [main] INFO AllOrderCreation - Email is selected as a Contact By
-2024-02-20 17:34:52,990 [main] INFO AllOrderCreation - Entered EmailID
-2024-02-20 17:34:55,285 [main] INFO AllOrderCreation - Entered Spoke With
-2024-02-20 17:35:02,766 [main] INFO AllOrderCreation - Clicked on Alert&Confirm button
-2024-02-20 17:35:37,194 [main] INFO AllOrderCreation - ==Moved to NetAgent==
-2024-02-20 17:35:44,415 [main] INFO AllOrderCreation - PickUpID is==10598893
-2024-02-20 17:35:46,425 [main] INFO AllOrderCreation - ALready loggedin
-2024-02-20 17:35:48,519 [main] INFO AllOrderCreation - Click on Operations
-2024-02-20 17:35:58,614 [main] INFO AllOrderCreation - Click on Task Log
-2024-02-20 17:36:05,540 [main] INFO AllOrderCreation - PickUpID is==10598893
-2024-02-20 17:36:12,662 [main] INFO AllOrderCreation - Operation tab is not selected
-2024-02-20 17:36:16,813 [main] INFO AllOrderCreation - Click on Operation Tab
-2024-02-20 17:36:20,774 [main] INFO AllOrderCreation - Clear search input
-2024-02-20 17:36:20,964 [main] INFO AllOrderCreation - Enter PickUpID in Search input
-2024-02-20 17:36:21,285 [main] INFO AllOrderCreation - Click on Search button
-2024-02-20 17:36:41,587 [main] INFO AllOrderCreation - Job is available in NetAgent
-2024-02-20 17:36:50,645 [main] INFO AllOrderCreation - ServiceID=P3P
-2024-02-20 17:36:54,696 [main] INFO AllOrderCreation - Stage=Confirm Pu Alert
-2024-02-20 17:36:55,025 [main] INFO AllOrderCreation - Clicked on Confirm PU Alert button
-2024-02-20 17:37:03,625 [main] INFO AllOrderCreation - Clear search input
-2024-02-20 17:37:03,800 [main] INFO AllOrderCreation - Enter PickUpID in Search input
-2024-02-20 17:37:04,137 [main] INFO AllOrderCreation - Click on Search button
-2024-02-20 17:37:27,734 [main] INFO AllOrderCreation - Job is available in NetAgent
-2024-02-20 17:37:36,736 [main] INFO AllOrderCreation - ServiceID=P3P
-2024-02-20 17:37:40,387 [main] INFO AllOrderCreation - Stage=Pickup
-2024-02-20 17:37:40,481 [main] INFO AllOrderCreation - ZoneID of is==EST
-2024-02-20 17:37:40,491 [main] INFO AllOrderCreation - 07:07
-2024-02-20 17:37:41,168 [main] INFO AllOrderCreation - Enter Actual pickup time
-2024-02-20 17:37:45,067 [main] INFO AllOrderCreation - Click on Confirm PU button
-2024-02-20 17:38:22,442 [main] INFO AllOrderCreation - Dialogue is not exist
-2024-02-20 17:38:27,221 [main] INFO AllOrderCreation - Clear search input
-2024-02-20 17:38:27,382 [main] INFO AllOrderCreation - Enter PickUpID in Search input
-2024-02-20 17:38:27,713 [main] INFO AllOrderCreation - Click on Search button
-2024-02-20 17:38:49,694 [main] INFO AllOrderCreation - Job is available in NetAgent
-2024-02-20 17:39:30,797 [main] INFO AllOrderCreation - ServiceID=P3P
-2024-02-20 17:39:32,855 [main] INFO AllOrderCreation - Stage=Tender to 3P
-2024-02-20 17:39:32,974 [main] INFO AllOrderCreation - ZoneID of is==EST
-2024-02-20 17:39:32,979 [main] INFO AllOrderCreation - 07:09
-2024-02-20 17:39:33,386 [main] INFO AllOrderCreation - Enter Drop off time
-2024-02-20 17:39:33,536 [main] INFO AllOrderCreation - Click on Confirm Drop button
-2024-02-20 17:39:39,137 [main] INFO AllOrderCreation - Airbill already exist !!
-2024-02-20 17:39:42,509 [main] INFO AllOrderCreation - Clear search input
-2024-02-20 17:39:42,710 [main] INFO AllOrderCreation - Enter PickUpID in Search input
-2024-02-20 17:39:48,046 [main] INFO AllOrderCreation - Click on Search button
-2024-02-20 17:39:57,048 [main] INFO AllOrderCreation - Job is not found in Operation Tab
-2024-02-20 17:40:02,222 [main] INFO AllOrderCreation - Click on Inventory tab
-2024-02-20 17:40:06,945 [main] INFO AllOrderCreation - Clear search input
-2024-02-20 17:40:07,173 [main] INFO AllOrderCreation - Enter pickupID in search input
-2024-02-20 17:40:17,917 [main] INFO AllOrderCreation - Click on Search button
-2024-02-20 17:40:34,751 [main] INFO AllOrderCreation - ==Moved to Connect==
-2024-02-20 17:40:55,750 [main] INFO AllOrderCreation - Clicked on Operations
-2024-02-20 17:41:04,722 [main] INFO AllOrderCreation - Clicked on TaskLog
-2024-02-20 17:41:36,036 [main] INFO AllOrderCreation - PickUpID=10598893
+2024-02-23 11:02:24,908 [main] INFO AllOrderCreation - Clicked on Edit Order
+2024-02-23 11:02:31,721 [main] INFO AllOrderCreation - Scroll down to Get the Rate
+2024-02-23 11:02:31,812 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:02:36,714 [main] INFO AllOrderCreation - ServiceID=LOC
+2024-02-23 11:02:36,795 [main] INFO AllOrderCreation - Stage=TC ACKNOWLEDGE
+2024-02-23 11:02:36,993 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:02:42,153 [main] INFO AllOrderCreation - Clicked on TC Acknowledge button
+2024-02-23 11:02:52,366 [main] INFO AllOrderCreation - Service is==LOC
+2024-02-23 11:02:52,445 [main] INFO AllOrderCreation - Stage=READY FOR DISPATCH
+2024-02-23 11:02:52,620 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:02:57,662 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
+2024-02-23 11:02:59,748 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
+2024-02-23 11:03:05,523 [main] INFO AllOrderCreation - Enter CourierID
+2024-02-23 11:03:05,730 [main] INFO AllOrderCreation - Enter Agent Key
+2024-02-23 11:03:05,787 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:03:07,990 [main] INFO AllOrderCreation - Total Agent==11
+2024-02-23 11:03:08,255 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:08,520 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:08,782 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:09,047 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:09,356 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:09,667 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:09,977 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:10,351 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:10,647 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:10,963 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:03:11,291 [main] INFO AllOrderCreation - Searched Agent is exist
+2024-02-23 11:03:11,668 [main] INFO AllOrderCreation - Select the AgentID
+2024-02-23 11:03:12,328 [main] INFO AllOrderCreation - Selected agent is==AUTOMATION
+2024-02-23 11:03:12,329 [main] INFO AllOrderCreation - Selected Agent is not displayed in Driver section
+2024-02-23 11:03:12,330 [main] INFO AllOrderCreation - == Edit Driver Test End==
+2024-02-23 11:03:12,480 [main] INFO AllOrderCreation - Email is selected as a Contact By
+2024-02-23 11:03:12,670 [main] INFO AllOrderCreation - Entered EmailID
+2024-02-23 11:03:12,798 [main] INFO AllOrderCreation - Entered Spoke With
+2024-02-23 11:03:17,991 [main] INFO AllOrderCreation - Clicked on Alert&Confirm button
+2024-02-23 11:03:48,821 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 11:03:49,880 [main] INFO AllOrderCreation - PickUpID is==10273691
+2024-02-23 11:03:49,914 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 11:03:50,138 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:04:05,719 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:04:05,755 [main] INFO AllOrderCreation - PickUpID is==10273691
+2024-02-23 11:04:12,859 [main] INFO AllOrderCreation - Operation tab is not selected
+2024-02-23 11:04:13,191 [main] INFO AllOrderCreation - Click on Operation Tab
+2024-02-23 11:04:13,282 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:04:13,349 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:04:13,506 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:04:28,008 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:04:36,706 [main] INFO AllOrderCreation - ServiceID=LOC
+2024-02-23 11:04:36,887 [main] INFO AllOrderCreation - Stage=Confirm Pu Alert
+2024-02-23 11:04:37,057 [main] INFO AllOrderCreation - Clicked on Confirm PU Alert button
+2024-02-23 11:04:50,916 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:04:50,989 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:04:51,137 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:05:06,550 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:05:13,790 [main] INFO AllOrderCreation - ServiceID=LOC
+2024-02-23 11:05:13,875 [main] INFO AllOrderCreation - Stage=Pickup
+2024-02-23 11:05:14,066 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:05:14,068 [main] INFO AllOrderCreation - 23:35
+2024-02-23 11:05:14,497 [main] INFO AllOrderCreation - Enter Actual pickup time
+2024-02-23 11:05:16,614 [main] INFO AllOrderCreation - Click on Confirm PU button
+2024-02-23 11:05:54,681 [main] INFO AllOrderCreation - Dialogue is not exist
+2024-02-23 11:05:54,865 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:05:54,929 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:05:55,094 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:06:09,556 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:06:16,663 [main] INFO AllOrderCreation - ServiceID=LOC
+2024-02-23 11:06:16,857 [main] INFO AllOrderCreation - Stage=Deliver
+2024-02-23 11:06:16,912 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:06:16,913 [main] INFO AllOrderCreation - 23:36
+2024-02-23 11:06:17,306 [main] INFO AllOrderCreation - Enter Actual DL Time
+2024-02-23 11:06:17,573 [main] INFO AllOrderCreation - Enter Signature
+2024-02-23 11:06:26,074 [main] INFO AllOrderCreation - Clicked on Confirm DEL button
+2024-02-23 11:06:36,467 [main] INFO AllOrderCreation - Dialogue is not exist
+2024-02-23 11:06:36,779 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:06:36,850 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:06:37,019 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:06:38,811 [main] INFO AllOrderCreation - Job is not found in Operation Tab
+2024-02-23 11:06:39,054 [main] INFO AllOrderCreation - Click on Inventory tab
+2024-02-23 11:06:39,160 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:06:39,203 [main] INFO AllOrderCreation - Enter pickupID in search input
+2024-02-23 11:06:39,428 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:06:49,716 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 11:07:02,684 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:07:03,002 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:07:20,706 [main] INFO AllOrderCreation - PickUpID=10273691
 
-2024-02-20 17:41:55,623 [main] INFO AllOrderCreation - Total Jobs==4
-2024-02-20 17:42:02,915 [main] INFO AllOrderCreation - Searched PickUpID==7115157
-2024-02-20 17:42:09,101 [main] INFO AllOrderCreation - Searched PickUpID==7115673
-2024-02-20 17:42:14,558 [main] INFO AllOrderCreation - Searched PickUpID==10598893
-2024-02-20 17:42:28,883 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
-2024-02-20 17:42:33,837 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
-2024-02-20 17:42:33,920 [main] INFO AllOrderCreation - Service is==P3P
-2024-02-20 17:42:36,216 [main] INFO AllOrderCreation - Click on Save&Exit button
+2024-02-23 11:07:31,088 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 11:07:31,088 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:07:31,402 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 11:07:31,739 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 11:07:31,774 [main] ERROR AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 11:07:32,088 [main] INFO AllOrderCreation - Verify Customer Bill Not Exist in Flow!!
+2024-02-23 11:07:32,164 [main] INFO AllOrderCreation - Current Enviornment is not Production , so job cancellation is not handled
+2024-02-23 11:07:32,438 [main] INFO AllOrderCreation - Click on Operation
+2024-02-23 11:07:49,146 [main] INFO AllOrderCreation - Click on Tasklog
+2024-02-23 11:07:49,952 [main] INFO AllOrderCreation - Click on New Order
+2024-02-23 11:07:53,381 [main] INFO AllOrderCreation - =====Service:- SD=====
+2024-02-23 11:07:53,678 [main] INFO AllOrderCreation - Entered CallerName
+2024-02-23 11:07:53,864 [main] INFO AllOrderCreation - Entered Contact/Phone
+2024-02-23 11:07:54,120 [main] INFO AllOrderCreation - Entered Customer Code
+2024-02-23 11:08:00,117 [main] INFO AllOrderCreation - Dialogue is not displayed for Customer
+2024-02-23 11:08:02,409 [main] INFO AllOrderCreation - Entered PU Zip
+2024-02-23 11:08:03,039 [main] INFO AllOrderCreation - Click on PU Address
+2024-02-23 11:08:03,375 [main] INFO AllOrderCreation - Entered PU Company
+2024-02-23 11:08:03,630 [main] INFO AllOrderCreation - Entered PU AddressLine1
+2024-02-23 11:08:03,857 [main] INFO AllOrderCreation - Entered PU Attention
+2024-02-23 11:08:04,058 [main] INFO AllOrderCreation - Entered PU Phone
+2024-02-23 11:08:09,347 [main] ERROR AllOrderCreation - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //input[contains(@class,'ng-invalid ng-invalid-required')] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SIPL92', ip: '10.212.130.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64204}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0573a0bb2d0a24217e567e8bd202d352
+2024-02-23 11:08:09,349 [main] INFO AllOrderCreation - Line number is: 95
+2024-02-23 11:08:09,349 [main] INFO AllOrderCreation - PU Ready time is exist
+2024-02-23 11:08:09,383 [main] INFO AllOrderCreation - PU Ready Time==00:38
+2024-02-23 11:08:09,527 [main] INFO AllOrderCreation - PU Receive Time==00:38
+2024-02-23 11:08:09,646 [main] INFO AllOrderCreation - PU Arrival Time==00:38
+2024-02-23 11:08:09,782 [main] INFO AllOrderCreation - PU Mileage==13
+2024-02-23 11:08:12,075 [main] INFO AllOrderCreation - Entered DL Zip
+2024-02-23 11:08:12,247 [main] INFO AllOrderCreation - Entered DL Address
+2024-02-23 11:08:12,437 [main] INFO AllOrderCreation - Entered DL Company
+2024-02-23 11:08:12,658 [main] INFO AllOrderCreation - Entered DL Address Line1
+2024-02-23 11:08:12,806 [main] INFO AllOrderCreation - Entered DL Attention
+2024-02-23 11:08:12,982 [main] INFO AllOrderCreation - Entered DL Phone
+2024-02-23 11:08:15,035 [main] INFO AllOrderCreation - DL Miles==
+2024-02-23 11:08:17,464 [main] INFO AllOrderCreation - Entered Total Qty
+2024-02-23 11:08:17,731 [main] INFO AllOrderCreation - Entered Weight
+2024-02-23 11:08:17,958 [main] INFO AllOrderCreation - Entered Length
+2024-02-23 11:08:18,169 [main] INFO AllOrderCreation - Entered Width
+2024-02-23 11:08:18,399 [main] INFO AllOrderCreation - Entered Height
+2024-02-23 11:08:28,206 [main] INFO AllOrderCreation - comodity dropdown is selected
+2024-02-23 11:08:31,643 [main] INFO AllOrderCreation - Entered Commodity
+2024-02-23 11:08:35,340 [main] INFO AllOrderCreation - Total Mileage==1097
+2024-02-23 11:08:40,935 [main] INFO AllOrderCreation - Click on Create Order button
+2024-02-23 11:08:53,114 [main] INFO AllOrderCreation - Validation for Package is not displayed
+2024-02-23 11:08:53,238 [main] INFO AllOrderCreation - =====Pickup =10273692=====
+
+2024-02-23 11:08:54,085 [main] INFO AllOrderCreation - Clicked on Edit Order
+2024-02-23 11:09:01,435 [main] INFO AllOrderCreation - Clicked on Unknown Shipper
+2024-02-23 11:09:03,821 [main] INFO AllOrderCreation - Clicked on Confirm button
+2024-02-23 11:09:03,967 [main] INFO AllOrderCreation - Scroll down to Get the Rate
+2024-02-23 11:09:04,060 [main] INFO AllOrderCreation - Clicked on Save Changes button
+2024-02-23 11:09:07,922 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:09:13,493 [main] INFO AllOrderCreation - Clicked on Select Flight button
+2024-02-23 11:09:20,943 [main] INFO AllOrderCreation - Selected 1st flight
+2024-02-23 11:09:22,810 [main] INFO AllOrderCreation - Clicked on Assign button
+2024-02-23 11:09:22,927 [main] INFO AllOrderCreation - Validation==Please select the appropriate Product Code before assigning the flight.
+2024-02-23 11:09:23,061 [main] INFO AllOrderCreation - Selected Product Code
+2024-02-23 11:09:25,254 [main] INFO AllOrderCreation - Clicked on Assign button
+2024-02-23 11:11:03,459 [main] INFO AllOrderCreation - Click on Add AirBill
+2024-02-23 11:11:03,790 [main] INFO AllOrderCreation - Click on Add AirBill
+2024-02-23 11:11:03,922 [main] INFO AllOrderCreation - Enter Quantity
+2024-02-23 11:11:04,055 [main] INFO AllOrderCreation - Enter Weight
+2024-02-23 11:11:04,216 [main] INFO AllOrderCreation - Enter Description
+2024-02-23 11:11:04,216 [main] INFO AllOrderCreation - Account and Service Lavel dropdowns are available
+2024-02-23 11:11:04,236 [main] INFO AllOrderCreation - Account and Service Lavel dropdowns are not available
+2024-02-23 11:11:07,176 [main] INFO AllOrderCreation - Click on Save Bill button
+2024-02-23 11:11:07,210 [main] INFO AllOrderCreation - Validation for Air Bill Description is not displayed
+2024-02-23 11:11:07,448 [main] INFO AllOrderCreation - ServiceID=SD
+2024-02-23 11:11:07,534 [main] INFO AllOrderCreation - Stage=TC ACKNOWLEDGE
+2024-02-23 11:11:07,756 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:11:15,063 [main] INFO AllOrderCreation - Clicked on TC Acknowledge button
+2024-02-23 11:12:18,127 [main] INFO AllOrderCreation - Service is==SD
+2024-02-23 11:12:18,207 [main] INFO AllOrderCreation - Stage=READY FOR DISPATCH
+2024-02-23 11:12:18,469 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:12:23,531 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
+2024-02-23 11:12:25,736 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
+2024-02-23 11:12:29,964 [main] INFO AllOrderCreation - Enter CourierID
+2024-02-23 11:12:30,158 [main] INFO AllOrderCreation - Enter Agent Key
+2024-02-23 11:12:30,241 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:12:30,831 [main] INFO AllOrderCreation - Total Agent==9
+2024-02-23 11:12:31,099 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:12:31,378 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:12:31,642 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:12:31,905 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:12:32,152 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:12:32,429 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:12:32,707 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:12:32,986 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:12:33,261 [main] INFO AllOrderCreation - Searched Agent is exist
+2024-02-23 11:12:33,539 [main] INFO AllOrderCreation - Select the AgentID
+2024-02-23 11:12:35,257 [main] INFO AllOrderCreation - Selected agent is==AUTOMATION
+2024-02-23 11:12:35,258 [main] INFO AllOrderCreation - Selected Agent is not displayed in Driver section
+2024-02-23 11:12:35,258 [main] INFO AllOrderCreation - == Edit Driver Test End==
+2024-02-23 11:12:35,459 [main] INFO AllOrderCreation - Email is selected as a Contact By
+2024-02-23 11:12:35,694 [main] INFO AllOrderCreation - Entered EmailID
+2024-02-23 11:12:35,873 [main] INFO AllOrderCreation - Entered Spoke With
+2024-02-23 11:12:41,134 [main] INFO AllOrderCreation - Clicked on Alert&Confirm button
+2024-02-23 11:13:13,884 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 11:13:14,947 [main] INFO AllOrderCreation - PickUpID is==10273692
+2024-02-23 11:13:14,982 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 11:13:15,175 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:13:19,191 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:13:19,255 [main] INFO AllOrderCreation - PickUpID is==10273692
+2024-02-23 11:13:26,700 [main] INFO AllOrderCreation - Operation tab is not selected
+2024-02-23 11:13:27,122 [main] INFO AllOrderCreation - Click on Operation Tab
+2024-02-23 11:13:27,250 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:13:27,345 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:13:27,526 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:13:42,006 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:13:49,159 [main] INFO AllOrderCreation - ServiceID=SD
+2024-02-23 11:13:49,271 [main] INFO AllOrderCreation - Stage=Confirm Pu Alert
+2024-02-23 11:13:49,465 [main] INFO AllOrderCreation - Clicked on Confirm PU Alert button
+2024-02-23 11:13:52,652 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:13:52,708 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:13:52,863 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:14:07,359 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:14:14,414 [main] INFO AllOrderCreation - ServiceID=SD
+2024-02-23 11:14:14,491 [main] INFO AllOrderCreation - Stage=Pickup
+2024-02-23 11:14:14,526 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:14:14,527 [main] INFO AllOrderCreation - 00:44
+2024-02-23 11:14:14,807 [main] INFO AllOrderCreation - Enter Actual pickup time
+2024-02-23 11:14:16,890 [main] INFO AllOrderCreation - Click on Confirm PU button
+2024-02-23 11:14:50,593 [main] INFO AllOrderCreation - Dialogue is not exist
+2024-02-23 11:14:50,704 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:14:50,784 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:14:50,964 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:15:05,537 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:15:12,683 [main] INFO AllOrderCreation - ServiceID=SD
+2024-02-23 11:15:12,739 [main] INFO AllOrderCreation - Stage=Drop @ Origin
+2024-02-23 11:15:12,777 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:15:12,778 [main] INFO AllOrderCreation - 00:45
+2024-02-23 11:15:12,947 [main] INFO AllOrderCreation - Enter Drop off time
+2024-02-23 11:15:13,002 [main] INFO AllOrderCreation - Click on Confirm Drop button
+2024-02-23 11:15:17,162 [main] INFO AllOrderCreation - Airbill already exist !!
+2024-02-23 11:15:17,256 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:15:17,329 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:15:17,526 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:15:18,195 [main] INFO AllOrderCreation - Job is not found in Operation Tab
+2024-02-23 11:15:18,527 [main] INFO AllOrderCreation - Click on Inventory tab
+2024-02-23 11:15:18,641 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:15:18,716 [main] INFO AllOrderCreation - Enter pickupID in search input
+2024-02-23 11:15:18,949 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:15:20,722 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 11:15:33,472 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:15:34,058 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:15:54,446 [main] INFO AllOrderCreation - PickUpID=10273692
+
+2024-02-23 11:16:04,766 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 11:16:04,767 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:16:04,943 [main] INFO AllOrderCreation - Stage=SEND DEL ALERT
+2024-02-23 11:16:05,195 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:16:10,234 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
+2024-02-23 11:16:12,409 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
+2024-02-23 11:16:17,632 [main] INFO AllOrderCreation - Enter CourierID
+2024-02-23 11:16:17,887 [main] INFO AllOrderCreation - Enter Agent Key
+2024-02-23 11:16:18,053 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:16:19,891 [main] INFO AllOrderCreation - Total Agent==11
+2024-02-23 11:16:20,149 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:20,414 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:20,678 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:20,942 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:21,206 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:21,503 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:21,754 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:22,020 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:22,285 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:22,553 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:16:22,802 [main] INFO AllOrderCreation - Searched Agent is exist
+2024-02-23 11:16:23,097 [main] INFO AllOrderCreation - Select the AgentID
+2024-02-23 11:16:23,740 [main] INFO AllOrderCreation - Selected agent is==AUTOMATION
+2024-02-23 11:16:23,740 [main] INFO AllOrderCreation - Selected Agent is not displayed in Driver section
+2024-02-23 11:16:23,741 [main] INFO AllOrderCreation - == Edit Driver Test End==
+2024-02-23 11:16:23,877 [main] INFO AllOrderCreation - Selected Email option as Contacted
+2024-02-23 11:16:25,109 [main] INFO AllOrderCreation - entered Contacted By
+2024-02-23 11:16:25,276 [main] INFO AllOrderCreation - entered Spoke With
+2024-02-23 11:16:26,421 [main] INFO AllOrderCreation - Selected Driver
+2024-02-23 11:16:27,512 [main] INFO AllOrderCreation - CLicked on Alert and Confirm Button
+2024-02-23 11:16:39,189 [main] INFO AllOrderCreation - Page is refreshed
+2024-02-23 11:16:40,470 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 11:16:41,527 [main] INFO AllOrderCreation - PickUpID is==10273692
+2024-02-23 11:16:41,568 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 11:16:41,764 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:16:45,396 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:16:45,452 [main] INFO AllOrderCreation - PickUpID is==10273692
+2024-02-23 11:16:52,835 [main] INFO AllOrderCreation - Operation tab is not selected
+2024-02-23 11:16:53,345 [main] INFO AllOrderCreation - Click on Operation Tab
+2024-02-23 11:16:53,441 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:16:53,520 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:16:53,729 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:17:08,462 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:17:15,547 [main] INFO AllOrderCreation - ServiceID=SD
+2024-02-23 11:17:15,623 [main] INFO AllOrderCreation - Stage=Confirm Del Alert
+2024-02-23 11:17:15,807 [main] INFO AllOrderCreation - Clicked on Confirm Del Alert button
+2024-02-23 11:17:19,484 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 11:17:32,154 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:17:32,330 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:17:50,391 [main] INFO AllOrderCreation - PickUpID=10273692
+
+2024-02-23 11:18:01,143 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 11:18:01,144 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:18:01,329 [main] INFO AllOrderCreation - Stage=WAIT FOR DEPARTURE
+2024-02-23 11:18:01,614 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:18:08,025 [main] INFO AllOrderCreation - Enter Departure Time
+2024-02-23 11:18:08,252 [main] INFO AllOrderCreation - Click on Depart button
+2024-02-23 11:18:12,560 [main] INFO AllOrderCreation - Stage=ON BOARD
+2024-02-23 11:18:12,765 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:18:20,777 [main] INFO AllOrderCreation - Stage=XER WAIT FOR ARR@CLT
+2024-02-23 11:18:21,013 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:18:26,125 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:18:26,127 [main] INFO AllOrderCreation - 00:48
+2024-02-23 11:18:26,310 [main] INFO AllOrderCreation - Enter Arrival Time
+2024-02-23 11:18:26,380 [main] INFO AllOrderCreation - Click on Arrival button
+2024-02-23 11:18:29,285 [main] INFO AllOrderCreation - Stage=XER WAIT FOR DEPT@CLT
+2024-02-23 11:18:29,517 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:18:34,580 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:18:34,581 [main] INFO AllOrderCreation - 00:48
+2024-02-23 11:18:34,743 [main] INFO AllOrderCreation - Enter Depature Time
+2024-02-23 11:18:34,831 [main] INFO AllOrderCreation - Click on Depart button
+2024-02-23 11:18:37,298 [main] INFO AllOrderCreation - Stage=ON BOARD
+2024-02-23 11:18:37,510 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:18:45,638 [main] INFO AllOrderCreation - Stage=WAIT FOR ARRIVAL
+2024-02-23 11:18:45,973 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:18:51,076 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:18:51,077 [main] INFO AllOrderCreation - 23:48
+2024-02-23 11:18:51,233 [main] INFO AllOrderCreation - Enter Arrival Time
+2024-02-23 11:18:51,302 [main] INFO AllOrderCreation - Click on Arrival button
+2024-02-23 11:18:55,223 [main] INFO AllOrderCreation - Stage=RECOVER @ DESTINATION
+2024-02-23 11:18:55,417 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:19:00,486 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:19:00,487 [main] INFO AllOrderCreation - 23:49
+2024-02-23 11:19:00,644 [main] INFO AllOrderCreation - Enter Arrival Time
+2024-02-23 11:19:00,882 [main] INFO AllOrderCreation - Click on Confirm Recover button
+2024-02-23 11:19:04,231 [main] INFO AllOrderCreation - ServiceID=SD
+2024-02-23 11:19:04,302 [main] INFO AllOrderCreation - Stage=DELIVER
+2024-02-23 11:19:04,608 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:19:09,740 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:19:09,740 [main] INFO AllOrderCreation - 23:49
+2024-02-23 11:19:10,439 [main] INFO AllOrderCreation - Enter Signature
+2024-02-23 11:19:10,530 [main] INFO AllOrderCreation - Clicked on Confirm DEL button
+2024-02-23 11:19:10,777 [main] INFO AllOrderCreation - Validation message is displayed=Parameter(s) are modified. Please recalculate customer charges.
+2024-02-23 11:19:11,206 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 11:19:21,357 [main] INFO AllOrderCreation - Click on Recalculate button
+2024-02-23 11:19:22,262 [main] INFO AllOrderCreation - Click on Save Changes button
+2024-02-23 11:19:42,771 [main] INFO AllOrderCreation - Click on Job Overview Tab
+2024-02-23 11:19:51,251 [main] INFO AllOrderCreation - Enter Signature
+2024-02-23 11:19:51,273 [main] INFO AllOrderCreation - Actual DL TimeZone==CST
+2024-02-23 11:19:51,274 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:19:51,274 [main] INFO AllOrderCreation - 23:49
+2024-02-23 11:19:51,274 [main] INFO AllOrderCreation - Actual DL Time==23:49
+2024-02-23 11:19:51,422 [main] INFO AllOrderCreation - Enter Actual DL Time
+2024-02-23 11:19:53,650 [main] INFO AllOrderCreation - Click on Confirm DEL button
+2024-02-23 11:20:25,506 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 11:20:25,506 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:20:25,689 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 11:20:25,987 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 11:20:26,017 [main] ERROR AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 11:20:26,333 [main] INFO AllOrderCreation - Verify Customer Bill Not Exist in Flow!!
+2024-02-23 11:20:26,334 [main] INFO AllOrderCreation - Current Enviornment is not Production , so job cancellation is not handled
+2024-02-23 11:20:28,501 [main] INFO AllOrderCreation - Click on Operation
+2024-02-23 11:20:43,845 [main] INFO AllOrderCreation - Click on Tasklog
+2024-02-23 11:20:43,985 [main] INFO AllOrderCreation - Click on New Order
+2024-02-23 11:20:50,249 [main] INFO AllOrderCreation - =====Service:- P3P=====
+2024-02-23 11:20:50,444 [main] INFO AllOrderCreation - Entered CallerName
+2024-02-23 11:20:50,639 [main] INFO AllOrderCreation - Entered Contact/Phone
+2024-02-23 11:20:50,870 [main] INFO AllOrderCreation - Entered Customer Code
+2024-02-23 11:21:00,059 [main] INFO AllOrderCreation - Dialogue is not displayed for Customer
+2024-02-23 11:21:02,270 [main] INFO AllOrderCreation - Entered PU Zip
+2024-02-23 11:21:03,434 [main] INFO AllOrderCreation - Click on PU Address
+2024-02-23 11:21:03,654 [main] INFO AllOrderCreation - Entered PU Company
+2024-02-23 11:21:03,833 [main] INFO AllOrderCreation - Entered PU AddressLine1
+2024-02-23 11:21:05,111 [main] INFO AllOrderCreation - Entered PU Attention
+2024-02-23 11:21:05,548 [main] INFO AllOrderCreation - Entered PU Phone
+2024-02-23 11:21:10,821 [main] ERROR AllOrderCreation - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //input[contains(@class,'ng-invalid ng-invalid-required')] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SIPL92', ip: '10.212.130.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64204}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0573a0bb2d0a24217e567e8bd202d352
+2024-02-23 11:21:10,822 [main] INFO AllOrderCreation - Line number is: 95
+2024-02-23 11:21:10,822 [main] INFO AllOrderCreation - PU Ready time is exist
+2024-02-23 11:21:10,853 [main] INFO AllOrderCreation - PU Ready Time==00:51
+2024-02-23 11:21:10,927 [main] INFO AllOrderCreation - PU Receive Time==00:51
+2024-02-23 11:21:11,021 [main] INFO AllOrderCreation - PU Arrival Time==00:51
+2024-02-23 11:21:11,118 [main] INFO AllOrderCreation - PU Mileage==6
+2024-02-23 11:21:13,351 [main] INFO AllOrderCreation - Entered DL Zip
+2024-02-23 11:21:13,467 [main] INFO AllOrderCreation - Entered DL Address
+2024-02-23 11:21:13,712 [main] INFO AllOrderCreation - Entered DL Company
+2024-02-23 11:21:13,943 [main] INFO AllOrderCreation - Entered DL Address Line1
+2024-02-23 11:21:14,148 [main] INFO AllOrderCreation - Entered DL Attention
+2024-02-23 11:21:14,485 [main] INFO AllOrderCreation - Entered DL Phone
+2024-02-23 11:21:22,400 [main] INFO AllOrderCreation - DL Miles==64
+2024-02-23 11:21:25,608 [main] INFO AllOrderCreation - Entered Total Qty
+2024-02-23 11:21:25,882 [main] INFO AllOrderCreation - Entered Weight
+2024-02-23 11:21:26,104 [main] INFO AllOrderCreation - Entered Length
+2024-02-23 11:21:26,376 [main] INFO AllOrderCreation - Entered Width
+2024-02-23 11:21:26,635 [main] INFO AllOrderCreation - Entered Height
+2024-02-23 11:21:32,463 [main] INFO AllOrderCreation - comodity dropdown is selected
+2024-02-23 11:21:35,983 [main] INFO AllOrderCreation - Entered Commodity
+2024-02-23 11:21:39,608 [main] INFO AllOrderCreation - Total Mileage==785
+2024-02-23 11:21:46,699 [main] INFO AllOrderCreation - Enter P3P service in Service input
+2024-02-23 11:22:02,632 [main] INFO AllOrderCreation - Selected 3P account
+2024-02-23 11:22:10,250 [main] INFO AllOrderCreation - Selected 3P Service
+2024-02-23 11:22:30,941 [main] INFO AllOrderCreation - Click on Select Drop-Off Location
+2024-02-23 11:22:30,992 [main] INFO AllOrderCreation - issue in drop off location
+2024-02-23 11:22:30,992 [main] INFO AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 11:22:31,282 [main] INFO AllOrderCreation - Drop Off Location Test= FAIL
+2024-02-23 11:22:31,373 [main] INFO AllOrderCreation - Click on Close button
+2024-02-23 11:22:31,478 [main] INFO AllOrderCreation - Click on FCA button
+2024-02-23 11:22:32,216 [main] INFO AllOrderCreation - Enter FCA Company
+2024-02-23 11:22:32,360 [main] INFO AllOrderCreation - Enter FCA ZipCode
+2024-02-23 11:22:34,507 [main] INFO AllOrderCreation - Enter FCA Address
+2024-02-23 11:22:34,581 [main] INFO AllOrderCreation - Click on FCA Save button
+2024-02-23 11:22:41,199 [main] INFO AllOrderCreation - Record saved successfully.
+2024-02-23 11:22:41,200 [main] INFO AllOrderCreation - Consignee address saved successfully=PASS
+2024-02-23 11:22:41,353 [main] INFO AllOrderCreation - Click on FCA Close button
+2024-02-23 11:22:46,629 [main] INFO AllOrderCreation - Click on Create Order button
+2024-02-23 11:23:10,936 [main] INFO AllOrderCreation - Validation for Package is not displayed
+2024-02-23 11:23:11,078 [main] INFO AllOrderCreation - =====Pickup =10273693=====
+
+2024-02-23 11:23:13,104 [main] INFO AllOrderCreation - Clicked on Edit Order
+2024-02-23 11:23:20,393 [main] INFO AllOrderCreation - Scroll down to Get the Rate
+2024-02-23 11:23:20,463 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:23:25,132 [main] INFO AllOrderCreation - Stage=CSR ACKNOWLEDGE
+2024-02-23 11:23:25,338 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:23:32,704 [main] INFO AllOrderCreation - Validation message is displayed=The Commodity field is required.
+2024-02-23 11:23:33,479 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 11:23:50,572 [main] INFO AllOrderCreation - comodity dropdown is selected
+2024-02-23 11:23:53,418 [main] INFO AllOrderCreation - Enter Commodity
+2024-02-23 11:23:53,816 [main] INFO AllOrderCreation - Click on Save Changes button
+2024-02-23 11:24:06,323 [main] INFO AllOrderCreation - Click on Job Overview Tab
+2024-02-23 11:24:20,350 [main] INFO AllOrderCreation - ServiceID=P3P
+2024-02-23 11:24:20,459 [main] INFO AllOrderCreation - Stage=TC ACKNOWLEDGE
+2024-02-23 11:24:20,652 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:24:25,772 [main] INFO AllOrderCreation - Clicked on TC Acknowledge button
+2024-02-23 11:24:36,965 [main] INFO AllOrderCreation - Service is==P3P
+2024-02-23 11:24:37,066 [main] INFO AllOrderCreation - Stage=READY FOR DISPATCH
+2024-02-23 11:24:37,285 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:24:42,327 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
+2024-02-23 11:24:44,420 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
+2024-02-23 11:24:49,634 [main] INFO AllOrderCreation - Enter CourierID
+2024-02-23 11:24:49,839 [main] INFO AllOrderCreation - Enter Agent Key
+2024-02-23 11:24:49,889 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:24:50,478 [main] INFO AllOrderCreation - Total Agent==5
+2024-02-23 11:24:50,745 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:24:50,998 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:24:51,262 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:24:51,537 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:24:51,804 [main] INFO AllOrderCreation - Searched Agent is exist
+2024-02-23 11:24:52,077 [main] INFO AllOrderCreation - Select the AgentID
+2024-02-23 11:24:52,744 [main] INFO AllOrderCreation - Selected agent is==AUTOMATION
+2024-02-23 11:24:52,744 [main] INFO AllOrderCreation - Selected Agent is not displayed in Driver section
+2024-02-23 11:24:52,744 [main] INFO AllOrderCreation - == Edit Driver Test End==
+2024-02-23 11:24:52,968 [main] INFO AllOrderCreation - Email is selected as a Contact By
+2024-02-23 11:24:53,182 [main] INFO AllOrderCreation - Entered EmailID
+2024-02-23 11:24:53,362 [main] INFO AllOrderCreation - Entered Spoke With
+2024-02-23 11:24:58,715 [main] INFO AllOrderCreation - Clicked on Alert&Confirm button
+2024-02-23 11:25:30,656 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 11:25:31,717 [main] INFO AllOrderCreation - PickUpID is==10273693
+2024-02-23 11:25:31,756 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 11:25:31,960 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:25:35,958 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:25:36,009 [main] INFO AllOrderCreation - PickUpID is==10273693
+2024-02-23 11:25:36,055 [main] INFO AllOrderCreation - Operation tab is already selected
+2024-02-23 11:25:36,168 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:25:36,253 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:25:36,433 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:25:51,245 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:25:58,327 [main] INFO AllOrderCreation - ServiceID=P3P
+2024-02-23 11:25:58,435 [main] INFO AllOrderCreation - Stage=Confirm Pu Alert
+2024-02-23 11:25:58,613 [main] INFO AllOrderCreation - Clicked on Confirm PU Alert button
+2024-02-23 11:26:02,368 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:26:02,436 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:26:02,595 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:26:17,182 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:26:24,251 [main] INFO AllOrderCreation - ServiceID=P3P
+2024-02-23 11:26:24,344 [main] INFO AllOrderCreation - Stage=Pickup
+2024-02-23 11:26:24,375 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:26:24,375 [main] INFO AllOrderCreation - 00:56
+2024-02-23 11:26:24,656 [main] INFO AllOrderCreation - Enter Actual pickup time
+2024-02-23 11:26:26,753 [main] INFO AllOrderCreation - Click on Confirm PU button
+2024-02-23 11:27:00,548 [main] INFO AllOrderCreation - Dialogue is not exist
+2024-02-23 11:27:00,649 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:27:00,728 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:27:00,906 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:27:15,677 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:27:53,264 [main] INFO AllOrderCreation - ServiceID=P3P
+2024-02-23 11:27:53,391 [main] INFO AllOrderCreation - Stage=Tender to 3P
+2024-02-23 11:27:53,485 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:27:53,486 [main] INFO AllOrderCreation - 00:57
+2024-02-23 11:27:54,038 [main] INFO AllOrderCreation - Enter Drop off time
+2024-02-23 11:27:54,137 [main] INFO AllOrderCreation - Click on Confirm Drop button
+2024-02-23 11:27:56,924 [main] INFO AllOrderCreation - Airbill already exist !!
+2024-02-23 11:27:57,018 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:27:57,106 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:27:57,275 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:27:58,007 [main] INFO AllOrderCreation - Job is not found in Operation Tab
+2024-02-23 11:27:58,317 [main] INFO AllOrderCreation - Click on Inventory tab
+2024-02-23 11:27:58,399 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:27:58,455 [main] INFO AllOrderCreation - Enter pickupID in search input
+2024-02-23 11:27:58,670 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:28:00,662 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 11:28:13,400 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:28:13,692 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:28:29,522 [main] INFO AllOrderCreation - PickUpID=10273693
+
+2024-02-23 11:28:33,856 [main] INFO AllOrderCreation - Total Jobs==2
+2024-02-23 11:28:33,921 [main] INFO AllOrderCreation - Searched PickUpID==10273693
+2024-02-23 11:28:45,215 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:28:45,310 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 11:28:45,335 [main] INFO AllOrderCreation - Service is==P3P
+2024-02-23 11:28:45,673 [main] INFO AllOrderCreation - Click on Save&Exit button
+2024-02-23 11:29:06,035 [main] INFO AllOrderCreation - Total Jobs==2
+2024-02-23 11:29:06,074 [main] INFO AllOrderCreation - Searched PickUpID==10273693
+2024-02-23 11:29:17,760 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:29:17,900 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 11:29:18,206 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 11:29:18,230 [main] ERROR AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 11:29:18,407 [main] INFO AllOrderCreation - Verify Customer Bill Not Exist in Flow!!
+2024-02-23 11:29:22,041 [main] INFO AllOrderCreation - Click on Operation
+2024-02-23 11:29:37,315 [main] INFO AllOrderCreation - Click on Tasklog
+2024-02-23 11:29:38,087 [main] INFO AllOrderCreation - Click on New Order
+2024-02-23 11:29:41,458 [main] INFO AllOrderCreation - =====Service:- PA=====
+2024-02-23 11:29:41,647 [main] INFO AllOrderCreation - Entered CallerName
+2024-02-23 11:29:41,801 [main] INFO AllOrderCreation - Entered Contact/Phone
+2024-02-23 11:29:41,976 [main] INFO AllOrderCreation - Entered Customer Code
+2024-02-23 11:29:48,417 [main] INFO AllOrderCreation - Dialogue is not displayed for Customer
+2024-02-23 11:29:50,604 [main] INFO AllOrderCreation - Entered PU Zip
+2024-02-23 11:29:52,378 [main] INFO AllOrderCreation - Click on PU Address
+2024-02-23 11:29:52,633 [main] INFO AllOrderCreation - Entered PU Company
+2024-02-23 11:29:52,816 [main] INFO AllOrderCreation - Entered PU AddressLine1
+2024-02-23 11:29:52,954 [main] INFO AllOrderCreation - Entered PU Attention
+2024-02-23 11:29:53,095 [main] INFO AllOrderCreation - Entered PU Phone
+2024-02-23 11:29:59,109 [main] ERROR AllOrderCreation - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //input[contains(@class,'ng-invalid ng-invalid-required')] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SIPL92', ip: '10.212.130.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64204}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0573a0bb2d0a24217e567e8bd202d352
+2024-02-23 11:29:59,110 [main] INFO AllOrderCreation - Line number is: 95
+2024-02-23 11:29:59,111 [main] INFO AllOrderCreation - PU Ready time is exist
+2024-02-23 11:29:59,138 [main] INFO AllOrderCreation - PU Ready Time==00:59
+2024-02-23 11:29:59,257 [main] INFO AllOrderCreation - PU Receive Time==00:59
+2024-02-23 11:29:59,371 [main] INFO AllOrderCreation - PU Arrival Time==00:59
+2024-02-23 11:29:59,438 [main] INFO AllOrderCreation - PU Mileage==13
+2024-02-23 11:30:01,650 [main] INFO AllOrderCreation - Entered DL Zip
+2024-02-23 11:30:01,741 [main] INFO AllOrderCreation - Entered DL Address
+2024-02-23 11:30:01,897 [main] INFO AllOrderCreation - Entered DL Company
+2024-02-23 11:30:02,083 [main] INFO AllOrderCreation - Entered DL Address Line1
+2024-02-23 11:30:02,218 [main] INFO AllOrderCreation - Entered DL Attention
+2024-02-23 11:30:02,377 [main] INFO AllOrderCreation - Entered DL Phone
+2024-02-23 11:30:04,427 [main] INFO AllOrderCreation - DL Miles==12
+2024-02-23 11:30:10,507 [main] INFO AllOrderCreation - Entered Total Qty
+2024-02-23 11:30:10,717 [main] INFO AllOrderCreation - Entered Weight
+2024-02-23 11:30:10,871 [main] INFO AllOrderCreation - Entered Length
+2024-02-23 11:30:11,033 [main] INFO AllOrderCreation - Entered Width
+2024-02-23 11:30:11,217 [main] INFO AllOrderCreation - Entered Height
+2024-02-23 11:30:18,384 [main] INFO AllOrderCreation - comodity dropdown is selected
+2024-02-23 11:30:22,015 [main] INFO AllOrderCreation - Entered Commodity
+2024-02-23 11:30:25,651 [main] INFO AllOrderCreation - Total Mileage==1097
+2024-02-23 11:30:34,098 [main] INFO AllOrderCreation - Enter PA service in Service input
+2024-02-23 11:30:39,401 [main] INFO AllOrderCreation - Click on Create Order button
+2024-02-23 11:30:51,267 [main] INFO AllOrderCreation - Validation for Package is not displayed
+2024-02-23 11:30:51,362 [main] INFO AllOrderCreation - =====Pickup =10273700=====
+
+2024-02-23 11:30:51,787 [main] INFO AllOrderCreation - Clicked on Edit Order
+2024-02-23 11:30:57,502 [main] INFO AllOrderCreation - Clicked on Unknown Shipper
+2024-02-23 11:30:58,760 [main] INFO AllOrderCreation - Clicked on Confirm button
+2024-02-23 11:30:58,872 [main] INFO AllOrderCreation - Scroll down to Get the Rate
+2024-02-23 11:30:58,946 [main] INFO AllOrderCreation - Clicked on Save Changes button
+2024-02-23 11:31:02,665 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:31:05,445 [main] INFO AllOrderCreation - Clicked on Select Flight button
+2024-02-23 11:31:10,999 [main] INFO AllOrderCreation - Selected 1st flight
+2024-02-23 11:31:12,825 [main] INFO AllOrderCreation - Clicked on Assign button
+2024-02-23 11:31:12,908 [main] INFO AllOrderCreation - Validation==Please select the appropriate Product Code before assigning the flight.
+2024-02-23 11:31:13,022 [main] INFO AllOrderCreation - Selected Product Code
+2024-02-23 11:31:15,217 [main] INFO AllOrderCreation - Clicked on Assign button
+2024-02-23 11:32:53,593 [main] INFO AllOrderCreation - Click on Add AirBill
+2024-02-23 11:32:54,193 [main] INFO AllOrderCreation - Click on Add AirBill
+2024-02-23 11:32:54,327 [main] INFO AllOrderCreation - Enter Quantity
+2024-02-23 11:32:54,412 [main] INFO AllOrderCreation - Enter Weight
+2024-02-23 11:32:54,538 [main] INFO AllOrderCreation - Enter Description
+2024-02-23 11:32:54,538 [main] INFO AllOrderCreation - Account and Service Lavel dropdowns are available
+2024-02-23 11:32:54,648 [main] INFO AllOrderCreation - Selected Account
+2024-02-23 11:32:54,757 [main] INFO AllOrderCreation - Selected Service Level
+2024-02-23 11:32:58,700 [main] INFO AllOrderCreation - Click on Save Bill button
+2024-02-23 11:32:58,713 [main] INFO AllOrderCreation - Validation for Air Bill Description is not displayed
+2024-02-23 11:32:58,773 [main] INFO AllOrderCreation - ServiceID=PA
+2024-02-23 11:32:58,833 [main] INFO AllOrderCreation - Stage=TC ACKNOWLEDGE
+2024-02-23 11:32:59,024 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:33:06,294 [main] INFO AllOrderCreation - Clicked on TC Acknowledge button
+2024-02-23 11:34:10,427 [main] INFO AllOrderCreation - Service is==PA
+2024-02-23 11:34:10,500 [main] INFO AllOrderCreation - Stage=READY FOR DISPATCH
+2024-02-23 11:34:10,705 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:34:15,736 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
+2024-02-23 11:34:17,896 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
+2024-02-23 11:34:22,162 [main] INFO AllOrderCreation - Enter CourierID
+2024-02-23 11:34:22,368 [main] INFO AllOrderCreation - Enter Agent Key
+2024-02-23 11:34:22,448 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:34:23,070 [main] INFO AllOrderCreation - Total Agent==9
+2024-02-23 11:34:23,352 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:34:23,635 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:34:23,885 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:34:24,164 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:34:24,490 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:34:24,737 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:34:25,016 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:34:25,259 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:34:25,520 [main] INFO AllOrderCreation - Searched Agent is exist
+2024-02-23 11:34:25,802 [main] INFO AllOrderCreation - Select the AgentID
+2024-02-23 11:34:28,025 [main] INFO AllOrderCreation - Selected agent is==AUTOMATION
+2024-02-23 11:34:28,025 [main] INFO AllOrderCreation - Selected Agent is not displayed in Driver section
+2024-02-23 11:34:28,025 [main] INFO AllOrderCreation - == Edit Driver Test End==
+2024-02-23 11:34:28,233 [main] INFO AllOrderCreation - Email is selected as a Contact By
+2024-02-23 11:34:28,570 [main] INFO AllOrderCreation - Entered EmailID
+2024-02-23 11:34:28,822 [main] INFO AllOrderCreation - Entered Spoke With
+2024-02-23 11:34:34,099 [main] INFO AllOrderCreation - Clicked on Alert&Confirm button
+2024-02-23 11:35:05,117 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 11:35:06,189 [main] INFO AllOrderCreation - PickUpID is==10273700
+2024-02-23 11:35:06,230 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 11:35:06,506 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:35:11,003 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:35:11,035 [main] INFO AllOrderCreation - PickUpID is==10273700
+2024-02-23 11:35:18,108 [main] INFO AllOrderCreation - Operation tab is not selected
+2024-02-23 11:35:18,515 [main] INFO AllOrderCreation - Click on Operation Tab
+2024-02-23 11:35:18,600 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:35:18,657 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:35:18,822 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:35:33,200 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:35:40,265 [main] INFO AllOrderCreation - ServiceID=PA
+2024-02-23 11:35:40,335 [main] INFO AllOrderCreation - Stage=Confirm Pu Alert
+2024-02-23 11:35:40,498 [main] INFO AllOrderCreation - Clicked on Confirm PU Alert button
+2024-02-23 11:35:45,362 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:35:45,419 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:35:45,606 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:36:00,331 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:36:07,388 [main] INFO AllOrderCreation - ServiceID=PA
+2024-02-23 11:36:07,468 [main] INFO AllOrderCreation - Stage=Pickup
+2024-02-23 11:36:07,500 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:36:07,500 [main] INFO AllOrderCreation - 01:06
+2024-02-23 11:36:07,748 [main] INFO AllOrderCreation - Enter Actual pickup time
+2024-02-23 11:36:09,852 [main] INFO AllOrderCreation - Click on Confirm PU button
+2024-02-23 11:36:43,195 [main] INFO AllOrderCreation - Validation message is not displayed for Recalculate the charges
+2024-02-23 11:36:43,277 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:36:43,340 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:36:43,493 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:36:57,910 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:37:05,009 [main] INFO AllOrderCreation - ServiceID=PA
+2024-02-23 11:37:05,050 [main] INFO AllOrderCreation - Stage=Drop @ Origin
+2024-02-23 11:37:05,074 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:37:05,075 [main] INFO AllOrderCreation - 01:07
+2024-02-23 11:37:05,203 [main] INFO AllOrderCreation - Enter Drop off time
+2024-02-23 11:37:05,248 [main] INFO AllOrderCreation - Click on Confirm Drop button
+2024-02-23 11:37:07,763 [main] INFO AllOrderCreation - Airbill already exist !!
+2024-02-23 11:37:07,860 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:37:07,939 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:37:08,095 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:37:08,742 [main] INFO AllOrderCreation - Job is not found in Operation Tab
+2024-02-23 11:37:09,062 [main] INFO AllOrderCreation - Click on Inventory tab
+2024-02-23 11:37:09,137 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:37:09,194 [main] INFO AllOrderCreation - Enter pickupID in search input
+2024-02-23 11:37:09,363 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:37:11,038 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 11:37:23,960 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:37:24,207 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:37:39,939 [main] INFO AllOrderCreation - PickUpID=10273700
+
+2024-02-23 11:37:45,954 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 11:37:45,954 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:37:46,091 [main] INFO AllOrderCreation - Stage=SEND DEL ALERT
+2024-02-23 11:37:46,268 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:37:51,308 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
+2024-02-23 11:37:53,456 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
+2024-02-23 11:37:58,992 [main] INFO AllOrderCreation - Enter CourierID
+2024-02-23 11:38:00,365 [main] INFO AllOrderCreation - Enter Agent Key
+2024-02-23 11:38:00,473 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:38:01,469 [main] INFO AllOrderCreation - Total Agent==11
+2024-02-23 11:38:01,775 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:02,053 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:02,303 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:02,565 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:02,830 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:03,102 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:03,365 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:03,631 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:03,909 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:04,189 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:38:04,477 [main] INFO AllOrderCreation - Searched Agent is exist
+2024-02-23 11:38:04,791 [main] INFO AllOrderCreation - Select the AgentID
+2024-02-23 11:38:05,416 [main] INFO AllOrderCreation - Selected agent is==AUTOMATION
+2024-02-23 11:38:05,416 [main] INFO AllOrderCreation - Selected Agent is not displayed in Driver section
+2024-02-23 11:38:05,416 [main] INFO AllOrderCreation - == Edit Driver Test End==
+2024-02-23 11:38:05,517 [main] INFO AllOrderCreation - Selected Email option as Contacted
+2024-02-23 11:38:06,717 [main] INFO AllOrderCreation - entered Contacted By
+2024-02-23 11:38:06,825 [main] INFO AllOrderCreation - entered Spoke With
+2024-02-23 11:38:07,936 [main] INFO AllOrderCreation - Selected Driver
+2024-02-23 11:38:09,038 [main] INFO AllOrderCreation - CLicked on Alert and Confirm Button
+2024-02-23 11:38:19,179 [main] INFO AllOrderCreation - Page is refreshed
+2024-02-23 11:38:20,508 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 11:38:21,563 [main] INFO AllOrderCreation - PickUpID is==10273700
+2024-02-23 11:38:21,590 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 11:38:21,768 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:38:24,093 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:38:24,144 [main] INFO AllOrderCreation - PickUpID is==10273700
+2024-02-23 11:38:31,664 [main] INFO AllOrderCreation - Operation tab is not selected
+2024-02-23 11:38:32,152 [main] INFO AllOrderCreation - Click on Operation Tab
+2024-02-23 11:38:32,244 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:38:32,338 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:38:32,599 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:38:47,350 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:38:54,405 [main] INFO AllOrderCreation - ServiceID=PA
+2024-02-23 11:38:54,477 [main] INFO AllOrderCreation - Stage=Confirm Del Alert
+2024-02-23 11:38:54,654 [main] INFO AllOrderCreation - Clicked on Confirm Del Alert button
+2024-02-23 11:38:58,240 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 11:39:10,953 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:39:11,078 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:39:23,593 [main] INFO AllOrderCreation - PickUpID=10273700
+
+2024-02-23 11:39:35,323 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 11:39:35,323 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:39:35,481 [main] INFO AllOrderCreation - Stage=WAIT FOR DEPARTURE
+2024-02-23 11:39:35,815 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:39:41,032 [main] INFO AllOrderCreation - Enter Departure Time
+2024-02-23 11:39:41,115 [main] INFO AllOrderCreation - Click on Depart button
+2024-02-23 11:39:43,970 [main] INFO AllOrderCreation - Stage=ON BOARD
+2024-02-23 11:39:44,158 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:40:05,610 [main] ERROR AllOrderCreation - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'XER Wait For Arr@')] (tried for 7 second(s) with 500 milliseconds interval)
+2024-02-23 11:40:05,806 [main] INFO AllOrderCreation - XER Wait for Arrival Not Exist in Flow!!
+2024-02-23 11:40:36,229 [main] ERROR AllOrderCreation - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'XER Wait For Dept@')] (tried for 30 second(s) with 500 milliseconds interval)
+2024-02-23 11:40:36,396 [main] INFO AllOrderCreation - XER Wait for Departure Not Exist in Flow!!
+2024-02-23 11:40:46,850 [main] ERROR AllOrderCreation - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="lblStages"][contains(text(),'ON BOARD')] (tried for 10 second(s) with 500 milliseconds interval)
+2024-02-23 11:40:47,038 [main] INFO AllOrderCreation - Board Not Exist in Flow!!
+2024-02-23 11:40:47,153 [main] INFO AllOrderCreation - Stage=WAIT FOR ARRIVAL
+2024-02-23 11:40:47,354 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:40:52,406 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:40:52,407 [main] INFO AllOrderCreation - 00:10
+2024-02-23 11:40:52,562 [main] INFO AllOrderCreation - Enter Arrival Time
+2024-02-23 11:40:52,614 [main] INFO AllOrderCreation - Click on Arrival button
+2024-02-23 11:40:57,535 [main] INFO AllOrderCreation - Stage=RECOVER @ DESTINATION
+2024-02-23 11:40:57,719 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:41:02,781 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:41:02,782 [main] INFO AllOrderCreation - 00:11
+2024-02-23 11:41:02,933 [main] INFO AllOrderCreation - Enter Arrival Time
+2024-02-23 11:41:03,144 [main] INFO AllOrderCreation - Click on Confirm Recover button
+2024-02-23 11:41:05,924 [main] INFO AllOrderCreation - ServiceID=PA
+2024-02-23 11:41:05,966 [main] INFO AllOrderCreation - Stage=DELIVER
+2024-02-23 11:41:06,157 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:41:11,243 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:41:11,243 [main] INFO AllOrderCreation - 00:11
+2024-02-23 11:41:11,528 [main] INFO AllOrderCreation - Enter Signature
+2024-02-23 11:41:11,575 [main] INFO AllOrderCreation - Clicked on Confirm DEL button
+2024-02-23 11:41:11,661 [main] INFO AllOrderCreation - Validation message is displayed=Parameter(s) are modified. Please recalculate customer charges.
+2024-02-23 11:41:12,031 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 11:41:20,547 [main] INFO AllOrderCreation - Click on Recalculate button
+2024-02-23 11:41:21,439 [main] INFO AllOrderCreation - Click on Save Changes button
+2024-02-23 11:41:38,293 [main] INFO AllOrderCreation - Click on Job Overview Tab
+2024-02-23 11:41:48,316 [main] INFO AllOrderCreation - Enter Signature
+2024-02-23 11:41:48,337 [main] INFO AllOrderCreation - Actual DL TimeZone==CST
+2024-02-23 11:41:48,337 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:41:48,338 [main] INFO AllOrderCreation - 00:11
+2024-02-23 11:41:48,338 [main] INFO AllOrderCreation - Actual DL Time==00:11
+2024-02-23 11:41:48,471 [main] INFO AllOrderCreation - Enter Actual DL Time
+2024-02-23 11:41:50,704 [main] INFO AllOrderCreation - Click on Confirm DEL button
+2024-02-23 11:42:17,626 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 11:42:17,626 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:42:17,760 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 11:42:18,038 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 11:42:18,065 [main] ERROR AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 11:42:18,254 [main] INFO AllOrderCreation - Verify Customer Bill Not Exist in Flow!!
+2024-02-23 11:42:20,907 [main] INFO AllOrderCreation - Click on Operation
+2024-02-23 11:42:36,281 [main] INFO AllOrderCreation - Click on Tasklog
+2024-02-23 11:42:36,479 [main] INFO AllOrderCreation - Click on New Order
+2024-02-23 11:42:41,614 [main] INFO AllOrderCreation - =====Service:- D3P=====
+2024-02-23 11:42:41,799 [main] INFO AllOrderCreation - Entered CallerName
+2024-02-23 11:42:41,954 [main] INFO AllOrderCreation - Entered Contact/Phone
+2024-02-23 11:42:42,134 [main] INFO AllOrderCreation - Entered Customer Code
+2024-02-23 11:42:47,479 [main] INFO AllOrderCreation - Dialogue is not displayed for Customer
+2024-02-23 11:42:47,556 [main] INFO AllOrderCreation - Clicked on Parts search button
+2024-02-23 11:42:50,076 [main] INFO AllOrderCreation - Clicked on Advanced search button
+2024-02-23 11:42:50,798 [main] INFO AllOrderCreation - Selected FSL
+2024-02-23 11:42:50,908 [main] INFO AllOrderCreation - Entered value of Field 1
+2024-02-23 11:42:50,960 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:42:52,841 [main] INFO AllOrderCreation - Clicked on Add Part button
+2024-02-23 11:42:52,884 [main] INFO AllOrderCreation - Total Qty of added parts==1
+2024-02-23 11:42:52,885 [main] INFO AllOrderCreation - Part is added successfully==PASS
+2024-02-23 11:42:52,956 [main] INFO AllOrderCreation - Clicked on Save Part button
+2024-02-23 11:42:57,459 [main] INFO AllOrderCreation - Qty of added parts==1
+2024-02-23 11:42:57,459 [main] INFO AllOrderCreation - Part is saved successfully==PASS
+2024-02-23 11:42:59,685 [main] INFO AllOrderCreation - Entered DL Zip
+2024-02-23 11:43:02,315 [main] INFO AllOrderCreation - Clicked on Delivery Address Tab
+2024-02-23 11:43:02,670 [main] INFO AllOrderCreation - Entered DL Company
+2024-02-23 11:43:02,695 [main] INFO AllOrderCreation - Entered DL Address
+2024-02-23 11:43:03,316 [main] INFO AllOrderCreation - Entered DL Address Line1
+2024-02-23 11:43:03,502 [main] INFO AllOrderCreation - Entered DL Attention
+2024-02-23 11:43:03,737 [main] INFO AllOrderCreation - Entered DL Phone
+2024-02-23 11:43:03,769 [main] INFO AllOrderCreation - DL Miles==9
+2024-02-23 11:43:12,435 [main] INFO AllOrderCreation - Selected 3P account
+2024-02-23 11:43:30,481 [main] INFO AllOrderCreation - Selected FedEx service
+2024-02-23 11:43:38,970 [main] INFO AllOrderCreation - Click on Select Drop-Off Location
+2024-02-23 11:43:39,016 [main] INFO AllOrderCreation - issue in drop off location
+2024-02-23 11:43:39,016 [main] INFO AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 11:43:39,360 [main] INFO AllOrderCreation - Drop Off Location Test= FAIL
+2024-02-23 11:43:39,453 [main] INFO AllOrderCreation - Click on Close button
+2024-02-23 11:43:39,540 [main] INFO AllOrderCreation - Click on FCA button
+2024-02-23 11:43:40,293 [main] INFO AllOrderCreation - Enter FCA Company
+2024-02-23 11:43:40,419 [main] INFO AllOrderCreation - Enter FCA ZipCode
+2024-02-23 11:43:41,179 [main] INFO AllOrderCreation - Enter FCA Address
+2024-02-23 11:43:41,247 [main] INFO AllOrderCreation - Click on FCA Save button
+2024-02-23 11:43:46,681 [main] INFO AllOrderCreation - Record saved successfully.
+2024-02-23 11:43:46,682 [main] INFO AllOrderCreation - Consignee address saved successfully=PASS
+2024-02-23 11:43:46,775 [main] INFO AllOrderCreation - Click on FCA Close button
+2024-02-23 11:43:56,122 [main] INFO AllOrderCreation - Total Mileage==1033
+2024-02-23 11:43:58,642 [main] INFO AllOrderCreation - Click on Create Order button
+2024-02-23 11:44:02,402 [main] INFO AllOrderCreation - Content of the Dialogue is==Warning: You are selecting a 3rd Party Service on a Friday.
+Yes  No
+2024-02-23 11:44:02,458 [main] INFO AllOrderCreation - Click on Yes Proceed button
+2024-02-23 11:44:06,350 [main] INFO AllOrderCreation - =====Pickup =10273725=====
+
+2024-02-23 11:44:06,912 [main] INFO AllOrderCreation - Clicked on Edit Order
+2024-02-23 11:44:23,777 [main] INFO AllOrderCreation - Service is==D3P
+2024-02-23 11:44:23,857 [main] INFO AllOrderCreation - Scroll down to Get the Rate
+2024-02-23 11:44:54,167 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:45:00,652 [main] INFO AllOrderCreation - ServiceID=D3P
+2024-02-23 11:45:00,714 [main] INFO AllOrderCreation - Stage=TC ACKNOWLEDGE
+2024-02-23 11:45:00,886 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:45:06,038 [main] INFO AllOrderCreation - Clicked on TC Acknowledge button
+2024-02-23 11:45:16,887 [main] INFO AllOrderCreation - ServiceID=D3P
+2024-02-23 11:45:16,954 [main] INFO AllOrderCreation - Stage=SEND PULL ALERT
+2024-02-23 11:45:17,130 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:45:22,214 [main] INFO AllOrderCreation - Actual Courier=34769
+2024-02-23 11:45:22,214 [main] INFO AllOrderCreation - By default Automation courier is selected 
+2024-02-23 11:45:22,338 [main] INFO AllOrderCreation - Email is selected as a Contact By
+2024-02-23 11:45:22,539 [main] INFO AllOrderCreation - Entered EmailID
+2024-02-23 11:45:22,680 [main] INFO AllOrderCreation - Entered Spoke With
+2024-02-23 11:45:22,842 [main] INFO AllOrderCreation - Clicked on Send Pull Alert button
+2024-02-23 11:45:26,077 [main] INFO AllOrderCreation - No popup visible 
+2024-02-23 11:45:26,122 [main] INFO AllOrderCreation - Service is==D3P
+2024-02-23 11:45:26,187 [main] INFO AllOrderCreation - Stage=READY FOR DISPATCH
+2024-02-23 11:45:26,357 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:45:31,388 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
+2024-02-23 11:45:33,473 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
+2024-02-23 11:45:37,477 [main] INFO AllOrderCreation - Enter CourierID
+2024-02-23 11:45:37,629 [main] INFO AllOrderCreation - Enter Agent Key
+2024-02-23 11:45:37,678 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:45:38,332 [main] INFO AllOrderCreation - Total Agent==11
+2024-02-23 11:45:38,611 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:38,865 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:39,269 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:39,515 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:39,780 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:40,028 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:40,278 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:40,543 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:40,820 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:41,066 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:45:41,313 [main] INFO AllOrderCreation - Searched Agent is exist
+2024-02-23 11:45:41,589 [main] INFO AllOrderCreation - Select the AgentID
+2024-02-23 11:45:42,188 [main] INFO AllOrderCreation - Selected agent is==AUTOMATION
+2024-02-23 11:45:42,189 [main] INFO AllOrderCreation - Selected Agent is not displayed in Driver section
+2024-02-23 11:45:42,189 [main] INFO AllOrderCreation - == Edit Driver Test End==
+2024-02-23 11:45:42,330 [main] INFO AllOrderCreation - Email is selected as a Contact By
+2024-02-23 11:45:42,495 [main] INFO AllOrderCreation - Entered EmailID
+2024-02-23 11:45:42,637 [main] INFO AllOrderCreation - Entered Spoke With
+2024-02-23 11:45:47,907 [main] INFO AllOrderCreation - Clicked on Alert&Confirm button
+2024-02-23 11:46:16,130 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 11:46:17,171 [main] INFO AllOrderCreation - PickUpID is==10273725
+2024-02-23 11:46:17,203 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 11:46:17,423 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:46:21,747 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:46:21,772 [main] INFO AllOrderCreation - PickUpID is==10273725
+2024-02-23 11:46:21,806 [main] INFO AllOrderCreation - Operation tab is already selected
+2024-02-23 11:46:21,884 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:46:21,938 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:46:22,103 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:46:37,254 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:46:44,322 [main] INFO AllOrderCreation - ServiceID=D3P
+2024-02-23 11:46:44,390 [main] INFO AllOrderCreation - Stage=Confirm Pu Alert
+2024-02-23 11:46:44,554 [main] INFO AllOrderCreation - Clicked on Confirm PU Alert button
+2024-02-23 11:46:47,706 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:46:47,758 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:46:47,944 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:47:02,272 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:47:09,361 [main] INFO AllOrderCreation - ServiceID=D3P
+2024-02-23 11:47:09,448 [main] INFO AllOrderCreation - Stage=CONF PULL ALERT
+2024-02-23 11:47:09,579 [main] INFO AllOrderCreation - Enter Spoke with
+2024-02-23 11:47:09,759 [main] INFO AllOrderCreation - Click on Confirm Pull Alert  button
+2024-02-23 11:47:13,090 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:47:13,144 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:47:13,303 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:47:13,980 [main] INFO AllOrderCreation - Job is not found in Operation Tab
+2024-02-23 11:47:14,266 [main] INFO AllOrderCreation - Click on Inventory tab
+2024-02-23 11:47:14,354 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:47:14,411 [main] INFO AllOrderCreation - Enter pickupID in search input
+2024-02-23 11:47:14,613 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:47:19,108 [main] INFO AllOrderCreation - ServiceID=D3P
+2024-02-23 11:47:19,184 [main] INFO AllOrderCreation - Stage=Confirm Pull
+2024-02-23 11:47:19,353 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 11:47:19,425 [main] INFO AllOrderCreation - Validation message is displayed=Part Pull DateTime is required.
+2024-02-23 11:47:19,451 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:47:19,451 [main] INFO AllOrderCreation - 00:17
+2024-02-23 11:47:19,452 [main] INFO AllOrderCreation - ZoneID is==CST
+2024-02-23 11:47:19,452 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 11:47:20,095 [main] INFO AllOrderCreation - Enter Actual Part Pull Date
+2024-02-23 11:47:20,249 [main] INFO AllOrderCreation - Enter Actual Part Pull time
+2024-02-23 11:47:25,580 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 11:47:25,653 [main] INFO AllOrderCreation - Validation message is displayed = Verify all parts before proceeding.
+2024-02-23 11:47:25,685 [main] INFO AllOrderCreation - Serial No of Part is==SERIAL1708646663786
+
+2024-02-23 11:47:27,659 [main] INFO AllOrderCreation - Entered serial No in scan barcode
+2024-02-23 11:47:27,681 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:47:27,682 [main] INFO AllOrderCreation - 00:17
+2024-02-23 11:47:27,682 [main] INFO AllOrderCreation - ZoneID is==CST
+2024-02-23 11:47:27,682 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 11:47:27,870 [main] INFO AllOrderCreation - Enter Actual Part Pull Date
+2024-02-23 11:47:28,041 [main] INFO AllOrderCreation - Enter Actual Part Pull time
+2024-02-23 11:47:33,435 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 11:47:36,809 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:47:37,044 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:47:44,453 [main] INFO AllOrderCreation - Operation tab is not selected
+2024-02-23 11:47:44,879 [main] INFO AllOrderCreation - Click on Operation Tab
+2024-02-23 11:47:44,987 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:47:45,059 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:47:45,213 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:47:59,705 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:48:06,767 [main] INFO AllOrderCreation - ServiceID=D3P
+2024-02-23 11:48:06,831 [main] INFO AllOrderCreation - Stage=Pickup
+2024-02-23 11:48:06,855 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:48:06,856 [main] INFO AllOrderCreation - 00:18
+2024-02-23 11:48:07,064 [main] INFO AllOrderCreation - Enter Actual pickup time
+2024-02-23 11:48:09,139 [main] INFO AllOrderCreation - Click on Confirm PU button
+2024-02-23 11:48:41,738 [main] INFO AllOrderCreation - Dialogue is not exist
+2024-02-23 11:48:41,807 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:48:41,863 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:48:42,010 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:48:56,999 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:49:04,062 [main] INFO AllOrderCreation - ServiceID=D3P
+2024-02-23 11:49:04,137 [main] INFO AllOrderCreation - Stage=Tender to 3P
+2024-02-23 11:49:04,160 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:49:04,160 [main] INFO AllOrderCreation - 01:19
+2024-02-23 11:49:04,323 [main] INFO AllOrderCreation - Entered Drop time
+2024-02-23 11:49:04,364 [main] INFO AllOrderCreation - ZoneID of is==EST
+2024-02-23 11:49:04,365 [main] INFO AllOrderCreation - 01:19
+2024-02-23 11:49:04,510 [main] INFO AllOrderCreation - Entered Drop time
+2024-02-23 11:49:05,616 [main] INFO AllOrderCreation - Clicked on Tender To 3P button
+2024-02-23 11:49:37,748 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:49:37,814 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:49:37,995 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:49:38,668 [main] INFO AllOrderCreation - Job is not found in Operation Tab
+2024-02-23 11:49:38,994 [main] INFO AllOrderCreation - Click on Inventory tab
+2024-02-23 11:49:39,076 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:49:39,132 [main] INFO AllOrderCreation - Enter pickupID in search input
+2024-02-23 11:49:39,359 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:49:41,137 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 11:49:51,733 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:49:51,926 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:50:04,219 [main] INFO AllOrderCreation - PickUpID=10273725
+
+2024-02-23 11:50:07,921 [main] INFO AllOrderCreation - Total Jobs==2
+2024-02-23 11:50:07,956 [main] INFO AllOrderCreation - Searched PickUpID==10273725
+2024-02-23 11:50:16,293 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:50:16,360 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 11:50:16,384 [main] INFO AllOrderCreation - Service is==D3P
+2024-02-23 11:50:16,688 [main] INFO AllOrderCreation - Click on Save&Exit button
+2024-02-23 11:50:29,061 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:50:29,316 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:50:43,115 [main] INFO AllOrderCreation - PickUpID=10273725
+
+2024-02-23 11:50:46,403 [main] INFO AllOrderCreation - Total Jobs==2
+2024-02-23 11:50:46,440 [main] INFO AllOrderCreation - Searched PickUpID==10273725
+2024-02-23 11:50:54,710 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:50:54,843 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 11:50:55,142 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 11:50:55,166 [main] ERROR AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 11:50:55,349 [main] INFO AllOrderCreation - Verify Customer Bill Not Exist in Flow!!
+2024-02-23 11:50:58,547 [main] INFO AllOrderCreation - Click on Operation
+2024-02-23 11:51:06,512 [main] INFO AllOrderCreation - Click on Tasklog
+2024-02-23 11:51:10,768 [main] INFO AllOrderCreation - Click on New Order
+2024-02-23 11:51:14,109 [main] INFO AllOrderCreation - =====Service:- 3PLAST=====
+2024-02-23 11:51:14,261 [main] INFO AllOrderCreation - Entered CallerName
+2024-02-23 11:51:14,404 [main] INFO AllOrderCreation - Entered Contact/Phone
+2024-02-23 11:51:14,585 [main] INFO AllOrderCreation - Entered Customer Code
+2024-02-23 11:51:20,733 [main] INFO AllOrderCreation - Dialogue is not displayed for Customer
+2024-02-23 11:51:20,863 [main] INFO AllOrderCreation - Clicked on Parts search button
+2024-02-23 11:51:22,791 [main] INFO AllOrderCreation - Clicked on Advanced search button
+2024-02-23 11:51:23,469 [main] INFO AllOrderCreation - Selected FSL
+2024-02-23 11:51:23,574 [main] INFO AllOrderCreation - Entered value of Field 1
+2024-02-23 11:51:23,624 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:51:24,787 [main] INFO AllOrderCreation - Clicked on Add Part button
+2024-02-23 11:51:24,838 [main] INFO AllOrderCreation - Total Qty of added parts==1
+2024-02-23 11:51:24,838 [main] INFO AllOrderCreation - Part is added successfully==PASS
+2024-02-23 11:51:24,910 [main] INFO AllOrderCreation - Clicked on Save Part button
+2024-02-23 11:51:28,584 [main] INFO AllOrderCreation - Qty of added parts==1
+2024-02-23 11:51:28,585 [main] INFO AllOrderCreation - Part is saved successfully==PASS
+2024-02-23 11:51:30,946 [main] INFO AllOrderCreation - Entered DL Zip
+2024-02-23 11:51:37,384 [main] INFO AllOrderCreation - Clicked on Delivery Address Tab
+2024-02-23 11:51:37,579 [main] INFO AllOrderCreation - Entered DL Company
+2024-02-23 11:51:37,605 [main] INFO AllOrderCreation - Entered DL Address
+2024-02-23 11:51:37,743 [main] INFO AllOrderCreation - Entered DL Address Line1
+2024-02-23 11:51:37,869 [main] INFO AllOrderCreation - Entered DL Attention
+2024-02-23 11:51:38,001 [main] INFO AllOrderCreation - Entered DL Phone
+2024-02-23 11:51:38,025 [main] INFO AllOrderCreation - DL Miles==11
+2024-02-23 11:51:40,590 [main] INFO AllOrderCreation - Selected 3P account
+2024-02-23 11:51:44,175 [main] INFO AllOrderCreation - Selected FedEx service
+2024-02-23 11:51:49,443 [main] INFO AllOrderCreation - Click on Select Drop-Off Location
+2024-02-23 11:51:49,485 [main] INFO AllOrderCreation - issue in drop off location
+2024-02-23 11:51:49,485 [main] INFO AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 11:51:49,704 [main] INFO AllOrderCreation - Drop Off Location Test= FAIL
+2024-02-23 11:51:49,783 [main] INFO AllOrderCreation - Click on Close button
+2024-02-23 11:51:49,908 [main] INFO AllOrderCreation - Click on FCA button
+2024-02-23 11:51:50,095 [main] INFO AllOrderCreation - Enter FCA Company
+2024-02-23 11:51:50,224 [main] INFO AllOrderCreation - Enter FCA ZipCode
+2024-02-23 11:51:50,970 [main] INFO AllOrderCreation - Enter FCA Address
+2024-02-23 11:51:51,037 [main] INFO AllOrderCreation - Click on FCA Save button
+2024-02-23 11:51:51,631 [main] INFO AllOrderCreation - Record saved successfully.
+2024-02-23 11:51:51,631 [main] INFO AllOrderCreation - Consignee address saved successfully=PASS
+2024-02-23 11:51:51,741 [main] INFO AllOrderCreation - Click on FCA Close button
+2024-02-23 11:52:04,383 [main] INFO AllOrderCreation - Total Mileage==1585
+2024-02-23 11:52:06,866 [main] INFO AllOrderCreation - Click on Create Order button
+2024-02-23 11:52:09,501 [main] INFO AllOrderCreation - Content of the Dialogue is==Do you wish to change the Delivery Airport from BUR to HOU ?
+Yes  No
+2024-02-23 11:52:09,561 [main] INFO AllOrderCreation - Click on Yes Proceed button
+2024-02-23 11:53:09,895 [main] INFO AllOrderCreation - Click on Yes Proceed button
+2024-02-23 11:53:15,291 [main] INFO AllOrderCreation - =====Pickup =10273727=====
+
+2024-02-23 11:53:15,685 [main] INFO AllOrderCreation - Clicked on Edit Order
+2024-02-23 11:53:21,138 [main] INFO AllOrderCreation - Service is==3PLAST
+2024-02-23 11:53:21,221 [main] INFO AllOrderCreation - Scroll down to Get the Rate
+2024-02-23 11:53:31,781 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:53:36,232 [main] INFO AllOrderCreation - ServiceID=3PLAST
+2024-02-23 11:53:36,304 [main] INFO AllOrderCreation - Stage=TC ACKNOWLEDGE
+2024-02-23 11:53:36,478 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:53:41,588 [main] INFO AllOrderCreation - Clicked on TC Acknowledge button
+2024-02-23 11:53:51,774 [main] INFO AllOrderCreation - ServiceID=3PLAST
+2024-02-23 11:53:51,845 [main] INFO AllOrderCreation - Stage=SEND PULL ALERT
+2024-02-23 11:53:52,048 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:53:57,172 [main] INFO AllOrderCreation - Actual Courier=34769
+2024-02-23 11:53:57,172 [main] INFO AllOrderCreation - By default Automation courier is selected 
+2024-02-23 11:53:57,286 [main] INFO AllOrderCreation - Email is selected as a Contact By
+2024-02-23 11:53:57,468 [main] INFO AllOrderCreation - Entered EmailID
+2024-02-23 11:53:57,596 [main] INFO AllOrderCreation - Entered Spoke With
+2024-02-23 11:53:58,886 [main] INFO AllOrderCreation - Clicked on Send Pull Alert button
+2024-02-23 11:54:03,350 [main] INFO AllOrderCreation - No popup visible 
+2024-02-23 11:54:04,405 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 11:54:05,465 [main] INFO AllOrderCreation - PickUpID is==10273727
+2024-02-23 11:54:05,492 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 11:54:05,688 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:54:09,680 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:54:09,703 [main] INFO AllOrderCreation - PickUpID is==10273727
+2024-02-23 11:54:17,127 [main] INFO AllOrderCreation - Operation tab is not selected
+2024-02-23 11:54:17,768 [main] INFO AllOrderCreation - Click on Operation Tab
+2024-02-23 11:54:17,853 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:54:17,911 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:54:18,083 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:54:32,391 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:54:39,648 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:54:42,687 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:54:42,720 [main] INFO AllOrderCreation - Operation tab is already selected
+2024-02-23 11:54:42,797 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:54:42,854 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:54:43,059 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:54:57,774 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:55:04,874 [main] INFO AllOrderCreation - ServiceID=3PLAST
+2024-02-23 11:55:04,954 [main] INFO AllOrderCreation - Stage=CONF PULL ALERT
+2024-02-23 11:55:05,081 [main] INFO AllOrderCreation - Enter Spoke with
+2024-02-23 11:55:05,263 [main] INFO AllOrderCreation - Click on Confirm Pull Alert  button
+2024-02-23 11:55:08,503 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:55:08,604 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:55:08,784 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:55:23,302 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:55:30,383 [main] INFO AllOrderCreation - ServiceID=3PLAST
+2024-02-23 11:55:30,462 [main] INFO AllOrderCreation - Stage=Confirm Pull
+2024-02-23 11:55:30,642 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 11:55:30,711 [main] INFO AllOrderCreation - Validation message is displayed=Part Pull DateTime is required.
+2024-02-23 11:55:30,738 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:55:30,742 [main] INFO AllOrderCreation - 00:25
+2024-02-23 11:55:30,742 [main] INFO AllOrderCreation - ZoneID is==CST
+2024-02-23 11:55:30,743 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 11:55:30,950 [main] INFO AllOrderCreation - Enter Actual Part Pull Date
+2024-02-23 11:55:31,093 [main] INFO AllOrderCreation - Enter Actual Part Pull time
+2024-02-23 11:55:36,483 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 11:55:36,573 [main] INFO AllOrderCreation - Validation message is displayed = Verify all parts before proceeding.
+2024-02-23 11:55:36,608 [main] INFO AllOrderCreation - Serial No of Part is==5328Z5B45ER8H5BR9HK9UQ
+
+2024-02-23 11:55:39,256 [main] INFO AllOrderCreation - Entered serial No in scan barcode
+2024-02-23 11:55:39,283 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 11:55:39,284 [main] INFO AllOrderCreation - 00:25
+2024-02-23 11:55:39,284 [main] INFO AllOrderCreation - ZoneID is==CST
+2024-02-23 11:55:39,284 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 11:55:39,505 [main] INFO AllOrderCreation - Enter Actual Part Pull Date
+2024-02-23 11:55:39,670 [main] INFO AllOrderCreation - Enter Actual Part Pull time
+2024-02-23 11:55:45,067 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 11:55:48,525 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:55:49,141 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:55:49,541 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:56:04,455 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:56:11,515 [main] INFO AllOrderCreation - ServiceID=3PLAST
+2024-02-23 11:56:11,586 [main] INFO AllOrderCreation - Stage=Tender to 3P
+2024-02-23 11:56:11,610 [main] INFO AllOrderCreation - ZoneID of is==PST
+2024-02-23 11:56:11,612 [main] INFO AllOrderCreation - 22:26
+2024-02-23 11:56:11,786 [main] INFO AllOrderCreation - Entered Drop time
+2024-02-23 11:56:11,982 [main] INFO AllOrderCreation - ZoneID of is==PST
+2024-02-23 11:56:11,983 [main] INFO AllOrderCreation - 22:26
+2024-02-23 11:56:12,142 [main] INFO AllOrderCreation - Entered Drop time
+2024-02-23 11:56:13,236 [main] INFO AllOrderCreation - Clicked on Tender To 3P button
+2024-02-23 11:56:15,649 [main] INFO AllOrderCreation - Dialogue content==Actual Drop Time is less than Ready Time. Do you want to continue?
+2024-02-23 11:56:19,361 [main] INFO AllOrderCreation - Clicked on Yes
+2024-02-23 11:56:19,515 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:56:19,582 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:56:19,761 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:56:20,475 [main] INFO AllOrderCreation - Job is not found in Operation Tab
+2024-02-23 11:56:20,862 [main] INFO AllOrderCreation - Click on Inventory tab
+2024-02-23 11:56:20,949 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:56:21,100 [main] INFO AllOrderCreation - Enter pickupID in search input
+2024-02-23 11:56:21,298 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:56:24,705 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 11:56:35,472 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:56:35,765 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:56:50,548 [main] INFO AllOrderCreation - PickUpID=10273727
+
+2024-02-23 11:56:59,539 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 11:56:59,539 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:56:59,706 [main] INFO AllOrderCreation - Stage=SEND DEL ALERT
+2024-02-23 11:56:59,891 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:57:04,922 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
+2024-02-23 11:57:07,056 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
+2024-02-23 11:57:12,085 [main] INFO AllOrderCreation - Enter CourierID
+2024-02-23 11:57:12,266 [main] INFO AllOrderCreation - Enter Agent Key
+2024-02-23 11:57:12,318 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 11:57:13,964 [main] INFO AllOrderCreation - Total Agent==11
+2024-02-23 11:57:14,213 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:14,472 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:14,723 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:14,977 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:15,226 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:15,479 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:15,732 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:15,993 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:16,253 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:16,533 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 11:57:16,784 [main] INFO AllOrderCreation - Searched Agent is exist
+2024-02-23 11:57:17,075 [main] INFO AllOrderCreation - Select the AgentID
+2024-02-23 11:57:17,677 [main] INFO AllOrderCreation - Selected agent is==AUTOMATION
+2024-02-23 11:57:17,678 [main] INFO AllOrderCreation - Selected Agent is not displayed in Driver section
+2024-02-23 11:57:17,678 [main] INFO AllOrderCreation - == Edit Driver Test End==
+2024-02-23 11:57:17,770 [main] INFO AllOrderCreation - Selected Email option as Contacted
+2024-02-23 11:57:18,946 [main] INFO AllOrderCreation - entered Contacted By
+2024-02-23 11:57:19,066 [main] INFO AllOrderCreation - entered Spoke With
+2024-02-23 11:57:20,184 [main] INFO AllOrderCreation - Selected Driver
+2024-02-23 11:57:21,250 [main] INFO AllOrderCreation - CLicked on Alert and Confirm Button
+2024-02-23 11:57:31,768 [main] INFO AllOrderCreation - Page is refreshed
+2024-02-23 11:57:32,799 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 11:57:33,828 [main] INFO AllOrderCreation - PickUpID is==10273727
+2024-02-23 11:57:33,862 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 11:57:34,077 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 11:57:37,619 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 11:57:37,642 [main] INFO AllOrderCreation - PickUpID is==10273727
+2024-02-23 11:57:45,049 [main] INFO AllOrderCreation - Operation tab is not selected
+2024-02-23 11:57:45,567 [main] INFO AllOrderCreation - Click on Operation Tab
+2024-02-23 11:57:45,634 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 11:57:45,686 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 11:57:45,843 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 11:58:00,865 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 11:58:07,934 [main] INFO AllOrderCreation - ServiceID=3PLAST
+2024-02-23 11:58:08,004 [main] INFO AllOrderCreation - Stage=Confirm Del Alert
+2024-02-23 11:58:08,181 [main] INFO AllOrderCreation - Clicked on Confirm Del Alert button
+2024-02-23 11:58:11,768 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 11:58:22,424 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 11:58:22,551 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 11:58:37,203 [main] INFO AllOrderCreation - PickUpID=10273727
+
+2024-02-23 11:58:47,046 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 11:58:47,046 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 11:58:54,644 [main] INFO AllOrderCreation - Stage=3RD PARTY DELIVERY
+2024-02-23 11:58:55,281 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 11:59:00,356 [main] INFO AllOrderCreation - ZoneID of is==PST
+2024-02-23 11:59:00,356 [main] INFO AllOrderCreation - 22:29
+2024-02-23 11:59:00,518 [main] INFO AllOrderCreation - Entered Drop time
+2024-02-23 11:59:00,674 [main] INFO AllOrderCreation - Clicked on Ship Label Services
+2024-02-23 11:59:03,976 [main] INFO AllOrderCreation - Selected 3p Account
+2024-02-23 11:59:04,049 [main] INFO AllOrderCreation - Selected Service
+2024-02-23 11:59:04,147 [main] INFO AllOrderCreation - Clicked on Submit button
+2024-02-23 11:59:06,353 [main] INFO AllOrderCreation - Tracking No==Your tracking number is :794608338436
+2024-02-23 11:59:06,406 [main] INFO AllOrderCreation - Tracking No==794608338436
+2024-02-23 11:59:06,445 [main] INFO AllOrderCreation - Clicked on Close button of ShipLabel
+2024-02-23 11:59:11,168 [main] INFO AllOrderCreation - ShipLabel Test=PASS
+2024-02-23 11:59:11,310 [main] INFO AllOrderCreation - Entered POD
+2024-02-23 11:59:11,357 [main] INFO AllOrderCreation - ZoneID of is==PST
+2024-02-23 11:59:11,358 [main] INFO AllOrderCreation - 22:29
+2024-02-23 11:59:11,493 [main] INFO AllOrderCreation - Entered Drop time
+2024-02-23 11:59:11,569 [main] INFO AllOrderCreation - Clicked on Tender To 3P button
+2024-02-23 12:00:01,945 [main] ERROR AllOrderCreation - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.id: loaderDiv (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SIPL92', ip: '10.212.130.18', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome-headless-shell, browserVersion: 121.0.6167.189, chrome: {chromedriverVersion: 121.0.6167.184 (057a8ae7deb..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64204}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0573a0bb2d0a24217e567e8bd202d352
+2024-02-23 12:00:02,119 [main] INFO AllOrderCreation - Tender to 3P Not Exist in Flow!!
+2024-02-23 12:00:38,862 [main] INFO AllOrderCreation - page is refreshed
+2024-02-23 12:00:38,870 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 12:00:39,912 [main] INFO AllOrderCreation - PickUpID is==10273727
+2024-02-23 12:00:39,940 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 12:00:40,141 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 12:00:45,120 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 12:00:45,151 [main] INFO AllOrderCreation - PickUpID is==10273727
+2024-02-23 12:00:45,187 [main] INFO AllOrderCreation - Operation tab is already selected
+2024-02-23 12:00:45,263 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:00:45,315 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:00:45,479 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:01:00,029 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 12:01:07,115 [main] INFO AllOrderCreation - ServiceID=3PLAST
+2024-02-23 12:01:07,188 [main] INFO AllOrderCreation - Stage=Recover @ Destination
+2024-02-23 12:01:07,211 [main] INFO AllOrderCreation - ZoneID of is==PST
+2024-02-23 12:01:07,211 [main] INFO AllOrderCreation - 22:31
+2024-02-23 12:01:07,344 [main] INFO AllOrderCreation - Enter Recovery Time
+2024-02-23 12:01:07,455 [main] INFO AllOrderCreation - Click on Confirm Recover button
+2024-02-23 12:01:10,492 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:01:10,543 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:01:10,710 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:01:25,693 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 12:01:32,786 [main] INFO AllOrderCreation - ServiceID=3PLAST
+2024-02-23 12:01:32,822 [main] INFO AllOrderCreation - Stage=Deliver
+2024-02-23 12:01:32,844 [main] INFO AllOrderCreation - ZoneID of is==PST
+2024-02-23 12:01:32,844 [main] INFO AllOrderCreation - 22:31
+2024-02-23 12:01:32,952 [main] INFO AllOrderCreation - Enter Actual DL Time
+2024-02-23 12:01:33,084 [main] INFO AllOrderCreation - Enter Signature
+2024-02-23 12:01:34,754 [main] INFO AllOrderCreation - Clicked on Confirm DEL button
+2024-02-23 12:01:34,822 [main] INFO AllOrderCreation - Click on OK of Dialogue box
+2024-02-23 12:01:37,598 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 12:01:47,902 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:01:48,028 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:02:01,951 [main] INFO AllOrderCreation - PickUpID=10273727
+
+2024-02-23 12:02:12,878 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 12:02:12,878 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 12:02:23,617 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:02:23,805 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:02:35,060 [main] INFO AllOrderCreation - PickUpID=10273727
+
+2024-02-23 12:02:45,773 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 12:02:45,773 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 12:02:45,912 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 12:02:46,222 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 12:02:46,245 [main] ERROR AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 12:02:46,426 [main] INFO AllOrderCreation - Verify Customer Bill Not Exist in Flow!!
+2024-02-23 12:02:46,427 [main] INFO AllOrderCreation - Current Enviornment is not Production , so job cancellation is not handled
+2024-02-23 12:02:48,513 [main] INFO AllOrderCreation - Click on Operation
+2024-02-23 12:02:59,964 [main] INFO AllOrderCreation - Click on Tasklog
+2024-02-23 12:03:00,113 [main] INFO AllOrderCreation - Click on New Order
+2024-02-23 12:03:03,199 [main] INFO AllOrderCreation - =====Service:- CPU=====
+2024-02-23 12:03:03,379 [main] INFO AllOrderCreation - Entered CallerName
+2024-02-23 12:03:03,523 [main] INFO AllOrderCreation - Entered Contact/Phone
+2024-02-23 12:03:03,716 [main] INFO AllOrderCreation - Entered Customer Code
+2024-02-23 12:03:13,471 [main] INFO AllOrderCreation - Dialogue is not displayed for Customer
+2024-02-23 12:03:13,550 [main] INFO AllOrderCreation - Clicked on Parts search button
+2024-02-23 12:03:15,431 [main] INFO AllOrderCreation - Clicked on Advanced search button
+2024-02-23 12:03:16,104 [main] INFO AllOrderCreation - Selected FSL
+2024-02-23 12:03:16,494 [main] INFO AllOrderCreation - Entered value of Field 1
+2024-02-23 12:03:18,970 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 12:03:20,365 [main] INFO AllOrderCreation - Clicked on Add Part button
+2024-02-23 12:03:20,402 [main] INFO AllOrderCreation - Total Qty of added parts==1
+2024-02-23 12:03:20,402 [main] INFO AllOrderCreation - Part is added successfully==PASS
+2024-02-23 12:03:20,471 [main] INFO AllOrderCreation - Clicked on Save Part button
+2024-02-23 12:03:23,743 [main] INFO AllOrderCreation - Qty of added parts==1
+2024-02-23 12:03:23,743 [main] INFO AllOrderCreation - Part is saved successfully==PASS
+2024-02-23 12:03:25,952 [main] INFO AllOrderCreation - Entered DL Zip
+2024-02-23 12:03:27,128 [main] INFO AllOrderCreation - Clicked on Delivery Address Tab
+2024-02-23 12:03:27,302 [main] INFO AllOrderCreation - Entered DL Company
+2024-02-23 12:03:27,324 [main] INFO AllOrderCreation - Entered DL Address
+2024-02-23 12:03:27,474 [main] INFO AllOrderCreation - Entered DL Address Line1
+2024-02-23 12:03:27,657 [main] INFO AllOrderCreation - Entered DL Attention
+2024-02-23 12:03:27,803 [main] INFO AllOrderCreation - Entered DL Phone
+2024-02-23 12:03:27,825 [main] INFO AllOrderCreation - DL Miles==9
+2024-02-23 12:03:38,919 [main] INFO AllOrderCreation - Total Mileage==1
+2024-02-23 12:03:41,383 [main] INFO AllOrderCreation - Click on Create Order button
+2024-02-23 12:03:43,465 [main] INFO AllOrderCreation - Content of the Dialogue is==The tech/customer pickup (QDT) will be in afterhours when warehouse is unmanned, would you like to proceed or change?
+Yes, proceed  No, change
+2024-02-23 12:03:43,521 [main] INFO AllOrderCreation - Click on Yes Proceed button
+2024-02-23 12:03:45,318 [main] INFO AllOrderCreation - =====Pickup =10273795=====
+
+2024-02-23 12:03:45,732 [main] INFO AllOrderCreation - Clicked on Edit Order
+2024-02-23 12:03:48,567 [main] INFO AllOrderCreation - Service is==CPU
+2024-02-23 12:03:48,635 [main] INFO AllOrderCreation - Scroll down to Get the Rate
+2024-02-23 12:03:56,026 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 12:04:00,916 [main] INFO AllOrderCreation - ServiceID=CPU
+2024-02-23 12:04:00,978 [main] INFO AllOrderCreation - Stage=TC ACKNOWLEDGE
+2024-02-23 12:04:01,155 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 12:04:06,280 [main] INFO AllOrderCreation - Clicked on TC Acknowledge button
+2024-02-23 12:04:15,977 [main] INFO AllOrderCreation - ServiceID=CPU
+2024-02-23 12:04:16,035 [main] INFO AllOrderCreation - Stage=SEND PULL ALERT
+2024-02-23 12:04:16,219 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 12:04:21,286 [main] INFO AllOrderCreation - Actual Courier=34769
+2024-02-23 12:04:21,286 [main] INFO AllOrderCreation - By default Automation courier is selected 
+2024-02-23 12:04:21,395 [main] INFO AllOrderCreation - Email is selected as a Contact By
+2024-02-23 12:04:21,567 [main] INFO AllOrderCreation - Entered EmailID
+2024-02-23 12:04:21,683 [main] INFO AllOrderCreation - Entered Spoke With
+2024-02-23 12:04:21,853 [main] INFO AllOrderCreation - Clicked on Send Pull Alert button
+2024-02-23 12:04:24,010 [main] INFO AllOrderCreation - No popup visible 
+2024-02-23 12:04:25,892 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 12:04:26,953 [main] INFO AllOrderCreation - PickUpID is==10273795
+2024-02-23 12:04:26,982 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 12:04:27,182 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 12:04:30,149 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 12:04:30,174 [main] INFO AllOrderCreation - PickUpID is==10273795
+2024-02-23 12:04:30,217 [main] INFO AllOrderCreation - Operation tab is already selected
+2024-02-23 12:04:30,319 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:04:30,373 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:04:30,555 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:04:45,091 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 12:04:52,218 [main] INFO AllOrderCreation - ServiceID=CPU
+2024-02-23 12:04:52,342 [main] INFO AllOrderCreation - Stage=CONF PULL ALERT
+2024-02-23 12:04:52,526 [main] INFO AllOrderCreation - Enter Spoke with
+2024-02-23 12:04:52,746 [main] INFO AllOrderCreation - Click on Confirm Pull Alert  button
+2024-02-23 12:04:55,426 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:04:55,521 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:04:55,689 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:05:10,173 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 12:05:17,264 [main] INFO AllOrderCreation - ServiceID=CPU
+2024-02-23 12:05:17,346 [main] INFO AllOrderCreation - Stage=Confirm Pull
+2024-02-23 12:05:17,517 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 12:05:17,587 [main] INFO AllOrderCreation - Validation message is displayed=Part Pull DateTime is required.
+2024-02-23 12:05:17,615 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:05:17,616 [main] INFO AllOrderCreation - 00:35
+2024-02-23 12:05:17,616 [main] INFO AllOrderCreation - ZoneID is==CST
+2024-02-23 12:05:17,616 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:05:17,816 [main] INFO AllOrderCreation - Enter Actual Part Pull Date
+2024-02-23 12:05:17,976 [main] INFO AllOrderCreation - Enter Actual Part Pull time
+2024-02-23 12:05:23,352 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 12:05:23,445 [main] INFO AllOrderCreation - Validation message is displayed = Verify all parts before proceeding.
+2024-02-23 12:05:23,484 [main] INFO AllOrderCreation - Serial No of Part is==5423SK67MVTY42MFJL4QCU
+
+2024-02-23 12:05:25,530 [main] INFO AllOrderCreation - Entered serial No in scan barcode
+2024-02-23 12:05:25,554 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:05:25,554 [main] INFO AllOrderCreation - 00:35
+2024-02-23 12:05:25,554 [main] INFO AllOrderCreation - ZoneID is==CST
+2024-02-23 12:05:25,554 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:05:25,836 [main] INFO AllOrderCreation - Enter Actual Part Pull Date
+2024-02-23 12:05:25,993 [main] INFO AllOrderCreation - Enter Actual Part Pull time
+2024-02-23 12:05:31,341 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 12:05:34,485 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:05:34,534 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:05:34,701 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:05:49,198 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 12:05:56,352 [main] INFO AllOrderCreation - Clicked on Close button
+2024-02-23 12:05:56,429 [main] INFO AllOrderCreation - ServiceID=CPU
+2024-02-23 12:05:56,454 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:05:56,454 [main] INFO AllOrderCreation - 00:35
+2024-02-23 12:05:56,569 [main] INFO AllOrderCreation - Enter Actual DL Time
+2024-02-23 12:05:56,685 [main] INFO AllOrderCreation - Enter Signature
+2024-02-23 12:06:00,306 [main] INFO AllOrderCreation - Clicked on Confirm DEL button
+2024-02-23 12:06:10,781 [main] INFO AllOrderCreation - Dialogue is not exist
+2024-02-23 12:06:10,878 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:06:10,940 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:06:11,082 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:06:12,858 [main] INFO AllOrderCreation - Job is not found in Operation Tab
+2024-02-23 12:06:13,366 [main] INFO AllOrderCreation - Click on Inventory tab
+2024-02-23 12:06:13,447 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:06:13,508 [main] INFO AllOrderCreation - Enter pickupID in search input
+2024-02-23 12:06:13,720 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:06:15,609 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 12:06:25,906 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:06:26,103 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:06:42,859 [main] INFO AllOrderCreation - PickUpID=10273795
+
+2024-02-23 12:06:51,453 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 12:06:51,454 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 12:07:02,229 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:07:02,473 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:07:21,532 [main] INFO AllOrderCreation - PickUpID=10273795
+
+2024-02-23 12:07:33,300 [main] INFO AllOrderCreation - Total Jobs==0
+2024-02-23 12:07:33,300 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 12:07:33,514 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 12:07:33,898 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 12:07:33,934 [main] ERROR AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 12:07:34,268 [main] INFO AllOrderCreation - Verify Customer Bill Not Exist in Flow!!
+2024-02-23 12:07:34,269 [main] INFO AllOrderCreation - Current Enviornment is not Production , so job cancellation is not handled
+2024-02-23 12:07:37,171 [main] INFO AllOrderCreation - Click on Operation
+2024-02-23 12:08:15,945 [main] INFO AllOrderCreation - Click on Tasklog
+2024-02-23 12:08:16,923 [main] INFO AllOrderCreation - Click on New Order
+2024-02-23 12:08:20,315 [main] INFO AllOrderCreation - =====Service:- H3P=====
+2024-02-23 12:08:20,508 [main] INFO AllOrderCreation - Entered CallerName
+2024-02-23 12:08:20,695 [main] INFO AllOrderCreation - Entered Contact/Phone
+2024-02-23 12:08:20,908 [main] INFO AllOrderCreation - Entered Customer Code
+2024-02-23 12:08:26,946 [main] INFO AllOrderCreation - Dialogue is not displayed for Customer
+2024-02-23 12:08:27,146 [main] INFO AllOrderCreation - Clicked on Parts search button
+2024-02-23 12:08:29,662 [main] INFO AllOrderCreation - Clicked on Advanced search button
+2024-02-23 12:08:30,525 [main] INFO AllOrderCreation - Selected FSL
+2024-02-23 12:08:30,696 [main] INFO AllOrderCreation - Entered value of Field 1
+2024-02-23 12:08:30,751 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 12:08:33,356 [main] INFO AllOrderCreation - Clicked on Add Part button
+2024-02-23 12:08:33,407 [main] INFO AllOrderCreation - Total Qty of added parts==1
+2024-02-23 12:08:33,407 [main] INFO AllOrderCreation - Part is added successfully==PASS
+2024-02-23 12:08:33,691 [main] INFO AllOrderCreation - Clicked on Save Part button
+2024-02-23 12:08:38,817 [main] INFO AllOrderCreation - Qty of added parts==1
+2024-02-23 12:08:38,817 [main] INFO AllOrderCreation - Part is saved successfully==PASS
+2024-02-23 12:08:41,089 [main] INFO AllOrderCreation - Entered DL Zip
+2024-02-23 12:08:41,203 [main] INFO AllOrderCreation - Clicked on Delivery Address Tab
+2024-02-23 12:08:41,446 [main] INFO AllOrderCreation - Entered DL Company
+2024-02-23 12:08:41,478 [main] INFO AllOrderCreation - Entered DL Address
+2024-02-23 12:08:41,700 [main] INFO AllOrderCreation - Entered DL Address Line1
+2024-02-23 12:08:41,905 [main] INFO AllOrderCreation - Entered DL Attention
+2024-02-23 12:08:42,075 [main] INFO AllOrderCreation - Entered DL Phone
+2024-02-23 12:08:42,107 [main] INFO AllOrderCreation - DL Miles==
+2024-02-23 12:08:50,588 [main] INFO AllOrderCreation - Selected 3P account
+2024-02-23 12:08:57,422 [main] INFO AllOrderCreation - Selected FedEx service
+2024-02-23 12:09:06,829 [main] INFO AllOrderCreation - Total Mileage==1
+2024-02-23 12:09:09,664 [main] INFO AllOrderCreation - Click on Create Order button
+2024-02-23 12:09:16,371 [main] INFO AllOrderCreation - Content of the Dialogue is==Warning: You are selecting a 3rd Party Service on a Friday.
+Yes  No
+2024-02-23 12:09:16,442 [main] INFO AllOrderCreation - Click on Yes Proceed button
+2024-02-23 12:09:31,126 [main] INFO AllOrderCreation - =====Pickup =10273796=====
+
+2024-02-23 12:09:32,803 [main] INFO AllOrderCreation - Clicked on Edit Order
+2024-02-23 12:09:39,682 [main] INFO AllOrderCreation - Service is==H3P
+2024-02-23 12:09:39,817 [main] INFO AllOrderCreation - Scroll down to Get the Rate
+2024-02-23 12:09:40,472 [main] INFO AllOrderCreation - Clicked on OK button of Error Message
+2024-02-23 12:09:41,667 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 12:09:45,182 [main] INFO AllOrderCreation - ServiceID=H3P
+2024-02-23 12:09:45,275 [main] INFO AllOrderCreation - Stage=TC ACKNOWLEDGE
+2024-02-23 12:09:45,472 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 12:09:50,667 [main] INFO AllOrderCreation - Clicked on TC Acknowledge button
+2024-02-23 12:10:01,440 [main] INFO AllOrderCreation - ServiceID=H3P
+2024-02-23 12:10:01,516 [main] INFO AllOrderCreation - Stage=SEND PULL ALERT
+2024-02-23 12:10:01,710 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 12:10:06,791 [main] INFO AllOrderCreation - Actual Courier=34769
+2024-02-23 12:10:06,791 [main] INFO AllOrderCreation - By default Automation courier is selected 
+2024-02-23 12:10:06,934 [main] INFO AllOrderCreation - Email is selected as a Contact By
+2024-02-23 12:10:07,206 [main] INFO AllOrderCreation - Entered EmailID
+2024-02-23 12:10:07,374 [main] INFO AllOrderCreation - Entered Spoke With
+2024-02-23 12:10:07,573 [main] INFO AllOrderCreation - Clicked on Send Pull Alert button
+2024-02-23 12:10:11,073 [main] INFO AllOrderCreation - No popup visible 
+2024-02-23 12:10:13,327 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 12:10:14,382 [main] INFO AllOrderCreation - PickUpID is==10273796
+2024-02-23 12:10:14,450 [main] INFO AllOrderCreation - ALready loggedin
+2024-02-23 12:10:14,784 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 12:10:18,363 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 12:10:18,431 [main] INFO AllOrderCreation - PickUpID is==10273796
+2024-02-23 12:10:25,467 [main] INFO AllOrderCreation - Operation tab is not selected
+2024-02-23 12:10:26,464 [main] INFO AllOrderCreation - Click on Operation Tab
+2024-02-23 12:10:26,630 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:10:26,708 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:10:26,881 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:10:41,634 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 12:10:51,147 [main] INFO AllOrderCreation - ServiceID=H3P
+2024-02-23 12:10:51,266 [main] INFO AllOrderCreation - Stage=CONF PULL ALERT
+2024-02-23 12:10:51,433 [main] INFO AllOrderCreation - Enter Spoke with
+2024-02-23 12:10:52,720 [main] INFO AllOrderCreation - Click on Confirm Pull Alert  button
+2024-02-23 12:10:55,911 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:10:55,986 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:10:56,168 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:11:11,097 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 12:11:18,186 [main] INFO AllOrderCreation - ServiceID=H3P
+2024-02-23 12:11:18,277 [main] INFO AllOrderCreation - Stage=Confirm Pull
+2024-02-23 12:11:18,465 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 12:11:18,559 [main] INFO AllOrderCreation - Validation message is displayed=Part Pull DateTime is required.
+2024-02-23 12:11:18,602 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:11:18,604 [main] INFO AllOrderCreation - 00:41
+2024-02-23 12:11:18,605 [main] INFO AllOrderCreation - ZoneID is==CST
+2024-02-23 12:11:18,605 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:11:18,909 [main] INFO AllOrderCreation - Enter Actual Part Pull Date
+2024-02-23 12:11:19,082 [main] INFO AllOrderCreation - Enter Actual Part Pull time
+2024-02-23 12:11:24,629 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 12:11:24,713 [main] INFO AllOrderCreation - Validation message is displayed = Verify all parts before proceeding.
+2024-02-23 12:11:24,758 [main] INFO AllOrderCreation - Serial No of Part is==5522X8M81ZY2EQ0TJZ4XRD
+
+2024-02-23 12:11:27,018 [main] INFO AllOrderCreation - Entered serial No in scan barcode
+2024-02-23 12:11:27,053 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:11:27,053 [main] INFO AllOrderCreation - 00:41
+2024-02-23 12:11:27,053 [main] INFO AllOrderCreation - ZoneID is==CST
+2024-02-23 12:11:27,053 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:11:27,308 [main] INFO AllOrderCreation - Enter Actual Part Pull Date
+2024-02-23 12:11:27,492 [main] INFO AllOrderCreation - Enter Actual Part Pull time
+2024-02-23 12:11:33,058 [main] INFO AllOrderCreation - Click on Confirm Pull  button
+2024-02-23 12:11:35,503 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:11:35,571 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:11:35,724 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:11:50,540 [main] INFO AllOrderCreation - Job is available in NetAgent
+2024-02-23 12:11:57,637 [main] INFO AllOrderCreation - ServiceID=H3P
+2024-02-23 12:11:57,761 [main] INFO AllOrderCreation - Stage=Tender to 3P
+2024-02-23 12:11:57,787 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:11:57,788 [main] INFO AllOrderCreation - 00:41
+2024-02-23 12:11:57,991 [main] INFO AllOrderCreation - Entered Drop time
+2024-02-23 12:11:58,060 [main] INFO AllOrderCreation - POD is already set
+2024-02-23 12:11:58,081 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:11:58,082 [main] INFO AllOrderCreation - 00:41
+2024-02-23 12:11:58,290 [main] INFO AllOrderCreation - Entered Drop time
+2024-02-23 12:11:59,422 [main] INFO AllOrderCreation - Clicked on Tender To 3P button
+2024-02-23 12:11:59,974 [main] INFO AllOrderCreation - Dialogue content==This job does not have a scheduled pickup confirmation number. You may need to manually schedule a pick up. Do you want to continue?
+2024-02-23 12:12:03,621 [main] INFO AllOrderCreation - Clicked on Yes
+2024-02-23 12:12:03,744 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:12:03,804 [main] INFO AllOrderCreation - Enter PickUpID in Search input
+2024-02-23 12:12:03,978 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:12:04,690 [main] INFO AllOrderCreation - Job is not found in Operation Tab
+2024-02-23 12:12:05,589 [main] INFO AllOrderCreation - Click on Inventory tab
+2024-02-23 12:12:05,737 [main] INFO AllOrderCreation - Clear search input
+2024-02-23 12:12:05,814 [main] INFO AllOrderCreation - Enter pickupID in search input
+2024-02-23 12:12:06,069 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:12:08,298 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 12:12:19,010 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:12:19,330 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:12:38,173 [main] INFO AllOrderCreation - PickUpID=10273796
+
+2024-02-23 12:12:42,783 [main] INFO AllOrderCreation - Total Jobs==2
+2024-02-23 12:12:42,840 [main] INFO AllOrderCreation - Searched PickUpID==10273796
+2024-02-23 12:12:49,364 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 12:12:49,497 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 12:12:49,530 [main] INFO AllOrderCreation - Service is==H3P
+2024-02-23 12:12:49,854 [main] INFO AllOrderCreation - Click on Save&Exit button
+2024-02-23 12:13:02,173 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:13:02,543 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:13:24,653 [main] INFO AllOrderCreation - PickUpID=10273796
+
+2024-02-23 12:13:29,436 [main] INFO AllOrderCreation - Total Jobs==2
+2024-02-23 12:13:29,495 [main] INFO AllOrderCreation - Searched PickUpID==10273796
+2024-02-23 12:13:36,070 [main] INFO AllOrderCreation - Same job is displayed with 2 status==PASS
+2024-02-23 12:13:36,268 [main] INFO AllOrderCreation - Stage=VERIFY CUSTOMER BILL
+2024-02-23 12:13:36,587 [main] INFO AllOrderCreation - Click on Edit Order Tab
+2024-02-23 12:13:36,619 [main] ERROR AllOrderCreation - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+2024-02-23 12:13:36,898 [main] INFO AllOrderCreation - Verify Customer Bill Not Exist in Flow!!
+2024-02-23 12:13:36,900 [main] INFO AllOrderCreation - Current Enviornment is not Production , so job cancellation is not handled
+2024-02-23 12:13:38,499 [main] INFO AllOrderCreation - =====Service:- RTE=====
+2024-02-23 12:13:38,686 [main] INFO AllOrderCreation - Clicked on Tools
+2024-02-23 12:13:38,884 [main] INFO AllOrderCreation - Clicked on RouteList
+2024-02-23 12:13:42,801 [main] INFO AllOrderCreation - Total Rows==2
+2024-02-23 12:13:43,136 [main] INFO AllOrderCreation - Entered RoutWorkID
+2024-02-23 12:13:43,313 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:13:52,435 [main] INFO AllOrderCreation - Data is exist with search parameter
+2024-02-23 12:13:52,480 [main] INFO AllOrderCreation - RWTrackingNo is generated
+2024-02-23 12:13:52,543 [main] INFO AllOrderCreation - RWTrackingNo is ==136984827
+2024-02-23 12:13:53,172 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:13:53,599 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:14:17,264 [main] INFO AllOrderCreation - Clicked on SearchAllJobs
+2024-02-23 12:14:24,282 [main] INFO AllOrderCreation - Clicked on Reset button
+2024-02-23 12:14:24,399 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:14:24,517 [main] INFO AllOrderCreation - Entered Origin From Date
+2024-02-23 12:14:24,590 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:14:24,715 [main] INFO AllOrderCreation - Entered Origin From Date
+2024-02-23 12:14:24,812 [main] INFO AllOrderCreation - Route Tracking No==136984827
+2024-02-23 12:14:24,903 [main] INFO AllOrderCreation - Entered RouteTrackingID
+2024-02-23 12:14:25,006 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:14:38,248 [main] INFO AllOrderCreation - Data is exist with search TrackingNO
+2024-02-23 12:14:38,297 [main] INFO AllOrderCreation - Total No of records are==1
+2024-02-23 12:14:38,580 [main] INFO AllOrderCreation - JobID is==33456998
+2024-02-23 12:14:38,673 [main] INFO AllOrderCreation - PickUpID is==10273683
+2024-02-23 12:14:38,782 [main] INFO AllOrderCreation - BOLNo is==136984838
+2024-02-23 12:14:41,219 [main] INFO AllOrderCreation - Clicked on Record
+2024-02-23 12:14:49,341 [main] INFO AllOrderCreation - Job status tab is not Opened
+2024-02-23 12:14:49,466 [main] INFO AllOrderCreation - Clicked on Job Status Tab
+2024-02-23 12:14:58,287 [main] INFO AllOrderCreation - Job status is==TC ACK
+2024-02-23 12:14:58,288 [main] INFO AllOrderCreation - It is TC ACK stage
+2024-02-23 12:14:58,679 [main] INFO AllOrderCreation - Clicked on Acknowledge button
+2024-02-23 12:15:10,794 [main] INFO AllOrderCreation - Job status is==RDY FOR DSP
+2024-02-23 12:15:10,795 [main] INFO AllOrderCreation - ==Edit Driver Test Start==
+2024-02-23 12:15:12,888 [main] INFO AllOrderCreation - Clicked on Edit button of Driver
+2024-02-23 12:15:18,792 [main] INFO AllOrderCreation - Enter CourierID
+2024-02-23 12:15:19,043 [main] INFO AllOrderCreation - Enter Agent Key
+2024-02-23 12:15:19,105 [main] INFO AllOrderCreation - Clicked on search button
+2024-02-23 12:15:19,759 [main] INFO AllOrderCreation - Total Agent==11
+2024-02-23 12:15:20,062 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:20,355 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:20,681 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:21,010 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:21,331 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:21,687 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:21,949 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:22,215 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:22,510 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:22,789 [main] INFO AllOrderCreation - There is no Agent with search parameter
+2024-02-23 12:15:23,073 [main] INFO AllOrderCreation - Searched Agent is exist
+2024-02-23 12:15:23,377 [main] INFO AllOrderCreation - Select the AgentID
+2024-02-23 12:15:25,058 [main] INFO AllOrderCreation - Selected agent is==34769
+2024-02-23 12:15:25,058 [main] INFO AllOrderCreation - Selected Agent is displayed in Driver section
+2024-02-23 12:15:25,059 [main] INFO AllOrderCreation - == Edit Driver Test End==
+2024-02-23 12:15:25,174 [main] INFO AllOrderCreation - Clicked on Send PU Alert button
+2024-02-23 12:15:48,149 [main] INFO AllOrderCreation - Spoke With validation is not displayed
+2024-02-23 12:15:50,899 [main] INFO AllOrderCreation - ==Moved to NetAgent==
+2024-02-23 12:15:52,776 [main] INFO AllOrderCreation - Click on Operations
+2024-02-23 12:16:04,736 [main] INFO AllOrderCreation - Click on Task Log
+2024-02-23 12:16:05,045 [main] INFO AllOrderCreation - PickUpID is==10273683
+2024-02-23 12:16:06,054 [main] INFO AllOrderCreation - Click on RTE Tab
+2024-02-23 12:16:06,981 [main] INFO AllOrderCreation - RW Tracking No===136984827
+2024-02-23 12:16:07,079 [main] INFO AllOrderCreation - RW Tracking No===136984827is entered in Net agent RTE TAB
+2024-02-23 12:16:07,243 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:16:09,601 [main] INFO AllOrderCreation - Record is available with search parameters
+2024-02-23 12:16:10,002 [main] INFO AllOrderCreation - Clicked on the record
+2024-02-23 12:16:17,259 [main] INFO AllOrderCreation - Current stage of the order is=Confirm Alert
+2024-02-23 12:16:17,803 [main] INFO AllOrderCreation - Clicked on Accept button
+2024-02-23 12:16:20,789 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:16:21,452 [main] INFO AllOrderCreation - Record is available with search parameters
+2024-02-23 12:16:21,648 [main] INFO AllOrderCreation - Clicked on the record
+2024-02-23 12:16:25,371 [main] INFO AllOrderCreation - Current stage of the order is=Pickup@Stop 1 of 2
+2024-02-23 12:16:25,841 [main] INFO AllOrderCreation - Clicked on the Save
+2024-02-23 12:16:25,944 [main] INFO AllOrderCreation - validation message=Act. Pickup Time is Required.
+2024-02-23 12:16:25,984 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:16:26,032 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:16:26,035 [main] INFO AllOrderCreation - 00:48
+2024-02-23 12:16:26,547 [main] INFO AllOrderCreation - Route End time :00:48
+2024-02-23 12:16:27,826 [main] INFO AllOrderCreation - Clicked on the Save
+2024-02-23 12:16:34,626 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:16:35,273 [main] INFO AllOrderCreation - Record is available with search parameters
+2024-02-23 12:16:36,601 [main] INFO AllOrderCreation - Clicked on the record
+2024-02-23 12:16:38,730 [main] INFO AllOrderCreation - Current stage of the order is=Deliver@Stop 2 of 2
+2024-02-23 12:16:39,414 [main] INFO AllOrderCreation - Clicked on Accept button
+2024-02-23 12:16:39,602 [main] INFO AllOrderCreation - validation message=Act. Delivery Time is Required.
+2024-02-23 12:16:39,707 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:16:39,867 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:16:39,867 [main] INFO AllOrderCreation - 00:48
+2024-02-23 12:16:40,375 [main] INFO AllOrderCreation - Route End time :00:48
+2024-02-23 12:16:41,755 [main] INFO AllOrderCreation - Clicked on Accept button
+2024-02-23 12:16:41,934 [main] INFO AllOrderCreation - validation message=Signature is Required.
+2024-02-23 12:16:42,219 [main] INFO AllOrderCreation - Enter signature
+2024-02-23 12:16:42,411 [main] INFO AllOrderCreation - Clicked on Accept button
+2024-02-23 12:16:44,167 [main] INFO AllOrderCreation - validation message=Actual Delivery Datetime can not be less than or equal to Actual Pickup Datetime.
+2024-02-23 12:16:44,357 [main] INFO AllOrderCreation - Entered Actual Pickup Time
+2024-02-23 12:16:44,548 [main] INFO AllOrderCreation - Clicked on Accept button
+2024-02-23 12:16:48,014 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:16:57,772 [main] INFO AllOrderCreation - Clicked on the record
+2024-02-23 12:16:59,026 [main] INFO AllOrderCreation - Current stage of the order is=Delivered@Stop 2 of 2
+2024-02-23 12:16:59,027 [main] INFO AllOrderCreation - Job is delivered
+2024-02-23 12:16:59,200 [main] INFO AllOrderCreation - Clicked on Close button
+2024-02-23 12:17:01,437 [main] INFO AllOrderCreation - RTE Order Processing Test=PASS
+2024-02-23 12:17:01,439 [main] INFO AllOrderCreation - =====RTE Order Processing Test End=====
+2024-02-23 12:17:02,086 [main] INFO AllOrderCreation - ==Moved to Connect==
+2024-02-23 12:17:02,544 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:17:02,879 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:17:26,532 [main] INFO AllOrderCreation - Clicked on SearchAllJobs
+2024-02-23 12:17:31,993 [main] INFO AllOrderCreation - Clicked on Reset button
+2024-02-23 12:17:32,105 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:17:32,212 [main] INFO AllOrderCreation - Entered Origin From Date
+2024-02-23 12:17:32,287 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:17:32,422 [main] INFO AllOrderCreation - Entered Origin From Date
+2024-02-23 12:17:32,548 [main] INFO AllOrderCreation - Route Tracking No==136984827
+2024-02-23 12:17:32,626 [main] INFO AllOrderCreation - Entered RouteTrackingID
+2024-02-23 12:17:32,767 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:17:44,638 [main] INFO AllOrderCreation - Data is exist with search TrackingNO
+2024-02-23 12:17:44,660 [main] INFO AllOrderCreation - Total No of records are==1
+2024-02-23 12:17:44,911 [main] INFO AllOrderCreation - JobID is==33456998
+2024-02-23 12:17:45,065 [main] INFO AllOrderCreation - PickUpID is==10273683
+2024-02-23 12:17:45,168 [main] INFO AllOrderCreation - BOLNo is==136984838
+2024-02-23 12:17:52,206 [main] INFO AllOrderCreation - Clicked on Record
+2024-02-23 12:17:58,185 [main] INFO AllOrderCreation - Data is exist with search parameter
+2024-02-23 12:17:58,550 [main] INFO AllOrderCreation - Job status is==DELIVERED@STOP 2 OF 2
+2024-02-23 12:17:58,552 [main] INFO AllOrderCreation - Job is Delivered successfully
+2024-02-23 12:17:58,612 [main] INFO AllOrderCreation - Edit Route tab is already selected
+2024-02-23 12:17:59,001 [main] INFO AllOrderCreation - Clicked on End Route
+2024-02-23 12:17:59,136 [main] INFO AllOrderCreation - Validation is displayed==Actual Route End Date Required.
+Actual Route End Time Required.
+2024-02-23 12:17:59,138 [main] INFO AllOrderCreation - Validation is displayed for Route End Date and Time==PASS
+2024-02-23 12:17:59,190 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:17:59,190 [main] INFO AllOrderCreation - ZoneID is==CST
+2024-02-23 12:17:59,191 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:17:59,191 [main] INFO AllOrderCreation - ZoneID of is==CST
+2024-02-23 12:17:59,192 [main] INFO AllOrderCreation - 00:47
+2024-02-23 12:17:59,391 [main] INFO AllOrderCreation - Entered Actual Route End Date
+2024-02-23 12:17:59,537 [main] INFO AllOrderCreation - Entered Actual Route End Time
+2024-02-23 12:17:59,915 [main] INFO AllOrderCreation - Clicked on End Route
+2024-02-23 12:17:59,996 [main] INFO AllOrderCreation - Validation is displayed==Actual route end date should be same or greater then last stop's pod time.
+2024-02-23 12:17:59,996 [main] INFO AllOrderCreation - Validation is displayed for route end date should be same or greater then last stop's pod time==PASS
+2024-02-23 12:18:02,053 [main] INFO AllOrderCreation - LastShip==[[ChromeDriver: chrome-headless-shell on WINDOWS (0573a0bb2d0a24217e567e8bd202d352)] -> id: lblActDeliveryValue]
+2024-02-23 12:18:02,069 [main] INFO AllOrderCreation - Last Del Date Time==2024-02-23 00:49
+2024-02-23 12:18:02,070 [main] INFO AllOrderCreation - Last Del Time==00:49
+2024-02-23 12:18:04,278 [main] INFO AllOrderCreation - Entered Actual Route End Time
+2024-02-23 12:18:05,639 [main] INFO AllOrderCreation - Clicked on End Route
+2024-02-23 12:18:29,516 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:18:29,868 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:18:36,592 [main] INFO AllOrderCreation - Clicked on SearchAllJobs
+2024-02-23 12:18:42,066 [main] INFO AllOrderCreation - Clicked on Reset button
+2024-02-23 12:18:42,173 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:18:42,289 [main] INFO AllOrderCreation - Entered Origin From Date
+2024-02-23 12:18:42,371 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:18:42,482 [main] INFO AllOrderCreation - Entered Origin From Date
+2024-02-23 12:18:42,597 [main] INFO AllOrderCreation - Route Tracking No==136984827
+2024-02-23 12:18:42,737 [main] INFO AllOrderCreation - Entered RouteTrackingID
+2024-02-23 12:18:42,859 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:18:54,627 [main] INFO AllOrderCreation - Data is exist with search TrackingNO
+2024-02-23 12:18:54,646 [main] INFO AllOrderCreation - Total No of records are==1
+2024-02-23 12:18:54,864 [main] INFO AllOrderCreation - JobID is==33456998
+2024-02-23 12:18:54,985 [main] INFO AllOrderCreation - PickUpID is==10273683
+2024-02-23 12:18:55,100 [main] INFO AllOrderCreation - BOLNo is==136984838
+2024-02-23 12:18:57,559 [main] INFO AllOrderCreation - Clicked on Record
+2024-02-23 12:19:03,893 [main] INFO AllOrderCreation - Data is exist with search parameter
+2024-02-23 12:19:04,285 [main] INFO AllOrderCreation - Job status is==VERIFY CUSTOMER BILL
+2024-02-23 12:19:04,288 [main] INFO AllOrderCreation - Job is moved to Verify Customer Bill stage
+2024-02-23 12:19:04,663 [main] INFO AllOrderCreation - Clicked on Verify button
+2024-02-23 12:19:24,185 [main] INFO AllOrderCreation - Clicked on Operations
+2024-02-23 12:19:24,569 [main] INFO AllOrderCreation - Clicked on TaskLog
+2024-02-23 12:19:30,308 [main] INFO AllOrderCreation - Clicked on SearchAllJobs
+2024-02-23 12:19:35,244 [main] INFO AllOrderCreation - Clicked on Reset button
+2024-02-23 12:19:36,066 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:19:36,393 [main] INFO AllOrderCreation - Entered Origin From Date
+2024-02-23 12:19:36,475 [main] INFO AllOrderCreation - 02/23/2024
+2024-02-23 12:19:36,640 [main] INFO AllOrderCreation - Entered Origin From Date
+2024-02-23 12:19:36,743 [main] INFO AllOrderCreation - Route Tracking No==136984827
+2024-02-23 12:19:37,033 [main] INFO AllOrderCreation - Entered RouteTrackingID
+2024-02-23 12:19:37,162 [main] INFO AllOrderCreation - Click on Search button
+2024-02-23 12:19:47,830 [main] INFO AllOrderCreation - Data is exist with search TrackingNO
+2024-02-23 12:19:47,841 [main] INFO AllOrderCreation - Total No of records are==1
+2024-02-23 12:19:53,133 [main] INFO AllOrderCreation - JobID is==33456998
+2024-02-23 12:19:53,225 [main] INFO AllOrderCreation - PickUpID is==10273683
+2024-02-23 12:19:53,332 [main] INFO AllOrderCreation - BOLNo is==136984838
+2024-02-23 12:19:55,766 [main] INFO AllOrderCreation - Clicked on Record
+2024-02-23 12:20:02,029 [main] INFO AllOrderCreation - Data is exist with search parameter
+2024-02-23 12:20:02,372 [main] INFO AllOrderCreation - Job status is==VERIFIED
+2024-02-23 12:20:02,373 [main] INFO AllOrderCreation - Job is moved to VERIFIED stage
+2024-02-23 12:20:05,856 [main] INFO AllOrderCreation - Clicked on LogOut
+2024-02-23 12:20:13,564 [main] INFO AllOrderCreation - ====Sending Email=====
