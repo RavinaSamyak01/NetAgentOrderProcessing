@@ -61,91 +61,96 @@ public class SD extends OrderCreation {
 		// --Refresh App
 		refreshApp();
 
-		// --NetAgent Tab
-		naTab();
+		String Portal = storage.getProperty("Portal");
+		if (Portal.equalsIgnoreCase("Mob") && Env.equalsIgnoreCase("Prod")) {
+			logger.info("No need to perform Processing");
+		} else {
+			// --NetAgent Tab
+			naTab();
 
-		sdProcessing();
+			sdProcessing();
 
-		// --COnnect Tab
-		connectTab();
+			// --COnnect Tab
+			connectTab();
 
-		Thread.sleep(2000);
+			Thread.sleep(2000);
 
-		OC.searchJob(2);
+			OC.searchJob(2);
 
-		SendDelAlert SDA = new SendDelAlert();
-		SDA.delAlert();
+			SendDelAlert SDA = new SendDelAlert();
+			SDA.delAlert();
 
-		// --Refresh App
-		refreshApp();
+			// --Refresh App
+			refreshApp();
 
-		// --NetAgent Tab
-		naTab();
+			// --NetAgent Tab
+			naTab();
 
-		sdConfDelstages();
+			sdConfDelstages();
 
-		// --COnnect Tab
-		connectTab();
+			// --COnnect Tab
+			connectTab();
 
-		Thread.sleep(2000);
+			Thread.sleep(2000);
 
-		OC.searchJob(2);
+			OC.searchJob(2);
 
-		// Wait for Departure
-		WaitForDeptarture WFD = new WaitForDeptarture();
-		WFD.waitForDept();
+			// Wait for Departure
+			WaitForDeptarture WFD = new WaitForDeptarture();
+			WFD.waitForDept();
 
-		// OnBorad
-		Board Brd = new Board();
-		Brd.onBoard();
+			// OnBorad
+			Board Brd = new Board();
+			Brd.onBoard();
 
-		// XER wait for Arrival
-		XerWaitForArrival XWFA = new XerWaitForArrival();
-		XWFA.xerWaitForArr();
+			// XER wait for Arrival
+			XerWaitForArrival XWFA = new XerWaitForArrival();
+			XWFA.xerWaitForArr();
 
-		// XER Wait for Departure
-		XerWaitForDeparture XWFD = new XerWaitForDeparture();
-		XWFD.xerWaitForDept();
+			// XER Wait for Departure
+			XerWaitForDeparture XWFD = new XerWaitForDeparture();
+			XWFD.xerWaitForDept();
 
-		// board2
-		Board1 Brd1 = new Board1();
-		Brd1.onBoard1();
+			// board2
+			Board1 Brd1 = new Board1();
+			Brd1.onBoard1();
 
-		// Wait for Arrival
-		WaitForArrival WFA = new WaitForArrival();
-		WFA.waitForArr();
+			// Wait for Arrival
+			WaitForArrival WFA = new WaitForArrival();
+			WFA.waitForArr();
 
-		// Recover
-		Recover RCV = new Recover();
-		RCV.recoverAtDestination();
+			// Recover
+			Recover RCV = new Recover();
+			RCV.recoverAtDestination();
 
-		// DELIVERED
-		Deliver Del = new Deliver();
-		Del.confirmDelivery();
+			// DELIVERED
+			Deliver Del = new Deliver();
+			Del.confirmDelivery();
 
-		// Verify Customer Bill
-		VerifyCustomerBill VCB = new VerifyCustomerBill();
-		VCB.verifyCustomerBill(2);
+			// Verify Customer Bill
+			VerifyCustomerBill VCB = new VerifyCustomerBill();
+			VCB.verifyCustomerBill(2);
 
-		if (Env.equalsIgnoreCase("PROD")) {
+			if (Env.equalsIgnoreCase("PROD")) {
 
-			// -- cancel job
-			cancel_job cb = new cancel_job();
-			cb.job_cancel(2);
+				// -- cancel job
+				cancel_job cb = new cancel_job();
+				cb.job_cancel(2);
 
+			}
+
+			else {
+
+				logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+			}
+
+			// -- navigae to NA tab
+
+			// OC.naTab();
+
+			// --Refresh App
+			refreshApp();
 		}
-
-		else {
-
-			logger.info("Current Enviornment is not Production , so job cancellation is not handled");
-		}
-		
-	//-- navigae to NA tab
-		
-		//OC.naTab();
-
-		// --Refresh App
-		refreshApp();
 
 	}
 

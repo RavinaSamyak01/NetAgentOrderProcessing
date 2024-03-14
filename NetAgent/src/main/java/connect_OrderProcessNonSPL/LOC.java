@@ -54,42 +54,42 @@ public class LOC extends BaseInit {
 		// --Refresh App
 		OC.refreshApp();
 
-		// --NetAgent Tab
-		OC.naTab();
+		String Portal = storage.getProperty("Portal");
+		if (Portal.equalsIgnoreCase("Mob") && Env.equalsIgnoreCase("Prod")) {
+			logger.info("No need to perform Processing");
+		} else {
+			// --NetAgent Tab
+			OC.naTab();
 
-		locProcessing();
+			locProcessing();
 
-		// --COnnect Tab
-		OC.connectTab();
+			// --COnnect Tab
+			OC.connectTab();
 
-		Thread.sleep(2000);
+			Thread.sleep(2000);
 
+			// Connectlogin();
 
-		// Connectlogin();
+			VerifyCustomerBill VFCB = new VerifyCustomerBill();
+			VFCB.verifyCustomerBill(1);
 
-		VerifyCustomerBill VFCB = new VerifyCustomerBill();
-		VFCB.verifyCustomerBill(1);
-		
-		
-		if (Env.equalsIgnoreCase("PROD")) {
+			if (Env.equalsIgnoreCase("PROD")) {
 
-		
-		
-		// -- cancel job
-		cancel_job cb = new cancel_job();
-		cb.job_cancel(1);
-				
+				// -- cancel job
+				cancel_job cb = new cancel_job();
+				cb.job_cancel(1);
+
+			}
+
+			else {
+
+				logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+			}
 		}
-		
-		else {
-			
-			logger.info("Current Enviornment is not Production , so job cancellation is not handled");
-		}
-		
-		
-		//-- navigae to NA tab
-		
-		//OC.naTab();
+
+		// -- navigae to NA tab
+
+		// OC.naTab();
 
 	}
 

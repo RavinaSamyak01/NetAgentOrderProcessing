@@ -77,44 +77,48 @@ public class H3P extends BaseInit {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		OC.refreshApp();
 
-		OC.naTab();
+		String Portal = storage.getProperty("Portal");
+		if (Portal.equalsIgnoreCase("Mob") && Env.equalsIgnoreCase("Prod")) {
+			logger.info("No need to perform Processing");
+		} else {
+			OC.naTab();
 
-		h3pProcessing();
+			h3pProcessing();
 
-		// --COnnect Tab
-		OC.connectTab();
+			// --COnnect Tab
+			OC.connectTab();
 
-		// -- 3P Deliver
-		OC.stage3Pdeliver(10);
+			// -- 3P Deliver
+			OC.stage3Pdeliver(10);
 
-		// Verify Customer Bill
-		VerifyCustomerBill VCB = new VerifyCustomerBill();
-		VCB.verifyCustomerBill(10);
-		
-		if (Env.equalsIgnoreCase("PROD")) {
+			// Verify Customer Bill
+			VerifyCustomerBill VCB = new VerifyCustomerBill();
+			VCB.verifyCustomerBill(10);
 
-			
-			
-			// -- cancel job
-			cancel_job cb = new cancel_job();
-			cb.job_cancel(10);
-					
+			if (Env.equalsIgnoreCase("PROD")) {
+
+				// -- cancel job
+				cancel_job cb = new cancel_job();
+				cb.job_cancel(10);
+
 			}
-			
+
 			else {
-				
+
 				logger.info("Current Enviornment is not Production , so job cancellation is not handled");
 			}
-			
-	//-- navigae to NA tab
-		
-		//OC.naTab();
-		
-		// --Refresh App
 
-		OC.refreshApp();
+			// -- navigae to NA tab
 
-		msg.append("\n\n\n");
+			// OC.naTab();
+
+			// --Refresh App
+
+			OC.refreshApp();
+
+			msg.append("\n\n\n");
+		}
+
 	}
 
 	public void h3pProcessing() throws Exception {
@@ -125,9 +129,9 @@ public class H3P extends BaseInit {
 		logger.info("PickUpID is==" + PUID);
 		msg.append("PickUpID==" + PUID + "\n");
 
-		OC.opFromNetAgent(10);	
+		OC.opFromNetAgent(10);
 
-		//OC.NATaskSearch(PUID);
+		// OC.NATaskSearch(PUID);
 
 		NAConfirmPullAlert CpullALert = new NAConfirmPullAlert();
 		CpullALert.naConfirmPullAlertstage();

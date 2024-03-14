@@ -32,9 +32,9 @@ public class T3PLAST extends BaseInit {
 		WebDriverWait wait = new WebDriverWait(Driver, 30);// wait time
 		// Actions act = new Actions(Driver);
 		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time
-		
+
 		String Env = storage.getProperty("Env");
-		
+
 		// --Order Creation
 		OrderCreation OC = new OrderCreation();
 
@@ -59,9 +59,7 @@ public class T3PLAST extends BaseInit {
 			jse.executeScript("arguments[0].click();", ErrorPUp);
 			logger.info("Clicked on OK button of Error Message");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-		} catch (
-
-		Exception eError) {
+		} catch (Exception eError) {
 			System.out.println("error pop up is not displayed");
 		}
 
@@ -84,70 +82,72 @@ public class T3PLAST extends BaseInit {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		OC.refreshApp();
 
-		OC.naTab();
+		String Portal = storage.getProperty("Portal");
+		if (Portal.equalsIgnoreCase("Mob") && Env.equalsIgnoreCase("Prod")) {
+			logger.info("No need to perform Processing");
+		} else {
+			OC.naTab();
 
-		t3PlastProcessing();
+			t3PlastProcessing();
 
-		// --COnnect Tab
-		OC.connectTab();
+			// --COnnect Tab
+			OC.connectTab();
 
+			OC.searchJob(12);
 
-		OC.searchJob(12);
+			SendDelAlert SDA = new SendDelAlert();
+			SDA.delAlert();
 
-		SendDelAlert SDA = new SendDelAlert();
-		SDA.delAlert();
+			OC.naTab();
 
-		OC.naTab();
+			t3PlastConfDelstages();
 
-		t3PlastConfDelstages();
+			// --COnnect Tab
+			OC.connectTab();
 
-		// --COnnect Tab
-		OC.connectTab();
+			OC.searchJob(12);
 
+			// Tender to 3P/ 3rd party delivery
+			TenderTo3P t3p = new TenderTo3P();
+			t3p.tndrTo3P();
 
-		OC.searchJob(12);
+			OC.naTab();
 
-		// Tender to 3P/ 3rd party delivery	
-		TenderTo3P t3p = new TenderTo3P();
-		t3p.tndrTo3P();
+			t3PlastRecoverstages();
 
-		OC.naTab();
+			// --COnnect Tab
+			OC.connectTab();
 
-		t3PlastRecoverstages();
+			OC.searchJob(12);
 
-		// --COnnect Tab
-		OC.connectTab();
+			// Verify Customer Bill
+			VerifyCustomerBill VCB = new VerifyCustomerBill();
+			VCB.verifyCustomerBill(12);
 
+			if (Env.equalsIgnoreCase("PROD")) {
 
-		OC.searchJob(12);
+				// -- cancel job
+				cancel_job cb = new cancel_job();
+				cb.job_cancel(12);
 
-		// Verify Customer Bill
-		VerifyCustomerBill VCB = new VerifyCustomerBill();
-		VCB.verifyCustomerBill(12);
-		
-		
-		if (Env.equalsIgnoreCase("PROD")) {
+			}
 
-			// -- cancel job
-			cancel_job cb = new cancel_job();
-			cb.job_cancel(12);
+			else {
 
+				logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+			}
+
+			// -- navigae to NA tab
+
+			// OC.naTab();
+
+			// --Refresh App
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			OC.refreshApp();
+
+			msg.append("\n\n\n");
 		}
 
-		else {
-
-			logger.info("Current Enviornment is not Production , so job cancellation is not handled");
-		}
-
-	//-- navigae to NA tab
-		
-	//	OC.naTab();
-		
-		// --Refresh App
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-		OC.refreshApp();
-
-		msg.append("\n\n\n");
 	}
 
 	public void t3PlastProcessing() throws Exception {
@@ -194,7 +194,7 @@ public class T3PLAST extends BaseInit {
 		CDA.confDelAlert();
 
 		OC.narefreshApp();
-		
+
 //		// -- 3 rd party stage process 
 //		try {
 //			

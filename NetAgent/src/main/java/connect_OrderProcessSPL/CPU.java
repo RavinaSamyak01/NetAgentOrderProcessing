@@ -78,39 +78,43 @@ public class CPU extends BaseInit {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 		OC.refreshApp();
 
-		// --NetAgent Tab
-		OC.naTab();
+		String Portal = storage.getProperty("Portal");
+		if (Portal.equalsIgnoreCase("Mob") && Env.equalsIgnoreCase("Prod")) {
+			logger.info("No need to perform Processing");
+		} else {
+			// --NetAgent Tab
+			OC.naTab();
 
-		cpuProcessing();
+			cpuProcessing();
 
-		// --COnnect Tab
-		OC.connectTab();
+			// --COnnect Tab
+			OC.connectTab();
 
+			OC.searchJob(13);
 
-		OC.searchJob(13);
+			// Verify Customer Bill
+			VerifyCustomerBill VCB = new VerifyCustomerBill();
+			VCB.verifyCustomerBill(13);
 
-		// Verify Customer Bill
-		VerifyCustomerBill VCB = new VerifyCustomerBill();
-		VCB.verifyCustomerBill(13);
-		
-		if (Env.equalsIgnoreCase("PROD")) {
+			if (Env.equalsIgnoreCase("PROD")) {
 
-			// -- cancel job
-			cancel_job cb = new cancel_job();
-			cb.job_cancel(13);
+				// -- cancel job
+				cancel_job cb = new cancel_job();
+				cb.job_cancel(13);
 
+			}
+
+			else {
+
+				logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+			}
+
+			// -- navigae to NA tab
+
+			// OC.naTab();
+
+			OC.refreshApp();
 		}
-
-		else {
-
-			logger.info("Current Enviornment is not Production , so job cancellation is not handled");
-		}
-		
-	//-- navigae to NA tab
-		
-	//	OC.naTab();
-
-		OC.refreshApp();
 
 	}
 
@@ -138,7 +142,7 @@ public class CPU extends BaseInit {
 		CDelInProg.nacustomerDelInProgress();
 
 		OC.NATaskSearch(PUID);
-		
+
 		OC.narefreshApp();
 
 	}

@@ -82,34 +82,39 @@ public class RTE extends BaseInit {
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 			OC.refreshApp();
 
-			// --NetAgent Tab
-			OC.naTab();
+			String Portal = storage.getProperty("Portal");
+			if (Portal.equalsIgnoreCase("Mob") && Env.equalsIgnoreCase("Prod")) {
+				logger.info("No need to perform Processing");
+			} else {
+				// --NetAgent Tab
+				OC.naTab();
 
-			RTE_OrderProcess RTEO = new RTE_OrderProcess();
-			RTEO.orderProcessRTEJOB();
+				RTE_OrderProcess RTEO = new RTE_OrderProcess();
+				RTEO.orderProcessRTEJOB();
 
-			// --COnnect Tab
-			OC.connectTab();
+				// --COnnect Tab
+				OC.connectTab();
 
-			// Process from connect
-			rteVerifyConnect();
+				// Process from connect
+				rteVerifyConnect();
 
-			if (Env.equalsIgnoreCase("PROD")) {
+				if (Env.equalsIgnoreCase("PROD")) {
 
-				// -- cancel job
-				cancel_job cb = new cancel_job();
-				cb.job_cancel(23);
+					// -- cancel job
+					cancel_job cb = new cancel_job();
+					cb.job_cancel(23);
 
+				}
+
+				else {
+
+					logger.info("Current Enviornment is not Production , so job cancellation is not handled");
+				}
+
+				// --NetAgent Tab
+				OC.naTab();
+				Thread.sleep(2500);
 			}
-
-			else {
-
-				logger.info("Current Enviornment is not Production , so job cancellation is not handled");
-			}
-
-			// --NetAgent Tab
-			OC.naTab();
-			Thread.sleep(2500);
 
 		}
 	}

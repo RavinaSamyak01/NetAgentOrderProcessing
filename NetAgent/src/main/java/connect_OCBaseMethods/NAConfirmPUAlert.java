@@ -14,7 +14,7 @@ public class NAConfirmPUAlert extends BaseInit {
 	public void naconfirmPUAlert() throws Exception {
 
 		JavascriptExecutor jse = (JavascriptExecutor) Driver;// scroll,click
-		WebDriverWait wait = new WebDriverWait(Driver, 50);// wait time
+		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
 		Actions act = new Actions(Driver);
 		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time;
 
