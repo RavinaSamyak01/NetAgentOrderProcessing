@@ -20,7 +20,7 @@ public class SendEmailOld {
 		String bccAddresses = null;
 		Properties props = System.getProperties();
 		
-		hostName = "10.100.112.1";
+		hostName = "10.100.111.1";
 		fromAddress = "ravina.prajapati@samyak.com";
 		bccAddresses = "ravina.prajapati@samyak.com";
 

@@ -346,12 +346,12 @@ public class BaseInit {
 			try {
 				// Driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.className("login")));
-				String UserName = storage.getProperty("Connect_PROD_UserName");
+				String UserName = storage.getProperty("ConnectPRODUserName");
 				highLight(isElementPresent("ConnectUserName_id"), Driver);
 				isElementPresent("ConnectUserName_id").sendKeys(UserName);
 				logger.info("Entered UserName");
 
-				String Password = storage.getProperty("Connect_PROD_Password");
+				String Password = storage.getProperty("ConnectPRODPassword");
 				highLight(isElementPresent("ConnectPassword_id"), Driver);
 				isElementPresent("ConnectPassword_id").sendKeys(Password);
 				logger.info("Entered Password");

@@ -61,7 +61,7 @@ public class SendEmail extends BaseInit {
 
 		} else if (RunConfig.equalsIgnoreCase("local")) {
 			
-			hostName = "10.100.112.1";
+			hostName = "10.100.111.1";
 			fromAddress = "ravina.prajapati@samyak.com";
 		//	bccAddresses = "ravina.prajapati@samyak.com,parth.shah@samyak.com";
 			bccAddresses = "ravina.prajapati@samyak.com,parth.shah@samyak.com,asharma@samyak.com,parth.doshi@samyak.com";
