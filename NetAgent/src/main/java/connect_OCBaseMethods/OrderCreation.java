@@ -3453,7 +3453,7 @@ public class OrderCreation extends BaseInit {
 
 	}
 
-	public void NATaskSearch(String PUID) throws InterruptedException {
+	public void NATaskSearch(String PUID) throws InterruptedException, IOException {
 		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
@@ -3578,6 +3578,8 @@ public class OrderCreation extends BaseInit {
 				Thread.sleep(7000);
 			}
 		}
+
+		getScreenshot(Driver, "NAJobAvailable_" + PUID);
 //		try {
 //			wait2.until(ExpectedConditions.visibilityOfElementLocated(By.className("dx-datagrid-nodata")));
 //			WebElement NoData = Driver.findElement(By.className("dx-datagrid-nodata"));

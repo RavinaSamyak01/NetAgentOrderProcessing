@@ -18,16 +18,21 @@ public class NAConfirmPUAlert extends BaseInit {
 		Actions act = new Actions(Driver);
 		WebDriverWait wait2 = new WebDriverWait(Driver, 10);// wait time;
 
-		/*
-		 * try { wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(
-		 * "//*[@class=\"ajax-loadernew\"]")));
-		 * 
-		 * } catch (Exception ee) {
-		 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(
-		 * "//*[@class=\"ajax-loadernew\"]")));
-		 * 
-		 * } Thread.sleep(5000);
-		 */
+		
+		try {
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
+			logger.info("try wait");
+			
+		} catch (Exception ee) {
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class=\"ajax-loadernew\"]")));
+			logger.info("catch wait");
+
+		}
+		Thread.sleep(5000);
+		logger.info("Thread wait");
+		
+		getScreenshot(Driver, "NACOnfirmPUAlertStage");
+
 
 		// --Get the ServiceID
 		WebElement service = isElementPresent("NOEServiceID_xpath");
