@@ -555,97 +555,93 @@ public class OrderCreation extends BaseInit {
 							.visibilityOfElementLocated(By.xpath("//*[@class=\"modal-dialog modal-sm\"]")));
 
 				} catch (Exception WaitOp) {
+
+					/*
+					 * order = isElementPresent("OCOProcess_id");
+					 * jse.executeScript("arguments[0].scrollIntoView();", order);
+					 * Thread.sleep(2000);
+					 */
+					/*
+					 * order = isElementPresent("OCOProcess_id");
+					 * wait.until(ExpectedConditions.elementToBeClickable(order));
+					 * act.moveToElement(order).click().build().perform();
+					 * logger.info("Click on Create Order button");
+					 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
+					 * ));
+					 */
+					/*
+					 * order = isElementPresent("OCOProcess_id");
+					 * jse.executeScript("arguments[0].scrollIntoView();", order);
+					 * Thread.sleep(2000);
+					 */
+					/*
+					 * order = isElementPresent("OCOProcess_id");
+					 * act.moveToElement(order).build().perform();
+					 * wait.until(ExpectedConditions.elementToBeClickable(order));
+					 * jse.executeScript("arguments[0].click();", order);
+					 * logger.info("Click on Create Order button");
+					 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
+					 * )); Thread.sleep(2000);
+					 */
+
 					try {
-						/*
-						 * order = isElementPresent("OCOProcess_id");
-						 * jse.executeScript("arguments[0].scrollIntoView();", order);
-						 * Thread.sleep(2000);
-						 */
-						/*
-						 * order = isElementPresent("OCOProcess_id");
-						 * wait.until(ExpectedConditions.elementToBeClickable(order));
-						 * act.moveToElement(order).click().build().perform();
-						 * logger.info("Click on Create Order button");
-						 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
-						 * ));
-						 */
-						/*
-						 * order = isElementPresent("OCOProcess_id");
-						 * jse.executeScript("arguments[0].scrollIntoView();", order);
-						 * Thread.sleep(2000);
-						 */
-						/*
-						 * order = isElementPresent("OCOProcess_id");
-						 * act.moveToElement(order).build().perform();
-						 * wait.until(ExpectedConditions.elementToBeClickable(order));
-						 * jse.executeScript("arguments[0].click();", order);
-						 * logger.info("Click on Create Order button");
-						 * wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")
-						 * )); Thread.sleep(2000);
-						 */
+						WebDriverWait wait5 = new WebDriverWait(Driver, 5);
 
-						try {
-							WebDriverWait wait5 = new WebDriverWait(Driver, 5);
+						// Use WebDriverWait to wait for the text to be present on the page
+						Boolean sameairport = wait5
+								.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"),
+										"Pickup and Delivery airport are different. Do you want to make it same?"));
 
-							// Use WebDriverWait to wait for the text to be present on the page
-							Boolean sameairport = wait5
-									.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"),
-											"Pickup and Delivery airport are different. Do you want to make it same?"));
+						if (sameairport == true) {
+							logger.info("PopUp message is displayed for Same Airport");
+							WebElement Yes = isElementPresent("OCSameApPupYes_xpath");
+							wait5.until(ExpectedConditions.elementToBeClickable(Yes));
+							jse.executeScript("arguments[0].click();", Yes);
+							logger.info("Clicked on YES button of popup");
+							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-							if (sameairport == true) {
-								logger.info("PopUp message is displayed for Same Airport");
-								WebElement Yes = isElementPresent("OCSameApPupYes_xpath");
-								wait5.until(ExpectedConditions.elementToBeClickable(Yes));
-								jse.executeScript("arguments[0].click();", Yes);
-								logger.info("Clicked on YES button of popup");
+						}
+					} catch (Exception eee) {
+
+					}
+
+					try {
+						wait.until(ExpectedConditions
+								.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"modal-dialog\"]")));
+						String DialogueContent = isElementPresent("AirSTationH_xpath").getText();
+						logger.info("Content of the Dialogue is==" + DialogueContent);
+
+						if (DialogueContent.contains("Quoted Pickup time cannot be greater than Schedule Drop time.")) {
+							msg.append("Wrong QPT QDT set==FAIL" + "\n");
+							try {
+								// --CLick on Yes button
+								WebElement YesProceed = isElementPresent("CPUDYesPrc_xpath");
+								wait2.until(ExpectedConditions.elementToBeClickable(YesProceed));
+								jse.executeScript("arguments[0].click();", YesProceed);
+								logger.info("Click on Yes Proceed button");
+								wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+								wait.until(ExpectedConditions
+										.invisibilityOfElementLocated(By.xpath("//*[@class=\"modal-dialog\"]")));
+
+							} catch (Exception YesBTN) {
+								// --CLick on Yes button
+								WebElement YesProceed = isElementPresent("EOCont_xpath");
+								wait2.until(ExpectedConditions.elementToBeClickable(YesProceed));
+								act.moveToElement(YesProceed).click().build().perform();
+								logger.info("Click on Yes Proceed button");
 								wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 							}
-						} catch (Exception eee) {
 
 						}
-
-						try {
-							wait.until(ExpectedConditions
-									.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"modal-dialog\"]")));
-							String DialogueContent = isElementPresent("AirSTationH_xpath").getText();
-							logger.info("Content of the Dialogue is==" + DialogueContent);
-
-							if (DialogueContent
-									.contains("Quoted Pickup time cannot be greater than Schedule Drop time.")) {
-								msg.append("Wrong QPT QDT set==FAIL" + "\n");
-								try {
-									// --CLick on Yes button
-									WebElement YesProceed = isElementPresent("CPUDYesPrc_xpath");
-									wait2.until(ExpectedConditions.elementToBeClickable(YesProceed));
-									jse.executeScript("arguments[0].click();", YesProceed);
-									logger.info("Click on Yes Proceed button");
-									wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-									wait.until(ExpectedConditions
-											.invisibilityOfElementLocated(By.xpath("//*[@class=\"modal-dialog\"]")));
-
-								} catch (Exception YesBTN) {
-									// --CLick on Yes button
-									WebElement YesProceed = isElementPresent("EOCont_xpath");
-									wait2.until(ExpectedConditions.elementToBeClickable(YesProceed));
-									act.moveToElement(YesProceed).click().build().perform();
-									logger.info("Click on Yes Proceed button");
-									wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-								}
-
-							}
-
-						} catch (Exception e) {
-							logger.info("QPT QDT validation not displayed");
-						}
-						WebDriverWait wait1 = new WebDriverWait(Driver, 50);// wait time
-						wait1.until(ExpectedConditions
-								.visibilityOfElementLocated(By.xpath("//*[@class=\"modal-dialog modal-sm\"]")));
 
 					} catch (Exception e) {
-
+						logger.info("QPT QDT validation not displayed");
 					}
+					WebDriverWait wait1 = new WebDriverWait(Driver, 50);// wait time
+					wait1.until(ExpectedConditions
+							.visibilityOfElementLocated(By.xpath("//*[@class=\"modal-dialog modal-sm\"]")));
+
 				}
 
 			}
