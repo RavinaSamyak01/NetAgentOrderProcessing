@@ -3515,11 +3515,11 @@ public class OrderCreation extends BaseInit {
 
 		}
 		try {
-			wait2.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class='ajax-loadernew']")));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class='ajax-loadernew']")));
 
 		} catch (Exception e) {
 			WebDriverWait wait1 = new WebDriverWait(Driver, 180);
-			wait2.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class='ajax-loadernew']")));
+			wait1.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class='ajax-loadernew']")));
 
 		}
 
@@ -3555,7 +3555,7 @@ public class OrderCreation extends BaseInit {
 
 				} catch (Exception e) {
 					// WebDriverWait wait1 = new WebDriverWait(Driver, 180);
-					wait2.until(
+					wait.until(
 							ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class='ajax-loadernew']")));
 
 				}
