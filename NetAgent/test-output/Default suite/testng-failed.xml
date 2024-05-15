@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="connect_OrderProcessNonSPL.RTE">
+      <class name="connect_OrderProcessNonSPL.LOC">
         <methods>
           <include name="getResult"/>
           <include name="beforeMethod"/>
-          <include name="rtejobcreationprocess"/>
           <include name="SendEmail"/>
+          <include name="locLocal"/>
           <include name="testMethodName"/>
         </methods>
-      </class> <!-- connect_OrderProcessNonSPL.RTE -->
+      </class> <!-- connect_OrderProcessNonSPL.LOC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

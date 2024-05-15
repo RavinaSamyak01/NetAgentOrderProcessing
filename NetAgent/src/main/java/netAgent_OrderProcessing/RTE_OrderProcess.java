@@ -364,6 +364,13 @@ public class RTE_OrderProcess extends BaseInit {
 												ActDelTime.sendKeys(newTime);
 												ActDelTime.sendKeys(Keys.TAB);
 												logger.info("Entered Actual Pickup Time");
+												
+												 Sign = Driver.findElement(By.id("txtsign"));
+												act.moveToElement(Sign).build().perform();
+												Sign.clear();
+												Sign.sendKeys("RV");
+												logger.info("Enter signature");
+
 
 												// --Click on save
 												try {

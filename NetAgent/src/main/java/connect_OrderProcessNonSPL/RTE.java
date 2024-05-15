@@ -538,44 +538,29 @@ public class RTE extends BaseInit {
 		logger.info("Job status is==" + jobStatus);
 		msg.append("Job status is==" + jobStatus + "\n");
 
-		logger.info("It is TC ACK stage");
-		getScreenshot(Driver, "JobEditor_TCACK");
+		if (jobStatus.equalsIgnoreCase("TC ACKNOWLEDGE")) {
+			logger.info("It is TC ACK stage");
+			getScreenshot(Driver, "JobEditor_TCACK");
 
-		// --Click on Acknowledge button
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-		WebElement TCACK = isElementPresent("TLAcknoldge_id");
-		wait.until(ExpectedConditions.visibilityOf(TCACK));
-		wait.until(ExpectedConditions.elementToBeClickable(TCACK));
-		js.executeScript("arguments[0].click();", TCACK);
-		logger.info("Clicked on Acknowledge button");
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			// --Click on Acknowledge button
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			WebElement TCACK = isElementPresent("TLAcknoldge_id");
+			wait.until(ExpectedConditions.visibilityOf(TCACK));
+			wait.until(ExpectedConditions.elementToBeClickable(TCACK));
+			js.executeScript("arguments[0].click();", TCACK);
+			logger.info("Clicked on Acknowledge button");
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-		WebElement PickUPSection = isElementPresent("TLAlertstages_id");
-		wait.until(ExpectedConditions.visibilityOf(PickUPSection));
-		getScreenshot(Driver, "JobEditor_RDYFORDSP");
-		jobStatus = isElementPresent("EOStageName_id").getText();
-		logger.info("Job status is==" + jobStatus);
-		msg.append("Job status is==" + jobStatus + "\n");
+			WebElement PickUPSection = isElementPresent("TLAlertstages_id");
+			wait.until(ExpectedConditions.visibilityOf(PickUPSection));
+			getScreenshot(Driver, "JobEditor_RDYFORDSP");
+			jobStatus = isElementPresent("EOStageName_id").getText();
+			logger.info("Job status is==" + jobStatus);
+			msg.append("Job status is==" + jobStatus + "\n");
 
-		// --Edit driver
-		OrderCreation OC = new OrderCreation();
-		OC.EditDriver();
-
-		// --Click on SendPuAlert button
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("WhiteTickAlert")));
-		isElementPresent("TLSendPUAl_id").click();
-		logger.info("Clicked on Send PU Alert button");
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-		try {
-			wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("idValidationforMain")));
-			String ValMsg = isElementPresent("TLAlValidation_id").getText();
-			logger.info("Validation is displayed==" + ValMsg);
-
-			// --Enter SpokeWith
-			wait.until(ExpectedConditions.elementToBeClickable(By.id("txtSpokeWith")));
-			isElementPresent("TLSpokeWith_id").sendKeys("RV");
-			logger.info("Entered Spoke With");
+			// --Edit driver
+			OrderCreation OC = new OrderCreation();
+			OC.EditDriver();
 
 			// --Click on SendPuAlert button
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("WhiteTickAlert")));
@@ -583,9 +568,68 @@ public class RTE extends BaseInit {
 			logger.info("Clicked on Send PU Alert button");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
-		} catch (Exception NoVal) {
-			logger.info("Spoke With validation is not displayed");
+			try {
+				wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("idValidationforMain")));
+				String ValMsg = isElementPresent("TLAlValidation_id").getText();
+				logger.info("Validation is displayed==" + ValMsg);
 
+				// --Enter SpokeWith
+				wait.until(ExpectedConditions.elementToBeClickable(By.id("txtSpokeWith")));
+				isElementPresent("TLSpokeWith_id").sendKeys("RV");
+				logger.info("Entered Spoke With");
+
+				// --Click on SendPuAlert button
+				wait.until(ExpectedConditions.elementToBeClickable(By.id("WhiteTickAlert")));
+				isElementPresent("TLSendPUAl_id").click();
+				logger.info("Clicked on Send PU Alert button");
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+			} catch (Exception NoVal) {
+				logger.info("Spoke With validation is not displayed");
+
+			}
+		} else if (jobStatus.equalsIgnoreCase("RDY FOR DSP")) {
+
+			WebElement PickUPSection = isElementPresent("TLAlertstages_id");
+			wait.until(ExpectedConditions.visibilityOf(PickUPSection));
+			getScreenshot(Driver, "JobEditor_RDYFORDSP");
+			jobStatus = isElementPresent("EOStageName_id").getText();
+			logger.info("Job status is==" + jobStatus);
+			msg.append("Job status is==" + jobStatus + "\n");
+
+			// --Edit driver
+			OrderCreation OC = new OrderCreation();
+			OC.EditDriver();
+
+			// --Click on SendPuAlert button
+			wait.until(ExpectedConditions.elementToBeClickable(By.id("WhiteTickAlert")));
+			isElementPresent("TLSendPUAl_id").click();
+			logger.info("Clicked on Send PU Alert button");
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+			try {
+				wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("idValidationforMain")));
+				String ValMsg = isElementPresent("TLAlValidation_id").getText();
+				logger.info("Validation is displayed==" + ValMsg);
+
+				// --Enter SpokeWith
+				wait.until(ExpectedConditions.elementToBeClickable(By.id("txtSpokeWith")));
+				isElementPresent("TLSpokeWith_id").sendKeys("RV");
+				logger.info("Entered Spoke With");
+
+				// --Click on SendPuAlert button
+				wait.until(ExpectedConditions.elementToBeClickable(By.id("WhiteTickAlert")));
+				isElementPresent("TLSendPUAl_id").click();
+				logger.info("Clicked on Send PU Alert button");
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+			} catch (Exception NoVal) {
+				logger.info("Spoke With validation is not displayed");
+
+			}
+		} else if (jobStatus.equalsIgnoreCase("PU DRV CONF")) {
+
+			logger.info("Already PU DRV CONF stage");
 		}
 
 	}

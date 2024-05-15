@@ -1627,22 +1627,23 @@ public class OrderCreation extends BaseInit {
 		WebDriverWait wait = new WebDriverWait(Driver, 60);// wait time
 		JavascriptExecutor js = (JavascriptExecutor) Driver;
 		Actions act = new Actions(Driver);
-		WebDriverWait wait2 = new WebDriverWait(Driver, 7);// wait time
+		WebDriverWait wait1 = new WebDriverWait(Driver, 10);// wait time
 
 		try {
 
 			try {
 				// --Unknown Shipper click
 				WebElement UnShipper = isElementPresent("TLUnShipp_id");
-				wait.until(ExpectedConditions.visibilityOf(UnShipper));
-				wait.until(ExpectedConditions.elementToBeClickable(UnShipper));
 				act.moveToElement(UnShipper).build().perform();
+				Thread.sleep(2000);
+				wait.until(ExpectedConditions.visibilityOf(UnShipper));
+				wait1.until(ExpectedConditions.elementToBeClickable(UnShipper));
 				js.executeScript("arguments[0].click();", UnShipper);
 				logger.info("Clicked on Unknown Shipper");
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
 				// --Wait for pop up of Unknown Shipper
-				wait2.until(ExpectedConditions
+				wait.until(ExpectedConditions
 						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"modal-dialog modal-sm\"]")));
 
 				// --Click on Confirm Button
@@ -3463,10 +3464,15 @@ public class OrderCreation extends BaseInit {
 			logger.info("Clear search input");
 			SearchBox.sendKeys(PUID);
 			logger.info("Enter PickUpID in Search input");
-			WebElement OPSearch = isElementPresent("NTSearchBtn_id");
-			act.moveToElement(OPSearch).build().perform();
-			js.executeScript("arguments[0].click();", OPSearch);
-			logger.info("Click on Search button");
+
+			// Click on Search Button
+			WebElement SearchBTN = isElementPresent("TLOSearchBTN_id");
+			wait.until(ExpectedConditions.visibilityOf(SearchBTN));
+			act.moveToElement(SearchBTN).build().perform();
+			wait2.until(ExpectedConditions.elementToBeClickable(SearchBTN));
+			js.executeScript("arguments[0].click();", SearchBTN);
+			Thread.sleep(5000);
+			logger.info("Clicked on SearchBTN");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@class='ajax-loadernew']")));
 
 		} catch (Exception ee) {

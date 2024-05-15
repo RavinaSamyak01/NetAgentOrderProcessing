@@ -1,164 +1,169 @@
-2024-03-22 16:01:56,929 - AllOrderCreation -INFO - initialization of the properties file is done
-2024-03-22 16:01:57,605 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 123.0.6312.58 (resolved driver for Chrome 123)
-2024-03-22 16:01:57,651 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as C:\Users\rprajapati\.cache\selenium\chromedriver\win64\123.0.6312.58\chromedriver.exe
-2024-03-22 16:02:04,850 - AllOrderCreation -INFO - Env : Test
-2024-03-22 16:02:04,851 - AllOrderCreation -INFO - URL use for Test test is : http://testdevna.nglog.com/login
-2024-03-22 16:02:04,851 - AllOrderCreation -INFO - Url opened
-2024-03-22 16:02:24,211 - AllOrderCreation -INFO - Entered UserName
-2024-03-22 16:02:25,336 - AllOrderCreation -INFO - Entered Password
-2024-03-22 16:02:26,451 - AllOrderCreation -INFO - Login done
-2024-03-22 16:02:33,863 - AllOrderCreation -INFO - Click on Operation
-2024-03-22 16:02:46,380 - AllOrderCreation -INFO - Click on Tasklog
-2024-03-22 16:02:46,500 - AllOrderCreation -INFO - Click on New Order
-2024-03-22 16:02:52,235 - AllOrderCreation -INFO - =====Service:- P3P=====
-2024-03-22 16:02:52,589 - AllOrderCreation -INFO - Entered CallerName
-2024-03-22 16:02:52,908 - AllOrderCreation -INFO - Entered Contact/Phone
-2024-03-22 16:02:53,241 - AllOrderCreation -INFO - Entered Customer Code
-2024-03-22 16:02:58,874 - AllOrderCreation -INFO - Dialogue is not displayed for Customer
-2024-03-22 16:03:01,395 - AllOrderCreation -INFO - Entered PU Zip
-2024-03-22 16:03:02,579 - AllOrderCreation -INFO - Click on PU Address
-2024-03-22 16:03:02,893 - AllOrderCreation -INFO - Entered PU Company
-2024-03-22 16:03:03,134 - AllOrderCreation -INFO - Entered PU AddressLine1
-2024-03-22 16:03:03,441 - AllOrderCreation -INFO - Entered PU Attention
-2024-03-22 16:03:03,661 - AllOrderCreation -INFO - Entered PU Phone
-2024-03-22 16:03:09,083 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //input[contains(@class,'ng-invalid ng-invalid-required')] (tried for 5 second(s) with 500 milliseconds interval)
+2024-05-15 13:10:09,290 - AllOrderCreation -INFO - initialization of the properties file is done
+2024-05-15 13:10:10,404 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Using chromedriver 124.0.6367.207 (resolved driver for Chrome 124)
+2024-05-15 13:10:10,844 - io.github.bonigarcia.wdm.WebDriverManager -INFO - Exporting webdriver.chrome.driver as C:\Users\rprajapati\.cache\selenium\chromedriver\win64\124.0.6367.207\chromedriver.exe
+2024-05-15 13:10:19,477 - AllOrderCreation -INFO - Env : STG
+2024-05-15 13:10:19,479 - AllOrderCreation -INFO - URL use for STG test is : https://stagingna.nglog.com/
+2024-05-15 13:10:19,479 - AllOrderCreation -INFO - Url opened
+2024-05-15 13:10:40,723 - AllOrderCreation -INFO - Entered UserName
+2024-05-15 13:10:41,937 - AllOrderCreation -INFO - Entered Password
+2024-05-15 13:10:43,101 - AllOrderCreation -INFO - Login done
+2024-05-15 13:10:51,188 - AllOrderCreation -INFO - =====Service:- RTE=====
+2024-05-15 13:10:51,420 - AllOrderCreation -INFO - Clicked on Tools
+2024-05-15 13:11:52,270 - AllOrderCreation -ERROR - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.xpath: //*[@class="OpenCloseClass dropdown open"]//ul (tried for 60 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SIPL92', ip: '10.212.130.71', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20'
+System info: host: 'SIPL92', ip: '10.212.140.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.58, chrome: {chromedriverVersion: 123.0.6312.58 (6b4b19e9dfbb..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55521}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 56a898c16128fddd43b9eaf4937c314f
-2024-03-22 16:03:09,084 - AllOrderCreation -INFO - Line number is: 95
-2024-03-22 16:03:09,084 - AllOrderCreation -INFO - PU Ready time is exist
-2024-03-22 16:03:09,110 - AllOrderCreation -INFO - PU Ready Time==06:32
-2024-03-22 16:03:09,491 - AllOrderCreation -INFO - PU Receive Time==06:32
-2024-03-22 16:03:09,742 - AllOrderCreation -INFO - PU Arrival Time==06:32
-2024-03-22 16:03:09,946 - AllOrderCreation -INFO - PU Mileage==6
-2024-03-22 16:03:12,271 - AllOrderCreation -INFO - Entered DL Zip
-2024-03-22 16:03:12,356 - AllOrderCreation -INFO - Entered DL Address
-2024-03-22 16:03:12,663 - AllOrderCreation -INFO - Entered DL Company
-2024-03-22 16:03:12,896 - AllOrderCreation -INFO - Entered DL Address Line1
-2024-03-22 16:03:13,115 - AllOrderCreation -INFO - Entered DL Attention
-2024-03-22 16:03:13,377 - AllOrderCreation -INFO - Entered DL Phone
-2024-03-22 16:03:20,054 - AllOrderCreation -INFO - DL Miles==64
-2024-03-22 16:03:23,039 - AllOrderCreation -INFO - Entered Total Qty
-2024-03-22 16:03:23,263 - AllOrderCreation -INFO - Entered Weight
-2024-03-22 16:03:23,513 - AllOrderCreation -INFO - Entered Length
-2024-03-22 16:03:23,704 - AllOrderCreation -INFO - Entered Width
-2024-03-22 16:03:23,917 - AllOrderCreation -INFO - Entered Height
-2024-03-22 16:03:26,154 - AllOrderCreation -INFO - comodity dropdown is selected
-2024-03-22 16:03:31,158 - AllOrderCreation -INFO - Entered Commodity
-2024-03-22 16:03:34,851 - AllOrderCreation -INFO - Total Mileage==785
-2024-03-22 16:03:42,212 - AllOrderCreation -INFO - Enter P3P service in Service input
-2024-03-22 16:03:47,112 - AllOrderCreation -INFO - Selected 3P account
-2024-03-22 16:03:49,995 - AllOrderCreation -INFO - Selected 3P Service
-2024-03-22 16:03:57,321 - AllOrderCreation -INFO - Click on Select Drop-Off Location
-2024-03-22 16:03:57,465 - AllOrderCreation -INFO - Select 1st drop off location
-2024-03-22 16:03:57,619 - AllOrderCreation -INFO - Drop Off Location Test= PASS
-2024-03-22 16:04:03,002 - AllOrderCreation -INFO - Click on Create Order button
-2024-03-22 16:04:21,829 - AllOrderCreation -INFO - Validation for Package is not displayed
-2024-03-22 16:04:21,938 - AllOrderCreation -INFO - =====Pickup =10302150=====
-
-2024-03-22 16:04:22,253 - AllOrderCreation -INFO - Clicked on Edit Order
-2024-03-22 16:04:28,351 - AllOrderCreation -INFO - Scroll down to Get the Rate
-2024-03-22 16:04:28,417 - AllOrderCreation -INFO - Clicked on Job Status Tab
-2024-03-22 16:04:32,307 - AllOrderCreation -INFO - Stage=CSR ACKNOWLEDGE
-2024-03-22 16:04:32,502 - AllOrderCreation -INFO - Clicked on Job Status Tab
-2024-03-22 16:04:39,797 - AllOrderCreation -INFO - Validation message is displayed=The Commodity field is required.
-2024-03-22 16:04:40,340 - AllOrderCreation -INFO - Click on Edit Order Tab
-2024-03-22 16:04:53,576 - AllOrderCreation -INFO - comodity dropdown is selected
-2024-03-22 16:04:56,578 - AllOrderCreation -INFO - Enter Commodity
-2024-03-22 16:04:56,954 - AllOrderCreation -INFO - Click on Save Changes button
-2024-03-22 16:05:07,404 - AllOrderCreation -INFO - Click on Job Overview Tab
-2024-03-22 16:05:14,536 - AllOrderCreation -INFO - ServiceID=P3P
-2024-03-22 16:05:14,599 - AllOrderCreation -INFO - Stage=TC ACKNOWLEDGE
-2024-03-22 16:05:14,778 - AllOrderCreation -INFO - Clicked on Job Status Tab
-2024-03-22 16:05:19,938 - AllOrderCreation -INFO - Clicked on TC Acknowledge button
-2024-03-22 16:05:29,648 - AllOrderCreation -INFO - Service is==P3P
-2024-03-22 16:05:29,716 - AllOrderCreation -INFO - Stage=READY FOR DISPATCH
-2024-03-22 16:05:29,894 - AllOrderCreation -INFO - Clicked on Job Status Tab
-2024-03-22 16:05:34,927 - AllOrderCreation -INFO - ==Edit Driver Test Start==
-2024-03-22 16:05:37,038 - AllOrderCreation -INFO - Clicked on Edit button of Driver
-2024-03-22 16:05:41,102 - AllOrderCreation -INFO - Enter CourierID
-2024-03-22 16:05:41,264 - AllOrderCreation -INFO - Enter Agent Key
-2024-03-22 16:05:41,312 - AllOrderCreation -INFO - Clicked on search button
-2024-03-22 16:05:41,892 - AllOrderCreation -INFO - Total Agent==5
-2024-03-22 16:05:42,144 - AllOrderCreation -INFO - There is no Agent with search parameter
-2024-03-22 16:05:42,395 - AllOrderCreation -INFO - There is no Agent with search parameter
-2024-03-22 16:05:42,676 - AllOrderCreation -INFO - There is no Agent with search parameter
-2024-03-22 16:05:42,945 - AllOrderCreation -INFO - There is no Agent with search parameter
-2024-03-22 16:05:43,209 - AllOrderCreation -INFO - Searched Agent is exist
-2024-03-22 16:05:43,469 - AllOrderCreation -INFO - Select the AgentID
-2024-03-22 16:05:44,077 - AllOrderCreation -INFO - Selected agent is==AUTOMATION
-2024-03-22 16:05:44,077 - AllOrderCreation -INFO - Selected Agent is not displayed in Driver section
-2024-03-22 16:05:44,078 - AllOrderCreation -INFO - == Edit Driver Test End==
-2024-03-22 16:05:44,232 - AllOrderCreation -INFO - Email is selected as a Contact By
-2024-03-22 16:05:44,448 - AllOrderCreation -INFO - Entered EmailID
-2024-03-22 16:05:44,623 - AllOrderCreation -INFO - Entered Spoke With
-2024-03-22 16:05:49,827 - AllOrderCreation -INFO - Clicked on Alert&Confirm button
-2024-03-22 16:06:16,187 - AllOrderCreation -INFO - ==Moved to NetAgent==
-2024-03-22 16:06:17,295 - AllOrderCreation -INFO - PickUpID is==10302150
-2024-03-22 16:06:17,325 - AllOrderCreation -INFO - ALready loggedin
-2024-03-22 16:06:17,518 - AllOrderCreation -INFO - Click on Operations
-2024-03-22 16:06:21,986 - AllOrderCreation -INFO - Click on Task Log
-2024-03-22 16:06:22,053 - AllOrderCreation -INFO - PickUpID is==10302150
-2024-03-22 16:06:29,434 - AllOrderCreation -INFO - Operation tab is not selected
-2024-03-22 16:06:29,719 - AllOrderCreation -INFO - Click on Operation Tab
-2024-03-22 16:06:29,821 - AllOrderCreation -INFO - Clear search input
-2024-03-22 16:06:29,902 - AllOrderCreation -INFO - Enter PickUpID in Search input
-2024-03-22 16:06:30,218 - AllOrderCreation -INFO - Click on Search button
-2024-03-22 16:06:44,760 - AllOrderCreation -INFO - Job is available in NetAgent
-2024-03-22 16:06:51,898 - AllOrderCreation -INFO - try wait
-2024-03-22 16:06:56,904 - AllOrderCreation -INFO - Thread wait
-2024-03-22 16:06:57,039 - AllOrderCreation -INFO - ServiceID=P3P
-2024-03-22 16:06:57,109 - AllOrderCreation -INFO - Stage=Confirm Pu Alert
-2024-03-22 16:06:57,286 - AllOrderCreation -INFO - Clicked on Confirm PU Alert button
-2024-03-22 16:07:00,507 - AllOrderCreation -INFO - Clear search input
-2024-03-22 16:07:00,573 - AllOrderCreation -INFO - Enter PickUpID in Search input
-2024-03-22 16:07:00,753 - AllOrderCreation -INFO - Click on Search button
-2024-03-22 16:07:15,313 - AllOrderCreation -INFO - Job is available in NetAgent
-2024-03-22 16:07:22,565 - AllOrderCreation -INFO - ServiceID=P3P
-2024-03-22 16:07:22,651 - AllOrderCreation -INFO - Stage=Pickup
-2024-03-22 16:07:22,774 - AllOrderCreation -INFO - ZoneID of is==EDT
-2024-03-22 16:07:22,774 - AllOrderCreation -INFO - 06:37
-2024-03-22 16:07:23,088 - AllOrderCreation -INFO - Enter Actual pickup time
-2024-03-22 16:07:25,180 - AllOrderCreation -INFO - Click on Confirm PU button
-2024-03-22 16:07:59,034 - AllOrderCreation -INFO - Dialogue is not exist
-2024-03-22 16:07:59,236 - AllOrderCreation -INFO - Clear search input
-2024-03-22 16:07:59,313 - AllOrderCreation -INFO - Enter PickUpID in Search input
-2024-03-22 16:07:59,462 - AllOrderCreation -INFO - Click on Search button
-2024-03-22 16:08:14,309 - AllOrderCreation -INFO - Job is available in NetAgent
-2024-03-22 16:08:52,095 - AllOrderCreation -INFO - ServiceID=P3P
-2024-03-22 16:08:52,140 - AllOrderCreation -INFO - Stage=Tender to 3P
-2024-03-22 16:08:52,166 - AllOrderCreation -INFO - ZoneID of is==EDT
-2024-03-22 16:08:52,166 - AllOrderCreation -INFO - 06:38
-2024-03-22 16:08:52,323 - AllOrderCreation -INFO - Enter Drop off time
-2024-03-22 16:08:52,367 - AllOrderCreation -INFO - Click on Confirm Drop button
-2024-03-22 16:08:54,726 - AllOrderCreation -INFO - Airbill already exist !!
-2024-03-22 16:08:54,841 - AllOrderCreation -INFO - Clear search input
-2024-03-22 16:08:54,920 - AllOrderCreation -INFO - Enter PickUpID in Search input
-2024-03-22 16:08:55,077 - AllOrderCreation -INFO - Click on Search button
-2024-03-22 16:08:55,733 - AllOrderCreation -INFO - Job is not found in Operation Tab
-2024-03-22 16:08:55,967 - AllOrderCreation -INFO - Click on Inventory tab
-2024-03-22 16:08:56,073 - AllOrderCreation -INFO - Clear search input
-2024-03-22 16:08:56,129 - AllOrderCreation -INFO - Enter pickupID in search input
-2024-03-22 16:08:56,320 - AllOrderCreation -INFO - Click on Search button
-2024-03-22 16:09:05,285 - AllOrderCreation -INFO - ==Moved to Connect==
-2024-03-22 16:09:17,853 - AllOrderCreation -INFO - Clicked on Operations
-2024-03-22 16:09:18,061 - AllOrderCreation -INFO - Clicked on TaskLog
-2024-03-22 16:09:32,903 - AllOrderCreation -INFO - PickUpID=10302150
-
-2024-03-22 16:09:36,630 - AllOrderCreation -INFO - Total Jobs==2
-2024-03-22 16:09:36,712 - AllOrderCreation -INFO - Searched PickUpID==10302150
-2024-03-22 16:09:44,152 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
-2024-03-22 16:09:44,246 - AllOrderCreation -INFO - Stage=VERIFY CUSTOMER BILL
-2024-03-22 16:09:44,273 - AllOrderCreation -INFO - Service is==P3P
-2024-03-22 16:09:44,643 - AllOrderCreation -INFO - Click on Save&Exit button
-2024-03-22 16:10:08,161 - AllOrderCreation -INFO - Total Jobs==2
-2024-03-22 16:10:08,215 - AllOrderCreation -INFO - Searched PickUpID==10302150
-2024-03-22 16:10:15,084 - AllOrderCreation -INFO - Same job is displayed with 2 status==PASS
-2024-03-22 16:10:15,287 - AllOrderCreation -INFO - Stage=VERIFY CUSTOMER BILL
-2024-03-22 16:10:15,577 - AllOrderCreation -INFO - Click on Edit Order Tab
-2024-03-22 16:10:15,608 - AllOrderCreation -ERROR - java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
-2024-03-22 16:10:15,722 - AllOrderCreation -INFO - Verify Customer Bill Not Exist in Flow!!
-2024-03-22 16:10:20,236 - AllOrderCreation -INFO - Clicked on LogOut
-2024-03-22 16:10:23,605 - AllOrderCreation -INFO - ====Sending Email=====
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.158, chrome: {chromedriverVersion: 124.0.6367.207 (a9001a6e39f..., userDataDir: C:\Users\RPRAJA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54212}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9e124d070523c83c50bc6af0113b0bdc
+2024-05-15 13:11:54,894 - AllOrderCreation -INFO - Clicked on Operations
+2024-05-15 13:11:55,145 - AllOrderCreation -INFO - Clicked on TaskLog
+2024-05-15 13:12:13,851 - AllOrderCreation -INFO - Clicked on SearchAllJobs
+2024-05-15 13:12:18,568 - AllOrderCreation -INFO - Clicked on Reset button
+2024-05-15 13:12:18,773 - AllOrderCreation -INFO - 05/15/2024
+2024-05-15 13:12:19,265 - AllOrderCreation -INFO - Entered Origin From Date
+2024-05-15 13:12:19,403 - AllOrderCreation -INFO - 05/15/2024
+2024-05-15 13:12:19,637 - AllOrderCreation -INFO - Entered Origin From Date
+2024-05-15 13:12:19,989 - AllOrderCreation -INFO - Route Tracking No==142049019
+2024-05-15 13:12:20,140 - AllOrderCreation -INFO - Entered RouteTrackingID
+2024-05-15 13:12:20,335 - AllOrderCreation -INFO - Click on Search button
+2024-05-15 13:12:31,666 - AllOrderCreation -INFO - Data is exist with search TrackingNO
+2024-05-15 13:12:31,695 - AllOrderCreation -INFO - Total No of records are==1
+2024-05-15 13:12:32,149 - AllOrderCreation -INFO - JobID is==33919642
+2024-05-15 13:12:32,466 - AllOrderCreation -INFO - PickUpID is==10737363
+2024-05-15 13:12:32,780 - AllOrderCreation -INFO - BOLNo is==142049020
+2024-05-15 13:12:35,328 - AllOrderCreation -INFO - Clicked on Record
+2024-05-15 13:12:40,420 - AllOrderCreation -INFO - Job status tab is not Opened
+2024-05-15 13:12:40,612 - AllOrderCreation -INFO - Clicked on Job Status Tab
+2024-05-15 13:12:43,702 - AllOrderCreation -INFO - Job status is==PU DRV CONF
+2024-05-15 13:12:43,703 - AllOrderCreation -INFO - Already PU DRV CONF stage
+2024-05-15 13:12:45,255 - AllOrderCreation -INFO - ==Moved to NetAgent==
+2024-05-15 13:12:46,551 - AllOrderCreation -INFO - Click on Operations
+2024-05-15 13:12:50,757 - AllOrderCreation -INFO - Click on Task Log
+2024-05-15 13:12:51,210 - AllOrderCreation -INFO - PickUpID is==10737363
+2024-05-15 13:12:51,713 - AllOrderCreation -INFO - Click on RTE Tab
+2024-05-15 13:12:53,500 - AllOrderCreation -INFO - RW Tracking No===142049019
+2024-05-15 13:12:53,678 - AllOrderCreation -INFO - RW Tracking No===142049019is entered in Net agent RTE TAB
+2024-05-15 13:12:53,861 - AllOrderCreation -INFO - Click on Search button
+2024-05-15 13:12:56,127 - AllOrderCreation -INFO - Record is available with search parameters
+2024-05-15 13:12:56,419 - AllOrderCreation -INFO - Clicked on the record
+2024-05-15 13:13:00,287 - AllOrderCreation -INFO - Current stage of the order is=Confirm Alert
+2024-05-15 13:13:00,950 - AllOrderCreation -INFO - Clicked on Accept button
+2024-05-15 13:13:03,997 - AllOrderCreation -INFO - Click on Search button
+2024-05-15 13:13:04,742 - AllOrderCreation -INFO - Record is available with search parameters
+2024-05-15 13:13:04,950 - AllOrderCreation -INFO - Clicked on the record
+2024-05-15 13:13:08,082 - AllOrderCreation -INFO - Current stage of the order is=Pickup@Stop 1 of 2
+2024-05-15 13:13:08,459 - AllOrderCreation -INFO - Clicked on the Save
+2024-05-15 13:13:08,657 - AllOrderCreation -INFO - validation message=Act. Pickup Time is Required.
+2024-05-15 13:13:08,697 - AllOrderCreation -INFO - ZoneID of is==CDT
+2024-05-15 13:13:08,767 - AllOrderCreation -INFO - ZoneID of is==CST
+2024-05-15 13:13:08,768 - AllOrderCreation -INFO - 02:45
+2024-05-15 13:13:09,276 - AllOrderCreation -INFO - Route End time :02:45
+2024-05-15 13:13:10,636 - AllOrderCreation -INFO - Clicked on the Save
+2024-05-15 13:13:14,565 - AllOrderCreation -INFO - Click on Search button
+2024-05-15 13:13:15,285 - AllOrderCreation -INFO - Record is available with search parameters
+2024-05-15 13:13:16,379 - AllOrderCreation -INFO - Clicked on the record
+2024-05-15 13:13:18,191 - AllOrderCreation -INFO - Current stage of the order is=Deliver@Stop 2 of 2
+2024-05-15 13:13:18,712 - AllOrderCreation -INFO - Clicked on Accept button
+2024-05-15 13:13:18,919 - AllOrderCreation -INFO - validation message=Act. Delivery Time is Required.
+2024-05-15 13:13:18,959 - AllOrderCreation -INFO - ZoneID of is==CDT
+2024-05-15 13:13:19,032 - AllOrderCreation -INFO - ZoneID of is==CST
+2024-05-15 13:13:19,033 - AllOrderCreation -INFO - 02:45
+2024-05-15 13:13:19,545 - AllOrderCreation -INFO - Route End time :02:45
+2024-05-15 13:13:21,113 - AllOrderCreation -INFO - Clicked on Accept button
+2024-05-15 13:13:21,281 - AllOrderCreation -INFO - validation message=Signature is Required.
+2024-05-15 13:13:21,566 - AllOrderCreation -INFO - Enter signature
+2024-05-15 13:13:21,778 - AllOrderCreation -INFO - Clicked on Accept button
+2024-05-15 13:13:22,452 - AllOrderCreation -INFO - validation message=Actual Delivery Datetime can not be less than or equal to Actual Pickup Datetime.
+2024-05-15 13:13:22,735 - AllOrderCreation -INFO - Entered Actual Pickup Time
+2024-05-15 13:13:23,052 - AllOrderCreation -INFO - Enter signature
+2024-05-15 13:13:23,278 - AllOrderCreation -INFO - Clicked on Accept button
+2024-05-15 13:13:26,567 - AllOrderCreation -INFO - Click on Search button
+2024-05-15 13:13:36,414 - AllOrderCreation -INFO - Clicked on the record
+2024-05-15 13:13:38,192 - AllOrderCreation -INFO - Current stage of the order is=Delivered@Stop 2 of 2
+2024-05-15 13:13:38,193 - AllOrderCreation -INFO - Job is delivered
+2024-05-15 13:13:38,356 - AllOrderCreation -INFO - Clicked on Close button
+2024-05-15 13:13:41,995 - AllOrderCreation -INFO - RTE Order Processing Test=PASS
+2024-05-15 13:13:41,996 - AllOrderCreation -INFO - =====RTE Order Processing Test End=====
+2024-05-15 13:13:42,693 - AllOrderCreation -INFO - ==Moved to Connect==
+2024-05-15 13:13:43,121 - AllOrderCreation -INFO - Clicked on Operations
+2024-05-15 13:13:43,475 - AllOrderCreation -INFO - Clicked on TaskLog
+2024-05-15 13:13:58,490 - AllOrderCreation -INFO - Clicked on SearchAllJobs
+2024-05-15 13:14:02,985 - AllOrderCreation -INFO - Clicked on Reset button
+2024-05-15 13:14:03,191 - AllOrderCreation -INFO - 05/15/2024
+2024-05-15 13:14:03,409 - AllOrderCreation -INFO - Entered Origin From Date
+2024-05-15 13:14:03,531 - AllOrderCreation -INFO - 05/15/2024
+2024-05-15 13:14:03,748 - AllOrderCreation -INFO - Entered Origin From Date
+2024-05-15 13:14:03,918 - AllOrderCreation -INFO - Route Tracking No==142049019
+2024-05-15 13:14:04,061 - AllOrderCreation -INFO - Entered RouteTrackingID
+2024-05-15 13:14:04,234 - AllOrderCreation -INFO - Click on Search button
+2024-05-15 13:14:14,933 - AllOrderCreation -INFO - Data is exist with search TrackingNO
+2024-05-15 13:14:14,948 - AllOrderCreation -INFO - Total No of records are==1
+2024-05-15 13:14:15,229 - AllOrderCreation -INFO - JobID is==33919642
+2024-05-15 13:14:15,364 - AllOrderCreation -INFO - PickUpID is==10737363
+2024-05-15 13:14:15,518 - AllOrderCreation -INFO - BOLNo is==142049020
+2024-05-15 13:14:23,217 - AllOrderCreation -INFO - Clicked on Record
+2024-05-15 13:14:28,093 - AllOrderCreation -INFO - Data is exist with search parameter
+2024-05-15 13:14:28,463 - AllOrderCreation -INFO - Job status is==DELIVERED@STOP 2 OF 2
+2024-05-15 13:14:28,464 - AllOrderCreation -INFO - Job is Delivered successfully
+2024-05-15 13:14:28,554 - AllOrderCreation -INFO - Edit Route tab is already selected
+2024-05-15 13:14:29,088 - AllOrderCreation -INFO - Clicked on End Route
+2024-05-15 13:14:29,417 - AllOrderCreation -INFO - Validation is displayed==Actual Route End Date Required.
+Actual Route End Time Required.
+2024-05-15 13:14:29,418 - AllOrderCreation -INFO - Validation is displayed for Route End Date and Time==PASS
+2024-05-15 13:14:29,471 - AllOrderCreation -INFO - ZoneID of is==CDT
+2024-05-15 13:14:29,472 - AllOrderCreation -INFO - ZoneID is==CDT
+2024-05-15 13:14:29,473 - AllOrderCreation -INFO - 05/15/2024
+2024-05-15 13:14:29,474 - AllOrderCreation -INFO - ZoneID of is==CDT
+2024-05-15 13:14:29,475 - AllOrderCreation -INFO - 02:44
+2024-05-15 13:14:30,267 - AllOrderCreation -INFO - Entered Actual Route End Date
+2024-05-15 13:14:30,671 - AllOrderCreation -INFO - Entered Actual Route End Time
+2024-05-15 13:14:31,427 - AllOrderCreation -INFO - Clicked on End Route
+2024-05-15 13:14:31,607 - AllOrderCreation -INFO - Validation is displayed==Actual route end date should be same or greater then last stop's pod time.
+2024-05-15 13:14:31,607 - AllOrderCreation -INFO - Validation is displayed for route end date should be same or greater then last stop's pod time==PASS
+2024-05-15 13:14:33,699 - AllOrderCreation -INFO - LastShip==[[ChromeDriver: chrome on WINDOWS (9e124d070523c83c50bc6af0113b0bdc)] -> id: lblActDeliveryValue]
+2024-05-15 13:14:33,718 - AllOrderCreation -INFO - Last Del Date Time==2024-05-15 02:46
+2024-05-15 13:14:33,719 - AllOrderCreation -INFO - Last Del Time==02:46
+2024-05-15 13:14:36,057 - AllOrderCreation -INFO - Entered Actual Route End Time
+2024-05-15 13:14:37,494 - AllOrderCreation -INFO - Clicked on End Route
+2024-05-15 13:14:54,386 - AllOrderCreation -INFO - Clicked on Operations
+2024-05-15 13:14:55,384 - AllOrderCreation -INFO - Clicked on TaskLog
+2024-05-15 13:15:00,077 - AllOrderCreation -INFO - Clicked on SearchAllJobs
+2024-05-15 13:15:03,968 - AllOrderCreation -INFO - Clicked on Reset button
+2024-05-15 13:15:04,122 - AllOrderCreation -INFO - 05/15/2024
+2024-05-15 13:15:04,323 - AllOrderCreation -INFO - Entered Origin From Date
+2024-05-15 13:15:04,441 - AllOrderCreation -INFO - 05/15/2024
+2024-05-15 13:15:04,658 - AllOrderCreation -INFO - Entered Origin From Date
+2024-05-15 13:15:04,836 - AllOrderCreation -INFO - Route Tracking No==142049019
+2024-05-15 13:15:04,995 - AllOrderCreation -INFO - Entered RouteTrackingID
+2024-05-15 13:15:05,155 - AllOrderCreation -INFO - Click on Search button
+2024-05-15 13:15:15,874 - AllOrderCreation -INFO - Data is exist with search TrackingNO
+2024-05-15 13:15:15,902 - AllOrderCreation -INFO - Total No of records are==1
+2024-05-15 13:15:17,066 - AllOrderCreation -INFO - JobID is==33919642
+2024-05-15 13:15:17,294 - AllOrderCreation -INFO - PickUpID is==10737363
+2024-05-15 13:15:17,706 - AllOrderCreation -INFO - BOLNo is==142049020
+2024-05-15 13:15:20,654 - AllOrderCreation -INFO - Clicked on Record
+2024-05-15 13:15:24,229 - AllOrderCreation -INFO - Data is exist with search parameter
+2024-05-15 13:15:24,502 - AllOrderCreation -INFO - Job status is==VERIFY CUSTOMER BILL
+2024-05-15 13:15:24,503 - AllOrderCreation -INFO - Job is moved to Verify Customer Bill stage
+2024-05-15 13:15:24,771 - AllOrderCreation -INFO - Clicked on Verify button
+2024-05-15 13:15:34,256 - AllOrderCreation -INFO - Clicked on Operations
+2024-05-15 13:15:34,521 - AllOrderCreation -INFO - Clicked on TaskLog
+2024-05-15 13:15:37,807 - AllOrderCreation -INFO - Clicked on SearchAllJobs
+2024-05-15 13:15:41,200 - AllOrderCreation -INFO - Clicked on Reset button
+2024-05-15 13:15:41,365 - AllOrderCreation -INFO - 05/15/2024
+2024-05-15 13:15:41,608 - AllOrderCreation -INFO - Entered Origin From Date
+2024-05-15 13:15:41,747 - AllOrderCreation -INFO - 05/15/2024
+2024-05-15 13:15:41,967 - AllOrderCreation -INFO - Entered Origin From Date
+2024-05-15 13:15:42,112 - AllOrderCreation -INFO - Route Tracking No==142049019
+2024-05-15 13:15:42,249 - AllOrderCreation -INFO - Entered RouteTrackingID
+2024-05-15 13:15:42,399 - AllOrderCreation -INFO - Click on Search button
+2024-05-15 13:15:53,260 - AllOrderCreation -INFO - Data is exist with search TrackingNO
+2024-05-15 13:15:53,282 - AllOrderCreation -INFO - Total No of records are==1
+2024-05-15 13:15:53,643 - AllOrderCreation -INFO - JobID is==33919642
+2024-05-15 13:15:53,786 - AllOrderCreation -INFO - PickUpID is==10737363
+2024-05-15 13:15:53,930 - AllOrderCreation -INFO - BOLNo is==142049020
+2024-05-15 13:15:56,479 - AllOrderCreation -INFO - Clicked on Record
+2024-05-15 13:16:00,555 - AllOrderCreation -INFO - Data is exist with search parameter
+2024-05-15 13:16:00,783 - AllOrderCreation -INFO - Job status is==VERIFIED
+2024-05-15 13:16:00,783 - AllOrderCreation -INFO - Job is moved to VERIFIED stage
+2024-05-15 13:16:55,201 - AllOrderCreation -INFO - ====Sending Email=====
