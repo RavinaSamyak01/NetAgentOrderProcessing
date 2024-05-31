@@ -538,7 +538,7 @@ public class RTE extends BaseInit {
 		logger.info("Job status is==" + jobStatus);
 		msg.append("Job status is==" + jobStatus + "\n");
 
-		if (jobStatus.equalsIgnoreCase("TC ACKNOWLEDGE")) {
+		if (jobStatus.equalsIgnoreCase("TC ACKNOWLEDGE") || jobStatus.equalsIgnoreCase("TC ACK")) {
 			logger.info("It is TC ACK stage");
 			getScreenshot(Driver, "JobEditor_TCACK");
 
