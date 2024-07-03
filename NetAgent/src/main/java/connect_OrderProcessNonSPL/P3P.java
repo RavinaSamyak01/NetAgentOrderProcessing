@@ -28,7 +28,9 @@ public class P3P extends OrderCreation {
 		// --Order Creation
 		OrderCreation OC = new OrderCreation();
 
-		OC.orderCreation(3);
+		// OC.orderCreation(3);
+
+		OC.searchJob(3);
 
 		// --Scroll to get Rate
 		jse.executeScript("window.scrollBy(0,400)", "");
@@ -67,7 +69,6 @@ public class P3P extends OrderCreation {
 		connectTab();
 
 		Thread.sleep(2000);
-
 
 		// OC.searchJob(3);
 

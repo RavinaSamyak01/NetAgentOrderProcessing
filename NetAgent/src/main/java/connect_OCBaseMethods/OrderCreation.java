@@ -416,6 +416,8 @@ public class OrderCreation extends BaseInit {
 				Thread.sleep(5000);
 				act.moveToElement(order).build().perform();
 				order = isElementPresent("OCOProcess_id");
+				act.moveToElement(order).build().perform();
+				Thread.sleep(3000);
 				wait.until(ExpectedConditions.elementToBeClickable(order));
 				jse.executeScript("arguments[0].click();", order);
 				logger.info("Click on Create Order button");

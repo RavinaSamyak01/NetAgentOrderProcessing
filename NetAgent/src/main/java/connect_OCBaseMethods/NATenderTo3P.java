@@ -91,52 +91,62 @@ public class NATenderTo3P extends OrderCreation {
 			} else if (svc.equalsIgnoreCase("P3P") && stage.equalsIgnoreCase("Tender to 3P")
 					|| ((svc.equalsIgnoreCase("H3P") && stage.equalsIgnoreCase("Tender to 3P"))
 							|| ((svc.equalsIgnoreCase("3PLAST") && stage.equalsIgnoreCase("Tender to 3P"))))) {
-				
-				try {
 
 				try {
-					WebElement POD = isElementPresent("TT3POD_id");
 
-					if (POD.getAttribute("value").isBlank()) {
-						String TrackID = OC.shipLabel();
-						// --Enter POD
-						POD.clear();
-						POD.sendKeys(TrackID);
-						POD.sendKeys(Keys.TAB);
-						logger.info("Entered POD");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+					try {
+						WebElement POD = isElementPresent("TT3POD_id");
 
-					} else {
-						logger.info("POD is already set");
+						if (POD.getAttribute("value").isBlank()) {
+							String TrackID = OC.shipLabel();
+							// --Enter POD
+							POD.clear();
+							POD.sendKeys(TrackID);
+							POD.sendKeys(Keys.TAB);
+							logger.info("Entered POD");
+							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+						} else {
+							logger.info("POD is already set");
+
+						}
+
+					} catch (Exception e) {
+
+						WebElement POD = isElementPresent("TT3POD2_id");
+						if (POD.getAttribute("value").isBlank()) {
+							String TrackID = OC.shipLabel();
+							// --Enter POD
+							POD.clear();
+							POD.sendKeys(TrackID);
+							POD.sendKeys(Keys.TAB);
+							logger.info("Entered POD");
+							wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+
+						} else {
+							logger.info("POD is already set");
+
+						}
 
 					}
-
-				} catch (Exception e) {
-
-					WebElement POD = isElementPresent("TT3POD2_id");
-					if (POD.getAttribute("value").isBlank()) {
-						String TrackID = OC.shipLabel();
-						// --Enter POD
-						POD.clear();
-						POD.sendKeys(TrackID);
-						POD.sendKeys(Keys.TAB);
-						logger.info("Entered POD");
-						wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
-
-					} else {
-						logger.info("POD is already set");
-
-					}
-
 				}
-				}
-				
+
 				catch (Exception e) {
-					
+
 					WebElement pkg_tracking_no = isElementPresent("pkg_tracking_id");
-					 js.executeScript("arguments[0].scrollIntoView(true);", pkg_tracking_no);
-					 pkg_tracking_no.clear();
-					 pkg_tracking_no.sendKeys("12345");
+					js.executeScript("arguments[0].scrollIntoView(true);", pkg_tracking_no);
+
+					// --Get packageTrackingID
+					String TrackingNo = pkg_tracking_no.getText();
+					logger.info("Tracking No==" + TrackingNo);
+
+					if (TrackingNo.isBlank()) {
+						pkg_tracking_no.clear();
+						pkg_tracking_no.sendKeys("12345");
+					} else {
+
+					}
+
 				}
 
 			}
@@ -157,8 +167,8 @@ public class NATenderTo3P extends OrderCreation {
 			// --Click on Tender To 3P
 			WebElement Ten3P = isElementPresent("NDelbutton_id");
 			wait.until(ExpectedConditions.elementToBeClickable(Ten3P));
-			 js.executeScript("arguments[0].scrollIntoView(true);", Ten3P);
-			 Thread.sleep(1000);
+			js.executeScript("arguments[0].scrollIntoView(true);", Ten3P);
+			Thread.sleep(1000);
 			js.executeScript("arguments[0].click();", Ten3P);
 			logger.info("Clicked on Tender To 3P button");
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));

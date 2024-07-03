@@ -47,77 +47,117 @@ public class AllOrderCreation extends BaseInit {
 
 				// ActivateAccount();
 
-				/*
-				 * try { LOC LocJob = new LOC(); LocJob.locLocal();
-				 * 
-				 * setResultData("Result", 1, 4, "PASS");
-				 * 
-				 * } catch (Exception LOC) { logger.info(LOC); getScreenshot(Driver,
-				 * "LOCIssue"); String Error = LOC.getMessage(); setResultData("Result", 1, 4,
-				 * "FAIL"); setResultData("Result", 1, 5, Error); }
-				 * 
-				 * try { SD sdJob = new SD(); sdJob.sdSameDay();
-				 * 
-				 * setResultData("Result", 2, 4, "PASS");
-				 * 
-				 * } catch (Exception SD) { logger.info(SD); getScreenshot(Driver, "LOCIssue");
-				 * String Error = SD.getMessage(); setResultData("Result", 2, 4, "FAIL");
-				 * setResultData("Result", 2, 5, Error); }
-				 * 
-				 * try { P3P P3PJob = new P3P(); P3PJob.p3pservice(); setResultData("Result", 3,
-				 * 4, "PASS");
-				 * 
-				 * } catch (Exception P3P) { logger.info(P3P); getScreenshot(Driver,
-				 * "P3PIssue"); String Error = P3P.getMessage(); setResultData("Result", 3, 4,
-				 * "FAIL"); setResultData("Result", 3, 5, Error);
-				 * 
-				 * }
-				 * 
-				 * try { PA PAJob = new PA(); PAJob.paPriorityAir(); setResultData("Result", 4,
-				 * 4, "PASS");
-				 * 
-				 * } catch (Exception PA) { logger.info(PA); getScreenshot(Driver, "PAIssue");
-				 * String Error = PA.getMessage(); setResultData("Result", 4, 4, "FAIL");
-				 * setResultData("Result", 4, 5, Error);
-				 * 
-				 * }
-				 * 
-				 * try { D3P D3PJob = new D3P(); D3PJob.d3P(); setResultData("Result", 11, 4,
-				 * "PASS");
-				 * 
-				 * } catch (Exception D3P) { logger.info(D3P); getScreenshot(Driver,
-				 * "D3PIssue"); String Error = D3P.getMessage(); setResultData("Result", 11, 4,
-				 * "FAIL"); setResultData("Result", 11, 5, Error);
-				 * 
-				 * }
-				 * 
-				 * try { T3PLAST T3PLASTJob = new T3PLAST(); T3PLASTJob.t3PLAST();
-				 * setResultData("Result", 12, 4, "PASS");
-				 * 
-				 * } catch (Exception T3PLAST) { logger.info(T3PLAST); getScreenshot(Driver,
-				 * "LOCIssue"); String Error = T3PLAST.getMessage(); setResultData("Result", 12,
-				 * 4, "FAIL"); setResultData("Result", 12, 5, Error);
-				 * 
-				 * }
-				 * 
-				 * try { CPU CPUJob = new CPU(); CPUJob.FedExCpu(); setResultData("Result", 13,
-				 * 4, "PASS");
-				 * 
-				 * } catch (Exception CPU) { logger.info(CPU); getScreenshot(Driver,
-				 * "CPUIssue"); String Error = CPU.getMessage(); setResultData("Result", 13, 4,
-				 * "FAIL"); setResultData("Result", 13, 5, Error);
-				 * 
-				 * }
-				 * 
-				 * try { H3P H3PJob = new H3P(); H3PJob.h3P(); setResultData("Result", 10, 4,
-				 * "PASS");
-				 * 
-				 * } catch (Exception H3P) { logger.info(H3P); getScreenshot(Driver,
-				 * "LOCIssue"); String Error = H3P.getMessage(); setResultData("Result", 10, 4,
-				 * "FAIL"); setResultData("Result", 10, 5, Error);
-				 * 
-				 * }
-				 */
+				try {
+					LOC LocJob = new LOC();
+					LocJob.locLocal();
+
+					setResultData("Result", 1, 4, "PASS");
+
+				} catch (Exception LOC) {
+					logger.info(LOC);
+					getScreenshot(Driver, "LOCIssue");
+					String Error = LOC.getMessage();
+					setResultData("Result", 1, 4, "FAIL");
+					setResultData("Result", 1, 5, Error);
+				}
+
+				try {
+					SD sdJob = new SD();
+					sdJob.sdSameDay();
+
+					setResultData("Result", 2, 4, "PASS");
+
+				} catch (Exception SD) {
+					logger.info(SD);
+					getScreenshot(Driver, "LOCIssue");
+					String Error = SD.getMessage();
+					setResultData("Result", 2, 4, "FAIL");
+					setResultData("Result", 2, 5, Error);
+				}
+
+				try {
+					P3P P3PJob = new P3P();
+					P3PJob.p3pservice();
+					setResultData("Result", 3, 4, "PASS");
+
+				} catch (Exception P3P) {
+					logger.info(P3P);
+					getScreenshot(Driver, "P3PIssue");
+					String Error = P3P.getMessage();
+					setResultData("Result", 3, 4, "FAIL");
+					setResultData("Result", 3, 5, Error);
+
+				}
+
+				try {
+					PA PAJob = new PA();
+					PAJob.paPriorityAir();
+					setResultData("Result", 4, 4, "PASS");
+
+				} catch (Exception PA) {
+					logger.info(PA);
+					getScreenshot(Driver, "PAIssue");
+					String Error = PA.getMessage();
+					setResultData("Result", 4, 4, "FAIL");
+					setResultData("Result", 4, 5, Error);
+
+				}
+
+				try {
+					D3P D3PJob = new D3P();
+					D3PJob.d3P();
+					setResultData("Result", 11, 4, "PASS");
+
+				} catch (Exception D3P) {
+					logger.info(D3P);
+					getScreenshot(Driver, "D3PIssue");
+					String Error = D3P.getMessage();
+					setResultData("Result", 11, 4, "FAIL");
+					setResultData("Result", 11, 5, Error);
+
+				}
+
+				try {
+					T3PLAST T3PLASTJob = new T3PLAST();
+					T3PLASTJob.t3PLAST();
+					setResultData("Result", 12, 4, "PASS");
+
+				} catch (Exception T3PLAST) {
+					logger.info(T3PLAST);
+					getScreenshot(Driver, "LOCIssue");
+					String Error = T3PLAST.getMessage();
+					setResultData("Result", 12, 4, "FAIL");
+					setResultData("Result", 12, 5, Error);
+
+				}
+
+				try {
+					CPU CPUJob = new CPU();
+					CPUJob.FedExCpu();
+					setResultData("Result", 13, 4, "PASS");
+
+				} catch (Exception CPU) {
+					logger.info(CPU);
+					getScreenshot(Driver, "CPUIssue");
+					String Error = CPU.getMessage();
+					setResultData("Result", 13, 4, "FAIL");
+					setResultData("Result", 13, 5, Error);
+
+				}
+
+				try {
+					H3P H3PJob = new H3P();
+					H3PJob.h3P();
+					setResultData("Result", 10, 4, "PASS");
+
+				} catch (Exception H3P) {
+					logger.info(H3P);
+					getScreenshot(Driver, "LOCIssue");
+					String Error = H3P.getMessage();
+					setResultData("Result", 10, 4, "FAIL");
+					setResultData("Result", 10, 5, Error);
+
+				}
 
 				try {
 					RTE rteJob = new RTE();

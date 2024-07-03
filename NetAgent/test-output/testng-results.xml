@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-31T12:31:04 IST" name="NetAgentOrderProcess" finished-at="2024-05-31T12:36:28 IST" duration-ms="324810">
+  <suite started-at="2024-07-03T12:46:17 IST" name="NetAgentOrderProcess" finished-at="2024-07-03T13:04:42 IST" duration-ms="1104611">
     <groups>
     </groups>
-    <test started-at="2024-05-31T12:31:04 IST" name="OrderProcessing" finished-at="2024-05-31T12:36:28 IST" duration-ms="324810">
+    <test started-at="2024-07-03T12:46:17 IST" name="OrderProcessing" finished-at="2024-07-03T13:04:42 IST" duration-ms="1104611">
       <class name="netAgent_OrderProcess.AllOrderCreation">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@43bc63a3]" started-at="2024-05-31T12:30:41 IST" name="beforeMethod" finished-at="2024-05-31T12:31:04 IST" duration-ms="22557" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@17fc391b]" started-at="2024-07-03T12:45:57 IST" name="beforeMethod" finished-at="2024-07-03T12:46:17 IST" duration-ms="19754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method is-config="true" signature="testMethodName(java.lang.reflect.Method)[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@43bc63a3]" started-at="2024-05-31T12:31:04 IST" name="testMethodName" finished-at="2024-05-31T12:31:04 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="testMethodName(java.lang.reflect.Method)[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@17fc391b]" started-at="2024-07-03T12:46:17 IST" name="testMethodName" finished-at="2024-07-03T12:46:17 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,22 +22,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMethodName -->
-        <test-method signature="allOrderCreation()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@43bc63a3]" started-at="2024-05-31T12:31:04 IST" name="allOrderCreation" finished-at="2024-05-31T12:36:28 IST" duration-ms="324418" status="PASS">
+        <test-method signature="allOrderCreation()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@17fc391b]" started-at="2024-07-03T12:46:17 IST" name="allOrderCreation" finished-at="2024-07-03T13:04:42 IST" duration-ms="1104408" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- allOrderCreation -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@43bc63a3]" started-at="2024-05-31T12:36:28 IST" name="getResult" finished-at="2024-05-31T12:36:28 IST" duration-ms="253" status="PASS">
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@17fc391b]" started-at="2024-07-03T13:04:42 IST" name="getResult" finished-at="2024-07-03T13:04:42 IST" duration-ms="108" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=allOrderCreation status=SUCCESS method=AllOrderCreation.allOrderCreation()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@43bc63a3] output={null}]]]>
+                <![CDATA[[TestResult name=allOrderCreation status=SUCCESS method=AllOrderCreation.allOrderCreation()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@17fc391b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="SendEmail()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@43bc63a3]" started-at="2024-05-31T12:36:29 IST" name="SendEmail" finished-at="2024-05-31T12:36:38 IST" duration-ms="9013" status="PASS">
+        <test-method is-config="true" signature="SendEmail()[pri:0, instance:netAgent_OrderProcess.AllOrderCreation@17fc391b]" started-at="2024-07-03T13:04:42 IST" name="SendEmail" finished-at="2024-07-03T13:04:47 IST" duration-ms="5167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SendEmail -->

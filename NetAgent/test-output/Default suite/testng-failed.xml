@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="connect_OrderProcessNonSPL.LOC">
+      <class name="connect_OrderProcessSPL.D3P">
         <methods>
           <include name="getResult"/>
+          <include name="d3P"/>
           <include name="beforeMethod"/>
           <include name="SendEmail"/>
-          <include name="locLocal"/>
           <include name="testMethodName"/>
         </methods>
-      </class> <!-- connect_OrderProcessNonSPL.LOC -->
+      </class> <!-- connect_OrderProcessSPL.D3P -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

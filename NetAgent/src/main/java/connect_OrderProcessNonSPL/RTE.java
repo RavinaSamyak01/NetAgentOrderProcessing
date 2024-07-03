@@ -120,27 +120,36 @@ public class RTE extends BaseInit {
 	}
 
 	public void getRTETrackingNo() throws EncryptedDocumentException, InvalidFormatException, IOException {
-		WebDriverWait wait = new WebDriverWait(Driver, 60);
-		WebDriverWait wait2 = new WebDriverWait(Driver, 7);
+
+		JavascriptExecutor js = (JavascriptExecutor) Driver;// scroll,click
+		WebDriverWait wait = new WebDriverWait(Driver, 15);// wait time
 		Actions act = new Actions(Driver);
+		WebDriverWait wait1 = new WebDriverWait(Driver, 5);// wait time
+		WebDriverWait wait2 = new WebDriverWait(Driver, 30);// wait time
+
 		String Env = storage.getProperty("Env");
 		// --Go to RouteList
 		// --Go to Tools tab
 		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("a_tools")));
-			WebElement Tools = isElementPresent("Tools_id");
-			act.moveToElement(Tools).click().perform();
-			logger.info("Clicked on Tools");
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
 
+			// --Click on Operations
+			WebElement OperationTab = isElementPresent("Tools_id");
+			wait1.until(ExpectedConditions.visibilityOfAllElements(OperationTab));
+			wait1.until(ExpectedConditions.elementToBeClickable(OperationTab));
+			act.moveToElement(OperationTab).build().perform();
+			js.executeScript("arguments[0].click();", OperationTab);
+			logger.info("Click on Tools");
+			Thread.sleep(2000);
 			wait.until(ExpectedConditions
 					.visibilityOfAllElementsLocatedBy(By.xpath("//*[@class=\"OpenCloseClass dropdown open\"]//ul")));
 
-			// --Click on RouteList
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("a_RouteWorkList")));
-			isElementPresent("RouteList_linkText").click();
-			logger.info("Clicked on RouteList");
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loaderDiv")));
+			// --Create Order
+			WebElement CreateOrder = isElementPresent("RouteList_linkText");
+			wait1.until(ExpectedConditions.visibilityOfAllElements(CreateOrder));
+			wait1.until(ExpectedConditions.elementToBeClickable(CreateOrder));
+			act.moveToElement(CreateOrder).build().perform();
+			js.executeScript("arguments[0].click();", CreateOrder);
+			logger.info("Click on RouteList");
 
 			getScreenshot(Driver, "RouteList");
 
